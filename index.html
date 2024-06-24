@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -18,25 +21,50 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-indigo w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-indigo" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+  <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     <a href="UKBB-CanR" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">UKBB-CanR</a>
+    <a href="#CanCode" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">CanCode</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href="UKBB-CanR" class="w3-bar-item w3-button w3-padding-large">UKBB-CanR</a>
+    <a href="#CanCode" class="w3-bar-item w3-button w3-padding-large">CanCode</a>
   </div>
 </div>
 
 <!-- Header -->
-<header class="w3-container w3-indigo w3-center" style="padding:75px 5px">
+<header class="w3-container w3-blue w3-center" style="padding:75px 5px">
   <h1 class="w3-margin w3-jumbo">Murat Guler</h1>
-  <p class="w3-xlarge">Personal page. Repository of my R pacakges.</p>
+  <p class="w3-xlarge">Personal page. Repository of my R packages.</p>
   <p class="w3-xlarge">Follow the links above to R packages. Visit my <a href="https://github.com/biomguler">GitHub</a> for more.</p>
   <!-- <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button> -->
 </header>
+
+<!-- CanCode Section -->
+<div class="w3-container w3-padding-64" id="CanCode">
+  <div class="w3-content">
+    <h2 class="w3-center">CanCode Data</h2>
+    <div class="w3-responsive">
+      <table id="cancodeTable" class="display" style="width:100%">
+        <thead>
+          <tr>
+            <th>CanCode</th>
+            <th>ICD10</th>
+            <th>Histology</th>
+            <th>Behaviour</th>
+            <th>Cases</th>
+            <th>L1 (general site)</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
@@ -48,7 +76,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
 
     <div class="w3-third w3-center">
-      <i class="fa w3-padding-64 w3-text-red"> <img src="files/P1000306.jpg" alt="Headshot" style="width:400px;height:400px;"> </i>
+      <i class="fa w3-padding-64 w3-text-blue"> <img src="files/P1000306.jpg" alt="Headshot" style="width:400px;height:400px;"> </i>
     </div>
   </div>
 </div>
@@ -57,7 +85,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+      <i class="fa fa-coffee w3-padding-64 w3-text-blue w3-margin-right"></i>
     </div>
 
     <div class="w3-twothird">
@@ -94,6 +122,25 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+$(document).ready(function() {
+    $('#cancodeTable').DataTable({
+        "ajax": {
+            "url": "cancodes.txt",
+            "dataSrc": ""
+        },
+        "columns": [
+            { "data": "CanCode" },
+            { "data": "ICD10" },
+            { "data": "Histology" },
+            { "data": "Behaviour" },
+            { "data": "Cases" },
+            { "data": "L1 (general site)" }
+        ],
+        "pageLength": 100,
+        "searching": true // Enable filtering
+    });
+});
 </script>
 
 </body>

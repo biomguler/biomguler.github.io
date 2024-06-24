@@ -1,0 +1,19 @@
+[
+  {
+    "CanCode": "00377",
+    "ICD10": "C16.9 Stomach, unspecified",
+    "Histology": "Malignant lymphoma, non-Hodgkin",
+    "Behaviour": "Malignant, primary site",
+    "Cases": "1",
+    "L1 (general site)": "Lymphoid neoplasm"
+  },
+  {
+    "CanCode": "00378",
+    "ICD10": "C16.9 Stomach, unspecified",
+    "Histology": "Malignant lymphoma, NOS",
+    "Behaviour": "Malignant, primary site",
+    "Cases": "2",
+    "L1 (general site)": "Lymphoid neoplasm"
+  },
+  // More records...
+]

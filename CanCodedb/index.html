@@ -22,6 +22,8 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
     <!-- Select2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- jQuery for AJAX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -77,68 +79,61 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>CC00001</td>
-            <td>C000</td>
-            <td>8200</td>
-            <td>3</td>
-            <td>Malignant neoplasms of lip, oral cavity and pharynx</td>
-            <td>Lip</td>
-            <td>External upper lip</td>
-            <td>Adenoid cystic carcinoma</td>
-            <td>Malignant, primary site</td>
-            <td>Malignant neoplasm of the lip</td>
-            <td>Lip cancer</td>
-        </tr>
-        <tr>
-            <td>CC00002</td>
-            <td>C000</td>
-            <td>8090</td>
-            <td>3</td>
-            <td>Malignant neoplasms of lip, oral cavity and pharynx</td>
-            <td>Lip</td>
-            <td>External upper lip</td>
-            <td>Basal cell carcinoma, NOS</td>
-            <td>Malignant, primary site</td>
-            <td>Malignant neoplasm of the lip</td>
-            <td></td>
-        </tr>
+        <!-- Data will be loaded here via AJAX -->
     </tbody>
 </table>
 
 <script>
 $(document).ready(function() {
-    var table = $('#example').DataTable({
-        orderCellsTop: true,
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ],
-        initComplete: function () {
-            this.api().columns().every( function () {
-                var column = this;
-                var select = $('<select multiple="multiple"><option value=""></option></select>')
-                    .appendTo( $("#example thead tr:eq(1) th").eq(column.index()).empty() )
-                    .on( 'change', function () {
-                        var val = $(this).val();
-                        var searchValue = val ? val.join('|') : '';
-                        
-                        column
-                            .search( searchValue ? '^(' + searchValue + ')$' : '', true, false )
-                            .draw();
+    // Load data from JSON file
+    $.getJSON('cancodedb.json', function(data) {
+        // Append data to table
+        var table = $('#example').DataTable({
+            data: data,
+            columns: [
+                { data: 'CanCode' },
+                { data: 'ICD10' },
+                { data: 'ICDO3_histology' },
+                { data: 'ICDO3_behaviour' },
+                { data: 'L1' },
+                { data: 'L2' },
+                { data: 'L3' },
+                { data: 'L4' },
+                { data: 'L5' },
+                { data: 'L6' },
+                { data: 'L7' }
+            ],
+            orderCellsTop: true,
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            initComplete: function () {
+                this.api().columns().every( function () {
+                    var column = this;
+                    var select = $('<select multiple="multiple"><option value=""></option></select>')
+                        .appendTo( $("#example thead tr:eq(1) th").eq(column.index()).empty() )
+                        .on( 'change', function () {
+                            var val = $(this).val();
+                            var searchValue = val ? val.join('|') : '';
+                            
+                            column
+                                .search( searchValue ? '^(' + searchValue + ')$' : '', true, false )
+                                .draw();
+                        } );
+
+                    column.data().unique().sort().each( function ( d, j ) {
+                        select.append( '<option value="'+d+'">'+d+'</option>' );
                     } );
 
-                column.data().unique().sort().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' );
+                    // Initialize Select2
+                    select.select2({
+                        width: 'resolve',
+                        placeholder: 'Select options'
+                    });
                 } );
-
-                // Initialize Select2
-                select.select2({
-                    width: 'resolve',
-                    placeholder: 'Select options'
-                });
-            } );
-        }
+            }
+        });
     });
 });
 </script>

@@ -87,7 +87,8 @@
 $(document).ready(function() {
     // Load data from JSON file
     $.getJSON('cancodedb.json', function(data) {
-        // Append data to table
+        console.log('Data loaded:', data); // Debugging log
+        // Initialize DataTable
         var table = $('#example').DataTable({
             data: data,
             columns: [
@@ -134,6 +135,8 @@ $(document).ready(function() {
                 } );
             }
         });
+    }).fail(function(jqxhr, textStatus, error) {
+        console.log("Request Failed: " + textStatus + ", " + error); // Error handling log
     });
 });
 </script>

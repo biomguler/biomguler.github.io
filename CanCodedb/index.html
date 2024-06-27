@@ -94,7 +94,7 @@ $(document).ready(function() {
                 this.api().columns().every( function () {
                     var column = this;
                     var select = $('<select multiple="multiple"><option value=""></option></select>')
-                        .appendTo( $(column.header()).empty() )
+                        .appendTo( $(column.header()) )
                         .on( 'change', function () {
                             var val = $(this).val();
                             var searchValue = val ? val.join('|') : '';

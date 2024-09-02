@@ -2,7 +2,6 @@
 d3.json('data.json').then(function(data) {
     const width = 960;
     const height = 600;
-
     const svg = d3.select("#chart")
         .append("svg")
         .attr("width", width)
@@ -12,30 +11,21 @@ d3.json('data.json').then(function(data) {
 
     const tree = d3.tree().size([height, width - 160]);
     const root = d3.hierarchy(data);
-
-    // Collapse all children of all nodes initially
+    
+    // Collapse all children at the beginning
     root.descendants().forEach(d => {
         if (d.depth > 0) d._children = d.children, d.children = null;
     });
 
-    // Initialize the positions of the nodes
-    root.x0 = height / 2;
-    root.y0 = 0;
-
     update(root);
 
     function update(source) {
-        // Compute the new tree layout
         const nodes = root.descendants().reverse();
         const links = root.links();
 
-        // Update the tree layout
         tree(root);
 
-        // Normalize for fixed-depth
-        nodes.forEach(d => { d.y = d.depth * 180; });
-
-        // Update the nodes
+        // Join data to existing nodes
         const node = svg.selectAll(".node")
             .data(nodes, d => d.id || (d.id = ++i));
 
@@ -44,23 +34,27 @@ d3.json('data.json').then(function(data) {
             .attr("class", "node")
             .attr("transform", d => `translate(${source.y0},${source.x0})`)
             .on("click", function(event, d) {
-                d.children = d.children ? null : d._children;
-                d._children = d.children ? null : d._children;
+                if (d.children) {
+                    d._children = d.children;
+                    d.children = null;
+                } else {
+                    d.children = d._children;
+                    d._children = null;
+                }
                 update(d);
             });
 
+        // Add circles to nodes
         nodeEnter.append("circle")
-            .attr("r", 10)
-            .style("fill", d => d._children ? "lightsteelblue" : "#fff")
-            .style("stroke", "#333")
-            .style("stroke-width", "2px");
+            .attr("r", 5)
+            .style("fill", d => d._children ? "lightsteelblue" : "#fff");
 
+        // Add labels to nodes
         nodeEnter.append("text")
             .attr("dy", ".35em")
-            .attr("x", d => d.children || d._children ? -12 : 12)
+            .attr("x", d => d.children || d._children ? -10 : 10)
             .attr("text-anchor", d => d.children || d._children ? "end" : "start")
-            .text(d => d.data.name)
-            .style("fill-opacity", 1);
+            .text(d => d.data.name);
 
         // Transition nodes to their new position
         const nodeUpdate = nodeEnter.merge(node).transition()
@@ -86,7 +80,7 @@ d3.json('data.json').then(function(data) {
         nodeExit.select("text")
             .style("fill-opacity", 1e-6);
 
-        // Update the links
+        // Update links
         const link = svg.selectAll(".link")
             .data(links, d => d.target.id);
 
@@ -110,7 +104,7 @@ d3.json('data.json').then(function(data) {
             .remove();
 
         // Store the old positions for transition
-        root.descendants().forEach(d => {
+        nodes.forEach(d => {
             d.x0 = d.x;
             d.y0 = d.y;
         });

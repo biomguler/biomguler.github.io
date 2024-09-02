@@ -1,0 +1,63 @@
+{
+  "name": "Animals",
+  "children": [
+    {
+      "name": "warm-blooded",
+      "children": [
+        {
+          "name": "can fly",
+          "children": [
+            {
+              "name": "vertebrate",
+              "children": [
+                {
+                  "name": "endangered",
+                  "children": [
+                    {"name": "hai", "children": [{"name": "colorful"}, {"name": "black"}]},
+                    {"name": "no hai", "children": [{"name": "colorful"}, {"name": "black"}]}
+                  ]
+                },
+                {
+                  "name": "not endangered",
+                  "children": [
+                    {"name": "hai", "children": [{"name": "colorful"}, {"name": "black"}]},
+                    {"name": "no hai", "children": [{"name": "colorful"}, {"name": "black"}]}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cold-blooded",
+      "children": [
+        {
+          "name": "can not",
+          "children": [
+            {
+              "name": "invertebrate",
+              "children": [
+                {
+                  "name": "endangered",
+                  "children": [
+                    {"name": "hai", "children": [{"name": "colorful"}, {"name": "black"}]},
+                    {"name": "no hai", "children": [{"name": "colorful"}]}
+                  ]
+                },
+                {
+                  "name": "not endangered",
+                  "children": [
+                    {"name": "hai", "children": [{"name": "black"}]},
+                    {"name": "no hai", "children": [{"name": "colorful"}]}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

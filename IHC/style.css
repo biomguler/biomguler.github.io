@@ -2,46 +2,59 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 15px;
-    text-align: center;
+    background-color: #333;
+    padding: 10px 0;
 }
 
-nav ul {
-    list-style-type: none;
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 15px;
+header ul li {
+    margin: 0 15px;
 }
 
-nav ul li a {
+header ul li a {
     color: white;
     text-decoration: none;
-}
-
-.search-container {
-    text-align: center;
-    margin: 20px 0;
+    font-size: 18px;
 }
 
 #searchBox {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
     padding: 10px;
-    width: 80%;
-    max-width: 600px;
     font-size: 16px;
 }
 
-#network {
+#chart {
     width: 100%;
     height: 600px;
-    background-color: #f7f7f7;
     margin: 0 auto;
+    background-color: white;
+}
+
+.node circle {
+    fill: steelblue;
+    stroke: #333;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font-size: 12px;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
 }

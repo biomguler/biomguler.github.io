@@ -2,6 +2,7 @@
 d3.json('data.json').then(function(data) {
     const width = 960;
     const height = 600;
+
     const svg = d3.select("#chart")
         .append("svg")
         .attr("width", width)
@@ -11,8 +12,8 @@ d3.json('data.json').then(function(data) {
 
     const tree = d3.tree().size([height, width - 160]);
     const root = d3.hierarchy(data);
-    
-    // Collapse all children at the beginning
+
+    // Collapse all children of all nodes initially
     root.descendants().forEach(d => {
         if (d.depth > 0) d._children = d.children, d.children = null;
     });
@@ -20,9 +21,11 @@ d3.json('data.json').then(function(data) {
     update(root);
 
     function update(source) {
+        // Compute the new tree layout.
         const nodes = root.descendants().reverse();
         const links = root.links();
 
+        // Update the tree layout
         tree(root);
 
         // Join data to existing nodes

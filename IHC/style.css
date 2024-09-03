@@ -66,3 +66,12 @@ header ul li a {
     stroke: #ccc;
     stroke-width: 1.5px;
 }
+.highcharts-figure {
+    margin: 0 auto;
+    max-width: 900px;
+    min-width: 360px;
+}
+
+#container {
+    height: 1200px;
+}

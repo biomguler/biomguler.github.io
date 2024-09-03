@@ -1,50 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InterLymph Hierarchical Classification</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>InterLymph Hierarchical Classification</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Mapping Tools</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <input type="text" id="searchBox" placeholder="Search for a member..." />
-        <div id="chart"></div>
-    </main>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/treemap.js"></script>
+<script src="https://code.highcharts.com/modules/treegraph.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-    <!-- Placeholder content for Mapping Tools and About -->
-    <section id="mapping-tools" style="display: none;">
-        <h2>Mapping Tools</h2>
-        <p>Placeholder text for Mapping Tools content.</p>
-    </section>
-    <section id="about" style="display: none;">
-        <h2>About</h2>
-        <p>Placeholder text for About content.</p>
-    </section>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/treemap.js"></script>
-    <script src="https://code.highcharts.com/modules/treegraph.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    
-    <figure class="highcharts-figure">
-        <div id="container"></div>
-        <p class="highcharts-description">
-            The treegraph series can be used to render phylogenetic trees, a typical
-            visualization of genetics and related tree structures.
-       </p>
-    </figure>
-
-</body>
-</html>
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        The treegraph series can be used to render phylogenetic trees, a typical
+        visualization of genetics and related tree structures.
+   </p>
+</figure>

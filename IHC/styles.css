@@ -5,20 +5,21 @@
     box-sizing: border-box;
 }
 
-/* Body styling */
-/*background: url('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/IHC/images/pexels-pixelcop-2680270.jpg') no-repeat center center fixed; */
+/* Gradient background only for the body with the gradient-bg class */
+/* Alternative background: url('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/IHC/images/pexels-pixelcop-2680270.jpg') no-repeat center center fixed; */
+
 .gradient-bg {
     font-family: Arial, sans-serif;
     background: linear-gradient(-30deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat center center fixed;
     background-size: 400% 400%;
-    color: #fff;
+    color: #fff; /* White text for gradient background */
     animation: gradientAnimation 10s ease infinite;
 }
 
 /* White background for other sections or pages */
 body {
     background-color: #ffffff; /* White background */
-    color: #fff; /* White text */
+    color: #000; /* Black text for visibility on white background */
 }
 
 /* Keyframes for gradient animation */
@@ -39,9 +40,11 @@ header {
     background-color: transparent;
     padding: 20px 0;
 }
+
 nav {
     width: 100%;
 }
+
 nav ul {
     display: flex;
     justify-content: flex-end; /* Aligns the nav menu to the right */
@@ -53,10 +56,16 @@ nav ul li {
     margin: 0 20px; /* Adds spacing between navigation items */
 }
 
+/* Dark text for navigation links on pages with a white background */
 nav ul li a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
     font-size: 18px;
+}
+
+/* White text for navigation links on pages with a gradient background */
+.gradient-bg nav ul li a {
+    color: #fff;
 }
 
 nav ul li a:hover {
@@ -65,10 +74,10 @@ nav ul li a:hover {
 
 /* Main content styling */
 .main {
-    height: 150;
+    height: 150px;
     display: flex;
     justify-content: center;
-    align-items: justify;
+    align-items: center;
     text-align: center;
 }
 
@@ -98,6 +107,7 @@ nav ul li a:hover {
     margin-top: 20px;
 }
 
+/* Search box styling */
 .search-box {
     margin-top: 40px;
 }

@@ -144,6 +144,7 @@ nav ul li a:hover {
     color: #fff;
     border-radius: 8px;
     line-height: 1.6;
+    flex: 1;
 }
 
 /* About Page Titles */

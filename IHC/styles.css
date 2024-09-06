@@ -163,6 +163,7 @@ nav ul li a:hover {
 /* About Page Paragraph Styling */
 .about-page p {
     margin-bottom: 15px;
+    text-align: justify;
 }
 
 /* About Page List Styling */

@@ -4,9 +4,57 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* White background for other sections or pages */
+body {
+    background-color: #ffffff; /* White background */
+    color: #000; /* Black text for visibility on white background */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content area will take up the remaining space */
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: justify;
+    text-align: center;
+}
 
 /* Gradient background only for the body with the gradient-bg class */
 /* Alternative background: url('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/IHC/images/pexels-pixelcop-2680270.jpg') no-repeat center center fixed; */
+
+
+.content h1 {
+    font-size: 60px;
+    text-align: center;
+    line-height: 1;
+}
+
+.content h1 .line1 {
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.content h1 .line2 {
+    font-weight: normal;
+    font-size: 32px;
+}
+
+.content h1 .line3 {
+    font-weight: normal;
+    font-size: 60px;
+}
+
+/* Optional: Add some margin at the top if needed */
+.content {
+    margin-top: 20px;
+}
 
 .gradient-bg {
     font-family: Arial, sans-serif;
@@ -16,11 +64,7 @@
     animation: gradientAnimation 10s ease infinite;
 }
 
-/* White background for other sections or pages */
-body {
-    background-color: #ffffff; /* White background */
-    color: #000; /* Black text for visibility on white background */
-}
+
 
 /* Keyframes for gradient animation */
 @keyframes gradientAnimation {
@@ -72,40 +116,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main content styling */
-.main {
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: justify;
-    text-align: center;
-}
-
-.content h1 {
-    font-size: 60px;
-    text-align: center;
-    line-height: 1;
-}
-
-.content h1 .line1 {
-    font-weight: bold;
-    font-size: 60px;
-}
-
-.content h1 .line2 {
-    font-weight: normal;
-    font-size: 32px;
-}
-
-.content h1 .line3 {
-    font-weight: normal;
-    font-size: 60px;
-}
-
-/* Optional: Add some margin at the top if needed */
-.content {
-    margin-top: 20px;
-}
 
 /* Search box styling */
 .search-box {

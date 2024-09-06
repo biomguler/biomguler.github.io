@@ -175,11 +175,12 @@ nav ul li a:hover {
 
 /* Link Styling for About Page */
 .about-page a {
-    color: #1d7f99;
-    text-decoration: none;
+    color: #fff;
+    text-decoration: underline;
 }
 
 .about-page a:hover {
+    color: #f0f0f0;
     text-decoration: underline;
 }
 /* Footer Styling */

@@ -195,7 +195,7 @@ footer {
     background-color: #1d7f99;
     color: white;
     padding: 20px;
-    text-align: center;
+    text-align: center; /* Ensure the entire footer content is centered */
     width: 100%;
     position: relative;
     bottom: 0;
@@ -211,6 +211,7 @@ footer .footer-content {
 footer p {
     margin: 10px 0;
     font-size: 14px;
+    text-align: center; /* Explicitly center the paragraph text */
 }
 
 footer nav ul {

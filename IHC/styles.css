@@ -71,11 +71,11 @@ nav ul li a:hover {
 
 /* Optional: Add some margin at the top if needed */
 .content {
-    margin-top: 70px;
+    margin-top: 30px;
 }
 
 .search-box {
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .search-box input[type="text"] {

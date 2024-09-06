@@ -15,18 +15,21 @@ body {
 
 /* Navigation styling */
 header {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: transparent;
     padding: 20px 0;
 }
-
+nav {
+    width: 100%;
+}
 nav ul {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Aligns the nav menu to the right */
     list-style: none;
+    margin-right: 20px; /* Adds a bit of margin from the right side */
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 20px; /* Adds spacing between navigation items */
 }
 
 nav ul li a {

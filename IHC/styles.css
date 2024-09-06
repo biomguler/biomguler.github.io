@@ -225,3 +225,33 @@ footer nav ul li a {
 footer nav ul li a:hover {
     text-decoration: underline;
 }
+
+/* Ensure the body takes up the full height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Flexbox layout for main content */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content area will take up the remaining space */
+.main {
+    flex: 1; /* Make the main content grow and take up available space */
+}
+
+/* Footer styling */
+footer {
+    background-color: #1d7f99; /* Background color for the footer */
+    color: white; /* Text color for footer content */
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: relative; /* Footer is relative to its container */
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

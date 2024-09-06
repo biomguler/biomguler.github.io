@@ -4,31 +4,96 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Ensure the body takes up the full height */
 html, body {
     height: 100%;
     margin: 0;
-}
-
-/* White background for other sections or pages */
-body {
-    background-color: #ffffff; /* White background */
-    color: #000; /* Black text for visibility on white background */
     display: flex;
     flex-direction: column;
 }
 
-/* Main content area will take up the remaining space */
+/* Body for white background pages */
+body {
+    background-color: #ffffff; /* White background */
+    color: #000; /* Black text for visibility on white background */
+}
+
+/* Flexbox layout for main content */
 .main {
-    flex: 1;
+    flex: 1; /* Make the main content grow and take up available space */
     display: flex;
     justify-content: center;
     align-items: justify;
     text-align: center;
 }
 
-/* Gradient background only for the body with the gradient-bg class */
-/* Alternative background: url('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/IHC/images/pexels-pixelcop-2680270.jpg') no-repeat center center fixed; */
+/* Header and Navigation Styling */
+header {
+    background-color: transparent;
+    padding: 20px 0;
+}
 
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end; /* Aligns the nav menu to the right */
+    list-style: none;
+    margin-right: 20px; /* Adds a bit of margin from the right side */
+}
+
+nav ul li {
+    margin: 0 20px; /* Adds spacing between navigation items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Dark text for navigation links on pages with a white background */
+nav ul li a {
+    color: #000;
+}
+
+/* White text for navigation links on pages with a gradient background */
+.gradient-bg nav ul li a {
+    color: #fff;
+}
+
+/* Gradient background for specific pages */
+.gradient-bg {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-30deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat center center fixed;
+    background-size: 400% 400%;
+    color: #fff; /* White text for gradient background */
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Content styling */
+.content {
+    margin-top: 20px;
+}
 
 .content h1 {
     font-size: 60px;
@@ -51,73 +116,7 @@ body {
     font-size: 60px;
 }
 
-/* Optional: Add some margin at the top if needed */
-.content {
-    margin-top: 20px;
-}
-
-.gradient-bg {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(-30deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat center center fixed;
-    background-size: 400% 400%;
-    color: #fff; /* White text for gradient background */
-    animation: gradientAnimation 10s ease infinite;
-}
-
-
-
-/* Keyframes for gradient animation */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Navigation styling */
-header {
-    background-color: transparent;
-    padding: 20px 0;
-}
-
-nav {
-    width: 100%;
-}
-
-nav ul {
-    display: flex;
-    justify-content: flex-end; /* Aligns the nav menu to the right */
-    list-style: none;
-    margin-right: 20px; /* Adds a bit of margin from the right side */
-}
-
-nav ul li {
-    margin: 0 20px; /* Adds spacing between navigation items */
-}
-
-/* Dark text for navigation links on pages with a white background */
-nav ul li a {
-    color: #000;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* White text for navigation links on pages with a gradient background */
-.gradient-bg nav ul li a {
-    color: #fff;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-
-/* Search box styling */
+/* Search Box Styling */
 .search-box {
     margin-top: 40px;
 }
@@ -157,7 +156,6 @@ nav ul li a:hover {
     flex: 1;
 }
 
-/* About Page Titles */
 .about-page h1 {
     font-size: 36px;
     margin-bottom: 20px;
@@ -171,20 +169,17 @@ nav ul li a:hover {
     text-align: left;
 }
 
-/* About Page Paragraph Styling */
 .about-page p {
     margin-bottom: 15px;
     text-align: justify;
 }
 
-/* About Page List Styling */
 .about-page ul, .about-page ol {
     margin-left: 20px;
     margin-bottom: 20px;
     padding-left: 20px;
 }
 
-/* Link Styling for About Page */
 .about-page a {
     color: #fff;
     text-decoration: underline;
@@ -194,15 +189,18 @@ nav ul li a:hover {
     color: #f0f0f0;
     text-decoration: underline;
 }
+
 /* Footer Styling */
 footer {
-    background-color: #1d7f99; /* Background color for the footer */
-    color: white; /* Text color for footer content */
+    background-color: #1d7f99;
+    color: white;
     padding: 20px;
     text-align: center;
+    width: 100%;
     position: relative;
     bottom: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
 }
 
 footer .footer-content {
@@ -235,34 +233,4 @@ footer nav ul li a {
 
 footer nav ul li a:hover {
     text-decoration: underline;
-}
-
-/* Ensure the body takes up the full height */
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-/* Flexbox layout for main content */
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Main content area will take up the remaining space */
-.main {
-    flex: 1; /* Make the main content grow and take up available space */
-}
-
-/* Footer styling */
-footer {
-    background-color: #1d7f99; /* Background color for the footer */
-    color: white; /* Text color for footer content */
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    position: relative; /* Footer is relative to its container */
-    bottom: 0;
-    left: 0;
-    right: 0;
 }

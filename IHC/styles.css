@@ -7,12 +7,18 @@
 
 /* Body styling */
 /*background: url('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/IHC/images/pexels-pixelcop-2680270.jpg') no-repeat center center fixed; */
-body {
+.gradient-bg {
     font-family: Arial, sans-serif;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat center center fixed;
-    background-size: 400% 400%; /* Make the background larger for smoother animation */
+    background: linear-gradient(-30deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat center center fixed;
+    background-size: 400% 400%;
     color: #fff;
-    animation: gradientAnimation 10s ease infinite; /* Animation timing */
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* White background for other sections or pages */
+body {
+    background-color: #ffffff; /* White background */
+    color: #fff; /* White text */
 }
 
 /* Keyframes for gradient animation */

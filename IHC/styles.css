@@ -9,7 +9,7 @@
 /*background: url('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/IHC/images/pexels-pixelcop-2680270.jpg') no-repeat center center fixed; */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(-30deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat center center fixed;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat center center fixed;
     background-size: 400% 400%; /* Make the background larger for smoother animation */
     color: #fff;
     animation: gradientAnimation 10s ease infinite; /* Animation timing */

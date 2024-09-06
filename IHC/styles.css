@@ -10,8 +10,22 @@
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(-30deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat center center fixed;
-    background-size: cover;
+    background-size: 400% 400%; /* Make the background larger for smoother animation */
     color: #fff;
+    animation: gradientAnimation 10s ease infinite; /* Animation timing */
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Navigation styling */

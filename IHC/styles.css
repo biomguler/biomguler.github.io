@@ -133,3 +133,51 @@ nav ul li a:hover {
 .search-box button:hover {
     background-color: #145a70;
 }
+
+/* About Page Specific Styles */
+.about-page .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+}
+
+/* About Page Titles */
+.about-page h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.about-page h2 {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* About Page Paragraph Styling */
+.about-page p {
+    margin-bottom: 15px;
+}
+
+/* About Page List Styling */
+.about-page ul, .about-page ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+/* Link Styling for About Page */
+.about-page a {
+    color: #1d7f99;
+    text-decoration: none;
+}
+
+.about-page a:hover {
+    text-decoration: underline;
+}

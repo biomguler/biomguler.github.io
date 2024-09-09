@@ -1,4 +1,5 @@
-Highcharts.chart('container', {
+// Create the chart and store it in a global variable
+window.myTreeGraphChart = Highcharts.chart('container', {
     chart: {
         spacingBottom: 30,
         marginRight: 120,

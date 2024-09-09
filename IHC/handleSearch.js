@@ -1,10 +1,6 @@
-console.log('handleSearch.js is loaded');
-
 function handleSearch() {
-    console.log('Search button clicked');
-    
     const query = document.getElementById('search-input').value.toLowerCase();
-    const chart = Highcharts.charts[0];
+    const chart = window.myTreeGraphChart;  // Use the global chart variable
 
     if (!chart) {
         console.error('Chart is not available');
@@ -16,13 +12,13 @@ function handleSearch() {
         chart.series[0].points.forEach(function (point) {
             if (point.name.toLowerCase().includes(query)) {
                 point.update({
-                    color: '#FF0000'
+                    color: '#FF0000'  // Highlight matching nodes with red color
                 });
-                chart.tooltip.refresh(point);
+                chart.tooltip.refresh(point);  // Show tooltip on matched point
                 found = true;
             } else {
                 point.update({
-                    color: '#23a6d5'
+                    color: '#23a6d5'  // Reset color for non-matching nodes
                 });
             }
         });

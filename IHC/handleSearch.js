@@ -9,8 +9,14 @@ function handleSearch() {
 
     if (query) {
         let found = false;
+
+        // Iterate through the chart points
         chart.series[0].points.forEach(function (point) {
-            if (point.name.toLowerCase().includes(query)) {
+            const pointName = point.options.name ? point.options.name.toLowerCase() : '';  // Safely access the name
+
+            console.log(`Checking point: ${pointName}`);  // Debugging line
+
+            if (pointName.includes(query)) {
                 point.update({
                     color: '#FF0000'  // Highlight matching nodes with red color
                 });

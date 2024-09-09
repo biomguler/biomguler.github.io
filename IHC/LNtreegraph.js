@@ -15,8 +15,11 @@ window.myTreeGraphChart = Highcharts.chart('container', {
         data: [
             [undefined, 'Lymphoid Neoplasms'], 
             ['Lymphoid Neoplasms', 'LN'], 
-            ['Lymphoid Neoplasms', 'LN-ID'], 
+            ['Lymphoid Neoplasms', 'LN-ID'],
+            ['LN-ID', 'NHL'],
+            ['LN-ID', 'HL'],
             ['LN', 'NHL'],
+            ['LN', 'HL'],
             ['NHL', 'Precursor B-cell neoplasm'],
             ['Precursor B-cell neoplasm', 'Reactive B-cell-rich lymphoid proliferations that can mimic lymphoma'],
             ['Precursor B-cell neoplasm', 'IgG4-related disease'],

@@ -235,3 +235,45 @@ footer nav ul li a {
 footer nav ul li a:hover {
     text-decoration: underline;
 }
+
+
+/* Highcharts chart container */
+.highcharts-figure {
+    margin: 0 auto;
+    max-width: 900px;
+    min-width: 360px;
+}
+
+/* Set the height of the chart */
+#container {
+    height: 1200px;
+}
+
+/* Styling for the navigation */
+header {
+    background-color: #1d7f99;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}

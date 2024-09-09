@@ -26,8 +26,8 @@ window.myTreeGraphChart = Highcharts.chart('container', {
             ['NHL', 'Precursor B-cell neoplasm']
             ['NHL', 'Mature B-cell neoplasms'], 
             ['Mature B-cell neoplasms', 'Splenic B-cell lymphomas and leukemias'],
-            ['Splenic B-cell lymphomas and leukemias', 'HCL'],
-            ['Splenic B-cell lymphomas and leukemias', 'SMZL'],
+            ['Splenic B-cell lymphomas and leukemias', 'HCL', 6],
+            ['Splenic B-cell lymphomas and leukemias', 'SMZL', 6],
             // Add more data rows as needed...
         ],
         marker: {

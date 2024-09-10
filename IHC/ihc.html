@@ -25,6 +25,8 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
     <!-- Select2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- Custom table.js script -->
+    <script src="table.js"></script>
 
     <style>
         body {
@@ -110,50 +112,6 @@
         </tbody>
     </table>
 
-    <script>
-        $(document).ready(function() {
-            $.getJSON('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/IHC/ihc.json', function(data) {
-                var table = $('#example').DataTable({
-                    data: data,
-                    columns: [
-                        { data: 'ID', visible: false }, // Initially hidden
-                        { data: 'IHC Code' },
-                        { data: 'Table', visible: false }, // Initially hidden
-                        { data: 'Main Category(2022 WHO)', visible: false }, // Initially hidden
-                        { data: 'Family/class(2022 WHO)', visible: false }, // Initially hidden
-                        { data: 'Subtype/entity(Interlymph 2024)' },
-                        { data: 'Category' },
-                        { data: 'L1' },
-                        { data: 'L2' },
-                        { data: 'L3' },
-                        { data: 'L4' },
-                        { data: 'L5' },
-                        { data: 'L6' }
-                    ],
-                    orderCellsTop: true,
-                    dom: 'Bfrtip',
-                    buttons: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ]
-                });
-
-                // Event listeners for column visibility toggles
-                $('#toggleTable').on('change', function () {
-                    table.column(0).visible(this.checked);
-                });
-                $('#toggleTable').on('change', function () {
-                    table.column(2).visible(this.checked);
-                });
-                $('#toggleMainCategory').on('change', function () {
-                    table.column(3).visible(this.checked);
-                });
-                $('#toggleFamilyClass').on('change', function () {
-                    table.column(4).visible(this.checked);
-                });
-            });
-        });
-    </script>
-
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 M Guler. All rights reserved.</p>
@@ -171,5 +129,33 @@
         </div>
     </footer>
 
+    <!-- Initialize the table via table.js -->
+    <script>
+        const columnsConfig = [
+            { data: 'ID', visible: false }, // Initially hidden
+            { data: 'IHC Code' },
+            { data: 'Table', visible: false }, // Initially hidden
+            { data: 'Main Category(2022 WHO)', visible: false }, // Initially hidden
+            { data: 'Family/class(2022 WHO)', visible: false }, // Initially hidden
+            { data: 'Subtype/entity(Interlymph 2024)' },
+            { data: 'Category' },
+            { data: 'L1' },
+            { data: 'L2' },
+            { data: 'L3' },
+            { data: 'L4' },
+            { data: 'L5' },
+            { data: 'L6' }
+        ];
+
+        const toggleConfig = {
+            '#toggleID': 0,
+            '#toggleTable': 2,
+            '#toggleMainCategory': 3,
+            '#toggleFamilyClass': 4
+        };
+
+        // Initialize table using the new script
+        initializeDataTable('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/IHC/ihc.json', '#example', columnsConfig, toggleConfig);
+    </script>
 </body>
 </html>

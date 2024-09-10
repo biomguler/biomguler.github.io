@@ -137,13 +137,13 @@
 
                 // Event listeners for column visibility toggles
                 $('#toggleTable').on('change', function () {
-                    table.column(2).visible(this.checked);
+                    table.column(2).visible(this.unchecked);
                 });
                 $('#toggleMainCategory').on('change', function () {
-                    table.column(3).visible(this.checked);
+                    table.column(3).visible(this.unchecked);
                 });
                 $('#toggleFamilyClass').on('change', function () {
-                    table.column(4).visible(this.checked);
+                    table.column(4).visible(this.unchecked);
                 });
             });
         });

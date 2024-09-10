@@ -11,7 +11,7 @@ function initializeDataTable(jsonUrl, tableId, columnsConfig, toggleConfig) {
                 lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
                 columns: columnsConfig,
                 orderCellsTop: true,
-                dom: 'Bfrtip',
+                dom: 'lBfrtip',
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf', 'print'
                 ]

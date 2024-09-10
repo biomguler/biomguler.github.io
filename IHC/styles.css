@@ -282,6 +282,23 @@ nav ul li a:hover {
     background-color: yellow;
     font-weight: bold;
 }
+
+.main .content {
+    margin: 0; /* Remove extra space */
+    padding: 0; /* Remove extra padding */
+}
+
 table {
-    margin-top: 0; /* Remove top margin */
+    width: 100%;
+    margin: 0; /* Remove top margin */
+}
+
+.dataTables_wrapper {
+    margin-top: 0;
+    height: auto; /* Ensure the DataTable wrapper takes only necessary space */
+}
+
+.main {
+    flex: 1;
+    padding-bottom: 0;
 }

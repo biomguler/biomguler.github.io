@@ -283,10 +283,7 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-.main .content {
-    margin: 0; /* Remove extra space */
-    padding: 0; /* Remove extra padding */
-}
+
 
 table {
     width: 100%;
@@ -296,9 +293,4 @@ table {
 .dataTables_wrapper {
     margin-top: 0;
     height: auto; /* Ensure the DataTable wrapper takes only necessary space */
-}
-
-.main {
-    flex: 1;
-    padding-bottom: 0;
 }

@@ -8,6 +8,7 @@ function initializeDataTable(jsonUrl, tableId, columnsConfig, toggleConfig) {
                 data: data,
                 scrollCollapse: true,  // Collapse the table if fewer rows
                 paging: true,          // Keep pagination
+                lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
                 columns: columnsConfig,
                 orderCellsTop: true,
                 dom: 'Bfrtip',

@@ -82,10 +82,8 @@
 
             <!-- Toggle Columns Section -->
             <div class="toggle-columns">
-                <label><input type="checkbox" id="toggleICDO3"> Show ICD-O-3</label>
-                <label><input type="checkbox" id="toggleICD10"> Show ICD10</label>
-                <label><input type="checkbox" id="toggleICD11"> Show ICD11</label>
-                <label><input type="checkbox" id="toggleTransformations"> Show Transformations</label>
+                <label><input type="checkbox" id="toggleTransformations to"> Show Transformations to</label>
+                <label><input type="checkbox" id="toggleTransformations from"> Show Transformations from</label>
             </div>
         </div>
     </section>
@@ -149,10 +147,8 @@
         ];
 
         const toggleConfigMapping = {
-            '#toggleICDO3': 2,
-            '#toggleICD10': 3,
-            '#toggleICD11': 4,
-            '#toggleTransformations': [11, 12]
+            '#toggleTransformations to': 11,
+            '#toggleTransformations from': 12,
         };
 
         // Initialize table using the new script

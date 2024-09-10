@@ -5,6 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapping - LN-IHC Tool</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.flash.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- Custom table.js script -->
+    <script src="table.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .select2-container {
+            width: 100% !important;
+        }
+        .toggle-columns {
+            margin-bottom: 20px;
+        }
+        .toggle-columns label {
+            margin-right: 15px;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,11 +78,40 @@
         <div class="content">
             <h1>Mapping Lymphoid Neoplasms</h1>
             <p>Use the tool below to explore the classification of lymphoid neoplasms.</p>
-            <div class="map-section">
-                <!-- Insert your interactive map or flowchart here -->
+            <br>
+
+            <!-- Toggle Columns Section -->
+            <div class="toggle-columns">
+                <label><input type="checkbox" id="toggleICDO3"> Show ICD-O-3</label>
+                <label><input type="checkbox" id="toggleICD10"> Show ICD10</label>
+                <label><input type="checkbox" id="toggleICD11"> Show ICD11</label>
+                <label><input type="checkbox" id="toggleTransformations"> Show Transformations</label>
             </div>
         </div>
     </section>
+
+    <!-- DataTable -->
+    <table id="mappingTable" class="display">
+        <thead>
+            <tr>
+                <th>IHC Code</th>
+                <th>Name</th>
+                <th>ICD-O-3</th>
+                <th>ICD10</th>
+                <th>ICD11</th>
+                <th>ICD9</th>
+                <th>EFO</th>
+                <th>NCIt</th>
+                <th>SNOMED</th>
+                <th>MeSH</th>
+                <th>Orphanet</th>
+                <th>Transformations to</th>
+                <th>Transformations from</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 
     <footer>
         <div class="footer-content">
@@ -50,6 +129,35 @@
             </nav>
         </div>
     </footer>
+
+    <!-- Initialize the table via table.js -->
+    <script>
+        const columnsConfigMapping = [
+            { data: 'IHC Code' },
+            { data: 'Name' },
+            { data: 'ICD-O-3' },
+            { data: 'ICD10',  },
+            { data: 'ICD11',  },
+            { data: 'ICD9' },
+            { data: 'EFO' },
+            { data: 'NCIt' },
+            { data: 'SNOMED' },
+            { data: 'MeSH' },
+            { data: 'Orphanet' },
+            { data: 'Transformations to', visible: false }, // Initially hidden
+            { data: 'Transformations from', visible: false } // Initially hidden
+        ];
+
+        const toggleConfigMapping = {
+            '#toggleICDO3': 2,
+            '#toggleICD10': 3,
+            '#toggleICD11': 4,
+            '#toggleTransformations': [11, 12]
+        };
+
+        // Initialize table using the new script
+        initializeDataTable('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/IHC/ihc_mapping.json', '#mappingTable', columnsConfigMapping, toggleConfigMapping);
+    </script>
 
 </body>
 </html>

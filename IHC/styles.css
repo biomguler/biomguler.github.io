@@ -282,3 +282,6 @@ nav ul li a:hover {
     background-color: yellow;
     font-weight: bold;
 }
+table {
+    margin-top: 0; /* Remove top margin */
+}

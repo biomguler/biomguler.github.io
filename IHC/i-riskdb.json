@@ -1,0 +1,38 @@
+[
+    {
+        "IHC Code": "IHC-006-077",
+        "Incidence": "7.7",
+        "Age of onset": "Adult",
+        "Median age": "70",
+        "Sex ratio (M:F)": "1.5",
+        "Survival (5-years)": "61.1",
+        "Known risk factors (format: EBV [PMID], alchocol [PMID])": "Age, sex, race, family history, obesity, other plasma cell diseases"
+    },
+    {
+        "IHC Code": "IHC-006-077",
+        "Incidence": "8.7",
+        "Age of onset": "Adult",
+        "Median age": "71",
+        "Sex ratio (M:F)": "1.5",
+        "Survival (5-years)": "62.1",
+        "Known risk factors (format: EBV [PMID], alchocol [PMID])": "Age, sex, race, family history, obesity, other plasma cell diseases"
+    },
+    {
+        "IHC Code": "IHC-006-065",
+        "Incidence": "9.7",
+        "Age of onset": "Adult",
+        "Median age": "72",
+        "Sex ratio (M:F)": "1.5",
+        "Survival (5-years)": "63.1",
+        "Known risk factors (format: EBV [PMID], alchocol [PMID])": "Age, sex, race, family history, obesity, other plasma cell diseases"
+    },
+    {
+        "IHC Code": "IHC-001-011",
+        "Incidence": "10.7",
+        "Age of onset": "Adult",
+        "Median age": "73",
+        "Sex ratio (M:F)": "1.5",
+        "Survival (5-years)": "64.1",
+        "Known risk factors (format: EBV [PMID], alchocol [PMID])": "Age, sex, race, family history, obesity, other plasma cell diseases"
+    }
+]

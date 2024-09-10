@@ -1,0 +1,42 @@
+[
+    {
+        "IHC ": "IHC-006-077",
+        "Cytoband": "2p23.3",
+        "Lead variant (CHR:POS:TEST:OTHER)": "2:25613146:T:C",
+        "P value (<5e-08)": "1.00E-08",
+        "OR": "1.12",
+        "CI": "1.00-1.10",
+        "Mapped gene": "DTNB",
+        "Study (PMID)": "12345"
+    },
+    {
+        "IHC ": "IHC-006-077",
+        "Cytoband": "2q31.1",
+        "Lead variant (CHR:POS:TEST:OTHER)": "2:174808899:T:C",
+        "P value (<5e-08)": "1.00E-08",
+        "OR": "1.15",
+        "CI": "1.00-1.11",
+        "Mapped gene": "SP3",
+        "Study (PMID)": "12346"
+    },
+    {
+        "IHC ": "IHC-006-065",
+        "Cytoband": "3p22.1",
+        "Lead variant (CHR:POS:TEST:OTHER)": "2:41925398:G:A",
+        "P value (<5e-08)": "1.00E-08",
+        "OR": "1.20",
+        "CI": "1.00-1.12",
+        "Mapped gene": "ULK4",
+        "Study (PMID)": "12347"
+    },
+    {
+        "IHC ": "IHC-001-011",
+        "Cytoband": "3q26.2",
+        "Lead variant (CHR:POS:TEST:OTHER)": "2:169492101:G:A",
+        "P value (<5e-08)": "1.00E-08",
+        "OR": "1.30",
+        "CI": "1.00-1.13",
+        "Mapped gene": "MYNN",
+        "Study (PMID)": "12348"
+    }
+]

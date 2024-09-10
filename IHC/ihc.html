@@ -78,9 +78,9 @@
 
             <!-- Toggle Columns Section -->
             <div class="toggle-columns">
-                <label><input type="checkbox" id="toggleTable" checked> Show Table</label>
-                <label><input type="checkbox" id="toggleMainCategory" checked> Show Main Category (2022 WHO)</label>
-                <label><input type="checkbox" id="toggleFamilyClass" checked> Show Family/Class (2022 WHO)</label>
+                <label><input type="checkbox" id="toggleTable"> Show Table</label>
+                <label><input type="checkbox" id="toggleMainCategory"> Show Main Category (2022 WHO)</label>
+                <label><input type="checkbox" id="toggleFamilyClass"> Show Family/Class (2022 WHO)</label>
             </div>
         </div>
     </section>
@@ -114,11 +114,11 @@
                 var table = $('#example').DataTable({
                     data: data,
                     columns: [
-                        { data: 'ID' },
+                        { data: 'ID', visible: false }, // Initially hidden
                         { data: 'IHC Code' },
-                        { data: 'Table' },
-                        { data: 'Main Category(2022 WHO)' },
-                        { data: 'Family/class(2022 WHO)' },
+                        { data: 'Table', visible: false }, // Initially hidden
+                        { data: 'Main Category(2022 WHO)', visible: false }, // Initially hidden
+                        { data: 'Family/class(2022 WHO)', visible: false }, // Initially hidden
                         { data: 'Subtype/entity(Interlymph 2024)' },
                         { data: 'Category' },
                         { data: 'L1' },
@@ -137,13 +137,16 @@
 
                 // Event listeners for column visibility toggles
                 $('#toggleTable').on('change', function () {
-                    table.column(2).visible(this.unchecked);
+                    table.column(0).visible(this.checked);
+                });
+                $('#toggleTable').on('change', function () {
+                    table.column(2).visible(this.checked);
                 });
                 $('#toggleMainCategory').on('change', function () {
-                    table.column(3).visible(this.unchecked);
+                    table.column(3).visible(this.checked);
                 });
                 $('#toggleFamilyClass').on('change', function () {
-                    table.column(4).visible(this.unchecked);
+                    table.column(4).visible(this.checked);
                 });
             });
         });

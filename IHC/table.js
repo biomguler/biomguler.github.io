@@ -6,6 +6,8 @@ function initializeDataTable(jsonUrl, tableId, columnsConfig, toggleConfig) {
         $.getJSON(jsonUrl, function(data) {
             var table = $(tableId).DataTable({
                 data: data,
+                scrollCollapse: true,  // Collapse the table if fewer rows
+                paging: true,          // Keep pagination
                 columns: columnsConfig,
                 orderCellsTop: true,
                 dom: 'Bfrtip',

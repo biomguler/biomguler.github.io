@@ -33,6 +33,15 @@ const GROUP_COLORS = {
   '*':       '#999999'
 };
 
+// palette for Lineage-Nature (L1)
+const LINEAGE_COLORS = {
+  'PM-LN':   '#8B4513',
+  'LN':      '#2E8B57',
+  'LN-IDD':  '#A0522D',
+  'TLL':     '#4682B4',
+  'ID-TLL':  '#DA70D6'
+};
+
 // colors assigned to unknown groups will be pulled from here
 const FALLBACK_PALETTE = [
   '#3BA272', '#FC8452', '#9A60B4', '#EA7CCC',
@@ -99,16 +108,30 @@ function applyGroupColors(nodes, links) {
     }
     return GROUP_COLORS[label];
   }
-  function findNearestL2Color(nodeName) {
+
+  function colorForL1Label(label) {
+    if (!LINEAGE_COLORS[label]) {
+      const color = FALLBACK_PALETTE[fallbackIndex % FALLBACK_PALETTE.length] || DEFAULT_NODE_COLOR;
+      LINEAGE_COLORS[label] = color;
+      fallbackIndex++;
+    }
+    return LINEAGE_COLORS[label];
+  }
+
+  function findNearestColor(nodeName) {
     if (colorCache.has(nodeName)) return colorCache.get(nodeName);
 
-    // if node itself is L2|X
     if (nodeName.startsWith('L2|')) {
       const c = colorForL2Label(stripPrefix(nodeName));
       colorCache.set(nodeName, c);
       return c;
     }
-    // BFS upstream
+    if (nodeName.startsWith('L1|')) {
+      const c = colorForL1Label(stripPrefix(nodeName));
+      colorCache.set(nodeName, c);
+      return c;
+    }
+    // BFS upstream until we find L2 or L1
     const seen = new Set([nodeName]);
     const q = [nodeName];
     while (q.length) {
@@ -117,6 +140,11 @@ function applyGroupColors(nodes, links) {
       for (const p of ps) {
         if (p.startsWith('L2|')) {
           const c = colorForL2Label(stripPrefix(p));
+          colorCache.set(nodeName, c);
+          return c;
+        }
+        if (p.startsWith('L1|')) {
+          const c = colorForL1Label(stripPrefix(p));
           colorCache.set(nodeName, c);
           return c;
         }
@@ -130,7 +158,7 @@ function applyGroupColors(nodes, links) {
   // assign node colors
   nodes.forEach(n => {
     let color = DEFAULT_NODE_COLOR;
-    if (n.name !== ROOT_KEY) color = findNearestL2Color(n.name);
+    if (n.name !== ROOT_KEY) color = findNearestColor(n.name);
     n.itemStyle = { color, borderColor: color };
   });
 
@@ -196,10 +224,13 @@ function render(nodes, links) {
         color: 'rgba(0,0,0,0.85)',
         fontFamily: 'Arial',
         fontSize: 11,
+        lineHeight: 14,
+        width: 160,
+        overflow: 'break',
         formatter: params => stripPrefix(params.name)
       },
       nodeWidth: 26,
-      nodeGap: 12,
+      nodeGap: 18,
       layoutIterations: 64
     }]
   };

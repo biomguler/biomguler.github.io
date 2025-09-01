@@ -22,7 +22,7 @@ body {
 /* Flexbox layout for main content */
 .main {
     flex: 1; /* Make the main content grow and take up available space */
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: justify;
     text-align: center;

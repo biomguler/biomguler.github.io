@@ -7,22 +7,22 @@ const DATA_URL = 'ihc.json'; // same folder as index.html
 
 // Build the flow from these columns (left → right) using your exact keys
 const COLS = [
-  'Major Group',                 // MG
-  'WHO-HAEM5 Category',          // C1
-  'WHO-HAEM5 Family-Class',      // C2
-  'WHO-HAEM5 Entity-Type',       // C3
-  'Entity-Type',                 // C4
-  'Subtype(s)'                   // SUB (optional)
+  'Lineage-Nature',     // L1
+  'Major Group',        // L2
+  'Category',           // L3
+  'Class-Family',       // L4
+  'Entity-Type',        // L5
+  'Subtype(s)'          // L6
 ];
 
 // short tags per column (for unique node keys)
 const COL_TAGS = {
-  'Major Group': 'MG',
-  'WHO-HAEM5 Category': 'C1',
-  'WHO-HAEM5 Family-Class': 'C2',
-  'WHO-HAEM5 Entity-Type': 'C3',
-  'Entity-Type': 'C4',
-  'Subtype(s)': 'SUB'
+  'Lineage-Nature': 'L1',
+  'Major Group': 'L2',
+  'Category': 'L3',
+  'Class-Family': 'L4',
+  'Entity-Type': 'L5',
+  'Subtype(s)': 'L6'
 };
 
 // optional colors for top buckets

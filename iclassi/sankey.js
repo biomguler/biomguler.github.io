@@ -322,6 +322,7 @@ document.getElementById('filter').addEventListener('input', e => {
   const f = filterGraph(current.nodes, current.links, e.target.value || '');
   render(f.nodes, f.links);
 });
+
 document.getElementById('download').addEventListener('click', () => {
   const url = chart.getDataURL({ type: 'png', backgroundColor: '#ffffff' });
   const a = document.createElement('a'); a.href = url; a.download = 'ln-sankey.png'; a.click();

@@ -25,12 +25,21 @@ const COL_TAGS = {
 
 // palette for Major Group (exact strings from your data)
 const GROUP_COLORS = {
-  'NHL':   '#5470C6',
-  'HL':    '#EE6666',
-  'LPD':   '#91CC75',
-  'PM-LN': '#FAC858',
-  'ID-LN': '#73C0DE'
+  'NHL':     '#5470C6',
+  'HL':      '#EE6666',
+  'LPD':     '#91CC75',
+  'LPD/NHL': '#FAC858',
+  'NHL/HL':  '#73C0DE',
+  '*':       '#999999'
 };
+
+// colors assigned to unknown groups will be pulled from here
+const FALLBACK_PALETTE = [
+  '#3BA272', '#FC8452', '#9A60B4', '#EA7CCC',
+  '#2F4554', '#61A0A8', '#D48265', '#91C7AE'
+];
+let fallbackIndex = 0;
+
 const DEFAULT_NODE_COLOR = '#1f77b4';
 
 const ROOT_LABEL = 'Hematological-lymphoid Neoplasms';
@@ -38,7 +47,7 @@ const ROOT_KEY   = 'ROOT|' + ROOT_LABEL;
 
 const norm = s => (s ?? '').toString().trim();
 const keyFor = (col, val) => `${(COL_TAGS[col] || 'X')}|${norm(val)}`;
-const stripPrefix = s => s.replace(/^[A-Z]+?\|/, '');
+const stripPrefix = s => s.replace(/^[A-Z0-9]+\|/, '');
 
 // ------- build graph (namespaced, dedup) -------
 function buildFromRows(rows) {
@@ -83,7 +92,12 @@ function applyGroupColors(nodes, links) {
   const colorCache = new Map();
 
   function colorForL2Label(label) {
-    return GROUP_COLORS[label] || DEFAULT_NODE_COLOR;
+    if (!GROUP_COLORS[label]) {
+      const color = FALLBACK_PALETTE[fallbackIndex % FALLBACK_PALETTE.length] || DEFAULT_NODE_COLOR;
+      GROUP_COLORS[label] = color;
+      fallbackIndex++;
+    }
+    return GROUP_COLORS[label];
   }
   function findNearestL2Color(nodeName) {
     if (colorCache.has(nodeName)) return colorCache.get(nodeName);

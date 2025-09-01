@@ -204,15 +204,7 @@ function render(nodes, links) {
     title: { text: 'InterLymph / WHO-HAEM5 — Sankey', subtext: 'from ihc.json', left: 'center' },
     tooltip: {
       trigger: 'item',
-      triggerOn: 'mousemove',
-      formatter: (p) => {
-        if (p.dataType === 'edge') {
-          const s = stripPrefix(p.data.source);
-          const t = stripPrefix(p.data.target);
-          return `<b>${s}</b> → <b>${t}</b><br/>Rows: <b>${p.data.value}</b>`;
-        }
-        return `<b>${stripPrefix(p.data.name)}</b>`;
-      }
+      triggerOn: 'mousemove'
     },
     animation: true,
     series: [{

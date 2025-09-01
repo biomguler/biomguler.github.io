@@ -268,7 +268,7 @@ function render(nodes, links) {
 
   const option = {
     backgroundColor: '#fff',
-    title: { text: 'InterLymph i-CLASSi', left: 'center' },
+    title: { text: 'InterLymph i-CLASSi Webtool', left: 'center' },
     tooltip: {
       trigger: 'item',
       triggerOn: 'mousemove',

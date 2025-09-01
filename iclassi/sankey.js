@@ -286,11 +286,11 @@ function render(nodes, links) {
         type: 'sankey',
         nodeAlign: 'right',
         emphasis: { focus: 'trajectory' },
-        nodeGap: 50,
+        nodeGap: 8,
         data: nodes,
         links: links,
         labelLayout: { hideOverlap: true },
-        label: { width: 120, fontSize: 20 },
+        label: { width: 120, fontSize: 12 },
         // do NOT set a series-level itemStyle.color — we want per-node colors to show
         lineStyle: {
               color: 'source',

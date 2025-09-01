@@ -148,7 +148,8 @@ function assertDAG(nodes, links) {
 }
 
 // ------- render (nodeAlign: 'right') -------
-const chart = echarts.init(document.getElementById('chart'), null, { useDirtyRect: true });
+const chartEl = document.getElementById('chart');
+const chart = echarts.init(chartEl, null, { useDirtyRect: true });
 
 function render(nodes, links) {
   assertDAG(nodes, links);
@@ -193,6 +194,7 @@ function render(nodes, links) {
 }
 
 window.addEventListener('resize', () => chart.resize());
+new ResizeObserver(() => chart.resize()).observe(chartEl);
 
 // ------- filter + download -------
 function filterGraph(nodes, links, q) {

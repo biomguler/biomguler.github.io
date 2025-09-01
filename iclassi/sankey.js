@@ -1,5 +1,5 @@
 // ==========================
-// sankey.js (group color propagation + width-friendly)
+// sankey.js (right-align + group color propagation)
 // ==========================
 
 const DATA_URL = 'ihc.json';
@@ -23,7 +23,7 @@ const COL_TAGS = {
   'Subtype(s)':      'L6'
 };
 
-// palette for Major Group (exact values from your data)
+// palette for Major Group (exact strings from your data)
 const GROUP_COLORS = {
   'NHL':   '#5470C6',
   'HL':    '#EE6666',
@@ -40,7 +40,7 @@ const norm = s => (s ?? '').toString().trim();
 const keyFor = (col, val) => `${(COL_TAGS[col] || 'X')}|${norm(val)}`;
 const stripPrefix = s => s.replace(/^[A-Z]+?\|/, '');
 
-// ------- build graph -------
+// ------- build graph (namespaced, dedup) -------
 function buildFromRows(rows) {
   const nodeSet = new Set([ROOT_KEY]);
   const linkMap = new Map(); // "A||B" -> weight
@@ -55,6 +55,7 @@ function buildFromRows(rows) {
   rows.forEach(r => {
     const chain = COLS.map(c => [c, norm(r[c])]).filter(([, v]) => !!v);
     if (!chain.length) return;
+
     addLink(ROOT_KEY, keyFor(chain[0][0], chain[0][1]), 1);
     for (let i = 0; i < chain.length - 1; i++) {
       const [colA, valA] = chain[i];
@@ -79,13 +80,11 @@ function applyGroupColors(nodes, links) {
   nodes.forEach(n => parents.set(n.name, new Set()));
   links.forEach(l => parents.get(l.target)?.add(l.source));
 
-  // cache lookup
   const colorCache = new Map();
 
   function colorForL2Label(label) {
     return GROUP_COLORS[label] || DEFAULT_NODE_COLOR;
   }
-
   function findNearestL2Color(nodeName) {
     if (colorCache.has(nodeName)) return colorCache.get(nodeName);
 
@@ -95,8 +94,7 @@ function applyGroupColors(nodes, links) {
       colorCache.set(nodeName, c);
       return c;
     }
-
-    // BFS upstream to nearest L2
+    // BFS upstream
     const seen = new Set([nodeName]);
     const q = [nodeName];
     while (q.length) {
@@ -118,30 +116,26 @@ function applyGroupColors(nodes, links) {
   // assign node colors
   nodes.forEach(n => {
     let color = DEFAULT_NODE_COLOR;
-    if (n.name === ROOT_KEY) {
-      color = DEFAULT_NODE_COLOR;
-    } else {
-      color = findNearestL2Color(n.name);
-    }
+    if (n.name !== ROOT_KEY) color = findNearestL2Color(n.name);
     n.itemStyle = { color, borderColor: color };
   });
 
-  // color links by target’s group color (consistent downstream)
+  // color links by the SOURCE group color (so flow carries upstream color)
   links.forEach(l => {
-    const t = nodeMap.get(l.target);
-    const c = t?.itemStyle?.color || DEFAULT_NODE_COLOR;
-    l.lineStyle = { color: c, opacity: 0.9 };
+    const srcColor =
+      nodes.find(n => n.name === l.source)?.itemStyle?.color || DEFAULT_NODE_COLOR;
+    l.lineStyle = { color: srcColor, opacity: 0.95 };
   });
 
   return { nodes, links };
 }
 
-// ------- DAG sanity check (defensive) -------
+// ------- simple DAG check (defensive) -------
 function assertDAG(nodes, links) {
   const adj = new Map(), indeg = new Map();
   nodes.forEach(n => { adj.set(n.name, []); indeg.set(n.name, 0); });
   links.forEach(l => { adj.get(l.source)?.push(l.target); indeg.set(l.target, (indeg.get(l.target)||0)+1); });
-  const q = []; indeg.forEach((d, k) => { if (d === 0) q.push(k); });
+  const q = []; indeg.forEach((d,k)=>{ if(d===0) q.push(k); });
   let seen = 0;
   while (q.length) {
     const u = q.shift(); seen++;
@@ -153,8 +147,8 @@ function assertDAG(nodes, links) {
   if (seen !== nodes.length) throw new Error('Local DAG check failed: cycle present.');
 }
 
-// ------- render -------
-const chart = echarts.init(document.getElementById('chart'));
+// ------- render (nodeAlign: 'right') -------
+const chart = echarts.init(document.getElementById('chart'), null, { useDirtyRect: true });
 
 function render(nodes, links) {
   assertDAG(nodes, links);
@@ -164,6 +158,7 @@ function render(nodes, links) {
     title: { text: 'InterLymph / WHO-HAEM5 — Sankey', subtext: 'from ihc.json', left: 'center' },
     tooltip: {
       trigger: 'item',
+      triggerOn: 'mousemove',
       formatter: (p) => {
         if (p.dataType === 'edge') {
           const s = stripPrefix(p.data.source);
@@ -173,13 +168,15 @@ function render(nodes, links) {
         return `<b>${stripPrefix(p.data.name)}</b>`;
       }
     },
+    animation: false,
     series: [{
       type: 'sankey',
-      left: 20, top: 10, right: 20, bottom: 10,
+      nodeAlign: 'right',           // << like the demo you found
+      emphasis: { focus: 'adjacency' },
       data: nodes,
       links: links,
-      // no series.itemStyle default color — let per-node colors show
-      lineStyle: { curveness: 0.5 }, // link colors set per-link already
+      // do NOT set a series-level itemStyle.color — we want per-node colors to show
+      lineStyle: { curveness: 0.5 }, // per-link colors already set
       label: {
         color: 'rgba(0,0,0,0.85)',
         fontFamily: 'Arial',
@@ -188,8 +185,7 @@ function render(nodes, links) {
       },
       nodeWidth: 26,
       nodeGap: 12,
-      layoutIterations: 64,
-      emphasis: { focus: 'adjacency' }
+      layoutIterations: 64
     }]
   };
 
@@ -240,6 +236,7 @@ let current = { nodes: [], links: [] };
     render(current.nodes, current.links);
   } catch (e) {
     console.error('Init failed:', e);
+    // tiny fallback so you see something
     const nodes = [{ name: ROOT_KEY }, { name: 'L2|NHL' }, { name: 'L3|Large B-cell lymphomas (LBCL)' }];
     const links = [
       { source: ROOT_KEY, target: 'L2|NHL', value: 1 },

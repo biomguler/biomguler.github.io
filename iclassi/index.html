@@ -6,16 +6,10 @@
   <title>LN-IHC Tool</title>
   <link rel="stylesheet" href="styles.css"/>
 
-  <!-- ECharts -->
+    <!-- ECharts -->
   <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 
 
-  <style>
-    /* tiny bit of local CSS for the toolbar, if not in styles.css yet */
-    .toolbar { display:flex; gap:.5rem; align-items:center; padding:.5rem .75rem; border-bottom:1px solid #eee; background:#fafafa; }
-    .toolbar .spacer { flex:1; }
-    #chart { width:100%; height:700px; }
-  </style>
 </head>
 <body class="gradient-bg">
 
@@ -43,18 +37,25 @@
         <span class="line3">InterLymph Classification Webtool</span>
       </h1>
 
-      <!-- Toolbar + Sankey container -->
-      <div class="toolbar">
-  <strong>LN Sankey (ihc.json)</strong>
-  <span class="spacer"></span>
-  <label>Filter:
-    <input id="filter" type="text" placeholder="e.g. follicular, HL, TFH" />
-  </label>
-  <button id="reset">Reset</button>
-  <button id="download">Download PNG</button>
-</div>
-<div id="chart"></div>
+ <!-- ECharts -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 
+<!-- Toolbar + Chart -->
+<div class="wrap">
+  <div class="toolbar">
+    <strong>LN Sankey (ihc.json)</strong>
+    <span class="spacer"></span>
+    <label>Filter:
+      <input id="filter" type="text" placeholder="e.g. follicular, HL, TFH"/>
+    </label>
+    <button id="reset">Reset</button>
+    <button id="download">Download PNG</button>
+  </div>
+
+  <div id="chart-container">
+    <div id="chart"></div>
+  </div>
+</div>
 
       <p class="highcharts-description" style="margin-top:.5rem">
         InterLymph / WHO-HAEM5 relationships shown as a Sankey (multi-parent friendly).

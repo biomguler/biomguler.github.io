@@ -293,26 +293,31 @@ table {
     height: auto; /* Ensure the DataTable wrapper takes only necessary space */
 }
 
-/* Sankey toolbar + chart */
-.toolbar { 
-  display: flex; 
-  gap: .5rem; 
-  align-items: center; 
-  padding: .5rem .75rem; 
-  border-bottom: 1px solid #eee; 
-  background: #fafafa; 
+/* same max width for toolbar + chart */
+.wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+/* toolbar */
+.toolbar {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  padding: .5rem .75rem;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
 }
 .toolbar .spacer { flex: 1; }
 
-
+/* chart container */
+#chart-container {
+  width: 100%;
+}
 #chart {
   width: 100%;
-  height: 80vh;         /* bigger than 700px on most screens */
-  max-width: 1400px;    /* optional */
-  margin: 0 auto;       /* center */
+  height: 80vh;   /* fills most of the viewport */
 }
 
-/* Make the content area not constrain width */
-.main .content {
-  width: 100%;
-}

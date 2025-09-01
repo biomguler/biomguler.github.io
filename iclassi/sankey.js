@@ -214,27 +214,19 @@ function render(nodes, links) {
         return `<b>${stripPrefix(p.data.name)}</b>`;
       }
     },
-    animation: false,
+    animation: true,
     series: [{
       type: 'sankey',
       nodeAlign: 'right',           // << like the demo you found
-      emphasis: { focus: 'adjacency' },
+      emphasis: { focus: 'trajectory' },
       data: nodes,
       links: links,
       // do NOT set a series-level itemStyle.color — we want per-node colors to show
-      lineStyle: { curveness: 0.5 }, // per-link colors already set
-      label: {
-        color: 'rgba(0,0,0,0.85)',
-        fontFamily: 'Arial',
-        fontSize: 11,
-        lineHeight: 14,
-        width: 160,
-        overflow: 'break',
-        formatter: params => stripPrefix(params.name)
-      },
-      nodeWidth: 26,
-      nodeGap: 18,
-      layoutIterations: 64
+      lineStyle: {
+            color: 'source',
+            curveness: 0.5
+          }
+      
     }]
   };
 

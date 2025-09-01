@@ -219,6 +219,18 @@ document.getElementById('download').addEventListener('click', () => {
   const a = document.createElement('a'); a.href = url; a.download = 'ln-sankey.png'; a.click();
 });
 
+// fullscreen toggle
+const fsBtn = document.getElementById('fullscreen');
+const chartContainer = document.getElementById('chart-container');
+fsBtn?.addEventListener('click', () => {
+  if (!document.fullscreenElement) {
+    chartContainer?.requestFullscreen?.();
+  } else {
+    document.exitFullscreen?.();
+  }
+});
+document.addEventListener('fullscreenchange', () => chart.resize());
+
 // ------- init -------
 let current = { nodes: [], links: [] };
 

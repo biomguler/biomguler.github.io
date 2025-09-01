@@ -268,7 +268,7 @@ function render(nodes, links) {
 
   const option = {
     backgroundColor: '#fff',
-    title: { text: 'InterLymph / WHO-HAEM5 — Sankey', subtext: 'from ihc.json', left: 'center' },
+    title: { text: 'InterLymph i-CLASSi', left: 'center' },
     tooltip: {
       trigger: 'item',
       triggerOn: 'mousemove',
@@ -286,11 +286,11 @@ function render(nodes, links) {
         type: 'sankey',
         nodeAlign: 'right',
         emphasis: { focus: 'trajectory' },
-        nodeGap: 8,
+        nodeGap: 50,
         data: nodes,
         links: links,
         labelLayout: { hideOverlap: true },
-        label: { width: 120, fontSize: 12 },
+        label: { width: 120, fontSize: 20 },
         // do NOT set a series-level itemStyle.color — we want per-node colors to show
         lineStyle: {
               color: 'source',

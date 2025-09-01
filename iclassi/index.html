@@ -1,75 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LN-IHC Tool</title>
-    <link rel="stylesheet" href="styles.css">
-     <!-- Include Highcharts libraries -->
-     <script src="https://code.highcharts.com/highcharts.js"></script>
-     <script src="https://code.highcharts.com/modules/treemap.js"></script>
-     <script src="https://code.highcharts.com/modules/treegraph.js"></script>
-     <script src="https://code.highcharts.com/modules/exporting.js"></script>
-     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LN-IHC Tool</title>
+  <link rel="stylesheet" href="styles.css"/>
+
+  <!-- Remove Highcharts includes for this page and add ECharts -->
+  <!-- <script src="https://code.highcharts.com/highcharts.js"></script> ... -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+  <style>
+    /* tiny bit of local CSS for the toolbar, if not in styles.css yet */
+    .toolbar { display:flex; gap:.5rem; align-items:center; padding:.5rem .75rem; border-bottom:1px solid #eee; background:#fafafa; }
+    .toolbar .spacer { flex:1; }
+    #chart { width:100%; height:700px; }
+  </style>
 </head>
 <body class="gradient-bg">
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ihc.html">i-CLASSi</a></li>
-                <li><a href="mapping.html">Mapping</a></li>
-                <li><a href="i-riskdb.html">i-Riskdb</a></li>
-                <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-                <li><a href="abbreviations.html">Abbreviations</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Nav -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ihc.html">i-CLASSi</a></li>
+        <li><a href="mapping.html">Mapping</a></li>
+        <li><a href="i-riskdb.html">i-Riskdb</a></li>
+        <li><a href="i-gwasdb.html">i-GWASdb</a></li>
+        <li><a href="abbreviations.html">Abbreviations</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Main Content Area -->
-    <section class="main">
-        <div class="content">
-            <div class="content">
-                <h1>
-                    <span class="line1">i-CLASSi</span><br>
-                    <span class="line2">Lymphoid Neoplasms</span><br>
-                    <span class="line3">InterLymph Classification Webtool</span>
-                </h1>
-            </div>
-    
-            <br><br>
-            <!-- TreeGraph Chart Container with figure and description -->
-            <figure class="highcharts-figure">
-                <div id="container" style="height: 600px;"></div>
-                <p class="highcharts-description"><br>
-                    InterLymph hierarchical classifications interactive tree
-                    <br><br>
-                </p>
-            </figure>
-        </div>
-    </section>
+  <!-- Main -->
+  <section class="main">
+    <div class="content">
+      <h1>
+        <span class="line1">i-CLASSi</span><br>
+        <span class="line2">Lymphoid Neoplasms</span><br>
+        <span class="line3">InterLymph Classification Webtool</span>
+      </h1>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 M Guler. All rights reserved.</p>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="ihc.html">i-CLASSi</a></li>
-                    <li><a href="mapping.html">Mapping</a></li>
-                    <li><a href="i-riskdb.html">i-Riskdb</a></li>
-                    <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-                    <li><a href="abbreviations.html">Abbreviations</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
-    <!-- Link to the external JS file -->
-    <script src="LNtreegraph.js"></script>
-    <script src="siteSearch.js"></script>
+      <!-- Toolbar + Sankey container -->
+      <div class="toolbar">
+        <strong>LN Sankey (ihc.json)</strong>
+        <span class="spacer"></span>
+        <label>Filter:
+          <input id="filter" type="text" placeholder="e.g. follicular, HL, TFH"/>
+        </label>
+        <button id="reset">Reset</button>
+        <button id="download">Download PNG</button>
+      </div>
+      <div id="chart"></div>
+
+      <p class="highcharts-description" style="margin-top:.5rem">
+        InterLymph / WHO-HAEM5 relationships shown as a Sankey (multi-parent friendly).
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 M Guler. All rights reserved.</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ihc.html">i-CLASSi</a></li>
+          <li><a href="mapping.html">Mapping</a></li>
+          <li><a href="i-riskdb.html">i-Riskdb</a></li>
+          <li><a href="i-gwasdb.html">i-GWASdb</a></li>
+          <li><a href="abbreviations.html">Abbreviations</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Your Sankey logic -->
+  <script src="sankey.js"></script>
+  <!-- Keep siteSearch if you use it -->
+  <script src="siteSearch.js"></script>
 </body>
 </html>

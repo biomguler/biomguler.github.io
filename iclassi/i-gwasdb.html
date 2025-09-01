@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>i-GWASdb - LN-IHC Tool</title>
+    <title>i-GWASdb</title>
     <link rel="stylesheet" href="styles.css">
     
     <!-- DataTables CSS -->
@@ -77,12 +77,14 @@
     <section class="main">
         <div class="content">
             <h1>i-GWASdb for Lymphoid Neoplasms</h1><br>
-            <p>Explore GWAS data for lymphoid neoplasms using the tool below.</p>
+            <p>Explore GWAS data for lymphoid neoplasms using the table below.</p>
             <br>
 
             <!-- Toggle Columns Section -->
             <div class="toggle-columns">
-                <label><input type="checkbox" id="toggleStudy" checked> Show/Hide Study (PMID)</label>
+                <label><input type="checkbox" id="togglePMID" checked> Show/Hide Study (PMID)</label>
+                <label><input type="checkbox" id="toggleGWASCat" checked> Show/Hide GWAS Catalog ID</label>
+                <label><input type="checkbox" id="toggleEFO" checked> Show/Hide EFO traits</label>
             </div>
         </div>
     </section>
@@ -91,14 +93,19 @@
     <table id="gwasdbTable" class="display">
         <thead>
             <tr>
-                <th>IHC Code</th>
+                <th>LNIC Code</th>
+                <th>CHR</th>
                 <th>Cytoband</th>
-                <th>Lead variant (CHR:POS:TEST:OTHER)</th>
+                <th>POS</th>
+                <th>rsID</th>
+                <th>EA</th>
+                <th>Nearest gene(s)</th>
                 <th>P value (&lt;5e-08)</th>
-                <th>OR</th>
-                <th>CI</th>
-                <th>Mapped gene</th>
-                <th>Study (PMID)</th>
+                <th>Author</th>
+                <th>Reported trait(s)</th>
+                <th>EFO traits</th>
+                <th>GWAS Catalog</th>
+                <th>PUBMED</th>
             </tr>
         </thead>
         <tbody>
@@ -125,18 +132,25 @@
     <!-- Initialize the table via table.js -->
     <script>
         const columnsConfigGwasdb = [
-            { data: 'IHC ' },
+            { data: 'LNIC Code' },
+            { data: 'CHR' },
             { data: 'Cytoband' },
-            { data: 'Lead variant (CHR:POS:TEST:OTHER)' },
+            { data: 'POS' }
+            { data: 'rsID' },
+            { data: 'EA' },
+            { data: 'Nearest gene(s)' },
             { data: 'P value (<5e-08)' },
-            { data: 'OR' },
-            { data: 'CI' },
-            { data: 'Mapped gene' },
-            { data: 'Study (PMID)', visible: false } // Initially hidden
+            { data: 'Author' },
+            { data: 'Reported trait(s)' },
+            { data: 'EFO traits', visible: false },
+            { data: 'GWAS Catalog', visible: false },
+            { data: 'PUBMED', visible: false }
         ];
 
         const toggleConfigGwasdb = {
-            '#toggleStudy': 7
+            '#togglePMID': 12,
+            '#toggleGWASCat': 11,
+            '#toggleEFO': 10
         };
 
         // Initialize table using the new script

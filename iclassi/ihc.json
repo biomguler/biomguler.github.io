@@ -1,7 +1,7 @@
 [
  {
    "Source": "T1",
-   "Entry ID": "001",
+   "Entry ID": 1,
    "LNIC Code": "LNIC-120-001",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Pre-neoplastic and neoplastic small lymphocytic proliferations (PNSLP)",
@@ -16,7 +16,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "002",
+   "Entry ID": 2,
    "LNIC Code": "LNIC-000-002",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Pre-neoplastic and neoplastic small lymphocytic proliferations (PNSLP)",
@@ -31,7 +31,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "003",
+   "Entry ID": 3,
    "LNIC Code": "LNIC-000-003",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Splenic B-cell lymphomas and leukemias (SBL)",
@@ -42,11 +42,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "SBL",
    "Entity-Type": "HCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "004",
+   "Entry ID": 4,
    "LNIC Code": "LNIC-000-004",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Splenic B-cell lymphomas and leukemias (SBL)",
@@ -57,11 +57,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "SBL",
    "Entity-Type": "SMZL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "005",
+   "Entry ID": 5,
    "LNIC Code": "LNIC-000-005",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Splenic B-cell lymphomas and leukemias (SBL)",
@@ -72,11 +72,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "SBL",
    "Entity-Type": "SDRPL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "006",
+   "Entry ID": 6,
    "LNIC Code": "LNIC-000-006",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Splenic B-cell lymphomas and leukemias (SBL)",
@@ -87,11 +87,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "SBL",
    "Entity-Type": "SBLPN",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "007",
+   "Entry ID": 7,
    "LNIC Code": "LNIC-000-007",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Lymphoplasmacytic lymphoma (LPL)",
@@ -102,14 +102,14 @@
    "Category": "Mature B-cell",
    "Class-Family": "LPL",
    "Entity-Type": "LPL",
-   "Subtype(s)": "IgM-type LPL/Waldenström macroglobulinaemia (WM) type, Non-IgM type LPL"
+   "Subtype(s)": "IgM-type LPL/Waldenstrom macroglobulinaemia (WM) type, Non-IgM type LPL"
  },
  {
    "Source": "T1",
-   "Entry ID": "008",
+   "Entry ID": 8,
    "LNIC Code": "LNIC-000-008",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "Marginal Zone Lymphoma (MZL) ",
+   "WHO-HAEM5 Family-Class": "Marginal Zone Lymphoma (MZL) ",
    "WHO-HAEM5 Entity-Type": "Extranodal marginal zone lymphoma (EMZL) of mucosa associated lymphoid tissue (MALT lymphoma) (MALT)",
    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Extranodal marginal zone lymphoma of mucosa associated lymphoid tissue (MALT lymphoma) (MALT)",
    "Lineage-Nature": "LN",
@@ -121,10 +121,10 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "009",
+   "Entry ID": 9,
    "LNIC Code": "LNIC-000-009",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "Marginal Zone Lymphoma (MZL) ",
+   "WHO-HAEM5 Family-Class": "Marginal Zone Lymphoma (MZL) ",
    "WHO-HAEM5 Entity-Type": "Primary cutaneous marginal zone lymphoma (PCMZL)",
    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "*",
    "Lineage-Nature": "LN",
@@ -136,10 +136,10 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "010",
+   "Entry ID": 10,
    "LNIC Code": "LNIC-000-010",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "Marginal Zone Lymphoma (MZL) ",
+   "WHO-HAEM5 Family-Class": "Marginal Zone Lymphoma (MZL) ",
    "WHO-HAEM5 Entity-Type": "Nodal marginal zone lymphoma (NMZL)",
    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Nodal marginal zone lymphoma (NMZL)",
    "Lineage-Nature": "LN",
@@ -147,26 +147,26 @@
    "Category": "Mature B-cell",
    "Class-Family": "MZL",
    "Entity-Type": "NMZL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "011",
+   "Entry ID": 11,
    "LNIC Code": "LNIC-000-011",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "Marginal Zone Lymphoma (MZL) ",
-   "WHO-HAEM5 Entity-Type": "Paediatric nodal marginal zone lymphoma (pNMZL)  ",
+   "WHO-HAEM5 Family-Class": "Marginal Zone Lymphoma (MZL) ",
+   "WHO-HAEM5 Entity-Type": "Paediatric nodal marginal zone lymphoma (pNMZL)  ",
    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "nodal marginal zone lymphoma (NMZL-PED)",
    "Lineage-Nature": "LN",
    "Major Group": "NHL",
    "Category": "Mature B-cell",
    "Class-Family": "MZL",
    "Entity-Type": "pNMZL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "012",
+   "Entry ID": 12,
    "LNIC Code": "LNIC-120-012",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Follicular lymphoma (FL)",
@@ -177,11 +177,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "FL",
    "Entity-Type": "ISFN",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "013",
+   "Entry ID": 13,
    "LNIC Code": "LNIC-000-013",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Follicular lymphoma (FL)",
@@ -196,7 +196,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "014",
+   "Entry ID": 14,
    "LNIC Code": "LNIC-000-014",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Follicular lymphoma (FL)",
@@ -207,11 +207,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "FL",
    "Entity-Type": "PTFL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "015",
+   "Entry ID": 15,
    "LNIC Code": "LNIC-000-015",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Follicular lymphoma (FL)",
@@ -222,11 +222,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "FL",
    "Entity-Type": "DTFL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "016",
+   "Entry ID": 16,
    "LNIC Code": "LNIC-000-016",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Follicular lymphoma (FL)",
@@ -237,26 +237,26 @@
    "Category": "Mature B-cell",
    "Class-Family": "FL",
    "Entity-Type": "PCFCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "017",
+   "Entry ID": 17,
    "LNIC Code": "LNIC-120-017",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Mantle cell lymphoma (MCL)",
-   "WHO-HAEM5 Entity-Type": "\"In situ\" mantle cell neoplasm (ISMCN)",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "\"in situ\" mantle cell lymphoma (MCL-in-in situ)",
+   "WHO-HAEM5 Entity-Type": "In situ",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "in situ",
    "Lineage-Nature": "PM-LN",
    "Major Group": "LPD",
    "Category": "Mature B-cell",
    "Class-Family": "MCL",
    "Entity-Type": "ISMCN",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "018",
+   "Entry ID": 18,
    "LNIC Code": "LNIC-000-018",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Mantle cell lymphoma (MCL)",
@@ -271,7 +271,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "019",
+   "Entry ID": 19,
    "LNIC Code": "LNIC-000-019",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Mantle cell lymphoma (MCL)",
@@ -282,26 +282,26 @@
    "Category": "Mature B-cell",
    "Class-Family": "MCL",
    "Entity-Type": "nnMCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "020",
+   "Entry ID": 20,
    "LNIC Code": "LNIC-030-020",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Transformations of Indolent B-cell lymphomas",
    "WHO-HAEM5 Entity-Type": "Transformation of Indolent B-cell lymphomas, high grade transformation (HGT of entity)",
    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "*",
    "Lineage-Nature": "LN",
-   "Major Group": "NHL/HL ",
+   "Major Group": "NHL/HL ",
    "Category": "Mature B-cell",
    "Class-Family": "Transformations of indolent B-cell lymphomas",
    "Entity-Type": "HGT of entity (CLL, MZL, LPL, FL)",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "021",
+   "Entry ID": 21,
    "LNIC Code": "LNIC-000-021",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -316,7 +316,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "022",
+   "Entry ID": 22,
    "LNIC Code": "LNIC-000-022",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -331,7 +331,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "023",
+   "Entry ID": 23,
    "LNIC Code": "LNIC-000-023",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -346,7 +346,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "024",
+   "Entry ID": 24,
    "LNIC Code": "LNIC-000-024",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -357,11 +357,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "LBCL",
    "Entity-Type": "ALK-positive DLBCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "025",
+   "Entry ID": 25,
    "LNIC Code": "LNIC-000-025",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -371,12 +371,12 @@
    "Major Group": "NHL",
    "Category": "Mature B-cell",
    "Class-Family": "LBCL",
-   "Entity-Type": "LBCL-IRF4 ",
-   "Subtype(s)": null
+   "Entity-Type": "LBCL-IRF4 ",
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "026",
+   "Entry ID": 26,
    "LNIC Code": "LNIC-000-026",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -387,11 +387,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "LBCL",
    "Entity-Type": "LBCL-HGBL-11q",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "027",
+   "Entry ID": 27,
    "LNIC Code": "LNIC-000-027",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -406,7 +406,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "028",
+   "Entry ID": 28,
    "LNIC Code": "LNIC-000-028",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -417,11 +417,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "LBCL",
    "Entity-Type": "EBV-positive DLBCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "029",
+   "Entry ID": 29,
    "LNIC Code": "LNIC-000-029",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -432,11 +432,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "LBCL",
    "Entity-Type": "CI-DLBCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "030",
+   "Entry ID": 30,
    "LNIC Code": "LNIC-000-030",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -447,11 +447,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "LBCL",
    "Entity-Type": "FA-LBCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "031",
+   "Entry ID": 31,
    "LNIC Code": "LNIC-000-031",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -462,11 +462,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "LBCL",
    "Entity-Type": "FO-LBCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "032",
+   "Entry ID": 32,
    "LNIC Code": "LNIC-000-032",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -477,16 +477,16 @@
    "Category": "Mature B-cell",
    "Class-Family": "LBCL",
    "Entity-Type": "PBL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "033",
+   "Entry ID": 33,
    "LNIC Code": "LNIC-000-033",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
    "WHO-HAEM5 Entity-Type": "Primary large B-cell lymphoma of immune-privileged sites (IP-LBCL)",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Primary DLBCL of the central nervous system (CNS DLBCL)  ",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Primary DLBCL of the central nervous system (CNS DLBCL)  ",
    "Lineage-Nature": "LN",
    "Major Group": "NHL",
    "Category": "Mature B-cell",
@@ -496,7 +496,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "034",
+   "Entry ID": 34,
    "LNIC Code": "LNIC-000-034",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -507,11 +507,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "LBCL",
    "Entity-Type": "PCLBCL-LT",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "035",
+   "Entry ID": 35,
    "LNIC Code": "LNIC-000-035",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -526,7 +526,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "036",
+   "Entry ID": 36,
    "LNIC Code": "LNIC-000-036",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -537,11 +537,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "LBCL",
    "Entity-Type": "PMBCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "037",
+   "Entry ID": 37,
    "LNIC Code": "LNIC-000-037",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -552,11 +552,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "LBCL",
    "Entity-Type": "MGZL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "038",
+   "Entry ID": 38,
    "LNIC Code": "LNIC-000-038",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Large B-cell lymphomas (LBCL)",
@@ -571,7 +571,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "039",
+   "Entry ID": 39,
    "LNIC Code": "LNIC-000-039",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Burkitt lymphoma",
@@ -586,7 +586,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "040",
+   "Entry ID": 40,
    "LNIC Code": "LNIC-000-040",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "KSHV/HHV8-associated B-cell lymphoid proliferations and lymphomas (KSHV/HHV8)",
@@ -601,7 +601,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "041",
+   "Entry ID": 41,
    "LNIC Code": "LNIC-000-041",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "KSHV/HHV8-associated B-cell lymphoid proliferations and lymphomas (KSHV/HHV8)",
@@ -612,11 +612,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "KSHV/HHV8associated",
    "Entity-Type": "KSHV/HHV8-positive DLBCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "042",
+   "Entry ID": 42,
    "LNIC Code": "LNIC-020-042",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "KSHV/HHV8-associated B-cell lymphoid proliferations and lymphomas (KSHV/HHV8)",
@@ -627,29 +627,29 @@
    "Category": "Mature B-cell",
    "Class-Family": "KSHV/HHV8associated",
    "Entity-Type": "KSHV/HHV8-positive GLPD",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "043",
+   "Entry ID": 43,
    "LNIC Code": "LNIC-010-043",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "Hodgkin lymphoma (HL)  ",
+   "WHO-HAEM5 Family-Class": "Hodgkin lymphoma (HL)  ",
    "WHO-HAEM5 Entity-Type": "Classic Hodgkin lymphoma, (CHL)",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Classical  Hodgkin lymphoma",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Classical  Hodgkin lymphoma",
    "Lineage-Nature": "LN",
    "Major Group": "HL",
    "Category": "Mature B-cell",
    "Class-Family": "HL",
    "Entity-Type": "CHL",
-   "Subtype(s)": "Nodular sclerosis, mixed-cellularity, lymphocyte-rich, lymphocyte-depleted "
+   "Subtype(s)": "Nodular sclerosis, mixed-cellularity, lymphocyte-rich, lymphocyte-depleted "
  },
  {
    "Source": "T1",
-   "Entry ID": "044",
+   "Entry ID": 44,
    "LNIC Code": "LNIC-010-044",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "Hodgkin lymphoma (HL)  ",
+   "WHO-HAEM5 Family-Class": "Hodgkin lymphoma (HL)  ",
    "WHO-HAEM5 Entity-Type": "Nodular lymphocyte predominant Hodgkin lymphoma (NLPHL)",
    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Nodular lymphocyte predominant Hodgkin lymphoma (NLPHL)",
    "Lineage-Nature": "LN",
@@ -661,7 +661,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "045",
+   "Entry ID": 45,
    "LNIC Code": "LNIC-120-045",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Monoclonal gammopathies",
@@ -672,11 +672,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "Monoclonal gammopathies",
    "Entity-Type": "CAD",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "046",
+   "Entry ID": 46,
    "LNIC Code": "LNIC-120-046",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Monoclonal gammopathies",
@@ -687,11 +687,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "Monoclonal gammopathies",
    "Entity-Type": "IgMMGUS",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "047",
+   "Entry ID": 47,
    "LNIC Code": "LNIC-120-047",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Monoclonal gammopathies",
@@ -706,7 +706,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "048",
+   "Entry ID": 48,
    "LNIC Code": "LNIC-120-048",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Monoclonal gammopathies",
@@ -721,7 +721,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "049",
+   "Entry ID": 49,
    "LNIC Code": "LNIC-120-049",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Diseases with monoclonal immunoglobulin deposition",
@@ -736,7 +736,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "050",
+   "Entry ID": 50,
    "LNIC Code": "LNIC-120-050",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Diseases with monoclonal immunoglobulin deposition",
@@ -751,7 +751,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "051",
+   "Entry ID": 51,
    "LNIC Code": "LNIC-140-051",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Heavy chain diseases (HCD)",
@@ -762,11 +762,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "Heavy chain diseases",
    "Entity-Type": "Mu HCD",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "052",
+   "Entry ID": 52,
    "LNIC Code": "LNIC-120-052",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Heavy chain diseases (HCD)",
@@ -777,11 +777,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "Heavy chain diseases",
    "Entity-Type": "GammaHCD",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "053",
+   "Entry ID": 53,
    "LNIC Code": "LNIC-120-053",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Heavy chain diseases (HCD)",
@@ -792,11 +792,11 @@
    "Category": "Mature B-cell",
    "Class-Family": "Heavy chain diseases",
    "Entity-Type": "Alpha HCD",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T1",
-   "Entry ID": "054",
+   "Entry ID": 54,
    "LNIC Code": "LNIC-000-054",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Plasma cell neoplasms (PCN)",
@@ -811,7 +811,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "055",
+   "Entry ID": 55,
    "LNIC Code": "LNIC-000-055",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Plasma cell neoplasms (PCN)",
@@ -826,7 +826,7 @@
  },
  {
    "Source": "T1",
-   "Entry ID": "056",
+   "Entry ID": 56,
    "LNIC Code": "LNIC-000-056",
    "WHO-HAEM5 Category": "Plasma cell neoplasms and other diseases with paraproteins",
    "WHO-HAEM5 Family-Class": "Plasma cell neoplasms (PCN)",
@@ -841,7 +841,7 @@
  },
  {
    "Source": "T2",
-   "Entry ID": "057",
+   "Entry ID": 57,
    "LNIC Code": "LNIC-00-057",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Mature T-cell and NK-cell leukaemias",
@@ -852,11 +852,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Mature T-cell and NK-cell leukaemias",
    "Entity-Type": "T-PLL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "058",
+   "Entry ID": 58,
    "LNIC Code": "LNIC-00-058",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Mature T-cell and NK-cell leukaemias",
@@ -867,11 +867,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Mature T-cell and NK-cell leukaemias",
    "Entity-Type": "T-LGLL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "059",
+   "Entry ID": 59,
    "LNIC Code": "LNIC-00-059",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Mature T-cell and NK-cell leukaemias",
@@ -882,11 +882,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Mature T-cell and NK-cell leukaemias",
    "Entity-Type": "NK-LGLL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "060",
+   "Entry ID": 60,
    "LNIC Code": "LNIC-00-060",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Mature T-cell and NK-cell leukaemias",
@@ -901,22 +901,22 @@
  },
  {
    "Source": "T2",
-   "Entry ID": "061",
+   "Entry ID": 61,
    "LNIC Code": "LNIC-00-061",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Mature T-cell and NK-cell leukaemias",
-   "WHO-HAEM5 Entity-Type": "Sézary syndrome (SS)",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Sézary syndrome (SS)",
+   "WHO-HAEM5 Entity-Type": "Sezary syndrome (SS)",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Sezary syndrome (SS)",
    "Lineage-Nature": "LN",
    "Major Group": "NHL",
    "Category": "Mature T/NK-cell",
    "Class-Family": "Mature T-cell and NK-cell leukaemias",
    "Entity-Type": "SS",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "062",
+   "Entry ID": 62,
    "LNIC Code": "LNIC-00-062",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Mature T-cell and NK-cell leukaemias",
@@ -927,11 +927,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Mature T-cell and NK-cell leukaemias",
    "Entity-Type": "ANKL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "063",
+   "Entry ID": 63,
    "LNIC Code": "LNIC-02-063",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Primary cutaneous T-cell neoplasms",
@@ -942,11 +942,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Primary cutaneous T-cell LPD",
    "Entity-Type": "PCSM-LPD",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "064",
+   "Entry ID": 64,
    "LNIC Code": "LNIC-02-064",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Primary cutaneous T-cell neoplasms",
@@ -957,11 +957,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Primary cutaneous T-cell LPD",
    "Entity-Type": "Primary cutaneous acral CD8-positive LPD",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "065",
+   "Entry ID": 65,
    "LNIC Code": "LNIC-00-065",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Primary cutaneous T-cell neoplasms",
@@ -976,7 +976,7 @@
  },
  {
    "Source": "T2",
-   "Entry ID": "066",
+   "Entry ID": 66,
    "LNIC Code": "LNIC-02-066",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Primary cutaneous T-cell neoplasms",
@@ -991,7 +991,7 @@
  },
  {
    "Source": "T2",
-   "Entry ID": "067",
+   "Entry ID": 67,
    "LNIC Code": "LNIC-00-067",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Primary cutaneous T-cell neoplasms",
@@ -1002,11 +1002,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "CD30+PCLPD",
    "Entity-Type": "C-ALCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "068",
+   "Entry ID": 68,
    "LNIC Code": "LNIC-00-068",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Primary cutaneous T-cell neoplasms",
@@ -1017,11 +1017,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "CTCL",
    "Entity-Type": "SPTCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "069",
+   "Entry ID": 69,
    "LNIC Code": "LNIC-00-069",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Primary cutaneous T-cell neoplasms",
@@ -1032,11 +1032,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "CTCL",
    "Entity-Type": "PCGD-TCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "070",
+   "Entry ID": 70,
    "LNIC Code": "LNIC-00-070",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Primary cutaneous T-cell neoplasms",
@@ -1047,26 +1047,26 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "CTCL",
    "Entity-Type": "PCAETL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "071",
+   "Entry ID": 71,
    "LNIC Code": "LNIC-00-071",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Primary cutaneous T-cell neoplasms",
-   "WHO-HAEM5 Entity-Type": "Primary cutaneous peripheral T-cell lymphoma, NOS (PCPTC L-NOS)",
+   "WHO-HAEM5 Entity-Type": "Primary cutaneous peripheral T-cell lymphoma, NOS (PCPTC L-NOS)",
    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Primary cutaneous T-cell lymphoma,NOS (PCTCL,NOS)",
    "Lineage-Nature": "LN",
    "Major Group": "NHL",
    "Category": "Mature T/NK-cell",
    "Class-Family": "CTCL",
    "Entity-Type": "PCPTCL-NOS",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "072",
+   "Entry ID": 72,
    "LNIC Code": "LNIC-00-072",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Intestinal T-cell and NK-cell lymphoid proliferations and lymphomas",
@@ -1077,11 +1077,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Intestinal T-cell and NK-cell lymphoid proliferations and lymphomas",
    "Entity-Type": "iTCL-GI",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "073",
+   "Entry ID": 73,
    "LNIC Code": "LNIC-02-073",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Intestinal T-cell and NK-cell lymphoid proliferations and lymphomas",
@@ -1092,11 +1092,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Intestinal T-cell and NK-cell lymphoid proliferations and lymphomas",
    "Entity-Type": "iNK-LPD",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "074",
+   "Entry ID": 74,
    "LNIC Code": "LNIC-00-074",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Intestinal T-cell and NK-cell lymphoid proliferations and lymphomas",
@@ -1107,11 +1107,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Intestinal T-cell and NK-cell lymphoid proliferations and lymphomas",
    "Entity-Type": "EATL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "075",
+   "Entry ID": 75,
    "LNIC Code": "LNIC-00-075",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Intestinal T-cell and NK-cell lymphoid proliferations and lymphomas",
@@ -1122,11 +1122,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Intestinal T-cell and NK-cell lymphoid proliferations and lymphomas",
    "Entity-Type": "MEITL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "076",
+   "Entry ID": 76,
    "LNIC Code": "LNIC-00-076",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Intestinal T-cell and NK-cell lymphoid proliferations and lymphomas",
@@ -1137,11 +1137,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Intestinal T-cell and NK-cell lymphoid proliferations and lymphomas",
    "Entity-Type": "ITCL-NOS",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "077",
+   "Entry ID": 77,
    "LNIC Code": "LNIC-00-077",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Hepatosplenic T-cell lymphoma",
@@ -1152,11 +1152,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "Hepatosplenic T-cell lymphoma",
    "Entity-Type": "Hepatosplenic T-cell lymphoma",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "078",
+   "Entry ID": 78,
    "LNIC Code": "LNIC-00-078",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Anaplastic large cell lymphoma (ALCL)",
@@ -1167,11 +1167,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "ALCL",
    "Entity-Type": "ALK positive ALCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "079",
+   "Entry ID": 79,
    "LNIC Code": "LNIC-00-079",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Anaplastic large cell lymphoma (ALCL)",
@@ -1182,11 +1182,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "ALCL",
    "Entity-Type": "ALK-negative ALCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "080",
+   "Entry ID": 80,
    "LNIC Code": "LNIC-00-080",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Anaplastic large cell lymphoma (ALCL)",
@@ -1197,11 +1197,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "ALCL",
    "Entity-Type": "BIA-ALCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "081",
+   "Entry ID": 81,
    "LNIC Code": "LNIC-00-081",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Nodal T-follicular helper (TFH) cell lymphoma (nTFHL)",
@@ -1212,11 +1212,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "nTFHL",
    "Entity-Type": "nTFHL-AI",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "082",
+   "Entry ID": 82,
    "LNIC Code": "LNIC-00-082",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Nodal T-follicular helper (TFH) cell lymphoma (nTFHL)",
@@ -1227,11 +1227,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "nTFHL",
    "Entity-Type": "nTFHL-F",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "083",
+   "Entry ID": 83,
    "LNIC Code": "LNIC-00-083",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Nodal T-follicular helper (TFH) cell lymphoma (nTFHL)",
@@ -1242,11 +1242,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "nTFHL",
    "Entity-Type": "nTFHL-NOS",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "084",
+   "Entry ID": 84,
    "LNIC Code": "LNIC-00-084",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "Other peripheral T-cell lymphomas",
@@ -1257,11 +1257,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "PTCL",
    "Entity-Type": "PTCLNOS",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "085",
+   "Entry ID": 85,
    "LNIC Code": "LNIC-00-085",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "EBV-positive T-cell and NK-cell lymphomas",
@@ -1272,11 +1272,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "EBV-positive NK/T-cell lymphomas",
    "Entity-Type": "EBV-positive nodal T- and NK-cell lymphoma",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "086",
+   "Entry ID": 86,
    "LNIC Code": "LNIC-00-086",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "EBV-positive T-cell and NK-cell lymphomas",
@@ -1291,7 +1291,7 @@
  },
  {
    "Source": "T2",
-   "Entry ID": "087",
+   "Entry ID": 87,
    "LNIC Code": "LNIC-02-087",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "EBV-positive T- and NK-cell lymphoid proliferations and lymphomas of childhood",
@@ -1302,11 +1302,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "EBV-positive NK/T-cell lymphoid proliferations and lymphomas of childhood",
    "Entity-Type": "Severe mosquito bite allergy",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "088",
+   "Entry ID": 88,
    "LNIC Code": "LNIC-02-088",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "EBV-positive T- and NK-cell lymphoid proliferations and lymphomas of childhood",
@@ -1321,7 +1321,7 @@
  },
  {
    "Source": "T2",
-   "Entry ID": "089",
+   "Entry ID": 89,
    "LNIC Code": "LNIC-04-089",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "EBV-positive T- and NK-cell lymphoid proliferations and lymphomas of childhood",
@@ -1332,11 +1332,11 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "EBV-positive NK/T-cell lymphoid proliferations and lymphomas of childhood",
    "Entity-Type": "CAEBV",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T2",
-   "Entry ID": "090",
+   "Entry ID": 90,
    "LNIC Code": "LNIC-00-090",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
    "WHO-HAEM5 Family-Class": "EBV-positive T- and NK-cell lymphoid proliferations and lymphomas of childhood",
@@ -1347,656 +1347,296 @@
    "Category": "Mature T/NK-cell",
    "Class-Family": "EBV-positive NK/T-cell lymphoid proliferations and lymphomas of childhood",
    "Entity-Type": "SEBVTCL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "091",
+   "Entry ID": 91,
    "LNIC Code": "LNIC-324-091",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Hyperplasias arising in immune deficiency/dysregulation",
-   "LNIC Code": "PTLD early lesions: Plasmacytic hyperplasia (PTLD-PH)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "LPD",
-   "WHO-HAEM5 Entity-Type": "Mature B-LPD",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PTLD",
-   "Lineage-Nature": "PTLD-PH",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Hyperplasias arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PTLD early lesions: Plasmacytic hyperplasia (PTLD-PH)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "LPD",
+   "Category": "Mature B-LPD",
+   "Class-Family": "PTLD",
+   "Entity-Type": "PTLD-PH",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "092",
+   "Entry ID": 92,
    "LNIC Code": "LNIC-324-092",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Hyperplasias arising in immune deficiency/dysregulation",
-   "LNIC Code": "PTLD early lesions: Infectious mononucleosis-like PTLD (PTLD-IM-like)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "LPD",
-   "WHO-HAEM5 Entity-Type": "Mature B-LPD",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PTLD",
-   "Lineage-Nature": "PTLD-IM-like",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Hyperplasias arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PTLD early lesions: Infectious mononucleosis-like PTLD (PTLD-IM-like)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "LPD",
+   "Category": "Mature B-LPD",
+   "Class-Family": "PTLD",
+   "Entity-Type": "PTLD-IM-like",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "093",
+   "Entry ID": 93,
    "LNIC Code": "LNIC-324-093",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Polymorphic lymphoproliferative disorders arising in immune deficiency/dysregulation",
-   "LNIC Code": "PTLD polymorphic (PTLD-P)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "LPD",
-   "WHO-HAEM5 Entity-Type": "Mature B-LPD",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PTLD",
-   "Lineage-Nature": "PTLD-PH",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Polymorphic lymphoproliferative disorders arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PTLD polymorphic (PTLD-P)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "LPD",
+   "Category": "Mature B-LPD",
+   "Class-Family": "PTLD",
+   "Entity-Type": "PTLD-PH",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "094",
+   "Entry ID": 94,
    "LNIC Code": "LNIC-303-094",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Lymphomas arising in immune deficiency/dysregulation",
-   "LNIC Code": "PTLD monomorphic B-cell (specify) (PTLD-M-B-cell)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "NHL",
-   "WHO-HAEM5 Entity-Type": "Mature B-NHL",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PTLD",
-   "Lineage-Nature": "PTLD-M-B-cell",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Lymphomas arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PTLD monomorphic B-cell (specify) (PTLD-M-B-cell)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "NHL",
+   "Category": "Mature B-NHL",
+   "Class-Family": "PTLD",
+   "Entity-Type": "PTLD-M-B-cell",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "095",
+   "Entry ID": 95,
    "LNIC Code": "LNIC-30-095",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Lymphomas arising in immune deficiency/dysregulation",
-   "LNIC Code": "PTLD monomorphic T- or NK -cell (specify) (PTLD-M-T-or NK- cell)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "NHL",
-   "WHO-HAEM5 Entity-Type": "Mature T/NK-cell",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PTLD",
-   "Lineage-Nature": "PTLD-M-T-cell",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Lymphomas arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PTLD monomorphic T- or NK -cell (specify) (PTLD-M-T-or NK- cell)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "NHL",
+   "Category": "Mature T/NK-cell",
+   "Class-Family": "PTLD",
+   "Entity-Type": "PTLD-M-T-cell",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "096",
+   "Entry ID": 96,
    "LNIC Code": "LNIC-310-096",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Lymphomas arising in immune deficiency/dysregulation",
-   "LNIC Code": "Classical Hodgkin lymphoma type PTLD (PTLD-CHL)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "HL",
-   "WHO-HAEM5 Entity-Type": "Mature B-cell",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PTLD",
-   "Lineage-Nature": "PTLD-CHL",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Lymphomas arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Classical Hodgkin lymphoma type PTLD (PTLD-CHL)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "HL",
+   "Category": "Mature B-cell",
+   "Class-Family": "PTLD",
+   "Entity-Type": "PTLD-CHL",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "097",
+   "Entry ID": 97,
    "LNIC Code": "LNIC-324-097",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "\"Inborn error of immunity-associated lymphoid proliferations",
-   "LNIC Code": null,
-   "WHO-HAEM5 Category": null,
-   "WHO-HAEM5 Family-Class": null,
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "and lymphomas\"",
-   "Entry ID": "PID-early and PTLD-like polymorphous lymphoid proliferations (PID-LPD-P)",
-   "LNIC Code": "LN-IDD",
-   "WHO-HAEM5 Category": "LPD",
-   "WHO-HAEM5 Family-Class": "Mature B-LPD",
-   "WHO-HAEM5 Entity-Type": "PID-LPD",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PID-LPD-P",
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Inborn error of immunity-associated lymphoid proliferations\nand lymphomas",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PID-early and PTLD-like polymorphous lymphoid proliferations (PID-LPD-P)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "LPD",
+   "Category": "Mature B-LPD",
+   "Class-Family": "PID-LPD",
+   "Entity-Type": "PID-LPD-P",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "098",
+   "Entry ID": 98,
    "LNIC Code": "LNIC-303-098",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "\"Inborn error of immunity-associated lymphoid proliferations",
-   "LNIC Code": null,
-   "WHO-HAEM5 Category": null,
-   "WHO-HAEM5 Family-Class": null,
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "and lymphomas\"",
-   "Entry ID": "PID-B-cell NHL (Specify) (PID-LPD-B-cell)",
-   "LNIC Code": "LN-IDD",
-   "WHO-HAEM5 Category": "NHL",
-   "WHO-HAEM5 Family-Class": "Mature B-NHL",
-   "WHO-HAEM5 Entity-Type": "PID-LPD",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PID-LPD-B-cell",
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Inborn error of immunity-associated lymphoid proliferations\nand lymphomas",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PID-B-cell NHL (Specify) (PID-LPD-B-cell)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "NHL",
+   "Category": "Mature B-NHL",
+   "Class-Family": "PID-LPD",
+   "Entity-Type": "PID-LPD-B-cell",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "099",
+   "Entry ID": 99,
    "LNIC Code": "LNIC-30-099",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "\"Inborn error of immunity-associated lymphoid proliferations",
-   "LNIC Code": null,
-   "WHO-HAEM5 Category": null,
-   "WHO-HAEM5 Family-Class": null,
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "and lymphomas\"",
-   "Entry ID": "PID-mature T- or NK-cell NHL (specify) (PID-LPD-T or NK Cell)",
-   "LNIC Code": "LN-IDD",
-   "WHO-HAEM5 Category": "NHL",
-   "WHO-HAEM5 Family-Class": "Mature T/NK-cell",
-   "WHO-HAEM5 Entity-Type": "PID-LPD",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PID-LPD-T or NK cell",
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Inborn error of immunity-associated lymphoid proliferations\nand lymphomas",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PID-mature T- or NK-cell NHL (specify) (PID-LPD-T or NK Cell)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "NHL",
+   "Category": "Mature T/NK-cell",
+   "Class-Family": "PID-LPD",
+   "Entity-Type": "PID-LPD-T or NK cell",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "100",
+   "Entry ID": 100,
    "LNIC Code": "LNIC-306-100",
    "WHO-HAEM5 Category": "Precursor T-cell neoplasms",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "\"Inborn error of immunity-associated lymphoid proliferations",
-   "LNIC Code": null,
-   "WHO-HAEM5 Category": null,
-   "WHO-HAEM5 Family-Class": null,
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "and lymphomas\"",
-   "Entry ID": "PID-T lymphoblastic leukemia/lymphoma (PID-T-ALL/LBL)",
-   "LNIC Code": "LN-IDD",
-   "WHO-HAEM5 Category": "NHL",
-   "WHO-HAEM5 Family-Class": "Precursor T-cell",
-   "WHO-HAEM5 Entity-Type": "PID-LPD",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PID-T-ALL/LBL",
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Inborn error of immunity-associated lymphoid proliferations\nand lymphomas",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PID-T lymphoblastic leukemia/lymphoma (PID-T-ALL/LBL)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "NHL",
+   "Category": "Precursor T-cell",
+   "Class-Family": "PID-LPD",
+   "Entity-Type": "PID-T-ALL/LBL",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "101",
+   "Entry ID": 101,
    "LNIC Code": "LNIC-310-101",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "\"Inborn error of immunity-associated lymphoid proliferations",
-   "LNIC Code": null,
-   "WHO-HAEM5 Category": null,
-   "WHO-HAEM5 Family-Class": null,
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "and lymphomas\"",
-   "Entry ID": "PID-LPD classical Hodgkin lymphoma (PID-CHL)",
-   "LNIC Code": "LN-IDD",
-   "WHO-HAEM5 Category": "HL",
-   "WHO-HAEM5 Family-Class": "Mature B-cell",
-   "WHO-HAEM5 Entity-Type": "PID-LPD",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PID-CHL",
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Inborn error of immunity-associated lymphoid proliferations\nand lymphomas",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "PID-LPD classical Hodgkin lymphoma (PID-CHL)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "HL",
+   "Category": "Mature B-cell",
+   "Class-Family": "PID-LPD",
+   "Entity-Type": "PID-CHL",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "102",
+   "Entry ID": 102,
    "LNIC Code": "LNIC-324-102",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Lymphomas arising in immune deficiency/dysregulation",
-   "LNIC Code": "HIV-PTLD-like polymorphous lymphoid proliferations (HIV-LPD-P)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "LPD",
-   "WHO-HAEM5 Entity-Type": "Mature B-LPD",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "HIV-LPD",
-   "Lineage-Nature": "HIV-LPD-P",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Lymphomas arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "HIV-PTLD-like polymorphous lymphoid proliferations (HIV-LPD-P)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "LPD",
+   "Category": "Mature B-LPD",
+   "Class-Family": "HIV-LPD",
+   "Entity-Type": "HIV-LPD-P",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "103",
+   "Entry ID": 103,
    "LNIC Code": "LNIC-303-103",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Lymphomas arising in immune deficiency/dysregulation",
-   "LNIC Code": "HIV-B-cell NHL (specify) (HIV-LPD-B-cell)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "NHL",
-   "WHO-HAEM5 Entity-Type": "Mature B-NHL",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "HIV-LPD",
-   "Lineage-Nature": "HIV-LPD-B-cell",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Lymphomas arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "HIV-B-cell NHL (specify) (HIV-LPD-B-cell)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "NHL",
+   "Category": "Mature B-NHL",
+   "Class-Family": "HIV-LPD",
+   "Entity-Type": "HIV-LPD-B-cell",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "104",
+   "Entry ID": 104,
    "LNIC Code": "LNIC-30-104",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Lymphomas arising in immune deficiency/dysregulation",
-   "LNIC Code": "HIV-T or NK-cell NHL (specify) (HIV-LPD-T or NK-cell)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "NHL",
-   "WHO-HAEM5 Entity-Type": "Mature T/NK-cell",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "HIV-LPD",
-   "Lineage-Nature": "HIV-LPD-T or NK cell",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Lymphomas arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "HIV-T or NK-cell NHL (specify) (HIV-LPD-T or NK-cell)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "NHL",
+   "Category": "Mature T/NK-cell",
+   "Class-Family": "HIV-LPD",
+   "Entity-Type": "HIV-LPD-T or NK cell",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "105",
+   "Entry ID": 105,
    "LNIC Code": "LNIC-310-105",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Lymphomas arising in immune deficiency/dysregulation",
-   "LNIC Code": "HIV-classical Hodgkin lymphoma (HIV-CHL)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "HL",
-   "WHO-HAEM5 Entity-Type": "Mature B-cell",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "HIV-LPD",
-   "Lineage-Nature": "HIV-CHL",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Lymphomas arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "HIV-classical Hodgkin lymphoma (HIV-CHL)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "HL",
+   "Category": "Mature B-cell",
+   "Class-Family": "HIV-LPD",
+   "Entity-Type": "HIV-CHL",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "106",
+   "Entry ID": 106,
    "LNIC Code": "LNIC-324-106",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Polymorphic lymphoproliferative disorders arising in immune deficiency/dysregulation",
-   "LNIC Code": "IAT-PTLD-like polymorphous lymphoid proliferations (IAT-LPD-P)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "LPD",
-   "WHO-HAEM5 Entity-Type": "Mature B-LPD",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "IAT-LPD",
-   "Lineage-Nature": "IAT-LPD-P",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Polymorphic lymphoproliferative disorders arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "IAT-PTLD-like polymorphous lymphoid proliferations (IAT-LPD-P)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "LPD",
+   "Category": "Mature B-LPD",
+   "Class-Family": "IAT-LPD",
+   "Entity-Type": "IAT-LPD-P",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "107",
+   "Entry ID": 107,
    "LNIC Code": "LNIC-303-107",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Lymphomas arising in immune deficiency/dysregulation",
-   "LNIC Code": "IAT-B-cell NHL (specify) (IAT-LPD-B-cell)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "NHL",
-   "WHO-HAEM5 Entity-Type": "Mature B-NHL",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "IAT-LPD",
-   "Lineage-Nature": "IAT-LPD-B-cell",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Lymphomas arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "IAT-B-cell NHL (specify) (IAT-LPD-B-cell)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "NHL",
+   "Category": "Mature B-NHL",
+   "Class-Family": "IAT-LPD",
+   "Entity-Type": "IAT-LPD-B-cell",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "108",
+   "Entry ID": 108,
    "LNIC Code": "LNIC-30-108",
    "WHO-HAEM5 Category": "Mature T-cell and NK-cell neoplasms",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Lymphomas arising in immune deficiency/dysregulation",
-   "LNIC Code": "IAT-T or NK- cell NHL (specify) (IAT-LPD-T or NK-cell)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "NHL",
-   "WHO-HAEM5 Entity-Type": "Mature T/NK-cell",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "IAT-LPD",
-   "Lineage-Nature": "IAT-LPD-T or NK cell",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Lymphomas arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "IAT-T or NK- cell NHL (specify) (IAT-LPD-T or NK-cell)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "NHL",
+   "Category": "Mature T/NK-cell",
+   "Class-Family": "IAT-LPD",
+   "Entity-Type": "IAT-LPD-T or NK cell",
+   "Subtype(s)": ""
  },
  {
    "Source": "T3",
-   "Entry ID": "109",
+   "Entry ID": 109,
    "LNIC Code": "LNIC-310-109",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
-   "WHO-HAEM5 Family-Class": "\"Lymphoid proliferations and lymphomas associated with",
-   "WHO-HAEM5 Entity-Type": null,
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": null,
-   "Lineage-Nature": null,
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
- },
- {
-   "Source": "immune deficiency and dysregulation\"",
-   "Entry ID": "Lymphomas arising in immune deficiency/dysregulation",
-   "LNIC Code": "IAT-classical Hodgkin lymphoma (IAT-CHL)",
-   "WHO-HAEM5 Category": "LN-IDD",
-   "WHO-HAEM5 Family-Class": "HL",
-   "WHO-HAEM5 Entity-Type": "Mature B-cell",
-   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "IAT-LPD",
-   "Lineage-Nature": "IAT-CHL",
-   "Major Group": null,
-   "Category": null,
-   "Class-Family": null,
-   "Entity-Type": null,
-   "Subtype(s)": null
+   "WHO-HAEM5 Family-Class": "Lymphoid proliferations and lymphomas associated with\nimmune deficiency and dysregulation",
+   "WHO-HAEM5 Entity-Type": "Lymphomas arising in immune deficiency/dysregulation",
+   "Interlymph 2010 Entity-Type based on WHO-HAEM4": "IAT-classical Hodgkin lymphoma (IAT-CHL)",
+   "Lineage-Nature": "LN-IDD",
+   "Major Group": "HL",
+   "Category": "Mature B-cell",
+   "Class-Family": "IAT-LPD",
+   "Entity-Type": "IAT-CHL",
+   "Subtype(s)": ""
  },
  {
    "Source": "ST1",
-   "Entry ID": "110",
+   "Entry ID": 110,
    "LNIC Code": "LNIC-217-110",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2007,11 +1647,11 @@
    "Category": "Reactive B-cell",
    "Class-Family": "Nodal Follicular/nodular proliferation",
    "Entity-Type": "Florid follicular hyperplasia",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST1",
-   "Entry ID": "111",
+   "Entry ID": 111,
    "LNIC Code": "LNIC-217-111",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2022,11 +1662,11 @@
    "Category": "Reactive B-cell",
    "Class-Family": "Nodal Follicular/nodular proliferation",
    "Entity-Type": "Progressive transformation of germinal centres",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST1",
-   "Entry ID": "112",
+   "Entry ID": 112,
    "LNIC Code": "LNIC-217-112",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2037,11 +1677,11 @@
    "Category": "Reactive B-cell",
    "Class-Family": "Nodal Follicular/nodular proliferation",
    "Entity-Type": "Systemic lupus erythematosus",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST1",
-   "Entry ID": "113",
+   "Entry ID": 113,
    "LNIC Code": "LNIC-217-113",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2052,11 +1692,11 @@
    "Category": "Reactive B-cell",
    "Class-Family": "Extranodal follicular/nodular proliferation",
    "Entity-Type": "Sjogren syndrome",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST1",
-   "Entry ID": "114",
+   "Entry ID": 114,
    "LNIC Code": "LNIC-217-114",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2067,11 +1707,11 @@
    "Category": "Reactive B-cell",
    "Class-Family": "Extranodal follicular/nodular proliferation",
    "Entity-Type": "Lymphoma-like lesions of the female genital tract",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST1",
-   "Entry ID": "115",
+   "Entry ID": 115,
    "LNIC Code": "LNIC-217-115",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2082,26 +1722,26 @@
    "Category": "Reactive B-cell",
    "Class-Family": "Extranodal follicular/nodular proliferation",
    "Entity-Type": "Rectal tonsil",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST1",
-   "Entry ID": "116",
+   "Entry ID": 116,
    "LNIC Code": "LNIC-217-116",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
-   "WHO-HAEM5 Entity-Type": "IgG4-related disease (IgG4-RD) ",
+   "WHO-HAEM5 Entity-Type": "IgG4-related disease (IgG4-RD) ",
    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "*",
    "Lineage-Nature": "TLL",
    "Major Group": "*",
    "Category": "Reactive B-cell",
    "Class-Family": "Extranodal follicular/nodular proliferation",
    "Entity-Type": "IgG4-RD",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST1",
-   "Entry ID": "117",
+   "Entry ID": 117,
    "LNIC Code": "LNIC-217-117",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2116,7 +1756,7 @@
  },
  {
    "Source": "ST1",
-   "Entry ID": "118",
+   "Entry ID": 118,
    "LNIC Code": "LNIC-417-118",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2131,7 +1771,7 @@
  },
  {
    "Source": "ST1",
-   "Entry ID": "119",
+   "Entry ID": 119,
    "LNIC Code": "LNIC-417-119",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2142,11 +1782,11 @@
    "Category": "Reactive B-cell",
    "Class-Family": "Nodal immunoblastic proliferation (interfollicular, paracortical, or diffuse pattern)",
    "Entity-Type": "Drug sensitivity",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST1",
-   "Entry ID": "120",
+   "Entry ID": 120,
    "LNIC Code": "LNIC-417-120",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2161,7 +1801,7 @@
  },
  {
    "Source": "ST1",
-   "Entry ID": "121",
+   "Entry ID": 121,
    "LNIC Code": "LNIC-417-121",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2176,7 +1816,7 @@
  },
  {
    "Source": "ST1",
-   "Entry ID": "122",
+   "Entry ID": 122,
    "LNIC Code": "LNIC-417-122",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2191,7 +1831,7 @@
  },
  {
    "Source": "ST1",
-   "Entry ID": "123",
+   "Entry ID": 123,
    "LNIC Code": "LNIC-217-123",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2206,7 +1846,7 @@
  },
  {
    "Source": "ST1",
-   "Entry ID": "124",
+   "Entry ID": 124,
    "LNIC Code": "LNIC-217-124",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2221,7 +1861,7 @@
  },
  {
    "Source": "ST1",
-   "Entry ID": "125",
+   "Entry ID": 125,
    "LNIC Code": "LNIC-217-125",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2236,7 +1876,7 @@
  },
  {
    "Source": "ST1",
-   "Entry ID": "126",
+   "Entry ID": 126,
    "LNIC Code": "LNIC-217-126",
    "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
    "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
@@ -2247,11 +1887,11 @@
    "Category": "Reactive B-cell",
    "Class-Family": "Castleman disease",
    "Entity-Type": "KSHV8/HHV-MCD",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "127",
+   "Entry ID": 127,
    "LNIC Code": "LNIC-005-127",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2266,7 +1906,7 @@
  },
  {
    "Source": "ST2",
-   "Entry ID": "128",
+   "Entry ID": 128,
    "LNIC Code": "LNIC-005-128",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2277,11 +1917,11 @@
    "Category": "Precursor B-cell",
    "Class-Family": "B-ALL/B-LBL",
    "Entity-Type": "B-ALL/B-LBL-RGA",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "129",
+   "Entry ID": 129,
    "LNIC Code": "LNIC-005-129",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2292,11 +1932,11 @@
    "Category": "Precursor B-cell",
    "Class-Family": "B-ALL/LBL",
    "Entity-Type": "B-ALL/LBL with hypodiploidy",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "130",
+   "Entry ID": 130,
    "LNIC Code": "LNIC-005-130",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2307,11 +1947,11 @@
    "Category": "Precursor B-cell",
    "Class-Family": "B-ALL/LBL",
    "Entity-Type": "B-ALL/LBL with iAMP21",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "131",
+   "Entry ID": 131,
    "LNIC Code": "LNIC-005-131",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2322,11 +1962,11 @@
    "Category": "Precursor B-cell",
    "Class-Family": "B-ALL/LBL",
    "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "132",
+   "Entry ID": 132,
    "LNIC Code": "LNIC-005-132",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2337,11 +1977,11 @@
    "Category": "Precursor B-cell",
    "Class-Family": "B-ALL/LBL",
    "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "133",
+   "Entry ID": 133,
    "LNIC Code": "LNIC-005-133",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2352,11 +1992,11 @@
    "Category": "Precursor B-cell",
    "Class-Family": "B-ALL/LBL",
    "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "134",
+   "Entry ID": 134,
    "LNIC Code": "LNIC-005-134",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2367,11 +2007,11 @@
    "Category": "Precursor B-cell",
    "Class-Family": "B-ALL/LBL",
    "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "135",
+   "Entry ID": 135,
    "LNIC Code": "LNIC-005-135",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2382,11 +2022,11 @@
    "Category": "Precursor B-cell",
    "Class-Family": "B-ALL/LBL",
    "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "136",
+   "Entry ID": 136,
    "LNIC Code": "LNIC-005-136",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2397,11 +2037,11 @@
    "Category": "Precursor B-cell",
    "Class-Family": "B-ALL/LBL",
    "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "137",
+   "Entry ID": 137,
    "LNIC Code": "LNIC-005-137",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2412,11 +2052,11 @@
    "Category": "Precursor B-cell",
    "Class-Family": "B-ALL/LBL",
    "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "138",
+   "Entry ID": 138,
    "LNIC Code": "LNIC-005-138",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2427,11 +2067,11 @@
    "Category": "Precursor B-cell",
    "Class-Family": "B-ALL/LBL",
    "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST2",
-   "Entry ID": "139",
+   "Entry ID": 139,
    "LNIC Code": "LNIC-005-139",
    "WHO-HAEM5 Category": "Precursor B-cell neoplasms",
    "WHO-HAEM5 Family-Class": "B-cell lymphoblastic leukaemias / lymphomas (B-ALL/LBL)",
@@ -2446,7 +2086,7 @@
  },
  {
    "Source": "ST3",
-   "Entry ID": "140",
+   "Entry ID": 140,
    "LNIC Code": "LNIC-218-140",
    "WHO-HAEM5 Category": "Tumour-like lesions with T-cell predominance",
    "WHO-HAEM5 Family-Class": "*",
@@ -2457,11 +2097,11 @@
    "Category": "Reactive T-cell",
    "Class-Family": "Tumour-like lesions with T-cell predominance",
    "Entity-Type": "KFD",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST3",
-   "Entry ID": "141",
+   "Entry ID": 141,
    "LNIC Code": "LNIC-218-141",
    "WHO-HAEM5 Category": "Tumour-like lesions with T-cell predominance",
    "WHO-HAEM5 Family-Class": "*",
@@ -2476,7 +2116,7 @@
  },
  {
    "Source": "ST3",
-   "Entry ID": "142",
+   "Entry ID": 142,
    "LNIC Code": "LNIC-218-142",
    "WHO-HAEM5 Category": "Tumour-like lesions with T-cell predominance",
    "WHO-HAEM5 Family-Class": "*",
@@ -2487,26 +2127,26 @@
    "Category": "Reactive T-cell",
    "Class-Family": "Tumour-like lesions with T-cell predominance",
    "Entity-Type": "iT-LBP",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST4",
-   "Entry ID": "143",
+   "Entry ID": 143,
    "LNIC Code": "LNIC-006-143",
    "WHO-HAEM5 Category": "Precursor T-cell neoplasms",
    "WHO-HAEM5 Family-Class": "T-lymphoblastic leukaemia / lymphoma (T-ALL/LBL)",
-   "WHO-HAEM5 Entity-Type": "T-lymphoblastic leukaemia / lymphoma, NOS  ",
+   "WHO-HAEM5 Entity-Type": "T-lymphoblastic leukaemia / lymphoma, NOS  ",
    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "T-cell and natural killer cell lymphoma (T- and NK- NHL)",
    "Lineage-Nature": "LN",
    "Major Group": "NHL",
    "Category": "Precursor T-cell",
    "Class-Family": "T-ALL/LBL",
    "Entity-Type": "T-ALL/LBL,NOS",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  },
  {
    "Source": "ST4",
-   "Entry ID": "144",
+   "Entry ID": 144,
    "LNIC Code": "LNIC-006-144",
    "WHO-HAEM5 Category": "Precursor T-cell neoplasms",
    "WHO-HAEM5 Family-Class": "T-lymphoblastic leukaemia / lymphoma (T-ALL/LBL)",
@@ -2517,6 +2157,6 @@
    "Category": "Precursor T-cell",
    "Class-Family": "T-ALL/LBL",
    "Entity-Type": "ETP-ALL",
-   "Subtype(s)": null
+   "Subtype(s)": ""
  }
 ]

@@ -290,7 +290,11 @@ function render(nodes, links) {
         data: nodes,
         links: links,
         labelLayout: { hideOverlap: true },
-        label: { width: 120, fontSize: 12 },
+        label: { 
+          width: 120, 
+          fontSize: 12,
+          formatter: ({ name }) => stripPrefix(name) 
+        },
         // do NOT set a series-level itemStyle.color — we want per-node colors to show
         lineStyle: {
               color: 'source',

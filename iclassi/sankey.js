@@ -61,31 +61,34 @@ const stripPrefix = s => s.replace(/^[A-Z0-9]+\|/, '');
 // ------- build graph (namespaced, dedup) -------
 function buildFromRows(rows) {
   const nodeSet = new Set([ROOT_KEY]);
-  const linkMap = new Map(); // "A||B" -> weight
+  const childMap = new Map(); // parent -> Set(children)
 
-  function addLink(a, b, w = 1) {
+  function addLink(a, b) {
     if (!a || !b || a === b) return;
     nodeSet.add(a); nodeSet.add(b);
-    const k = a + '||' + b;
-    linkMap.set(k, (linkMap.get(k) || 0) + w);
+    if (!childMap.has(a)) childMap.set(a, new Set());
+    childMap.get(a).add(b);
   }
 
   rows.forEach(r => {
     const chain = COLS.map(c => [c, norm(r[c])]).filter(([, v]) => !!v);
     if (!chain.length) return;
 
-    addLink(ROOT_KEY, keyFor(chain[0][0], chain[0][1]), 1);
+    addLink(ROOT_KEY, keyFor(chain[0][0], chain[0][1]));
     for (let i = 0; i < chain.length - 1; i++) {
       const [colA, valA] = chain[i];
       const [colB, valB] = chain[i + 1];
-      addLink(keyFor(colA, valA), keyFor(colB, valB), 1);
+      addLink(keyFor(colA, valA), keyFor(colB, valB));
     }
   });
 
   const nodes = [...nodeSet].map(name => ({ name }));
-  const links = [...linkMap.entries()].map(([k, w]) => {
-    const [source, target] = k.split('||');
-    return { source, target, value: w };
+  const links = [];
+  childMap.forEach((children, parent) => {
+    const weight = parent === ROOT_KEY ? 1 : 1 / children.size;
+    children.forEach(child => {
+      links.push({ source: parent, target: child, value: weight });
+    });
   });
 
   return { nodes, links };

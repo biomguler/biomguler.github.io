@@ -132,26 +132,26 @@
     <!-- Initialize the table via table.js -->
     <script>
         const columnsConfig = [
-            { data: 'ID', visible: false }, // Initially hidden
-            { data: 'IHC Code' },
-            { data: 'Table', visible: false }, // Initially hidden
-            { data: 'Main Category(2022 WHO)', visible: false }, // Initially hidden
-            { data: 'Family/class(2022 WHO)', visible: false }, // Initially hidden
-            { data: 'Subtype/entity(Interlymph 2024)' },
-            { data: 'Category' },
-            { data: 'L1' },
-            { data: 'L2' },
-            { data: 'L3' },
-            { data: 'L4' },
-            { data: 'L5' },
-            { data: 'L6' }
+            { data: 'Source', visible: false }, // Initially hidden
+            { data: 'Entry ID', visible: false }, // Initially hidden
+            { data: 'LNIC Code', visible: true }, // Initially hidden
+            { data: 'WHO-HAEM5 Category', visible: true }, // Initially hidden
+            { data: 'WHO-HAEM5 Family/Class', visible: true }, // Initially hidden
+            { data: 'WHO-HAEM5 Entity/Type', visible: true }, // Initially hidden
+            { data: 'Interlymph 2010 Entity/Type based on WHO-HAEM4', visible: true }, // Initially hidden
+            { data: 'Lineage/Nature', visible: true}, // Initially hidden
+            { data: 'Major Group', visible: true }, // Initially hidden
+            { data: 'Category', visible: true }, // Initially hidden
+            { data: 'Class/Family', visible: true }, // Initially hidden
+            { data: 'Entity/Type', visible: true }, // Initially hidden
+            { data: 'Subtype(s)', visible: true }, // Initially hidden
+            
+
         ];
 
         const toggleConfig = {
-            '#toggleID': 0,
-            '#toggleTable': 2,
-            '#toggleMainCategory': 3,
-            '#toggleFamilyClass': 4
+            '#toggleSource': 0,
+            '#toggleEntryID': 1
         };
 
         // Initialize table using the new script

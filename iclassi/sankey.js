@@ -26,8 +26,13 @@ const COL_TAGS = {
 };
 
 // optional colors for top buckets
+// Update the keys below to match your "Major Group" values exactly as they appear in your data
 const GROUP_COLORS = {
-  NHL:'#5470C6', HL:'#EE6666', LPD:'#91CC75', 'PM-LN':'#FAC858', 'ID-LN':'#73C0DE'
+  'NHL': '#5470C6',
+  'HL': '#EE6666',
+  'LPD': '#91CC75',
+  'PM-LN': '#FAC858',
+  'ID-LN': '#73C0DE'
 };
 const DEFAULT_NODE_COLOR = '#1f77b4';
 
@@ -77,7 +82,7 @@ function buildFromRows(rows) {
     const label = stripPrefix(name);
     // Color only the Major Group (MG|…) nodes by palette
     let color = DEFAULT_NODE_COLOR;
-    if (name.startsWith('MG|')) color = GROUP_COLORS[label] || DEFAULT_NODE_COLOR;
+    if (name.startsWith('L2|')) color = GROUP_COLORS[label] || DEFAULT_NODE_COLOR;
     return { name, itemStyle: { color, borderColor: color } };
   });
 
@@ -157,6 +162,9 @@ function render(nodes, links) {
   window.addEventListener('resize', () => chart.resize());
 }
 
+// Add resize listener only once, outside render
+window.addEventListener('resize', () => chart.resize());
+
 // ---------- filter + download ----------
 function filterGraph(nodes, links, q) {
   const query = (q || '').trim().toLowerCase();
@@ -183,8 +191,7 @@ document.getElementById('download').addEventListener('click', () => {
 });
 
 // ---------- load & go ----------
-let current = { nodes: [], links: [] };
-
+// Entry point: loads data, builds the graph, and renders the chart
 (async function init() {
   try {
     const rows = await fetch(DATA_URL).then(r => {
@@ -204,4 +211,4 @@ let current = { nodes: [], links: [] };
     ];
     render(nodes, links);
   }
-})();
+})()

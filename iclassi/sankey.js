@@ -282,17 +282,20 @@ function render(nodes, links) {
       }
     },
     animation: true,
-    series: [{
-      type: 'sankey',
-      nodeAlign: 'right',        
-      emphasis: { focus: 'trajectory' },
-      data: nodes,
-      links: links,
-      // do NOT set a series-level itemStyle.color — we want per-node colors to show
-      lineStyle: {
-            color: 'source',
-            curveness: 0.5
-          }
+      series: [{
+        type: 'sankey',
+        nodeAlign: 'right',
+        emphasis: { focus: 'trajectory' },
+        nodeGap: 8,
+        data: nodes,
+        links: links,
+        labelLayout: { hideOverlap: true },
+        label: { width: 120, fontSize: 12 },
+        // do NOT set a series-level itemStyle.color — we want per-node colors to show
+        lineStyle: {
+              color: 'source',
+              curveness: 0.5
+            }
       
     }]
   };

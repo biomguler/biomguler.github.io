@@ -58,6 +58,13 @@ const norm = s => (s ?? '').toString().trim();
 const keyFor = (col, val) => `${(COL_TAGS[col] || 'X')}|${norm(val)}`;
 const stripPrefix = s => s.replace(/^[A-Z0-9]+\|/, '');
 
+// default depth threshold for initial rendering
+let visibleDepth = 4;
+
+// hold the full graph (all depths) and the currently rendered subset
+let fullGraph = { nodes: [], links: [], childMap: new Map() };
+let current   = { nodes: [], links: [] };
+
 // ------- build graph (namespaced, dedup) -------
 function buildFromRows(rows) {
   const nodeSet = new Set([ROOT_KEY]);
@@ -82,7 +89,14 @@ function buildFromRows(rows) {
     }
   });
 
-  const nodes = [...nodeSet].map(name => ({ name }));
+  const nodes = [...nodeSet].map(name => {
+    let depth = 0;
+    if (name !== ROOT_KEY) {
+      const m = name.match(/^L(\d+)\|/);
+      depth = m ? parseInt(m[1], 10) : 0;
+    }
+    return { name, depth, children: Array.from(childMap.get(name) || []) };
+  });
   const links = [];
   childMap.forEach((children, parent) => {
     const weight = parent === ROOT_KEY ? 1 : 1 / children.size;
@@ -91,7 +105,7 @@ function buildFromRows(rows) {
     });
   });
 
-  return { nodes, links };
+  return { nodes, links, childMap };
 }
 
 // ------- color propagation from L2 (Major Group) -------
@@ -192,9 +206,62 @@ function assertDAG(nodes, links) {
   if (seen !== nodes.length) throw new Error('Local DAG check failed: cycle present.');
 }
 
+// filter graph by depth
+function filterByDepth(nodes, links, depthLimit) {
+  const keptNodes = nodes.filter(n => (n.depth || 0) <= depthLimit);
+  const names = new Set(keptNodes.map(n => n.name));
+  const keptLinks = links.filter(l => names.has(l.source) && names.has(l.target));
+  return { nodes: keptNodes, links: keptLinks };
+}
+
+// recursively collect all descendant node names
+function getDescendants(name) {
+  const result = new Set();
+  const stack = [...(fullGraph.childMap.get(name) || [])];
+  while (stack.length) {
+    const n = stack.pop();
+    if (!result.has(n)) {
+      result.add(n);
+      stack.push(...(fullGraph.childMap.get(n) || []));
+    }
+  }
+  return result;
+}
+
+// expand a node to reveal its hidden descendants
+function expandNode(name) {
+  const descendants = getDescendants(name);
+  if (!descendants.size) return;
+  const nodeMap = new Map(fullGraph.nodes.map(n => [n.name, n]));
+  const nodeSet = new Set(current.nodes.map(n => n.name));
+  const linkSet = new Set(current.links.map(l => `${l.source}|${l.target}`));
+
+  descendants.forEach(n => {
+    if (!nodeSet.has(n)) {
+      const node = nodeMap.get(n);
+      if (node) { current.nodes.push(node); nodeSet.add(n); }
+    }
+  });
+
+  fullGraph.links.forEach(l => {
+    if (nodeSet.has(l.source) && nodeSet.has(l.target)) {
+      const key = `${l.source}|${l.target}`;
+      if (!linkSet.has(key)) { current.links.push(l); linkSet.add(key); }
+    }
+  });
+
+  render(current.nodes, current.links);
+}
+
 // ------- render (nodeAlign: 'right') -------
 const chartEl = document.getElementById('chart');
 const chart = echarts.init(chartEl, null, { useDirtyRect: true });
+
+chart.on('click', params => {
+  if (params.dataType === 'node' && params.data.depth === visibleDepth) {
+    expandNode(params.data.name);
+  }
+});
 
 function render(nodes, links) {
   assertDAG(nodes, links);
@@ -261,6 +328,13 @@ document.getElementById('download').addEventListener('click', () => {
   const a = document.createElement('a'); a.href = url; a.download = 'ln-sankey.png'; a.click();
 });
 
+// collapse all expansions
+document.getElementById('collapse')?.addEventListener('click', () => {
+  document.getElementById('filter').value = '';
+  current = filterByDepth(fullGraph.nodes, fullGraph.links, visibleDepth);
+  render(current.nodes, current.links);
+});
+
 // fullscreen toggle
 const fsBtn = document.getElementById('fullscreen');
 const chartContainer = document.getElementById('chart-container');
@@ -274,8 +348,6 @@ fsBtn?.addEventListener('click', () => {
 document.addEventListener('fullscreenchange', () => chart.resize());
 
 // ------- init -------
-let current = { nodes: [], links: [] };
-
 (async function init() {
   try {
     const rows = await fetch(DATA_URL).then(r => {
@@ -286,18 +358,31 @@ let current = { nodes: [], links: [] };
 
     const built   = buildFromRows(rows);
     const colored = applyGroupColors(built.nodes, built.links);
-    current = colored;
+    fullGraph = { nodes: colored.nodes, links: colored.links, childMap: built.childMap };
+    current = filterByDepth(fullGraph.nodes, fullGraph.links, visibleDepth);
     render(current.nodes, current.links);
   } catch (e) {
     console.error('Init failed:', e);
     // tiny fallback so you see something
-    const nodes = [{ name: ROOT_KEY }, { name: 'L2|NHL' }, { name: 'L3|Large B-cell lymphomas (LBCL)' }];
+    const nodes = [
+      { name: ROOT_KEY, depth: 0, children: ['L2|NHL'] },
+      { name: 'L2|NHL', depth: 2, children: ['L3|Large B-cell lymphomas (LBCL)'] },
+      { name: 'L3|Large B-cell lymphomas (LBCL)', depth: 3, children: [] }
+    ];
     const links = [
       { source: ROOT_KEY, target: 'L2|NHL', value: 1 },
       { source: 'L2|NHL', target: 'L3|Large B-cell lymphomas (LBCL)', value: 1 }
     ];
     const colored = applyGroupColors(nodes, links);
-    current = colored;
+    fullGraph = {
+      nodes: colored.nodes,
+      links: colored.links,
+      childMap: new Map([
+        [ROOT_KEY, new Set(['L2|NHL'])],
+        ['L2|NHL', new Set(['L3|Large B-cell lymphomas (LBCL)'])]
+      ])
+    };
+    current = filterByDepth(fullGraph.nodes, fullGraph.links, visibleDepth);
     render(current.nodes, current.links);
   }
 })();

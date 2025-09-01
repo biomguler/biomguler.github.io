@@ -6,9 +6,9 @@
   <title>LN-IHC Tool</title>
   <link rel="stylesheet" href="styles.css"/>
 
-  <!-- Remove Highcharts includes for this page and add ECharts -->
-  <!-- <script src="https://code.highcharts.com/highcharts.js"></script> ... -->
+  <!-- ECharts -->
   <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
 
   <style>
     /* tiny bit of local CSS for the toolbar, if not in styles.css yet */
@@ -45,15 +45,16 @@
 
       <!-- Toolbar + Sankey container -->
       <div class="toolbar">
-        <strong>LN Sankey (ihc.json)</strong>
-        <span class="spacer"></span>
-        <label>Filter:
-          <input id="filter" type="text" placeholder="e.g. follicular, HL, TFH"/>
-        </label>
-        <button id="reset">Reset</button>
-        <button id="download">Download PNG</button>
-      </div>
-      <div id="chart"></div>
+  <strong>LN Sankey (ihc.json)</strong>
+  <span class="spacer"></span>
+  <label>Filter:
+    <input id="filter" type="text" placeholder="e.g. follicular, HL, TFH" />
+  </label>
+  <button id="reset">Reset</button>
+  <button id="download">Download PNG</button>
+</div>
+<div id="chart"></div>
+
 
       <p class="highcharts-description" style="margin-top:.5rem">
         InterLymph / WHO-HAEM5 relationships shown as a Sankey (multi-parent friendly).

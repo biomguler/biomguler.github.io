@@ -217,7 +217,7 @@ function render(nodes, links) {
     animation: true,
     series: [{
       type: 'sankey',
-      nodeAlign: 'right',           // << like the demo you found
+      nodeAlign: 'right',        
       emphasis: { focus: 'trajectory' },
       data: nodes,
       links: links,

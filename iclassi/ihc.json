@@ -78,7 +78,7 @@
    "Entity": {
       "Type": "HCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -105,7 +105,7 @@
    "Entity": {
       "Type": "SMZL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -132,7 +132,7 @@
    "Entity": {
       "Type": "SDRPL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -159,7 +159,7 @@
    "Entity": {
       "Type": "SBLPN"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -267,7 +267,7 @@
    "Entity": {
       "Type": "NMZL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -294,7 +294,7 @@
    "Entity": {
       "Type": "pNMZL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -321,7 +321,7 @@
    "Entity": {
       "Type": "ISFN"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -375,7 +375,7 @@
    "Entity": {
       "Type": "PTFL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -402,7 +402,7 @@
    "Entity": {
       "Type": "DTFL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -429,7 +429,7 @@
    "Entity": {
       "Type": "PCFCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -456,7 +456,7 @@
    "Entity": {
       "Type": "ISMCN"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -510,7 +510,7 @@
    "Entity": {
       "Type": "nnMCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -537,7 +537,7 @@
    "Entity": {
       "Type": "HGT of entity (CLL, MZL, LPL, FL)"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -645,7 +645,7 @@
    "Entity": {
       "Type": "ALK-positive DLBCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -672,7 +672,7 @@
    "Entity": {
       "Type": "LBCL-IRF4 "
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -699,7 +699,7 @@
    "Entity": {
       "Type": "LBCL-HGBL-11q"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -753,7 +753,7 @@
    "Entity": {
       "Type": "EBV-positive DLBCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -780,7 +780,7 @@
    "Entity": {
       "Type": "CI-DLBCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -807,7 +807,7 @@
    "Entity": {
       "Type": "FA-LBCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -834,7 +834,7 @@
    "Entity": {
       "Type": "FO-LBCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -861,7 +861,7 @@
    "Entity": {
       "Type": "PBL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -915,7 +915,7 @@
    "Entity": {
       "Type": "PCLBCL-LT"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -969,7 +969,7 @@
    "Entity": {
       "Type": "PMBCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -996,7 +996,7 @@
    "Entity": {
       "Type": "MGZL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -1104,7 +1104,7 @@
    "Entity": {
       "Type": "KSHV/HHV8-positive DLBCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -1131,7 +1131,7 @@
    "Entity": {
       "Type": "KSHV/HHV8-positive GLPD"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -1212,7 +1212,7 @@
    "Entity": {
       "Type": "CAD"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -1239,7 +1239,7 @@
    "Entity": {
       "Type": "IgMMGUS"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -1374,7 +1374,7 @@
    "Entity": {
       "Type": "Mu HCD"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -1401,7 +1401,7 @@
    "Entity": {
       "Type": "GammaHCD"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -1428,7 +1428,7 @@
    "Entity": {
       "Type": "Alpha HCD"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T1",
@@ -1536,7 +1536,7 @@
    "Entity": {
       "Type": "T-PLL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1563,7 +1563,7 @@
    "Entity": {
       "Type": "T-LGLL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1590,7 +1590,7 @@
    "Entity": {
       "Type": "NK-LGLL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1644,7 +1644,7 @@
    "Entity": {
       "Type": "SS"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1671,7 +1671,7 @@
    "Entity": {
       "Type": "ANKL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1698,7 +1698,7 @@
    "Entity": {
       "Type": "PCSM-LPD"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1725,7 +1725,7 @@
    "Entity": {
       "Type": "Primary cutaneous acral CD8-positive LPD"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1806,7 +1806,7 @@
    "Entity": {
       "Type": "C-ALCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1833,7 +1833,7 @@
    "Entity": {
       "Type": "SPTCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1860,7 +1860,7 @@
    "Entity": {
       "Type": "PCGD-TCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1887,7 +1887,7 @@
    "Entity": {
       "Type": "PCAETL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1914,7 +1914,7 @@
    "Entity": {
       "Type": "PCPTCL-NOS"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1941,7 +1941,7 @@
    "Entity": {
       "Type": "iTCL-GI"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1968,7 +1968,7 @@
    "Entity": {
       "Type": "iNK-LPD"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -1995,7 +1995,7 @@
    "Entity": {
       "Type": "EATL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2022,7 +2022,7 @@
    "Entity": {
       "Type": "MEITL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2049,7 +2049,7 @@
    "Entity": {
       "Type": "ITCL-NOS"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2076,7 +2076,7 @@
    "Entity": {
       "Type": "Hepatosplenic T-cell lymphoma"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2103,7 +2103,7 @@
    "Entity": {
       "Type": "ALK positive ALCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2130,7 +2130,7 @@
    "Entity": {
       "Type": "ALK-negative ALCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2157,7 +2157,7 @@
    "Entity": {
       "Type": "BIA-ALCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2184,7 +2184,7 @@
    "Entity": {
       "Type": "nTFHL-AI"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2211,7 +2211,7 @@
    "Entity": {
       "Type": "nTFHL-F"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2238,7 +2238,7 @@
    "Entity": {
       "Type": "nTFHL-NOS"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2265,7 +2265,7 @@
    "Entity": {
       "Type": "PTCLNOS"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2292,7 +2292,7 @@
    "Entity": {
       "Type": "EBV-positive nodal T- and NK-cell lymphoma"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2346,7 +2346,7 @@
    "Entity": {
       "Type": "Severe mosquito bite allergy"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2400,7 +2400,7 @@
    "Entity": {
       "Type": "CAEBV"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T2",
@@ -2427,7 +2427,7 @@
    "Entity": {
       "Type": "SEBVTCL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2454,7 +2454,7 @@
    "Entity": {
       "Type": "PTLD-PH"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2481,7 +2481,7 @@
    "Entity": {
       "Type": "PTLD-IM-like"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2508,7 +2508,7 @@
    "Entity": {
       "Type": "PTLD-PH"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2535,7 +2535,7 @@
    "Entity": {
       "Type": "PTLD-M-B-cell"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2562,7 +2562,7 @@
    "Entity": {
       "Type": "PTLD-M-T-cell"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2589,7 +2589,7 @@
    "Entity": {
       "Type": "PTLD-CHL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2616,7 +2616,7 @@
    "Entity": {
       "Type": "PID-LPD-P"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2643,7 +2643,7 @@
    "Entity": {
       "Type": "PID-LPD-B-cell"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2670,7 +2670,7 @@
    "Entity": {
       "Type": "PID-LPD-T or NK cell"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2697,7 +2697,7 @@
    "Entity": {
       "Type": "PID-T-ALL/LBL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2724,7 +2724,7 @@
    "Entity": {
       "Type": "PID-CHL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2751,7 +2751,7 @@
    "Entity": {
       "Type": "HIV-LPD-P"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2778,7 +2778,7 @@
    "Entity": {
       "Type": "HIV-LPD-B-cell"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2805,7 +2805,7 @@
    "Entity": {
       "Type": "HIV-LPD-T or NK cell"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2832,7 +2832,7 @@
    "Entity": {
       "Type": "HIV-CHL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2859,7 +2859,7 @@
    "Entity": {
       "Type": "IAT-LPD-P"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2886,7 +2886,7 @@
    "Entity": {
       "Type": "IAT-LPD-B-cell"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2913,7 +2913,7 @@
    "Entity": {
       "Type": "IAT-LPD-T or NK cell"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "T3",
@@ -2940,7 +2940,7 @@
    "Entity": {
       "Type": "IAT-CHL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST1",
@@ -2967,7 +2967,7 @@
    "Entity": {
       "Type": "Florid follicular hyperplasia"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST1",
@@ -2994,7 +2994,7 @@
    "Entity": {
       "Type": "Progressive transformation of germinal centres"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST1",
@@ -3021,7 +3021,7 @@
    "Entity": {
       "Type": "Systemic lupus erythematosus"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST1",
@@ -3048,7 +3048,7 @@
    "Entity": {
       "Type": "Sjogren syndrome"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST1",
@@ -3075,7 +3075,7 @@
    "Entity": {
       "Type": "Lymphoma-like lesions of the female genital tract"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST1",
@@ -3102,7 +3102,7 @@
    "Entity": {
       "Type": "Rectal tonsil"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST1",
@@ -3129,7 +3129,7 @@
    "Entity": {
       "Type": "IgG4-RD"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST1",
@@ -3210,7 +3210,7 @@
    "Entity": {
       "Type": "Drug sensitivity"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST1",
@@ -3399,7 +3399,7 @@
    "Entity": {
       "Type": "KSHV8/HHV-MCD"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3453,7 +3453,7 @@
    "Entity": {
       "Type": "B-ALL/B-LBL-RGA"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3480,7 +3480,7 @@
    "Entity": {
       "Type": "B-ALL/LBL with hypodiploidy"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3507,7 +3507,7 @@
    "Entity": {
       "Type": "B-ALL/LBL with iAMP21"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3534,7 +3534,7 @@
    "Entity": {
       "Type": "B-ALL/LBL with BCR::ABL1 fusion"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3561,7 +3561,7 @@
    "Entity": {
       "Type": "B-ALL/LBL with BCR::ABL1-like features"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3588,7 +3588,7 @@
    "Entity": {
       "Type": "B-ALL/LBL with KMT2A rearrangement"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3615,7 +3615,7 @@
    "Entity": {
       "Type": "B-ALL/LBL with ETV6::RUNX1 fusion"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3642,7 +3642,7 @@
    "Entity": {
       "Type": "B-ALL/LBL with ETV6::RUNX1-like features"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3669,7 +3669,7 @@
    "Entity": {
       "Type": "B-ALL/LBL with TCF3::PBX1 fusion"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3696,7 +3696,7 @@
    "Entity": {
       "Type": "B-ALL/LBL with IGH::IL3 fusion"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3723,7 +3723,7 @@
    "Entity": {
       "Type": "B-ALL/LBL with TCF3:HLF fusion"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST2",
@@ -3777,7 +3777,7 @@
    "Entity": {
       "Type": "KFD"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST3",
@@ -3831,7 +3831,7 @@
    "Entity": {
       "Type": "iT-LBP"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST4",
@@ -3858,7 +3858,7 @@
    "Entity": {
       "Type": "T-ALL/LBL,NOS"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 },
  {
    "Source": "ST4",
@@ -3885,6 +3885,6 @@
    "Entity": {
       "Type": "ETP-ALL"
    },
-   "Subtype(s)": ""
+   "Subtype(s)": null
 }
 ]

@@ -324,6 +324,7 @@ document.getElementById('filter').addEventListener('input', e => {
 });
 document.getElementById('reset').addEventListener('click', () => {
   document.getElementById('filter').value = '';
+  current = filterByDepth(fullGraph.nodes, fullGraph.links, visibleDepth);
   render(current.nodes, current.links);
 });
 document.getElementById('download').addEventListener('click', () => {

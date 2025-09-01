@@ -1,11 +1,11 @@
 // ==========================
-// sankey.js (cycle-proof)
+// sankey.js (namespaced + group-color propagation)
 // ==========================
 
 // -------- settings --------
 const DATA_URL = 'ihc.json'; // same folder as index.html
 
-// Build the flow from these columns (left → right) using your exact keys
+// Build the flow from these columns (left → right)
 const COLS = [
   'Lineage-Nature',     // L1
   'Major Group',        // L2
@@ -18,19 +18,18 @@ const COLS = [
 // short tags per column (for unique node keys)
 const COL_TAGS = {
   'Lineage-Nature': 'L1',
-  'Major Group': 'L2',
-  'Category': 'L3',
-  'Class-Family': 'L4',
-  'Entity-Type': 'L5',
-  'Subtype(s)': 'L6'
+  'Major Group':     'L2',
+  'Category':        'L3',
+  'Class-Family':    'L4',
+  'Entity-Type':     'L5',
+  'Subtype(s)':      'L6'
 };
 
-// optional colors for top buckets
-// Update the keys below to match your "Major Group" values exactly as they appear in your data
+// colors for Major Group (L2)
 const GROUP_COLORS = {
-  'NHL': '#5470C6',
-  'HL': '#EE6666',
-  'LPD': '#91CC75',
+  'NHL':   '#5470C6',
+  'HL':    '#EE6666',
+  'LPD':   '#91CC75',
   'PM-LN': '#FAC858',
   'ID-LN': '#73C0DE'
 };
@@ -44,32 +43,25 @@ const norm = s => (s ?? '').toString().trim();
 const keyFor = (col, val) => `${(COL_TAGS[col] || 'X')}|${norm(val)}`;
 const stripPrefix = s => s.replace(/^[A-Z]+?\|/, '');
 
-// ---------- build graph (namespaced nodes, dedup, no self-loops) ----------
+// ---------- build graph ----------
 function buildFromRows(rows) {
   const nodeSet = new Set([ROOT_KEY]);
   const linkMap = new Map(); // "A||B" -> weight
-  let used = 0;
 
   function addLink(a, b, w = 1) {
-    if (!a || !b) return;
-    if (a === b) return;                 // guard self-loops
+    if (!a || !b || a === b) return;
     nodeSet.add(a); nodeSet.add(b);
     const k = a + '||' + b;
     linkMap.set(k, (linkMap.get(k) || 0) + w);
   }
 
+  let used = 0;
   rows.forEach(r => {
-    const chain = COLS
-      .map(c => [c, norm(r[c])])
-      .filter(([, v]) => !!v);
-
+    const chain = COLS.map(c => [c, norm(r[c])]).filter(([,v]) => !!v);
     if (!chain.length) return;
     used++;
 
-    // Root → first level
     addLink(ROOT_KEY, keyFor(chain[0][0], chain[0][1]), 1);
-
-    // Chain through levels
     for (let i = 0; i < chain.length - 1; i++) {
       const [colA, valA] = chain[i];
       const [colB, valB] = chain[i + 1];
@@ -77,16 +69,7 @@ function buildFromRows(rows) {
     }
   });
 
-  // Nodes
-  const nodes = [...nodeSet].map(name => {
-    const label = stripPrefix(name);
-    // Color only the Major Group (MG|…) nodes by palette
-    let color = DEFAULT_NODE_COLOR;
-    if (name.startsWith('L2|')) color = GROUP_COLORS[label] || DEFAULT_NODE_COLOR;
-    return { name, itemStyle: { color, borderColor: color } };
-  });
-
-  // Links (dedup already via linkMap; self-loops already filtered)
+  const nodes = [...nodeSet].map(name => ({ name }));
   const links = [...linkMap.entries()].map(([k, w]) => {
     const [source, target] = k.split('||');
     return { source, target, value: w };
@@ -96,23 +79,90 @@ function buildFromRows(rows) {
   return { nodes, links };
 }
 
-// ---------- simple DAG sanity check (optional; throws on cycle) ----------
+// ---------- propagate Major Group (L2) colors to all nodes + links ----------
+function applyGroupColors(nodes, links) {
+  const nameToNode = new Map(nodes.map(n => [n.name, n]));
+  const parents = new Map();  // child -> Set(parents)
+  const children = new Map(); // parent -> Set(children)
+
+  nodes.forEach(n => { parents.set(n.name, new Set()); children.set(n.name, new Set()); });
+  links.forEach(l => { parents.get(l.target)?.add(l.source); children.get(l.source)?.add(l.target); });
+
+  // Cache for group color lookup
+  const groupColorCache = new Map();
+
+  function colorOfGroupLabel(label) {
+    return GROUP_COLORS[label] || DEFAULT_NODE_COLOR;
+  }
+
+  function findNearestL2Ancestor(nodeName, seen = new Set()) {
+    if (groupColorCache.has(nodeName)) return groupColorCache.get(nodeName);
+
+    // if this node itself is L2|X use that color
+    if (nodeName.startsWith('L2|')) {
+      const label = stripPrefix(nodeName);
+      const color = colorOfGroupLabel(label);
+      groupColorCache.set(nodeName, color);
+      return color;
+    }
+
+    // BFS upstream until we hit any L2
+    const q = [nodeName];
+    seen.add(nodeName);
+    while (q.length) {
+      const u = q.shift();
+      const ps = parents.get(u) || new Set();
+      for (const p of ps) {
+        if (p.startsWith('L2|')) {
+          const label = stripPrefix(p);
+          const color = colorOfGroupLabel(label);
+          groupColorCache.set(nodeName, color);
+          return color;
+        }
+        if (!seen.has(p)) { seen.add(p); q.push(p); }
+      }
+    }
+    // nothing found: default
+    groupColorCache.set(nodeName, DEFAULT_NODE_COLOR);
+    return DEFAULT_NODE_COLOR;
+  }
+
+  // assign node colors based on nearest L2 ancestor
+  nodes.forEach(n => {
+    let color = DEFAULT_NODE_COLOR;
+    if (n.name === ROOT_KEY) {
+      color = DEFAULT_NODE_COLOR;
+    } else if (n.name.startsWith('L2|')) {
+      color = colorOfGroupLabel(stripPrefix(n.name));
+    } else {
+      color = findNearestL2Ancestor(n.name);
+    }
+    n.itemStyle = { color, borderColor: color };
+  });
+
+  // color each link based on the color of its TARGET's major group (or source—choose one).
+  // Using target makes downstream flows look consistent by group.
+  links.forEach(l => {
+    const targetColor =
+      nodes.find(n => n.name === l.target)?.itemStyle?.color || DEFAULT_NODE_COLOR;
+    l.lineStyle = { color: targetColor, opacity: 0.9 };
+  });
+
+  return { nodes, links };
+}
+
+// ---------- simple DAG check (defensive) ----------
 function assertDAG(nodes, links) {
   const adj = new Map(), indeg = new Map();
   nodes.forEach(n => { adj.set(n.name, []); indeg.set(n.name, 0); });
-  links.forEach(l => {
-    if (!adj.has(l.source)) adj.set(l.source, []);
-    adj.get(l.source).push(l.target);
-    indeg.set(l.target, (indeg.get(l.target) || 0) + 1);
-  });
-  const q = [];
-  indeg.forEach((d, k) => { if (d === 0) q.push(k); });
+  links.forEach(l => { adj.get(l.source)?.push(l.target); indeg.set(l.target, (indeg.get(l.target)||0) + 1); });
+  const q = []; indeg.forEach((d,k)=>{ if(d===0) q.push(k); });
   let seen = 0;
   while (q.length) {
     const u = q.shift(); seen++;
-    (adj.get(u) || []).forEach(v => {
-      indeg.set(v, indeg.get(v) - 1);
-      if (indeg.get(v) === 0) q.push(v);
+    (adj.get(u)||[]).forEach(v => {
+      indeg.set(v, indeg.get(v)-1);
+      if (indeg.get(v)===0) q.push(v);
     });
   }
   if (seen !== nodes.length) throw new Error('Local DAG check failed: cycle present.');
@@ -122,7 +172,6 @@ function assertDAG(nodes, links) {
 const chart = echarts.init(document.getElementById('chart'));
 
 function render(nodes, links) {
-  // Optional: verify no cycle before rendering
   assertDAG(nodes, links);
 
   const option = {
@@ -141,29 +190,28 @@ function render(nodes, links) {
     },
     series: [{
       type: 'sankey',
-      left: 50, top: 20, right: 150, bottom: 25,
+      left: 20, top: 10, right: 20, bottom: 10,   // give it more room
       data: nodes,
       links: links,
-      lineStyle: { color: 'source', curveness: 0.5 },
+      // We color links individually, so no global color rule needed here:
+      lineStyle: { curveness: 0.5 },
+      // Node default (overridden per node above):
       itemStyle: { color: DEFAULT_NODE_COLOR, borderColor: DEFAULT_NODE_COLOR },
       label: {
-        color: 'rgba(0,0,0,0.7)',
+        color: 'rgba(0,0,0,0.8)',
         fontFamily: 'Arial',
-        fontSize: 10,
+        fontSize: 11,
         formatter: params => stripPrefix(params.name)
       },
-      nodeWidth: 22, nodeGap: 10, layoutIterations: 64,
+      nodeWidth: 24,
+      nodeGap: 12,
+      layoutIterations: 64,
       emphasis: { focus: 'adjacency' }
     }]
   };
 
-  // IMPORTANT: render fresh each time to avoid lingering edges that form cycles
   chart.setOption(option, { notMerge: true, lazyUpdate: false });
-  window.addEventListener('resize', () => chart.resize());
 }
-
-// Add resize listener only once, outside render
-window.addEventListener('resize', () => chart.resize());
 
 // ---------- filter + download ----------
 function filterGraph(nodes, links, q) {
@@ -189,9 +237,11 @@ document.getElementById('download').addEventListener('click', () => {
   const url = chart.getDataURL({ type: 'png', backgroundColor: '#ffffff' });
   const a = document.createElement('a'); a.href = url; a.download = 'ln-sankey.png'; a.click();
 });
+window.addEventListener('resize', () => chart.resize());
 
 // ---------- load & go ----------
-// Entry point: loads data, builds the graph, and renders the chart
+let current = { nodes: [], links: [] };
+
 (async function init() {
   try {
     const rows = await fetch(DATA_URL).then(r => {
@@ -199,16 +249,20 @@ document.getElementById('download').addEventListener('click', () => {
       return r.json();
     });
     if (!Array.isArray(rows)) throw new Error('ihc.json must be a JSON array of row objects.');
-    current = buildFromRows(rows);
+
+    const built = buildFromRows(rows);
+    const colored = applyGroupColors(built.nodes, built.links);
+    current = colored;
     render(current.nodes, current.links);
   } catch (e) {
     console.error('Init failed:', e);
     // Minimal fallback to verify the chart mounts
-    const nodes = [{ name: ROOT_KEY }, { name: 'MG|NHL' }, { name: 'C1|Large B-cell lymphomas (LBCL)' }];
+    const nodes = [{ name: ROOT_KEY }, { name: 'L2|NHL' }, { name: 'L3|Large B-cell lymphomas (LBCL)' }];
     const links = [
-      { source: ROOT_KEY, target: 'MG|NHL', value: 1 },
-      { source: 'MG|NHL', target: 'C1|Large B-cell lymphomas (LBCL)', value: 1 }
+      { source: ROOT_KEY, target: 'L2|NHL', value: 1 },
+      { source: 'L2|NHL', target: 'L3|Large B-cell lymphomas (LBCL)', value: 1 }
     ];
-    render(nodes, links);
+    const colored = applyGroupColors(nodes, links);
+    render(colored.nodes, colored.links);
   }
-})()
+})();

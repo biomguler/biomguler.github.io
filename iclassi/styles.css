@@ -304,11 +304,15 @@ table {
 }
 .toolbar .spacer { flex: 1; }
 
-/* IMPORTANT: give the ECharts div a height */
+
 #chart {
   width: 100%;
-  height: 700px;     /* or 80vh */
-  max-width: 1200px; /* optional */
-  margin: 0 auto;    /* center */
+  height: 80vh;         /* bigger than 700px on most screens */
+  max-width: 1400px;    /* optional */
+  margin: 0 auto;       /* center */
 }
 
+/* Make the content area not constrain width */
+.main .content {
+  width: 100%;
+}

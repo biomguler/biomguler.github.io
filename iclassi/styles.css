@@ -20,7 +20,8 @@ html, body {
 /* Body for white background pages */
 body {
     background-color: #ffffff; /* White background */
-    color: #000; /* Black text for visibility on white background */
+    color: #333; /* Dark gray for readability */
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Flexbox layout for main content */
@@ -74,24 +75,10 @@ nav ul li a {
 
 /* Gradient background for specific pages */
 .gradient-bg {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(-30deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat center center fixed;
-    background-size: 400% 400%;
-    color: #fff; /* White text for gradient background */
-    animation: gradientAnimation 10s ease infinite;
-}
-
-/* Keyframes for gradient animation */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298) no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
 }
 
 /* Content styling */
@@ -325,3 +312,56 @@ table {
   height: var(--chart-height, 100vh);   /* fills most of the viewport */
 }
 
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+.hero h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header and footer theme */
+header, footer {
+  background-color: #1e3c72;
+  color: #fff;
+}
+header nav ul, footer nav ul {
+  justify-content: center;
+  margin: 0;
+}
+header nav ul li a, footer nav ul li a {
+  color: #fff;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+  .toolbar {
+    flex-wrap: wrap;
+  }
+  #chart {
+    height: 60vh;
+  }
+}

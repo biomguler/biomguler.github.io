@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>i-CLASSi Tool</title>
   <link rel="stylesheet" href="styles.css"/>
-
-    <!-- ECharts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+  <!-- ECharts -->
   <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-
-
 </head>
-<body class="gradient-bg">
+<body>
 
   <!-- Nav -->
   <header>
@@ -27,33 +25,29 @@
     </nav>
   </header>
 
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Interactive Classification of Lymphoid Neoplasms</h1>
+    <p>A modern academic resource for lymphoid neoplasm taxonomy.</p>
+  </section>
+
   <!-- Main -->
-    <section class="main">
-      <br><br>
- <!-- ECharts -->
-<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-
-<!-- Toolbar + Chart -->
-<div class="wrap">
-  <div class="toolbar">
-
-    <span class="spacer"></span>
-    <label>Filter:
-      <input id="filter" type="text" placeholder="e.g. NHL, Mature-B, TFH"/>
-    </label>
-    <button id="download">Download PNG</button>
-    <button id="fullscreen">Fullscreen</button>
-    <button id="collapse">Collapse All</button>
-    <button id="expand56">Expand L5-L6</button>
-  </div>
-
-  <div id="chart-container">
-    <div id="chart"></div>
-  </div>
-</div>
-
-
-
+  <section class="main">
+    <!-- Toolbar + Chart -->
+    <div class="wrap">
+      <div class="toolbar">
+        <span class="spacer"></span>
+        <label>Filter:
+          <input id="filter" type="text" placeholder="e.g. NHL, Mature-B, TFH"/>
+        </label>
+        <button id="download">Download PNG</button>
+        <button id="fullscreen">Fullscreen</button>
+        <button id="collapse">Collapse All</button>
+        <button id="expand56">Expand L5-L6</button>
+      </div>
+      <div id="chart-container">
+        <div id="chart"></div>
+      </div>
     </div>
   </section>
 

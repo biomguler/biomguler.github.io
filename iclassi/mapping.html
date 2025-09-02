@@ -81,8 +81,8 @@
 
             <!-- Toggle Columns Section -->
             <div class="toggle-columns">
-                <label><input type="checkbox" id="toggleTransformationsTo"> Show Transformations to</label>
-                <label><input type="checkbox" id="toggleTransformationsFrom"> Show Transformations from</label>
+                <label><input type="checkbox" id="toggleID"> Show Entry ID</label>
+                <label><input type="checkbox" id="toggleLNICcode"> Show LNIC Code</label>
             </div>
         </div>
     </section>
@@ -91,19 +91,17 @@
     <table id="mappingTable" class="display">
         <thead>
             <tr>
-                <th>IHC Code</th>
-                <th>Name</th>
-                <th>ICD-O-3</th>
-                <th>ICD10</th>
-                <th>ICD11</th>
-                <th>ICD9</th>
-                <th>EFO</th>
-                <th>NCIt</th>
-                <th>SNOMED</th>
-                <th>MeSH</th>
-                <th>Orphanet</th>
-                <th>Transformations to</th>
-                <th>Transformations from</th>
+                <th>Entry ID</th>
+                <th>LNIC Code</th>
+                <th>Entity-Type</th>
+                <th>Subtype (s)</th>
+                <th>Vocabulary</th>
+                <th>Code</th>
+                <th>Mapping_type</th>
+                <th>Vocabulary Prefered Name</th>
+                <th>Version</th>
+                <th>Mapping confidence</th>
+
             </tr>
         </thead>
         <tbody>
@@ -129,24 +127,19 @@
     <!-- Initialize the table via table.js -->
     <script>
         const columnsConfigMapping = [
-            { data: 'IHC Code' },
-            { data: 'Name' },
-            { data: 'ICD-O-3' },
-            { data: 'ICD10',  },
-            { data: 'ICD11',  },
-            { data: 'ICD9' },
-            { data: 'EFO' },
-            { data: 'NCIt' },
-            { data: 'SNOMED' },
-            { data: 'MeSH' },
-            { data: 'Orphanet' },
-            { data: 'Transformations to', visible: false }, // Initially hidden
-            { data: 'Transformations from', visible: false } // Initially hidden
+            { data: 'Entry ID', visible: false },
+            { data: 'LNIC Code', visible: false },
+            { data: 'Subtype (s)' },
+            { data: 'Vocabulary',  },
+            { data: 'Code',  },
+            { data: 'Mapping_type' },
+            { data: 'Vocabulary Prefered Name' },
+            { data: 'Version' }
         ];
 
         const toggleConfigMapping = {
-            '#toggleTransformationsTo': 11,
-            '#toggleTransformationsFrom': 12,
+            '#toggleID': 0,
+            '#toggleLNICcode': 1,
         };
 
         // Initialize table using the new script

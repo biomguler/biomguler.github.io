@@ -6,9 +6,10 @@ function initializeDataTable(jsonUrl, tableId, columnsConfig, toggleConfig) {
         $.getJSON(jsonUrl, function(data) {
             var table = $(tableId).DataTable({
                 data: data,
-                scrollCollapse: true,  // Collapse the table if fewer rows
-                paging: true,          // Keep pagination
-                lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+                paging: false, // disable pagination
+                scrollY: 'calc(100vh - 250px)', // adjust offset for header/footer
+                scrollCollapse: true,
+                autoWidth: true,
                 columns: columnsConfig,
                 orderCellsTop: true,
                 dom: 'lBfrtip',
@@ -23,6 +24,13 @@ function initializeDataTable(jsonUrl, tableId, columnsConfig, toggleConfig) {
                     table.column(columnIndex).visible(this.checked);
                 });
             }
+
+            // Recalculate scroll height if the window is resized
+            $(window).on('resize', function () {
+                var newHeight = window.innerHeight - 250; // adjust offset
+                table.settings()[0].oScroll.sY = newHeight + 'px';
+                table.draw(false);
+            });
         });
     });
 }

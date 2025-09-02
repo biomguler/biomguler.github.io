@@ -1,0 +1,454 @@
+[
+  {
+    "Abbreviations-acronyms": "LN",
+    "Full name": "Lymphoid Neoplasms"
+  },
+  {
+    "Abbreviations-acronyms": "NHL",
+    "Full name": "Non-Hodgkin Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "HL",
+    "Full name": "Hodgkin Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "LPD",
+    "Full name": "Lymphoproliferative Disorder"
+  },
+  {
+    "Abbreviations-acronyms": "LPD-IDD",
+    "Full name": "Lymphoproliferative disorders associated with Immune Deficiency/Dysregulation"
+  },
+  {
+    "Abbreviations-acronyms": "PM-LN",
+    "Full name": "Plasma cell / Mature LN"
+  },
+  {
+    "Abbreviations-acronyms": "M-BCN",
+    "Full name": "Mature B-cell neoplasms"
+  },
+  {
+    "Abbreviations-acronyms": "MZL",
+    "Full name": "Marginal Zone Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "NMZL",
+    "Full name": "Nodal Marginal Zone Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "pNMZL",
+    "Full name": "Pediatric Nodal Marginal Zone Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "FL",
+    "Full name": "Follicular Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "ISFN",
+    "Full name": "In situ Follicular Neoplasia"
+  },
+  {
+    "Abbreviations-acronyms": "cFL",
+    "Full name": "Classic Follicular Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "uFL",
+    "Full name": "Unusual Follicular Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "dFL",
+    "Full name": "Diffuse Follicular Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "FLBCL",
+    "Full name": "Follicular Large B-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "PCFCL",
+    "Full name": "Primary Cutaneous Follicular Centre Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "MCL",
+    "Full name": "Mantle Cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "ISMCN",
+    "Full name": "In situ Mantle Cell Neoplasm"
+  },
+  {
+    "Abbreviations-acronyms": "nnMCL",
+    "Full name": "Non-nodal Mantle Cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "LBCL",
+    "Full name": "Large B-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "DLBCL",
+    "Full name": "Diffuse Large B-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "THRLBCL",
+    "Full name": "T-cell/Histiocyte-rich Large B-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "CHL",
+    "Full name": "Classical Hodgkin Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "T-PLL",
+    "Full name": "T-cell Prolymphocytic Leukemia"
+  },
+  {
+    "Abbreviations-acronyms": "T-LGLL",
+    "Full name": "T-cell Large Granular Lymphocytic Leukemia"
+  },
+  {
+    "Abbreviations-acronyms": "T-LGL",
+    "Full name": "T-cell Large Granular Lymphocyte"
+  },
+  {
+    "Abbreviations-acronyms": "NK-LGLL",
+    "Full name": "NK-cell Large Granular Lymphocytic Leukemia"
+  },
+  {
+    "Abbreviations-acronyms": "CLPD-NK",
+    "Full name": "Chronic Lymphoproliferative Disorder of NK cells"
+  },
+  {
+    "Abbreviations-acronyms": "ATLL",
+    "Full name": "Adult T-cell Leukemia/Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "SS",
+    "Full name": "Sézary Syndrome"
+  },
+  {
+    "Abbreviations-acronyms": "ANKL",
+    "Full name": "Aggressive NK-cell Leukemia"
+  },
+  {
+    "Abbreviations-acronyms": "PCSM-LPD",
+    "Full name": "Primary Cutaneous Small/Medium CD4+ T-cell LPD"
+  },
+  {
+    "Abbreviations-acronyms": "PCCD4-TCL",
+    "Full name": "Primary Cutaneous CD4-positive T-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "MF",
+    "Full name": "Mycosis Fungoides"
+  },
+  {
+    "Abbreviations-acronyms": "CTCL",
+    "Full name": "Cutaneous T-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "CD30+PCLPD",
+    "Full name": "CD30-positive Primary Cutaneous LPD"
+  },
+  {
+    "Abbreviations-acronyms": "LyP",
+    "Full name": "Lymphomatoid Papulosis"
+  },
+  {
+    "Abbreviations-acronyms": "C-ALCL",
+    "Full name": "Cutaneous Anaplastic Large Cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "SPTCL",
+    "Full name": "Subcutaneous Panniculitis-like T-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "PCGD-TCL",
+    "Full name": "Primary Cutaneous Gamma-delta T-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "PCAETL",
+    "Full name": "Primary Cutaneous Aggressive Epidermotropic T-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "PCCD8-TCL",
+    "Full name": "Primary Cutaneous CD8+ Aggressive Epidermotropic TCL"
+  },
+  {
+    "Abbreviations-acronyms": "PCPTCL-NOS",
+    "Full name": "Primary Cutaneous Peripheral TCL, Not Otherwise Specified"
+  },
+  {
+    "Abbreviations-acronyms": "PCTCL-NOS",
+    "Full name": "Primary Cutaneous TCL, NOS"
+  },
+  {
+    "Abbreviations-acronyms": "iTCL-GI",
+    "Full name": "Indolent T-cell Lymphoma of GI Tract"
+  },
+  {
+    "Abbreviations-acronyms": "iNK-LPD",
+    "Full name": "Indolent NK-cell LPD"
+  },
+  {
+    "Abbreviations-acronyms": "EATL",
+    "Full name": "Enteropathy-associated TCL"
+  },
+  {
+    "Abbreviations-acronyms": "MEITL",
+    "Full name": "Monomorphic Epitheliotropic Intestinal TCL"
+  },
+  {
+    "Abbreviations-acronyms": "ITCL-NOS",
+    "Full name": "Intestinal TCL, NOS"
+  },
+  {
+    "Abbreviations-acronyms": "HSTL",
+    "Full name": "Hepatosplenic TCL"
+  },
+  {
+    "Abbreviations-acronyms": "ALCL",
+    "Full name": "Anaplastic Large Cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "BIA-ALCL",
+    "Full name": "Breast Implant-associated ALCL"
+  },
+  {
+    "Abbreviations-acronyms": "nTFHL",
+    "Full name": "Nodal T-follicular Helper Cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "AITL",
+    "Full name": "Angioimmunoblastic T-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "PTCL-NOS",
+    "Full name": "Peripheral TCL, NOS"
+  },
+  {
+    "Abbreviations-acronyms": "ENKTL / ENNKTL",
+    "Full name": "Extranodal NK/T-cell Lymphoma (nasal/non-nasal types)"
+  },
+  {
+    "Abbreviations-acronyms": "PCN",
+    "Full name": "Plasma Cell Neoplasms"
+  },
+  {
+    "Abbreviations-acronyms": "PCM / MM",
+    "Full name": "Plasma Cell Myeloma / Multiple Myeloma"
+  },
+  {
+    "Abbreviations-acronyms": "SPB",
+    "Full name": "Solitary Plasmacytoma of Bone"
+  },
+  {
+    "Abbreviations-acronyms": "EMP",
+    "Full name": "Extramedullary Plasmacytoma"
+  },
+  {
+    "Abbreviations-acronyms": "HCD",
+    "Full name": "Heavy Chain Disease"
+  },
+  {
+    "Abbreviations-acronyms": "GammaHCD / Alpha HCD",
+    "Full name": "Heavy Chain Disease variants"
+  },
+  {
+    "Abbreviations-acronyms": "POEMS, TEMPI, AESOP",
+    "Full name": "Paraneoplastic Syndromes"
+  },
+  {
+    "Abbreviations-acronyms": "UCD",
+    "Full name": "Unicentric Castleman Disease"
+  },
+  {
+    "Abbreviations-acronyms": "iMCD",
+    "Full name": "Idiopathic Multicentric Castleman Disease"
+  },
+  {
+    "Abbreviations-acronyms": "KSHV/HHV8-MCD",
+    "Full name": "Kaposi Sarcoma Herpesvirus/HHV8-associated Multicentric Castleman Disease"
+  },
+  {
+    "Abbreviations-acronyms": "PTLD",
+    "Full name": "Post-transplant Lymphoproliferative Disorder"
+  },
+  {
+    "Abbreviations-acronyms": "PTLD-PH",
+    "Full name": "Plasmacytic Hyperplasia type"
+  },
+  {
+    "Abbreviations-acronyms": "PTLD-IM",
+    "Full name": "Infectious Mononucleosis-like PTLD"
+  },
+  {
+    "Abbreviations-acronyms": "PTLD-P",
+    "Full name": "Polymorphic PTLD"
+  },
+  {
+    "Abbreviations-acronyms": "PTLD-M",
+    "Full name": "Monomorphic PTLD (B-cell or T/NK-cell)"
+  },
+  {
+    "Abbreviations-acronyms": "PTLD-CHL",
+    "Full name": "Classical Hodgkin Lymphoma type PTLD"
+  },
+  {
+    "Abbreviations-acronyms": "PID-LPD",
+    "Full name": "Primary Immunodeficiency-associated LPD"
+  },
+  {
+    "Abbreviations-acronyms": "PID-CHL",
+    "Full name": "PID-associated Classical HL"
+  },
+  {
+    "Abbreviations-acronyms": "CAEBV",
+    "Full name": "Chronic Active EBV disease"
+  },
+  {
+    "Abbreviations-acronyms": "SEBVTCL",
+    "Full name": "Systemic EBV-positive T-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "EBV+LPD-PED",
+    "Full name": "EBV-positive LPD of Childhood"
+  },
+  {
+    "Abbreviations-acronyms": "CLL",
+    "Full name": "Chronic Lymphocytic Leukemia"
+  },
+  {
+    "Abbreviations-acronyms": "SLL",
+    "Full name": "Small Lymphocytic Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "CLL/SLL",
+    "Full name": "Chronic Lymphocytic Leukemia/Small Lymphocytic Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "HCL",
+    "Full name": "Hairy Cell Leukemia"
+  },
+  {
+    "Abbreviations-acronyms": "SMZL",
+    "Full name": "Splenic Marginal Zone Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "SDRPL",
+    "Full name": "Splenic Diffuse Red Pulp Small B-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "SBLPN",
+    "Full name": "Splenic B-cell Lymphoma/Leukemia with Prominent Nucleoli"
+  },
+  {
+    "Abbreviations-acronyms": "B-PLL",
+    "Full name": "B-cell Prolymphocytic Leukemia"
+  },
+  {
+    "Abbreviations-acronyms": "LPL",
+    "Full name": "Lymphoplasmacytic Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "WM",
+    "Full name": "Waldenström Macroglobulinemia"
+  },
+  {
+    "Abbreviations-acronyms": "PTFL",
+    "Full name": "Pediatric-type Follicular Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "DTFL",
+    "Full name": "Duodenal-type Follicular Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "DLBCL-NOS",
+    "Full name": "Diffuse Large B-cell Lymphoma, Not Otherwise Specified"
+  },
+  {
+    "Abbreviations-acronyms": "HGBL",
+    "Full name": "High-grade B-cell Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "HGBL-DH",
+    "Full name": "High-grade B-cell Lymphoma, Double Hit"
+  },
+  {
+    "Abbreviations-acronyms": "HGBL-TH",
+    "Full name": "High-grade B-cell Lymphoma, Triple Hit"
+  },
+  {
+    "Abbreviations-acronyms": "nTFHL-AI",
+    "Full name": "Nodal TFH Cell Lymphoma, Angioimmunoblastic-type"
+  },
+  {
+    "Abbreviations-acronyms": "nTFHL-F",
+    "Full name": "Nodal TFH Cell Lymphoma, Follicular-type"
+  },
+  {
+    "Abbreviations-acronyms": "nTFHL-NOS",
+    "Full name": "Nodal TFH Cell Lymphoma, Not Otherwise Specified"
+  },
+  {
+    "Abbreviations-acronyms": "EBV",
+    "Full name": "Epstein–Barr Virus"
+  },
+  {
+    "Abbreviations-acronyms": "CMV",
+    "Full name": "Cytomegalovirus"
+  },
+  {
+    "Abbreviations-acronyms": "PTLD-IM-like",
+    "Full name": "Infectious Mononucleosis-like PTLD"
+  },
+  {
+    "Abbreviations-acronyms": "PTLD-M-B-cell",
+    "Full name": "Monomorphic PTLD, B-cell"
+  },
+  {
+    "Abbreviations-acronyms": "PTLD-M-T/NK",
+    "Full name": "Monomorphic PTLD, T- or NK-cell"
+  },
+  {
+    "Abbreviations-acronyms": "PID-T-ALL/LBL",
+    "Full name": "Primary Immunodeficiency-associated T-lymphoblastic Leukemia/Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "PID-LPD-B-cell",
+    "Full name": "Primary Immunodeficiency-associated B-cell Lymphoproliferative Disorder"
+  },
+  {
+    "Abbreviations-acronyms": "PID-LPD-T/NK",
+    "Full name": "Primary Immunodeficiency-associated T/NK-cell Lymphoproliferative Disorder"
+  },
+  {
+    "Abbreviations-acronyms": "HIV-LPD-P",
+    "Full name": "HIV-associated Polymorphous Lymphoid Proliferations"
+  },
+  {
+    "Abbreviations-acronyms": "HIV-LPD-B-cell",
+    "Full name": "HIV-associated B-cell Non-Hodgkin Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "HIV-T/NK",
+    "Full name": "HIV-associated T/NK-cell Non-Hodgkin Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "HIV-CHL",
+    "Full name": "HIV-associated Classical Hodgkin Lymphoma"
+  },
+  {
+    "Abbreviations-acronyms": "MGUS",
+    "Full name": "Monoclonal Gammopathy of Undetermined Significance"
+  },
+  {
+    "Abbreviations-acronyms": "MGRS",
+    "Full name": "Monoclonal Gammopathy of Renal Significance"
+  },
+  {
+    "Abbreviations-acronyms": "AL",
+    "Full name": "Amyloid Light-chain (AL) Amyloidosis"
+  },
+  {
+    "Abbreviations-acronyms": "IgG4-RD",
+    "Full name": "IgG4-related Disease"
+  }
+]

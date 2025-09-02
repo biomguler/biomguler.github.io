@@ -5,38 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abbreviations - i-CLASSi Tool</title>
   <link rel="stylesheet" href="styles.css">
-
-  <!-- DataTables CSS -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
-
-  <!-- jQuery -->
   <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <!-- DataTables JS -->
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.flash.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
-
+  <script src="table.js"></script>
   <style>
-    table {
-      width: 100%;
-      margin: 20px 0;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 10px;
-      border: 1px solid #ddd;
-      text-align: left;
-    }
-    th {
-      background-color: #f4f4f4;
-    }
+    table { width: 100%; margin: 20px 0; border-collapse: collapse; }
+    th, td { padding: 10px; border: 1px solid #ddd; }
+    th { background-color: #f4f4f4; }
   </style>
 </head>
-<body class="gradient-bg">
-
-  <!-- Navigation Bar -->
+<body>
   <header>
     <nav>
       <ul>
@@ -49,72 +36,20 @@
       </ul>
     </nav>
   </header>
-
-  <!-- Main Content Area -->
   <section class="main">
     <div class="content">
-      <h1>Abbreviations</h1><br>
-      <p>This glossary lists the abbreviations and acronyms used in the i-CLASSi classification of lymphoid neoplasms.</p>
-      
-      <!-- Abbreviations Table -->
-      <table id="abbrevTable" class="display">
-        <thead>
-          <tr>
-            <th>Abbreviation</th>
-            <th>Full Form</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>LN</td><td>Lymphoid Neoplasms</td></tr>
-          <tr><td>NHL</td><td>Non-Hodgkin Lymphoma</td></tr>
-          <tr><td>HL</td><td>Hodgkin Lymphoma</td></tr>
-          <tr><td>LPD</td><td>Lymphoproliferative Disorder</td></tr>
-          <tr><td>PM-LN</td><td>Precursor/Mature Lymphoid Neoplasm</td></tr>
-          <tr><td>M-BCN</td><td>Mature B-cell Neoplasms</td></tr>
-          <tr><td>CLL</td><td>Chronic Lymphocytic Leukemia</td></tr>
-          <tr><td>SLL</td><td>Small Lymphocytic Lymphoma</td></tr>
-          <tr><td>MBL</td><td>Monoclonal B-cell Lymphocytosis</td></tr>
-          <tr><td>FL</td><td>Follicular Lymphoma</td></tr>
-          <tr><td>DLBCL</td><td>Diffuse Large B-cell Lymphoma</td></tr>
-          <tr><td>LBCL</td><td>Large B-cell Lymphoma</td></tr>
-          <tr><td>THRLBCL</td><td>T-cell/Histiocyte-rich Large B-cell Lymphoma</td></tr>
-          <tr><td>PCFCL</td><td>Primary Cutaneous Follicular Centre Lymphoma</td></tr>
-          <tr><td>MCL</td><td>Mantle Cell Lymphoma</td></tr>
-          <tr><td>ISMCN</td><td>In situ Mantle Cell Neoplasm</td></tr>
-          <tr><td>NMZL</td><td>Nodal Marginal Zone Lymphoma</td></tr>
-          <tr><td>SMZL</td><td>Splenic Marginal Zone Lymphoma</td></tr>
-          <tr><td>PCMZL</td><td>Primary Cutaneous Marginal Zone Lymphoma</td></tr>
-          <tr><td>PTCL-NOS</td><td>Peripheral T-cell Lymphoma, Not Otherwise Specified</td></tr>
-          <tr><td>T-PLL</td><td>T-cell Prolymphocytic Leukemia</td></tr>
-          <tr><td>T-LGLL</td><td>T-cell Large Granular Lymphocytic Leukemia</td></tr>
-          <tr><td>NK-LGLL</td><td>Natural Killer Large Granular Lymphocytic Leukemia</td></tr>
-          <tr><td>ATLL</td><td>Adult T-cell Leukemia/Lymphoma</td></tr>
-          <tr><td>SS</td><td>Sézary Syndrome</td></tr>
-          <tr><td>ANKL</td><td>Aggressive NK-cell Leukemia</td></tr>
-          <tr><td>MF</td><td>Mycosis Fungoides</td></tr>
-          <tr><td>CTCL</td><td>Cutaneous T-cell Lymphoma</td></tr>
-          <tr><td>ALCL</td><td>Anaplastic Large Cell Lymphoma</td></tr>
-          <tr><td>BIA-ALCL</td><td>Breast Implant-associated Anaplastic Large Cell Lymphoma</td></tr>
-          <tr><td>UCD</td><td>Unicentric Castleman Disease</td></tr>
-          <tr><td>iMCD</td><td>Idiopathic Multicentric Castleman Disease</td></tr>
-          <tr><td>KSHV/HHV8</td><td>Kaposi Sarcoma-associated Herpesvirus / Human Herpesvirus 8</td></tr>
-          <tr><td>PTLD</td><td>Post-transplant Lymphoproliferative Disorder</td></tr>
-          <tr><td>PID</td><td>Primary Immunodeficiency</td></tr>
-          <tr><td>CAEBV</td><td>Chronic Active Epstein–Barr Virus Infection</td></tr>
-          <tr><td>EBV</td><td>Epstein–Barr Virus</td></tr>
-          <tr><td>PCM/MM</td><td>Plasma Cell Myeloma / Multiple Myeloma</td></tr>
-          <tr><td>SPB</td><td>Solitary Plasmacytoma of Bone</td></tr>
-          <tr><td>EMP</td><td>Extramedullary Plasmacytoma</td></tr>
-          <tr><td>MGUS</td><td>Monoclonal Gammopathy of Undetermined Significance</td></tr>
-          <tr><td>MGRS</td><td>Monoclonal Gammopathy of Renal Significance</td></tr>
-          <tr><td>POEMS</td><td>Polyneuropathy, Organomegaly, Endocrinopathy, Monoclonal Protein, Skin Changes Syndrome</td></tr>
-          <tr><td>TEMPI</td><td>Telangiectasia, Erythrocytosis, Monoclonal gammopathy, Perinephric fluid, Intrapulmonary shunting Syndrome</td></tr>
-          <tr><td>AESOP</td><td>Adenopathy and Extensive Skin patch Overlying Plasmacytoma</td></tr>
-        </tbody>
-      </table>
+      <h1>Abbreviations</h1>
     </div>
   </section>
-
+  <table id="abbrevTable" class="display">
+    <thead>
+      <tr>
+        <th>Abbreviations-acronyms</th>
+        <th>Full name</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
   <footer>
     <div class="footer-content">
       <p>&copy; 2025 M Guler. All rights reserved.</p>
@@ -130,18 +65,14 @@
       </nav>
     </div>
   </footer>
-
-  <!-- Initialize DataTable -->
   <script>
-    $(document).ready(function() {
-      $('#abbrevTable').DataTable({
-        paging: true,
-        searching: true,
-        lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
-        dom: 'lBfrtip',
-        buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-      });
-    });
+    const columnsConfigAbbrev = [
+      { data: 'Abbreviations-acronyms' },
+      { data: 'Full name' }
+    ];
+    const toggleConfigAbbrev = {}; // no toggles for now
+    // Point to abv.json in same folder (adjust to raw URL if using GitHub Pages)
+    initializeDataTable('abbreviations.json', '#abbrevTable', columnsConfigAbbrev, toggleConfigAbbrev);
   </script>
 </body>
 </html>

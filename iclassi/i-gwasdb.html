@@ -91,7 +91,8 @@
     <table id="gwasdbTable" class="display">
         <thead>
             <tr>
-                <th>LNIC Code</th>
+                <th>LNIC Code(s)</th>
+                <th>Study type</th>
                 <th>CHR</th>
                 <th>Cytoband</th>
                 <th>POS</th>
@@ -130,6 +131,7 @@
     <script>
         const columnsConfigGwasdb = [
             { data: 'LNIC Code' },
+            { data: 'Study type'},
             { data: 'CHR' },
             { data: 'Cytoband' },
             { data: 'POS' },
@@ -145,9 +147,9 @@
         ];
 
         const toggleConfigGwasdb = {
-            '#togglePMID': 12,
-            '#toggleGWASCat': 11,
-            '#toggleEFO': 10
+            '#togglePMID': 13,
+            '#toggleGWASCat': 12,
+            '#toggleEFO': 11
         };
 
         // Initialize table using the new script

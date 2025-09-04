@@ -2,7 +2,7 @@
 // sankey.js (right-align + group color propagation)
 // ==========================
 
-const DATA_URL = 'ihc.json';
+const DATA_URL = 'https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/iclassi/ihc.json';
 
 // column order (left → right)
 const COLS = [

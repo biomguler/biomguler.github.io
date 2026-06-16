@@ -1,152 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapping - i-CLASSi Tool</title>
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
-    <!-- Select2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-    <!-- jQuery -->
-    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <!-- DataTables JS -->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.flash.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
-    <!-- Select2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <!-- Custom table.js script -->
-    <script src="table.js"></script>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            margin: 20px 0;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        .select2-container {
-            width: 100% !important;
-        }
-        .toggle-columns {
-            margin-bottom: 20px;
-        }
-        .toggle-columns label {
-            margin-right: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapping | i-CLASSi Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+  <script src="table.js"></script>
 </head>
 <body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="index.html"><img src="images/i-classi-vector-transparent.svg" alt="i-CLASSi logo"><strong>i-CLASSi</strong></a>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="index.html"><span class="sidebar-icon">⌂</span>Intro</a>
+        <a class="sidebar-link" href="iclassi.html"><span class="sidebar-icon">▤</span>i-CLASSi</a>
+        <a class="sidebar-link active" href="mapping.html"><span class="sidebar-icon">⇄</span>Mapping</a>
+        <a class="sidebar-link" href="hierarchy.html"><span class="sidebar-icon">⌕</span>Lookup</a>
+        <a class="sidebar-link" href="i-gwasdb.html"><span class="sidebar-icon">◇</span>i-GWASdb</a>
+        <a class="sidebar-link" href="abbreviations.html"><span class="sidebar-icon">A</span>Abbreviations</a>
+        <a class="sidebar-link" href="about.html"><span class="sidebar-icon">?</span>About</a>
+      </nav>
+      <div class="sidebar-footer"><a href="legal-notice.html">Legal Notice</a><a href="privacy-policy.html">Privacy Policy</a><span>© 2026 Murat Güler</span><span>i-CLASSi Studio v0.1.0</span></div>
+    </aside>
+    <main class="app-main">
+      <header class="topbar">
+        <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
+        <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select><option>0.1.0 (prototype)</option></select></div></div>
+      </header>
+      <section class="workspace">
+        <div class="page-heading"><div class="page-heading-icon">⇄</div><div><h1>Mapping Explorer</h1><p>Inspect vocabulary crosswalks and confidence labels for i-CLASSi disease entities.</p></div></div>
+        <section class="explorer-card">
+          <div class="card-header"><strong>Mapping table</strong><div class="table-actions"><input id="globalSearch" type="text" placeholder="Global search by entity, vocabulary, code, or preferred name..."><select id="quickEntity"><option value="">Quick entity...</option></select><button type="button" class="secondary" id="columnToggle">Columns</button><button type="button" class="danger" id="clearTableFilters">Clear</button><button type="button" class="success" id="exportCsv">Export CSV</button></div></div>
+          <table id="mappingTable" class="display">
+            <thead><tr><th>Entry ID</th><th>LNIC Code</th><th>Entity-Type</th><th>Subtype(s)</th><th>Vocabulary</th><th>Code</th><th>Mapping type</th><th>Vocabulary Preferred Name</th><th>Version</th><th>Mapping confidence</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script>
+    const columnsConfigMapping = [
+      { data: 'Entry ID', visible: false },
+      { data: 'LNIC Code', visible: true, render: data => `<span class="code-link">${data || ''}</span>` },
+      { data: 'Entity-Type', visible: true },
+      { data: 'Subtype\u00A0(s)', defaultContent: '' },
+      { data: 'Vocabulary' },
+      { data: 'Code' },
+      { data: 'Mapping_type' },
+      { data: 'Vocabulary Prefered Name' },
+      { data: 'Version', visible: false },
+      { data: 'Mapping confidence' }
+    ];
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ihc.html">i-CLASSi</a></li>
-                <li><a href="mapping.html">Mapping</a></li>
-                <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-                <li><a href="abbreviations.html">Abbreviations</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
+    initializeDataTable('iclassi_mapping.json', '#mappingTable', columnsConfigMapping, {}, {
+      scrollY: 'calc(100vh - 270px)',
+      buttons: ['copy', 'csv', 'excel'],
+      initComplete: function(table, data) {
+        setupColumnFilters(table);
+        setupControls(table, data);
+      }
+    });
 
-    <!-- Main Content Area -->
-    <section class="main">
-        <div class="content">
-            <h1>Mapping Lymphoid Neoplasms</h1><br>
-            <p>Use the tool below to explore the classification of lymphoid neoplasms.</p>
-            <br>
+    function setupControls(table, data) {
+      const globalSearch = document.querySelector('#globalSearch');
+      const quickEntity = document.querySelector('#quickEntity');
+      globalSearch.addEventListener('input', () => table.search(globalSearch.value).draw());
+      [...new Set(data.map(row => row['Entity-Type']).filter(Boolean))].sort().forEach(entity => {
+        const option = document.createElement('option');
+        option.value = entity;
+        option.textContent = entity;
+        quickEntity.appendChild(option);
+      });
+      quickEntity.addEventListener('change', () => table.column(2).search(quickEntity.value ? `^${$.fn.dataTable.util.escapeRegex(quickEntity.value)}$` : '', true, false).draw());
+      document.querySelector('#clearTableFilters').addEventListener('click', () => { globalSearch.value = ''; quickEntity.value = ''; table.search(''); table.columns().search(''); $('#mappingTable thead select').val(''); table.draw(); });
+      document.querySelector('#exportCsv').addEventListener('click', () => table.button('.buttons-csv').trigger());
+      document.querySelector('#columnToggle').addEventListener('click', () => [0, 3, 8].forEach(index => table.column(index).visible(!table.column(index).visible())));
+    }
 
-            <!-- Toggle Columns Section -->
-            <div class="toggle-columns">
-                <label><input type="checkbox" id="toggleID"> Show Entry ID</label>
-                <label><input type="checkbox" id="toggleLNICcode"> Show LNIC Code</label>
-            </div>
-        </div>
-    </section>
+    function setupColumnFilters(table) {
+      table.columns().every(function() {
+        const column = this;
+        const header = $(column.header());
+        const title = header.text();
+        const select = $('<select><option value="">All</option></select>')
+          .appendTo(header.empty().append(document.createTextNode(title)))
+          .on('click', event => event.stopPropagation())
+          .on('change', function() {
+            const value = $.fn.dataTable.util.escapeRegex($(this).val());
+            column.search(value ? `^${value}$` : '', true, false).draw();
+          });
+        column.data().unique().sort().each(value => {
+          if (value !== null && value !== undefined && String(value).trim()) select.append(`<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`);
+        });
+      });
+    }
 
-    <!-- DataTable -->
-    <table id="mappingTable" class="display">
-        <thead>
-            <tr>
-                <th>Entry ID</th>
-                <th>LNIC Code</th>
-                <th>Entity-Type</th>
-                <th>Subtype (s)</th>
-                <th>Vocabulary</th>
-                <th>Code</th>
-                <th>Mapping_type</th>
-                <th>Vocabulary Prefered Name</th>
-                <th>Version</th>
-                <th>Mapping confidence</th>
-
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 M Guler. All rights reserved.</p>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="ihc.html">i-CLASSi</a></li>
-                    <li><a href="mapping.html">Mapping</a></li>
-                    <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-                    <li><a href="abbreviations.html">Abbreviations</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
-
-    <!-- Initialize the table via table.js -->
-    <script>
-        const columnsConfigMapping = [
-            { data: 'Entry ID', visible: false },
-            { data: 'LNIC Code', visible: false },
-            { data: 'Entity-Type', visible: true },
-            { data: 'Subtype (s)' },
-            { data: 'Vocabulary',  },
-            { data: 'Code',  },
-            { data: 'Mapping_type' },
-            { data: 'Vocabulary Prefered Name' },
-            { data: 'Version' },
-            { data: 'Mapping confidence' }
-        ];
-
-        const toggleConfigMapping = {
-            '#toggleID': 0,
-            '#toggleLNICcode': 1,
-        };
-
-        // Initialize table using the new script
-        initializeDataTable('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/iclassi/ihc_mapping.json', '#mappingTable', columnsConfigMapping, toggleConfigMapping);
-    </script>
-
+    function escapeHtml(value) {
+      return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+    }
+  </script>
 </body>
 </html>

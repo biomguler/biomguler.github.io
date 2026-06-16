@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lookup | i-CLASSi Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="hierarchy.js"></script>
+  <script src="umls.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="index.html">
+        <img src="images/i-classi-vector-transparent.svg" alt="i-CLASSi logo">
+        <strong>i-CLASSi</strong>
+      </a>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="index.html"><span class="sidebar-icon">⌂</span>Intro</a>
+        <a class="sidebar-link" href="iclassi.html"><span class="sidebar-icon">▤</span>i-CLASSi</a>
+        <a class="sidebar-link" href="mapping.html"><span class="sidebar-icon">⇄</span>Mapping</a>
+        <a class="sidebar-link active" href="hierarchy.html"><span class="sidebar-icon">⌕</span>Lookup</a>
+        <a class="sidebar-link" href="i-gwasdb.html"><span class="sidebar-icon">◇</span>i-GWASdb</a>
+        <a class="sidebar-link" href="abbreviations.html"><span class="sidebar-icon">A</span>Abbreviations</a>
+        <a class="sidebar-link" href="about.html"><span class="sidebar-icon">?</span>About</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="legal-notice.html">Legal Notice</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span>© 2026 Murat Güler</span>
+        <span>i-CLASSi Studio v0.1.0</span>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <header class="topbar">
+        <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
+        <div class="topbar-controls">
+          <div class="topbar-field">
+            <label for="versionSelect">i-CLASSi version</label>
+            <select id="versionSelect">
+              <option>0.1.0 (prototype)</option>
+            </select>
+          </div>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <div class="page-heading">
+          <div class="page-heading-icon">▽</div>
+          <div>
+            <h1>i-CLASSi Lookup</h1>
+            <p>Expand the classification from L1 to L6. Terminal branches open disease details and cached UMLS metadata when available.</p>
+          </div>
+        </div>
+
+        <div class="hierarchy-workspace">
+          <section class="hierarchy-browser">
+            <div class="card-header">
+              <strong>Classification lookup tree</strong>
+              <div class="table-actions compact-actions">
+                <input id="hierarchySearch" type="text" placeholder="Filter hierarchy by entity, subtype, or code...">
+                <button type="button" class="secondary" id="collapseHierarchy">Collapse all</button>
+              </div>
+            </div>
+            <div id="fullHierarchyTree" class="full-hierarchy-tree"></div>
+          </section>
+
+          <section class="hierarchy-detail">
+            <div class="detail-card" id="entityDetail">
+              <strong>No terminal branch selected</strong>
+              <p class="muted-small">Click an L5 entity or L6 subtype in the tree to view the classification record.</p>
+            </div>
+
+            <section class="umls-card" id="umlsPanel">
+              <div class="umls-toolbar">
+                <div>
+                  <strong>UMLS disease concept metadata</strong>
+                  <p id="umlsStatus" class="status">Loading generated UMLS metadata cache...</p>
+                </div>
+                <input id="umlsCacheSearch" type="text" placeholder="Search cached CUI or disease concept...">
+                <button type="button" class="secondary" id="umlsCacheSearchButton">Search cache</button>
+              </div>
+              <div class="umls-body">
+                <div>
+                  <div id="selectedDisease" class="selected-disease">
+                    <strong>No entity selected</strong>
+                    <span>Click a terminal hierarchy branch to view mapped UMLS concepts.</span>
+                  </div>
+                  <div id="mappedCuis" class="cui-list"></div>
+                </div>
+                <div id="umlsResults">
+                  <p class="muted-small">Cached concept metadata will appear here.</p>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    let allRows = [];
+
+    fetch('iclassi.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Could not load iclassi.json');
+        return response.json();
+      })
+      .then(rows => {
+        allRows = rows;
+        renderHierarchy(rows);
+        initIclassiUmlsPanel(null, rows, {
+          mappingUrl: 'iclassi_mapping.json',
+          cacheUrl: 'umls_concepts.json',
+          autoSelectInitial: false
+        });
+      })
+      .catch(error => {
+        document.querySelector('#fullHierarchyTree').innerHTML = `<p class="status error">${escapeHtml(error.message)}</p>`;
+      });
+
+    document.querySelector('#hierarchySearch').addEventListener('input', event => {
+      const query = event.target.value.trim().toLowerCase();
+      if (!query) {
+        renderHierarchy(allRows);
+        return;
+      }
+      const filtered = allRows.filter(row =>
+        Object.values(row).some(value => String(value || '').toLowerCase().includes(query))
+      );
+      renderHierarchy(filtered);
+    });
+
+    document.querySelector('#collapseHierarchy').addEventListener('click', () => renderHierarchy(allRows));
+
+    function renderHierarchy(rows) {
+      renderExpandableHierarchy(document.querySelector('#fullHierarchyTree'), rows, {
+        className: 'hierarchy-tree full-tree',
+        onSelect: function(node, button, isTerminal) {
+          document.querySelectorAll('.full-tree .tree-item.active').forEach(item => item.classList.remove('active'));
+          button.classList.add('active');
+          if (isTerminal && node.rows[0]) {
+            renderEntityDetail(node.rows[0]);
+            if (window.iclassiSelectDisease) window.iclassiSelectDisease(node.rows[0]);
+          }
+        }
+      });
+    }
+
+    function renderEntityDetail(row) {
+      document.querySelector('#entityDetail').innerHTML = `
+        <strong>${escapeHtml(row['Entity-Type'] || row['WHO-HAEM5 Entity-Type'] || 'Entity')}</strong>
+        <div class="meta-grid compact entity-meta">
+          <div class="meta-item"><span>LNIC Code</span>${escapeHtml(row['LNIC Code'] || '')}</div>
+          <div class="meta-item"><span>L1 Lineage-Nature</span>${escapeHtml(row['Lineage-Nature'] || '')}</div>
+          <div class="meta-item"><span>L2 Major Group</span>${escapeHtml(row['Major Group'] || '')}</div>
+          <div class="meta-item"><span>L3 Category</span>${escapeHtml(row.Category || '')}</div>
+          <div class="meta-item"><span>L4 Class-Family</span>${escapeHtml(row['Class-Family'] || '')}</div>
+          <div class="meta-item"><span>L5 Entity-Type</span>${escapeHtml(row['Entity-Type'] || '')}</div>
+          <div class="meta-item"><span>L6 Subtype(s)</span>${escapeHtml(row['Subtype(s)'] || 'None listed')}</div>
+        </div>
+      `;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+</html>

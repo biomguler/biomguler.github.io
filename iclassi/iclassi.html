@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>i-CLASSi | InterLymph Classification Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.flash.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+  <script src="table.js"></script>
+  <script src="hierarchy.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="index.html">
+        <img src="images/i-classi-vector-transparent.svg" alt="i-CLASSi logo">
+        <strong>i-CLASSi</strong>
+      </a>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="index.html"><span class="sidebar-icon">⌂</span>Intro</a>
+        <a class="sidebar-link active" href="iclassi.html"><span class="sidebar-icon">▤</span>i-CLASSi</a>
+        <a class="sidebar-link" href="mapping.html"><span class="sidebar-icon">⇄</span>Mapping</a>
+        <a class="sidebar-link" href="hierarchy.html"><span class="sidebar-icon">⌕</span>Lookup</a>
+        <a class="sidebar-link" href="i-gwasdb.html"><span class="sidebar-icon">◇</span>i-GWASdb</a>
+        <a class="sidebar-link" href="abbreviations.html"><span class="sidebar-icon">A</span>Abbreviations</a>
+        <a class="sidebar-link" href="about.html"><span class="sidebar-icon">?</span>About</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="legal-notice.html">Legal Notice</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span>© 2026 Murat Güler</span>
+        <span>i-CLASSi Studio v0.1.0</span>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <header class="topbar">
+        <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
+        <div class="topbar-controls">
+          <div class="topbar-field">
+            <label for="versionSelect">i-CLASSi version</label>
+            <select id="versionSelect">
+              <option>0.1.0 (prototype)</option>
+            </select>
+          </div>
+        </div>
+      </header>
+
+      <div class="explorer-layout">
+        <aside class="hierarchy-panel">
+          <h2>Hierarchy Navigator</h2>
+          <button type="button" class="secondary" id="clearHierarchy">Clear Selection</button>
+          <div class="hierarchy-tree" id="hierarchyTree"></div>
+        </aside>
+
+        <section class="workspace">
+          <div class="page-heading">
+            <div class="page-heading-icon">▤</div>
+            <div>
+              <h1>i-CLASSi Phenotype Explorer</h1>
+              <p>Browse the InterLymph lymphoid neoplasm classification reference. Click hierarchy levels in the left panel to filter, or use search and column filters below.</p>
+            </div>
+          </div>
+
+          <section class="explorer-card">
+            <div class="card-header">
+              <strong>i-CLASSi Phenotype Explorer</strong>
+              <div class="table-actions">
+                <input id="globalSearch" type="text" placeholder="Global search by LNIC code, entity, UMLS CUI, or hierarchy...">
+                <select id="quickEntity">
+                  <option value="">Quick entity...</option>
+                </select>
+                <button type="button" class="secondary" id="columnToggle">Columns</button>
+                <button type="button" class="danger" id="clearTableFilters">Clear</button>
+                <button type="button" class="success" id="exportCsv">Export CSV</button>
+              </div>
+            </div>
+
+            <table id="example" class="display">
+              <thead>
+                <tr>
+                  <th>Source</th>
+                  <th>Entry ID</th>
+                  <th>LNIC Code</th>
+                  <th>WHO-HAEM5 Category</th>
+                  <th>WHO-HAEM5 Family-Class</th>
+                  <th>WHO-HAEM5 Entity-Type</th>
+                  <th>InterLymph 2010 Entity-Type</th>
+                  <th>Lineage-Nature</th>
+                  <th>Major Group</th>
+                  <th>Category</th>
+                  <th>Class-Family</th>
+                  <th>Entity-Type</th>
+                  <th>Subtype(s)</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </section>
+
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const columnsConfig = [
+      { data: 'Source', visible: false },
+      { data: 'Entry ID', visible: false },
+      { data: 'LNIC Code', visible: true, render: data => `<span class="code-link">${data || ''}</span>` },
+      { data: 'WHO-HAEM5 Category', visible: true },
+      { data: 'WHO-HAEM5 Family-Class', visible: true },
+      { data: 'WHO-HAEM5 Entity-Type', visible: true },
+      { data: 'Interlymph 2010 Entity-Type based on WHO-HAEM4', visible: true },
+      { data: 'Lineage-Nature', visible: true },
+      { data: 'Major Group', visible: true },
+      { data: 'Category', visible: true },
+      { data: 'Class-Family', visible: true },
+      { data: 'Entity-Type', visible: true },
+      { data: 'Subtype(s)', visible: true }
+    ];
+
+    initializeDataTable('iclassi.json', '#example', columnsConfig, {}, {
+      heightOffset: 310,
+      scrollY: 'calc(100vh - 360px)',
+      buttons: ['copy', 'csv', 'excel'],
+      initComplete: function(table, data) {
+        setupColumnFilters(table);
+        setupExplorerControls(table, data);
+      },
+      onRowClick: function() {}
+    });
+
+    function setupColumnFilters(table) {
+      table.columns().every(function() {
+        const column = this;
+        const header = $(column.header());
+        const title = header.text();
+        const select = $('<select><option value="">All</option></select>')
+          .appendTo(header.empty().append(document.createTextNode(title)))
+          .on('click', event => event.stopPropagation())
+          .on('change', function() {
+            const value = $.fn.dataTable.util.escapeRegex($(this).val());
+            column.search(value ? `^${value}$` : '', true, false).draw();
+          });
+
+        column.data().unique().sort().each(function(value) {
+          if (value !== null && value !== undefined && String(value).trim()) {
+            select.append(`<option value="${escapeAttribute(value)}">${escapeHtml(value)}</option>`);
+          }
+        });
+      });
+    }
+
+    function setupExplorerControls(table, data) {
+      const globalSearch = document.querySelector('#globalSearch');
+      const quickEntity = document.querySelector('#quickEntity');
+      const clearButton = document.querySelector('#clearTableFilters');
+      const exportButton = document.querySelector('#exportCsv');
+      const hierarchyTree = document.querySelector('#hierarchyTree');
+      const clearHierarchy = document.querySelector('#clearHierarchy');
+      let activeHierarchyButton = null;
+
+      globalSearch.addEventListener('input', () => table.search(globalSearch.value).draw());
+
+      const entities = [...new Set(data.map(row => row['Entity-Type']).filter(Boolean))].sort();
+      entities.forEach(entity => {
+        const option = document.createElement('option');
+        option.value = entity;
+        option.textContent = entity;
+        quickEntity.appendChild(option);
+      });
+
+      quickEntity.addEventListener('change', () => {
+        table.column(11).search(quickEntity.value ? `^${$.fn.dataTable.util.escapeRegex(quickEntity.value)}$` : '', true, false).draw();
+      });
+
+      clearButton.addEventListener('click', () => {
+        globalSearch.value = '';
+        quickEntity.value = '';
+        table.search('');
+        table.columns().search('');
+        $('#example thead select').val('');
+        if (activeHierarchyButton) activeHierarchyButton.classList.remove('active');
+        activeHierarchyButton = null;
+        table.draw();
+      });
+
+      exportButton.addEventListener('click', () => table.button('.buttons-csv').trigger());
+      document.querySelector('#columnToggle').addEventListener('click', () => {
+        const optional = [0, 1, 3, 4, 6, 7];
+        optional.forEach(index => table.column(index).visible(!table.column(index).visible()));
+      });
+
+      renderExpandableHierarchy(hierarchyTree, data, {
+        onSelect: function(node, button, isTerminal) {
+        if (activeHierarchyButton) activeHierarchyButton.classList.remove('active');
+        activeHierarchyButton = button;
+        button.classList.add('active');
+        table.columns().search('');
+        $('#example thead select').val('');
+          table.column(node.columnIndex).search(`^${$.fn.dataTable.util.escapeRegex(node.value)}$`, true, false).draw();
+        }
+      });
+
+      clearHierarchy.addEventListener('click', () => {
+        if (activeHierarchyButton) activeHierarchyButton.classList.remove('active');
+        activeHierarchyButton = null;
+        table.columns().search('');
+        $('#example thead select').val('');
+        table.draw();
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function escapeAttribute(value) {
+      return escapeHtml(value).replace(/`/g, '&#096;');
+    }
+  </script>
+</body>
+</html>

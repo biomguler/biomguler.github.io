@@ -1,123 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - i-CLASSi Tool</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | i-CLASSi Studio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="gradient-bg about-page">
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="index.html"><img src="images/i-classi-vector-transparent.svg" alt="i-CLASSi logo"><strong>i-CLASSi</strong></a>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="index.html"><span class="sidebar-icon">⌂</span>Intro</a>
+        <a class="sidebar-link" href="iclassi.html"><span class="sidebar-icon">▤</span>i-CLASSi</a>
+        <a class="sidebar-link" href="mapping.html"><span class="sidebar-icon">⇄</span>Mapping</a>
+        <a class="sidebar-link" href="hierarchy.html"><span class="sidebar-icon">⌕</span>Lookup</a>
+        <a class="sidebar-link" href="i-gwasdb.html"><span class="sidebar-icon">◇</span>i-GWASdb</a>
+        <a class="sidebar-link" href="abbreviations.html"><span class="sidebar-icon">A</span>Abbreviations</a>
+        <a class="sidebar-link active" href="about.html"><span class="sidebar-icon">?</span>About</a>
+      </nav>
+      <div class="sidebar-footer"><a href="legal-notice.html">Legal Notice</a><a href="privacy-policy.html">Privacy Policy</a><span>© 2026 Murat Güler</span><span>i-CLASSi Studio v0.1.0</span></div>
+    </aside>
+    <main class="app-main">
+      <header class="topbar">
+        <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
+        <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select><option>0.1.0 (prototype)</option></select></div></div>
+      </header>
+      <section class="workspace">
+        <article class="content-panel">
+          <h1>About the i-CLASSi Tool</h1>
+          <p><strong>Disclaimer:</strong> This tool is developed for research and educational purposes only. It is not intended for clinical diagnosis or treatment guidance.</p>
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ihc.html">i-CLASSi</a></li>
-                <li><a href="mapping.html">Mapping</a></li>
-                <li><a href="i-riskdb.html">i-Riskdb</a></li>
-                <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-                <li><a href="abbreviations.html">Abbreviations</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
+          <h2>Overview</h2>
+          <p>The InterLymph Consortium is an international scientific forum for epidemiologic research in lymphoid malignancies. i-CLASSi supports harmonized use of the InterLymph hierarchical classification of lymphoid neoplasms and related biomedical vocabularies.</p>
+          <p>Learn more at the <a href="https://epi.grants.cancer.gov/interlymph/" target="_blank">InterLymph website</a>.</p>
 
-    <!-- Main content section -->
-    <section class="main about-page">
-        <div class="content">
-            <h1>About the i-CLASSi Tool</h1>
+          <h2>Pathology Working Group</h2>
+          <p>The InterLymph Pathology Working Group includes hematopathologists, epidemiologists, computational biologists, and researchers committed to harmonizing lymphoid malignancy classification for epidemiologic studies.</p>
 
-            <p><strong>Disclaimer:</strong> This tool is developed for research and educational purposes only. 
-            It is not intended for clinical diagnosis or treatment guidance.</p>
+          <h2>Citation</h2>
+          <ol>
+            <li>Turner, J. J., et al. (2010). InterLymph hierarchical classification of lymphoid neoplasms for epidemiologic research based on the WHO classification (2008): update and future directions. <i>Blood</i>, 116(20), e90-e98.</li>
+            <li>Morton, L. M., et al. (2007). Proposed classification of lymphoid neoplasms for epidemiologic research from the Pathology Working Group of InterLymph. <i>Blood</i>, 110(2), 695-708.</li>
+            <li>Pathology Working Group (2025). InterLymph hierarchical classification of lymphoid neoplasms for epidemiologic research based on the WHO-HAEM5. <i>Unpublished</i>.</li>
+          </ol>
 
-            <h2>Overview</h2>
-            <p>The InterLymph Consortium, or formally the International Consortium of Investigators Working on Epidemiologic Studies of Lymphoid Malignancies,
-               is an open scientific forum for epidemiologic research in lymphoid malignancies. Formed in 2001, the Consortium is a group of international 
-               investigators who have completed or ongoing case-control studies or contribute resources from completed or ongoing cohorts. InterLymph member 
-               investigators discuss and undertake research projects that pool data across studies or otherwise undertake collaborative research.</p>
+          <h2>Data Sources</h2>
+          <ul>
+            <li><strong>ICD-O-3</strong> - International Classification of Diseases for Oncology, 3rd Edition</li>
+            <li><strong>ICD-9 / ICD-10 / ICD-10-CM / ICD-11</strong> - International Classification of Diseases vocabularies</li>
+            <li><strong>SNOMED CT</strong> - Systematized Nomenclature of Medicine Clinical Terms</li>
+            <li><strong>NCIt</strong> - NCI Thesaurus</li>
+            <li><strong>EFO</strong> - Experimental Factor Ontology</li>
+            <li><strong>UMLS CUI</strong> - Unified Medical Language System Concept Unique Identifiers</li>
+          </ul>
 
-            <p>Learn more at the <a href="https://epi.grants.cancer.gov/interlymph/" target="_blank">InterLymph website</a>.</p>
+          <h2>Team and Contributors</h2>
+          <h3>Webtool Development</h3>
+          <ul>
+            <li><strong>Murat Güler</strong> (Genomic Epidemiology Group, German Cancer Research Center (DKFZ), Heidelberg, Germany, <a href="mailto:murat.guler@dkfz.de">murat.guler@dkfz.de</a>)</li>
+            <li><strong>Federico Canzian</strong> (Genomic Epidemiology Group, German Cancer Research Center (DKFZ), Heidelberg, Germany)</li>
+          </ul>
 
-            <h2>Pathology Working Group</h2>
-            <p>The InterLymph Pathology Working Group includes hematopathologists, epidemiologists, computational biologists and researchers committed to harmonizing 
-               lymphoid malignancies classification for epidemiologic studies.</p>
+          <h3>Classification Contributors</h3>
+          <ol>
+            <li><strong>Alyssa Clay-Gilmour</strong> (Department of Epidemiology &amp; Biostatistics, Arnold School of Public Health, University of South Carolina, Columbia, SC, USA)</li>
+            <li><strong>Murat Güler</strong> (Genomic Epidemiology Group, German Cancer Research Center (DKFZ), Heidelberg, Germany)</li>
+            <li><strong>James R. Cerhan</strong> (Department of Quantitative Health Sciences, Mayo Clinic, Rochester, MN, USA)</li>
+            <li><strong>Karin E. Smedby</strong> (Karolinska Institutet and Karolinska University Hospital, Stockholm, Sweden)</li>
+            <li><strong>Arjan Diepstra</strong> (University Medical Center Groningen, Groningen, The Netherlands)</li>
+            <li><strong>InterLymph Consortium Pathology and Survival Working Group</strong></li>
+          </ol>
 
-            <h2>Citation</h2>
-            <ol>
-                <li>Turner, J. J., et al. (2010). InterLymph hierarchical classification of lymphoid neoplasms for epidemiologic research based on the WHO classification (2008): update and future directions. <i>Blood</i>, 116(20), e90–e98.</li>
-                <li>Morton, L. M., et al. (2007). Proposed classification of lymphoid neoplasms for epidemiologic research from the Pathology Working Group of InterLymph. <i>Blood</i>, 110(2), 695–708.</li>
-                <li>Pathology Working Group (2025). InterLymph hierarchical classification of lymphoid neoplasms for epidemiologic research based on the WHO-HAEM5. <i>Unpublished</i>.</li>
-            </ol>
-
-            <h2>Data Sources</h2>
-            <ul>
-                <li><strong>ICD-O-3</strong> – International Classification of Diseases for Oncology, 3rd Edition (WHO)</li>
-                <li><strong>ICD-9</strong> – International Classification of Diseases, Ninth Revision (WHO/CDC)</li>
-                <li><strong>ICD-10</strong> – International Classification of Diseases, Tenth Revision (WHO)</li>
-                <li><strong>ICD-10-CM</strong> – ICD-10 Clinical Modification (U.S. National Center for Health Statistics, CDC)</li>
-                <li><strong>ICD-11</strong> – International Classification of Diseases, Eleventh Revision (WHO)</li>
-                <li><strong>SNOMED CT</strong> – Systematized Nomenclature of Medicine Clinical Terms (© IHTSDO)</li>
-                <li><strong>NCIt</strong> – NCI Thesaurus, National Cancer Institute</li>
-                <li><strong>EFO</strong> – Experimental Factor Ontology (EMBL-EBI, licensed under CC BY 4.0)</li>
-                <li><strong>UMLS CUI</strong> – Unified Medical Language System, Concept Unique Identifiers (U.S. National Library of Medicine)</li>
-            </ul>
-
-            <h2>Copyright and Licensing</h2>
-            <p>This tool integrates content from multiple biomedical classification and ontology systems. All data remain the intellectual property of their respective organizations:</p>
-            <ul>
-                <li>© World Health Organization (WHO): ICD-O-3, ICD-9, ICD-10, ICD-11.</li>
-                <li>© U.S. Centers for Disease Control and Prevention (CDC): ICD-10-CM.</li>
-                <li>© International Health Terminology Standards Development Organisation (IHTSDO): SNOMED CT.</li>
-                <li>© National Cancer Institute: NCI Thesaurus.</li>
-                <li>© U.S. National Library of Medicine: UMLS.</li>
-                <li>© EMBL-EBI: EFO (licensed under CC BY 4.0).</li>
-            </ul>
-            <p>All content is used under fair use and for research/educational purposes only. This tool is not intended for clinical decision-making.</p>
-
-            <h2>Team and Contributors</h2>
-
-            <h3>Webtool Development</h3>
-            <ul>
-                <li><strong>Murat Güler</strong> (Genomic Epidemiology Group, German Cancer Research Center (DKFZ), Heidelberg, Germany, <a href="mailto:murat.guler@dkfz.de">murat.guler@dkfz.de</a>)</li>
-                <li><strong>Federico Canzian</strong> (Genomic Epidemiology Group, German Cancer Research Center (DKFZ), Heidelberg, Germany)</li>
-            </ul>
-
-            <h3>Classification Contributors</h3>
-            <ol>
-                <li><strong>Alyssa Clay-Gilmour</strong> (Department of Epidemiology &amp; Biostatistics, Arnold School of Public Health, University of South Carolina, Columbia, SC, USA)</li>
-                <li><strong>Murat Güler</strong> (Genomic Epidemiology Group, German Cancer Research Center (DKFZ), Heidelberg, Germany)</li>
-                <li><strong>James R. Cerhan</strong> (Department of Quantitative Health Sciences, Mayo Clinic, Rochester, MN, USA)</li>
-                <li><strong>Karin E. Smedby</strong> (Dept of Medicine Solna, Division of Clinical Epidemiology, Karolinska Institutet, and Dept of Hematology, Karolinska University Hospital, Stockholm, Sweden)</li>
-                <li><strong>Arjan Diepstra</strong> (Department of Pathology and Medical Biology, University of Groningen, University Medical Center Groningen, Groningen, The Netherlands)</li>
-                <li><strong>InterLymph Consortium Pathology and Survival Working Group</strong></li>
-            </ol>
-
-            <h2>Updates</h2>
-            <ul>
-                <li>10/01/2024 – <a href="https://doi.org/10.1002/hon.70094_191" target="_blank">InterLymph 2025 based on WHO-HAEM5</a></li>
-                <li>06/22/2010 – <a href="https://doi.org/10.1182/blood-2010-06-289561" target="_blank">InterLymph 2010 based on WHO-HAEM3</a></li>
-                <li>05/15/2008 – <a href="https://doi.org/10.1182/blood-2006-11-051672" target="_blank">Initial 2008 InterLymph classification</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 M Guler. All rights reserved.</p>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="ihc.html">i-CLASSi</a></li>
-                    <li><a href="mapping.html">Mapping</a></li>
-                    <li><a href="i-riskdb.html">i-Riskdb</a></li>
-                    <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-                    <li><a href="abbreviations.html">Abbreviations</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
-
+          <h2>Updates</h2>
+          <ul>
+            <li>10/01/2024 - <a href="https://doi.org/10.1002/hon.70094_191" target="_blank">InterLymph 2025 based on WHO-HAEM5</a></li>
+            <li>06/22/2010 - <a href="https://doi.org/10.1182/blood-2010-06-289561" target="_blank">InterLymph 2010 based on WHO-HAEM3</a></li>
+            <li>05/15/2008 - <a href="https://doi.org/10.1182/blood-2006-11-051672" target="_blank">Initial 2008 InterLymph classification</a></li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </div>
 </body>
 </html>

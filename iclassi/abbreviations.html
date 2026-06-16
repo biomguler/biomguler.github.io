@@ -3,76 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abbreviations - i-CLASSi Tool</title>
+  <title>Abbreviations | i-CLASSi Studio</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
   <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.flash.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
   <script src="table.js"></script>
-  <style>
-    table { width: 100%; margin: 20px 0; border-collapse: collapse; }
-    th, td { padding: 10px; border: 1px solid #ddd; }
-    th { background-color: #f4f4f4; }
-  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="ihc.html">i-CLASSi</a></li>
-        <li><a href="mapping.html">Mapping</a></li>
-        <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-        <li><a href="abbreviations.html">Abbreviations</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-  </header>
-  <section class="main">
-    <div class="content">
-      <h1>Abbreviations</h1>
-    </div>
-  </section>
-  <table id="abbrevTable" class="display">
-    <thead>
-      <tr>
-        <th>Abbreviations-acronyms</th>
-        <th>Full name</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 M Guler. All rights reserved.</p>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ihc.html">i-CLASSi</a></li>
-          <li><a href="mapping.html">Mapping</a></li>
-          <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-          <li><a href="abbreviations.html">Abbreviations</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="index.html"><img src="images/i-classi-vector-transparent.svg" alt="i-CLASSi logo"><strong>i-CLASSi</strong></a>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="index.html"><span class="sidebar-icon">⌂</span>Intro</a>
+        <a class="sidebar-link" href="iclassi.html"><span class="sidebar-icon">▤</span>i-CLASSi</a>
+        <a class="sidebar-link" href="mapping.html"><span class="sidebar-icon">⇄</span>Mapping</a>
+        <a class="sidebar-link" href="hierarchy.html"><span class="sidebar-icon">⌕</span>Lookup</a>
+        <a class="sidebar-link" href="i-gwasdb.html"><span class="sidebar-icon">◇</span>i-GWASdb</a>
+        <a class="sidebar-link active" href="abbreviations.html"><span class="sidebar-icon">A</span>Abbreviations</a>
+        <a class="sidebar-link" href="about.html"><span class="sidebar-icon">?</span>About</a>
       </nav>
-    </div>
-  </footer>
+      <div class="sidebar-footer"><a href="legal-notice.html">Legal Notice</a><a href="privacy-policy.html">Privacy Policy</a><span>© 2026 Murat Güler</span><span>i-CLASSi Studio v0.1.0</span></div>
+    </aside>
+    <main class="app-main">
+      <header class="topbar">
+        <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
+        <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select><option>0.1.0 (prototype)</option></select></div></div>
+      </header>
+      <section class="workspace">
+        <div class="page-heading"><div class="page-heading-icon">A</div><div><h1>Abbreviations</h1><p>Common abbreviations and acronyms used in i-CLASSi resources.</p></div></div>
+        <section class="explorer-card">
+          <div class="card-header"><strong>Abbreviation table</strong><div class="table-actions"><input id="globalSearch" type="text" placeholder="Global search by acronym or full name..."><select disabled><option>Reference...</option></select><button type="button" class="secondary" disabled>Columns</button><button type="button" class="danger" id="clearTableFilters">Clear</button><button type="button" class="success" id="exportCsv">Export CSV</button></div></div>
+          <table id="abbrevTable" class="display">
+            <thead><tr><th>Abbreviation or acronym</th><th>Full name</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+  </div>
   <script>
     const columnsConfigAbbrev = [
       { data: 'Abbreviations-acronyms' },
       { data: 'Full name' }
     ];
-    const toggleConfigAbbrev = {}; // no toggles for now
-    // Point to abv.json in same folder (adjust to raw URL if using GitHub Pages)
-    initializeDataTable('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/iclassi/abbreviations.json', '#abbrevTable', columnsConfigAbbrev, toggleConfigAbbrev);
+
+    initializeDataTable('abbreviations.json', '#abbrevTable', columnsConfigAbbrev, {}, {
+      scrollY: 'calc(100vh - 270px)',
+      buttons: ['copy', 'csv', 'excel'],
+      initComplete: function(table) {
+        setupColumnFilters(table);
+        document.querySelector('#globalSearch').addEventListener('input', event => table.search(event.target.value).draw());
+        document.querySelector('#clearTableFilters').addEventListener('click', () => { document.querySelector('#globalSearch').value = ''; table.search(''); table.columns().search(''); $('#abbrevTable thead select').val(''); table.draw(); });
+        document.querySelector('#exportCsv').addEventListener('click', () => table.button('.buttons-csv').trigger());
+      }
+    });
+
+    function setupColumnFilters(table) {
+      table.columns().every(function() {
+        const column = this;
+        const header = $(column.header());
+        const title = header.text();
+        const select = $('<select><option value="">All</option></select>')
+          .appendTo(header.empty().append(document.createTextNode(title)))
+          .on('click', event => event.stopPropagation())
+          .on('change', function() {
+            const value = $.fn.dataTable.util.escapeRegex($(this).val());
+            column.search(value ? `^${value}$` : '', true, false).draw();
+          });
+        column.data().unique().sort().each(value => {
+          if (value !== null && value !== undefined && String(value).trim()) select.append(`<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`);
+        });
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+    }
   </script>
 </body>
 </html>

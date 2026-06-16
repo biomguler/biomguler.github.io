@@ -1,76 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>i-CLASSi Tool</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
-  <!-- ECharts -->
-  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>i-CLASSi Studio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- Nav -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="ihc.html">i-CLASSi</a></li>
-        <li><a href="mapping.html">Mapping</a></li>
-        <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-        <li><a href="abbreviations.html">Abbreviations</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Interactive Classification of Lymphoid Neoplasms</h1>
-    <p>A modern academic resource for lymphoid neoplasm taxonomy.</p>
-  </section>
-
-  <!-- Main -->
-  <section class="main">
-    <!-- Toolbar + Chart -->
-    <div class="wrap">
-      <div class="toolbar">
-        <span class="spacer"></span>
-        <label>Filter:
-          <input id="filter" type="text" placeholder="e.g. NHL, Mature-B, TFH"/>
-        </label>
-        <button id="download">Download PNG</button>
-        <button id="fullscreen">Fullscreen</button>
-        <button id="collapse">Collapse All</button>
-        <button id="expand56">Expand L5-L6</button>
-      </div>
-      <div id="chart-container">
-        <div id="chart"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 M Guler. All rights reserved.</p>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ihc.html">i-CLASSi</a></li>
-          <li><a href="mapping.html">Mapping</a></li>
-          <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-          <li><a href="abbreviations.html">Abbreviations</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="index.html">
+        <img src="images/i-classi-vector-transparent.svg" alt="i-CLASSi logo">
+        <strong>i-CLASSi</strong>
+      </a>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="index.html"><span class="sidebar-icon">⌂</span>Intro</a>
+        <a class="sidebar-link" href="iclassi.html"><span class="sidebar-icon">▤</span>i-CLASSi</a>
+        <a class="sidebar-link" href="mapping.html"><span class="sidebar-icon">⇄</span>Mapping</a>
+        <a class="sidebar-link" href="hierarchy.html"><span class="sidebar-icon">⌕</span>Lookup</a>
+        <a class="sidebar-link" href="i-gwasdb.html"><span class="sidebar-icon">◇</span>i-GWASdb</a>
+        <a class="sidebar-link" href="abbreviations.html"><span class="sidebar-icon">A</span>Abbreviations</a>
+        <a class="sidebar-link" href="about.html"><span class="sidebar-icon">?</span>About</a>
       </nav>
-    </div>
-  </footer>
+      <div class="sidebar-footer">
+        <a href="legal-notice.html">Legal Notice</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span>© 2026 Murat Güler</span>
+        <span>i-CLASSi Studio v0.1.0</span>
+      </div>
+    </aside>
 
-  <!-- Your Sankey logic -->
-  <script src="sankey.js"></script>
-  <!-- Keep siteSearch if you use it -->
-  <script src="siteSearch.js"></script>
+    <main class="app-main">
+      <header class="topbar">
+        <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
+        <div class="topbar-controls">
+          <div class="topbar-field">
+            <label for="versionSelect">i-CLASSi version</label>
+            <select id="versionSelect">
+              <option>0.1.0 (prototype)</option>
+            </select>
+          </div>
+        </div>
+      </header>
+
+      <section class="intro">
+        <div class="intro-logo">
+          <img src="images/i-classi-wbg-cropped.png" alt="i-CLASSi">
+        </div>
+        <p class="intro-copy">
+          A standardized lymphoid neoplasm classification framework for reproducible epidemiologic research.
+          Integrate InterLymph hierarchy, vocabulary mappings, and UMLS concept metadata.
+        </p>
+        <div class="stat-row">
+          <div class="stat-card">
+            <strong>140+</strong>
+            <span>Disease entities</span>
+          </div>
+          <div class="stat-card">
+            <strong>UMLS</strong>
+            <span>Cached concept metadata</span>
+          </div>
+          <div class="stat-card">
+            <strong>WHO-HAEM5</strong>
+            <span>Hierarchy support</span>
+          </div>
+        </div>
+        <div class="intro-actions">
+          <a class="button" href="iclassi.html">Explore i-CLASSi</a>
+          <a class="button" href="mapping.html">See mappings</a>
+          <a class="button" href="hierarchy.html">Lookup entities</a>
+          <a class="button" href="about.html">Why i-CLASSi?</a>
+        </div>
+        <div class="scroll-note">↓<br>Scroll to explore</div>
+      </section>
+
+      <section class="component-section">
+        <h2>Four Integrated Components</h2>
+        <p>Choose your entry point into the i-CLASSi ecosystem</p>
+        <div class="component-grid">
+          <a class="component-card" href="iclassi.html">
+            <h3>Classification Explorer</h3>
+            <p>Filter disease entities through InterLymph hierarchy levels and inspect table metadata.</p>
+          </a>
+          <a class="component-card" href="mapping.html">
+            <h3>Vocabulary Mapping</h3>
+            <p>Review mappings to ICD, ICD-O, SNOMED CT, NCIt, EFO, and UMLS CUI identifiers.</p>
+          </a>
+          <a class="component-card" href="hierarchy.html">
+            <h3>Lookup</h3>
+            <p>Expand i-CLASSi entities from L1 to terminal branches and open UMLS metadata.</p>
+          </a>
+          <a class="component-card" href="i-gwasdb.html">
+            <h3>Genetic Evidence</h3>
+            <p>Browse GWAS records linked to i-CLASSi disease categories and LNIC codes.</p>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>

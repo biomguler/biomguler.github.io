@@ -1,160 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>i-GWASdb</title>
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
-    <!-- Select2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-    <!-- jQuery -->
-    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <!-- DataTables JS -->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.flash.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
-    <!-- Select2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <!-- Custom table.js script -->
-    <script src="table.js"></script>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            margin: 20px 0;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        .select2-container {
-            width: 100% !important;
-        }
-        .toggle-columns {
-            margin-bottom: 20px;
-        }
-        .toggle-columns label {
-            margin-right: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>i-GWASdb | i-CLASSi Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+  <script src="table.js"></script>
 </head>
 <body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="index.html"><img src="images/i-classi-vector-transparent.svg" alt="i-CLASSi logo"><strong>i-CLASSi</strong></a>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="index.html"><span class="sidebar-icon">⌂</span>Intro</a>
+        <a class="sidebar-link" href="iclassi.html"><span class="sidebar-icon">▤</span>i-CLASSi</a>
+        <a class="sidebar-link" href="mapping.html"><span class="sidebar-icon">⇄</span>Mapping</a>
+        <a class="sidebar-link" href="hierarchy.html"><span class="sidebar-icon">⌕</span>Lookup</a>
+        <a class="sidebar-link active" href="i-gwasdb.html"><span class="sidebar-icon">◇</span>i-GWASdb</a>
+        <a class="sidebar-link" href="abbreviations.html"><span class="sidebar-icon">A</span>Abbreviations</a>
+        <a class="sidebar-link" href="about.html"><span class="sidebar-icon">?</span>About</a>
+      </nav>
+      <div class="sidebar-footer"><a href="legal-notice.html">Legal Notice</a><a href="privacy-policy.html">Privacy Policy</a><span>© 2026 Murat Güler</span><span>i-CLASSi Studio v0.1.0</span></div>
+    </aside>
+    <main class="app-main">
+      <header class="topbar">
+        <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
+        <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select><option>0.1.0 (prototype)</option></select></div></div>
+      </header>
+      <section class="workspace">
+        <div class="page-heading"><div class="page-heading-icon">◇</div><div><h1>i-GWASdb Explorer</h1><p>Browse genome-wide association records linked to i-CLASSi disease categories and LNIC codes.</p></div></div>
+        <section class="explorer-card">
+          <div class="card-header"><strong>GWAS table</strong><div class="table-actions"><input id="globalSearch" type="text" placeholder="Global search by LNIC, gene, trait, variant, or author..."><select id="quickTrait"><option value="">Quick trait...</option></select><button type="button" class="secondary" id="columnToggle">Columns</button><button type="button" class="danger" id="clearTableFilters">Clear</button><button type="button" class="success" id="exportCsv">Export CSV</button></div></div>
+          <table id="gwasdbTable" class="display">
+            <thead><tr><th>LNIC Code(s)</th><th>Study type</th><th>CHR</th><th>Cytoband</th><th>POS</th><th>rsID</th><th>EA</th><th>Nearest gene(s)</th><th>P-value</th><th>Author</th><th>Reported trait(s)</th><th>EFO traits</th><th>GWAS Catalog</th><th>PUBMED</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script>
+    const columnsConfigGwasdb = [
+      { data: 'LNIC Code(s)', render: data => `<span class="code-link">${data || ''}</span>` },
+      { data: 'Study type' },
+      { data: 'CHR' },
+      { data: 'Cytoband' },
+      { data: 'POS' },
+      { data: 'rsID' },
+      { data: 'EA' },
+      { data: 'Nearest gene(s)' },
+      { data: 'P' },
+      { data: 'Author' },
+      { data: 'Reported trait(s)' },
+      { data: 'EFO traits', visible: false },
+      { data: 'GWAS Catalog', visible: false },
+      { data: 'PUBMED', visible: false }
+    ];
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ihc.html">i-CLASSi</a></li>
-                <li><a href="mapping.html">Mapping</a></li>
-                <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-                <li><a href="abbreviations.html">Abbreviations</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
+    initializeDataTable('i-gwasdb.json', '#gwasdbTable', columnsConfigGwasdb, {}, {
+      scrollY: 'calc(100vh - 270px)',
+      buttons: ['copy', 'csv', 'excel'],
+      initComplete: function(table, data) {
+        setupColumnFilters(table);
+        setupControls(table, data);
+      }
+    });
 
-    <!-- Main Content Area -->
-    <section class="main">
-        <div class="content">
-            <h1>i-GWASdb for Lymphoid Neoplasms</h1><br>
-            <p>Explore GWAS data for lymphoid neoplasms using the table below.</p>
+    function setupControls(table, data) {
+      const globalSearch = document.querySelector('#globalSearch');
+      const quickTrait = document.querySelector('#quickTrait');
+      globalSearch.addEventListener('input', () => table.search(globalSearch.value).draw());
+      [...new Set(data.map(row => row['Reported trait(s)']).filter(Boolean))].sort().forEach(trait => {
+        const option = document.createElement('option');
+        option.value = trait;
+        option.textContent = trait;
+        quickTrait.appendChild(option);
+      });
+      quickTrait.addEventListener('change', () => table.column(10).search(quickTrait.value ? `^${$.fn.dataTable.util.escapeRegex(quickTrait.value)}$` : '', true, false).draw());
+      document.querySelector('#clearTableFilters').addEventListener('click', () => { globalSearch.value = ''; quickTrait.value = ''; table.search(''); table.columns().search(''); $('#gwasdbTable thead select').val(''); table.draw(); });
+      document.querySelector('#exportCsv').addEventListener('click', () => table.button('.buttons-csv').trigger());
+      document.querySelector('#columnToggle').addEventListener('click', () => [11, 12, 13].forEach(index => table.column(index).visible(!table.column(index).visible())));
+    }
 
-            <!-- Toggle Columns Section -->
-            <div class="toggle-columns">
-                <label><input type="checkbox" id="togglePMID"> Show/Hide Study (PMID)</label>
-                <label><input type="checkbox" id="toggleGWASCat"> Show/Hide GWAS Catalog ID</label>
-                <label><input type="checkbox" id="toggleEFO"> Show/Hide EFO traits</label>
-            </div>
-        </div>
-    </section>
+    function setupColumnFilters(table) {
+      table.columns().every(function() {
+        const column = this;
+        const header = $(column.header());
+        const title = header.text();
+        const select = $('<select><option value="">All</option></select>')
+          .appendTo(header.empty().append(document.createTextNode(title)))
+          .on('click', event => event.stopPropagation())
+          .on('change', function() {
+            const value = $.fn.dataTable.util.escapeRegex($(this).val());
+            column.search(value ? `^${value}$` : '', true, false).draw();
+          });
+        column.data().unique().sort().each(value => {
+          if (value !== null && value !== undefined && String(value).trim()) select.append(`<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`);
+        });
+      });
+    }
 
-    <!-- DataTable -->
-    <table id="gwasdbTable" class="display">
-        <thead>
-            <tr>
-                <th>LNIC Code(s)</th>
-                <th>Study type</th>
-                <th>CHR</th>
-                <th>Cytoband</th>
-                <th>POS</th>
-                <th>rsID</th>
-                <th>EA</th>
-                <th>Nearest gene(s)</th>
-                <th>P-value</th>
-                <th>Author</th>
-                <th>Reported trait(s)</th>
-                <th>EFO traits</th>
-                <th>GWAS Catalog</th>
-                <th>PUBMED</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 M Guler. All rights reserved.</p>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="ihc.html">i-CLASSi</a></li>
-                    <li><a href="mapping.html">Mapping</a></li>
-                    <li><a href="i-gwasdb.html">i-GWASdb</a></li>
-                    <li><a href="abbreviations.html">Abbreviations</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
-
-    <!-- Initialize the table via table.js -->
-    <script>
-        const columnsConfigGwasdb = [
-            { data: 'LNIC Code(s)' },
-            { data: 'Study type'},
-            { data: 'CHR' },
-            { data: 'Cytoband' },
-            { data: 'POS' },
-            { data: 'rsID' },
-            { data: 'EA' },
-            { data: 'Nearest gene(s)' },
-            { data: 'P' },
-            { data: 'Author' },
-            { data: 'Reported trait(s)' },
-            { data: 'EFO traits', visible: false },
-            { data: 'GWAS Catalog', visible: false },
-            { data: 'PUBMED', visible: false }
-        ];
-
-        const toggleConfigGwasdb = {
-            '#togglePMID': 13,
-            '#toggleGWASCat': 12,
-            '#toggleEFO': 11
-        };
-
-        // Initialize table using the new script
-        initializeDataTable('https://raw.githubusercontent.com/biomguler/biomguler.github.io/main/iclassi/i-gwasdb.json', '#gwasdbTable', columnsConfigGwasdb, toggleConfigGwasdb);
-    </script>
-
+    function escapeHtml(value) {
+      return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+    }
+  </script>
 </body>
 </html>

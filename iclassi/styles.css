@@ -121,14 +121,14 @@ select {
   border-bottom: 1px solid rgba(255, 255, 255, 0.17);
   display: flex;
   flex-direction: column;
-  gap: 11px;
-  padding: 20px 18px 16px;
+  gap: 8px;
+  padding: 14px 18px 12px;
   text-decoration: none;
 }
 
 .sidebar-brand img {
   display: block;
-  height: 118px;
+  height: 104px;
   object-fit: contain;
   width: 136px;
 }
@@ -140,8 +140,8 @@ select {
 
 .sidebar-nav {
   display: grid;
-  gap: 5px;
-  padding: 12px 7px;
+  gap: 3px;
+  padding: 10px 7px;
 }
 
 .sidebar-link {
@@ -151,8 +151,8 @@ select {
   display: flex;
   font-weight: 700;
   gap: 12px;
-  min-height: 40px;
-  padding: 9px 12px;
+  min-height: 37px;
+  padding: 8px 12px;
   text-decoration: none;
 }
 
@@ -172,10 +172,10 @@ select {
   border-top: 1px solid rgba(255, 255, 255, 0.17);
   color: #ffffff;
   display: grid;
-  font-size: 10px;
-  gap: 11px;
+  font-size: 9px;
+  gap: 8px;
   margin-top: auto;
-  padding: 16px 12px 20px;
+  padding: 12px 10px 14px;
   text-align: center;
 }
 
@@ -237,7 +237,9 @@ select {
     radial-gradient(circle at 88% 9%, rgba(61, 120, 194, 0.08), transparent 25%),
     #f7f9fb;
   min-height: calc(100vh - 46px);
-  padding: 64px 28px 88px;
+  align-content: center;
+  display: grid;
+  padding: 28px 28px 36px;
   text-align: center;
 }
 
@@ -245,22 +247,22 @@ select {
   background: #ffffff;
   display: inline-flex;
   justify-content: center;
-  margin: 0 auto 44px;
+  margin: 0 auto 24px;
   max-width: 655px;
   padding: 8px 18px;
-  width: min(655px, 90%);
+  width: 90%;
 }
 
 .intro-logo img {
   display: block;
-  max-height: 176px;
+  max-height: 150px;
   object-fit: contain;
   width: 100%;
 }
 
 .intro-copy {
   color: #334762;
-  font-size: 21px;
+  font-size: 19px;
   line-height: 1.55;
   margin: 0 auto;
   max-width: 980px;
@@ -270,7 +272,7 @@ select {
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(3, minmax(170px, 1fr));
-  margin: 32px auto 48px;
+  margin: 26px auto 34px;
   max-width: 895px;
 }
 
@@ -296,14 +298,12 @@ select {
 .intro-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
   justify-content: center;
 }
 
 .scroll-note {
-  color: #6b7b93;
-  font-size: 12px;
-  margin-top: 12px;
+  display: none;
 }
 
 .component-section {
@@ -829,10 +829,62 @@ table.dataTable tbody tr.selected {
   color: #334762;
 }
 
+.content-figure {
+  margin: 20px 0 18px;
+}
+
+.content-figure a {
+  display: block;
+}
+
+.content-figure img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 360px;
+  width: 50%;
+}
+
 code {
   background: #eef3f7;
   border-radius: 4px;
   padding: 2px 4px;
+}
+
+@media (max-height: 760px) and (min-width: 1051px) {
+  .sidebar-brand {
+    padding-top: 10px;
+    padding-bottom: 9px;
+  }
+
+  .sidebar-brand img {
+    height: 86px;
+  }
+
+  .sidebar-link {
+    min-height: 33px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+  }
+
+  .sidebar-footer {
+    gap: 6px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .intro-logo img {
+    max-height: 126px;
+  }
+
+  .intro-copy {
+    font-size: 18px;
+  }
+
+  .stat-row {
+    margin-bottom: 24px;
+    margin-top: 22px;
+  }
 }
 
 @media (max-width: 1050px) {
@@ -871,5 +923,81 @@ code {
   .component-grid,
   .hierarchy-workspace {
     grid-template-columns: 1fr;
+  }
+
+  .content-figure img {
+    max-width: 320px;
+    width: 82%;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 13px;
+  }
+
+  .topbar {
+    align-items: stretch;
+    display: grid;
+    gap: 8px;
+    position: relative;
+  }
+
+  .topbar-controls {
+    justify-content: stretch;
+  }
+
+  .topbar-field {
+    align-items: stretch;
+    display: grid;
+    width: 100%;
+  }
+
+  .topbar-field select,
+  .table-actions select,
+  .table-actions button,
+  .table-actions input {
+    width: 100%;
+  }
+
+  .workspace {
+    padding: 16px 12px;
+  }
+
+  .page-heading {
+    display: grid;
+    gap: 10px;
+  }
+
+  .page-heading h1,
+  .content-panel h1 {
+    font-size: 26px;
+  }
+
+  .content-panel {
+    margin: 12px auto;
+    padding: 18px;
+  }
+
+  .intro {
+    min-height: auto;
+    padding: 22px 14px 28px;
+  }
+
+  .intro-logo {
+    padding: 6px 10px;
+    width: 100%;
+  }
+
+  .intro-copy {
+    font-size: 16px;
+  }
+
+  .stat-card strong {
+    font-size: 24px;
+  }
+
+  .intro-actions {
+    display: grid;
   }
 }

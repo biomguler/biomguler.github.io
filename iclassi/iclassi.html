@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>i-CLASSi | InterLymph Classification Explorer</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=2">
   <link rel="stylesheet" href="styles.css">
+  <script src="versioning.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
   <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -127,15 +129,17 @@
       { data: 'Subtype(s)', visible: true }
     ];
 
-    initializeDataTable('iclassi.json', '#example', columnsConfig, {}, {
-      heightOffset: 310,
-      scrollY: 'calc(100vh - 360px)',
-      buttons: ['copy', 'csv', 'excel'],
-      initComplete: function(table, data) {
-        setupColumnFilters(table);
-        setupExplorerControls(table, data);
-      },
-      onRowClick: function() {}
+    IclassiVersions.ready().then(versionContext => {
+      initializeDataTable(versionContext.file('iclassi.json'), '#example', columnsConfig, {}, {
+        heightOffset: 310,
+        scrollY: 'calc(100vh - 360px)',
+        buttons: ['copy', 'csv', 'excel'],
+        initComplete: function(table, data) {
+          setupColumnFilters(table);
+          setupExplorerControls(table, data);
+        },
+        onRowClick: function() {}
+      });
     });
 
     function setupColumnFilters(table) {

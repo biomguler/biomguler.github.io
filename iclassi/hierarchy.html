@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lookup | i-CLASSi Studio</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=2">
   <link rel="stylesheet" href="styles.css">
+  <script src="versioning.js"></script>
   <script src="hierarchy.js"></script>
   <script src="umls.js"></script>
 </head>
@@ -103,23 +105,26 @@
   <script>
     let allRows = [];
 
-    fetch('iclassi.json')
-      .then(response => {
-        if (!response.ok) throw new Error('Could not load iclassi.json');
-        return response.json();
-      })
-      .then(rows => {
-        allRows = rows;
-        renderHierarchy(rows);
-        initIclassiUmlsPanel(null, rows, {
-          mappingUrl: 'iclassi_mapping.json',
-          cacheUrl: 'umls_concepts.json',
-          autoSelectInitial: false
+    IclassiVersions.ready().then(versionContext => {
+      const classificationUrl = versionContext.file('iclassi.json');
+      fetch(classificationUrl)
+        .then(response => {
+          if (!response.ok) throw new Error(`Could not load ${classificationUrl}`);
+          return response.json();
+        })
+        .then(rows => {
+          allRows = rows;
+          renderHierarchy(rows);
+          initIclassiUmlsPanel(null, rows, {
+            mappingUrl: versionContext.file('iclassi_mapping.json'),
+            cacheUrl: 'umls_concepts.json',
+            autoSelectInitial: false
+          });
+        })
+        .catch(error => {
+          document.querySelector('#fullHierarchyTree').innerHTML = `<p class="status error">${escapeHtml(error.message)}</p>`;
         });
-      })
-      .catch(error => {
-        document.querySelector('#fullHierarchyTree').innerHTML = `<p class="status error">${escapeHtml(error.message)}</p>`;
-      });
+    });
 
     document.querySelector('#hierarchySearch').addEventListener('input', event => {
       const query = event.target.value.trim().toLowerCase();

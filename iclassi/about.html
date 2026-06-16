@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | i-CLASSi Studio</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=2">
   <link rel="stylesheet" href="styles.css">
+  <script src="versioning.js"></script>
 </head>
 <body>
   <div class="app-shell">
@@ -24,7 +26,7 @@
     <main class="app-main">
       <header class="topbar">
         <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
-        <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select><option>0.1.0 (prototype)</option></select></div></div>
+        <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select data-version-select><option>0.1.0 (prototype)</option></select></div></div>
       </header>
       <section class="workspace">
         <article class="content-panel">
@@ -33,7 +35,12 @@
 
           <h2>Overview</h2>
           <p>The InterLymph Consortium is an international scientific forum for epidemiologic research in lymphoid malignancies. i-CLASSi supports harmonized use of the InterLymph hierarchical classification of lymphoid neoplasms and related biomedical vocabularies.</p>
-          <p>Learn more at the <a href="https://epi.grants.cancer.gov/interlymph/" target="_blank">InterLymph website</a>.</p>
+          <figure class="content-figure">
+            <a href="https://interlymph.org/" target="_blank" rel="noopener">
+              <img src="images/interlymph-about.png" alt="InterLymph classification overview">
+            </a>
+          </figure>
+          <p>Learn more at the <a href="https://interlymph.org/" target="_blank" rel="noopener">InterLymph website</a>.</p>
 
           <h2>Pathology Working Group</h2>
           <p>The InterLymph Pathology Working Group includes hematopathologists, epidemiologists, computational biologists, and researchers committed to harmonizing lymphoid malignancy classification for epidemiologic studies.</p>

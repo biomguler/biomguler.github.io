@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>i-GWASdb | i-CLASSi Studio</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=2">
   <link rel="stylesheet" href="styles.css">
+  <script src="versioning.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
   <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -32,7 +34,7 @@
     <main class="app-main">
       <header class="topbar">
         <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
-        <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select><option>0.1.0 (prototype)</option></select></div></div>
+        <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select data-version-select><option>0.1.0 (prototype)</option></select></div></div>
       </header>
       <section class="workspace">
         <div class="page-heading"><div class="page-heading-icon">◇</div><div><h1>i-GWASdb Explorer</h1><p>Browse genome-wide association records linked to i-CLASSi disease categories and LNIC codes.</p></div></div>
@@ -64,13 +66,15 @@
       { data: 'PUBMED', visible: false }
     ];
 
-    initializeDataTable('i-gwasdb.json', '#gwasdbTable', columnsConfigGwasdb, {}, {
-      scrollY: 'calc(100vh - 270px)',
-      buttons: ['copy', 'csv', 'excel'],
-      initComplete: function(table, data) {
-        setupColumnFilters(table);
-        setupControls(table, data);
-      }
+    IclassiVersions.ready().then(versionContext => {
+      initializeDataTable(versionContext.file('i-gwasdb.json'), '#gwasdbTable', columnsConfigGwasdb, {}, {
+        scrollY: 'calc(100vh - 270px)',
+        buttons: ['copy', 'csv', 'excel'],
+        initComplete: function(table, data) {
+          setupColumnFilters(table);
+          setupControls(table, data);
+        }
+      });
     });
 
     function setupControls(table, data) {

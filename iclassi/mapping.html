@@ -40,6 +40,15 @@
       </header>
       <section class="workspace">
         <div class="page-heading"><div class="page-heading-icon">⇄</div><div><h1>Mapping Explorer</h1><p>Inspect vocabulary crosswalks and confidence labels for i-CLASSi disease entities.</p></div></div>
+        <section class="explorer-card gwas-context-card" id="mappingContextCard">
+          <div class="card-header">
+            <strong>i-CLASSi context</strong>
+            <span class="muted-small">Click an LNIC code in the mapping table to view its L1-L6 classification path.</span>
+          </div>
+          <div class="gwas-context-body" id="mappingContextBody">
+            <p class="muted-small">No LNIC code selected.</p>
+          </div>
+        </section>
         <section class="explorer-card">
           <div class="card-header"><strong>Mapping table</strong><div class="table-actions"><input id="globalSearch" type="text" placeholder="Global search by entity, vocabulary, code, or preferred name..."><select id="quickEntity"><option value="">Quick entity...</option></select><button type="button" class="danger" id="clearTableFilters">Clear</button><button type="button" class="success" id="exportCsv">Export CSV</button></div></div>
           <table id="mappingTable" class="display">
@@ -51,9 +60,11 @@
     </main>
   </div>
   <script>
+    let classificationByLnic = {};
+
     const columnsConfigMapping = [
       { data: 'Entry ID', visible: true },
-      { data: 'LNIC Code', visible: true, render: data => `<span class="code-link">${data || ''}</span>` },
+      { data: 'LNIC Code', visible: true, render: renderLnicCodes },
       { data: 'Entity-Type', visible: true },
       { data: 'Subtype\u00A0(s)', defaultContent: '' },
       { data: 'Vocabulary' },
@@ -65,13 +76,19 @@
     ];
 
     IclassiVersions.ready().then(versionContext => {
+      $.getJSON(versionContext.file('iclassi.json'), classificationRows => {
+        classificationByLnic = buildClassificationIndex(classificationRows);
+      }).always(() => {
       initializeDataTable(versionContext.file('iclassi_mapping.json'), '#mappingTable', columnsConfigMapping, {}, {
-        scrollY: 'calc(100vh - 270px)',
+        scrollY: `${Math.max(window.innerHeight - 455, 320)}px`,
+        heightOffset: 455,
         buttons: ['copy', 'csv', 'excel'],
         initComplete: function(table, data) {
           setupColumnFilters(table);
           setupControls(table, data);
+          setupLnicContextClicks();
         }
+      });
       });
     });
 
@@ -88,6 +105,72 @@
       quickEntity.addEventListener('change', () => table.column(2).search(quickEntity.value ? `^${$.fn.dataTable.util.escapeRegex(quickEntity.value)}$` : '', true, false).draw());
       document.querySelector('#clearTableFilters').addEventListener('click', () => { globalSearch.value = ''; quickEntity.value = ''; table.search(''); table.columns().search(''); $('#mappingTable thead select').val(''); $('#mappingTable thead input').val(''); table.draw(); });
       document.querySelector('#exportCsv').addEventListener('click', () => table.button('.buttons-csv').trigger());
+    }
+
+    function setupLnicContextClicks() {
+      $('#mappingTable tbody').on('click', '.lnic-chip', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        const lnic = this.dataset.lnic;
+        showLnicContext(lnic);
+        document.querySelectorAll('.lnic-chip.active').forEach(item => item.classList.remove('active'));
+        this.classList.add('active');
+      });
+    }
+
+    function showLnicContext(lnic) {
+      const body = document.querySelector('#mappingContextBody');
+      const row = classificationByLnic[lnic];
+      if (!row) {
+        body.innerHTML = `<p class="status error">No i-CLASSi classification row was found for ${escapeHtml(lnic)}.</p>`;
+        return;
+      }
+      const title = row['Entity-Type'] || row['WHO-HAEM5 Entity-Type'] || lnic;
+      const fields = [
+        ['LNIC Code', row['LNIC Code']],
+        ['L1 Lineage-Nature', row['Lineage-Nature']],
+        ['L2 Major Group', row['Major Group']],
+        ['L3 Category', row.Category],
+        ['L4 Class-Family', row['Class-Family']],
+        ['L5 Entity-Type', row['Entity-Type']],
+        ['L6 Subtype(s)', row['Subtype(s)']]
+      ];
+      body.innerHTML = `
+        <div class="gwas-context-title">
+          <span class="muted-small">${escapeHtml(lnic)}</span>
+          <h2>${escapeHtml(title)}</h2>
+        </div>
+        <div class="meta-grid compact">
+          ${fields.map(([label, value]) => `
+            <div class="meta-item">
+              <span>${escapeHtml(label)}</span>
+              ${escapeHtml(value || 'Not reported')}
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function buildClassificationIndex(rows) {
+      return (Array.isArray(rows) ? rows : []).reduce((index, row) => {
+        const lnic = row && row['LNIC Code'];
+        if (lnic) index[lnic] = row;
+        return index;
+      }, {});
+    }
+
+    function renderLnicCodes(data, type) {
+      if (type !== 'display') return data || '';
+      const codes = splitValueList(data).filter(value => /^LNIC-\d{3}-\d{3}$/i.test(value));
+      if (!codes.length) return escapeHtml(data || '');
+      return codes.map(code => `<button type="button" class="lnic-chip" data-lnic="${escapeHtml(code)}">${escapeHtml(code)}</button>`).join(' ');
+    }
+
+    function splitValueList(value) {
+      return String(value || '')
+        .split(/[,;|\s]+/)
+        .map(item => item.trim())
+        .filter(Boolean);
     }
 
     function setupColumnFilters(table) {

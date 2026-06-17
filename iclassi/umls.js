@@ -6,12 +6,23 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
   const cuiList = panel.querySelector('#mappedCuis');
   const results = panel.querySelector('#umlsResults');
   const status = panel.querySelector('#umlsStatus');
-  const cacheSearch = panel.querySelector('#umlsCacheSearch');
-  const cacheSearchButton = panel.querySelector('#umlsCacheSearchButton');
+  const policySummary = panel.querySelector('#umlsPolicySummary');
+  const liveCuiSelect = panel.querySelector('#liveCuiSelect');
+  const apiKeyInput = panel.querySelector('#umlsApiKey');
+  const liveLookupButton = panel.querySelector('#liveLookupButton');
+  const clearLiveButton = panel.querySelector('#clearLiveLookup');
+  const liveStatus = panel.querySelector('#liveLookupStatus');
+  const liveResults = panel.querySelector('#liveLookupResults');
 
+  const defaultExcludedDefinitionSources = [
+    'MSHCZE', 'MSHDUT', 'MSHFIN', 'MSHFRE', 'MSHGER', 'MSHITA', 'MSHJPN',
+    'MSHKOR', 'MSHNOR', 'MSHPOL', 'MSHPOR', 'MSHRUS', 'MSHSPA', 'MSHSWE'
+  ];
   let mappings = [];
-  let cache = { concepts: {}, entityConcepts: {} };
+  let cache = { concepts: {}, entityConcepts: {}, excludedDefinitionSources: defaultExcludedDefinitionSources };
   let selectedRow = null;
+  let selectedCui = '';
+  let liveRequestInFlight = false;
 
   Promise.all([
     fetch(config.mappingUrl || 'iclassi_mapping.json').then(toJson),
@@ -21,23 +32,30 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
       mappings = Array.isArray(mappingData) ? mappingData : [];
       cache = normalizeCache(cacheData);
       setStatus(cache.generatedAt
-        ? `UMLS metadata cache generated ${cache.generatedAt}.`
-        : 'UMLS metadata cache is not generated yet.');
+        ? `UMLS definition cache generated ${cache.generatedAt}.`
+        : 'UMLS definition cache is not generated yet.');
+      renderPolicySummary();
       if (config.autoSelectInitial !== false && rows && rows.length) selectDisease(rows[0]);
     })
     .catch(error => setStatus(error.message, true));
 
-  if (cacheSearchButton) {
-    cacheSearchButton.addEventListener('click', () => searchCache(cacheSearch.value));
+  window.iclassiSelectDisease = selectDisease;
+  window.iclassiClearDiseaseSelection = clearDiseaseSelection;
+
+  if (liveLookupButton) {
+    liveLookupButton.addEventListener('click', retrieveLiveLookup);
   }
 
-  if (cacheSearch) {
-    cacheSearch.addEventListener('keydown', event => {
-      if (event.key === 'Enter') searchCache(cacheSearch.value);
+  if (clearLiveButton) {
+    clearLiveButton.addEventListener('click', clearLiveLookup);
+  }
+
+  if (liveCuiSelect) {
+    liveCuiSelect.addEventListener('change', () => {
+      selectedCui = liveCuiSelect.value;
+      if (selectedCui) renderPublicConcept(selectedCui, selectedRow && selectedRow['LNIC Code']);
     });
   }
-
-  window.iclassiSelectDisease = selectDisease;
 
   function selectDisease(row) {
     selectedRow = row;
@@ -52,14 +70,32 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
     `;
 
     renderCuis(cuis);
-    if (cacheSearch) cacheSearch.value = entity;
+    populateLiveCuiSelect(cuis);
+    selectedCui = cuis[0] || '';
 
-    const firstCached = cuis.find(cui => cache.concepts[cui]);
-    if (firstCached) {
-      renderConcept(cache.concepts[firstCached], lnic);
+    if (selectedCui) {
+      renderPublicConcept(selectedCui, lnic);
+      setLiveStatus(`Ready to retrieve live UMLS metadata for ${selectedCui} using your own API key.`);
     } else {
-      renderMissing(cuis, lnic);
+      renderNoMappedCui();
+      setLiveStatus('No mapped CUI is available for this i-CLASSi entity.', true);
     }
+    clearLiveResults(false);
+  }
+
+  function clearDiseaseSelection() {
+    selectedRow = null;
+    selectedCui = '';
+    selectedBox.innerHTML = `
+      <strong>No entity selected</strong>
+      <span>Click a terminal hierarchy branch to view mapped UMLS concepts.</span>
+    `;
+    cuiList.innerHTML = '';
+    results.innerHTML = '<p class="muted-small">UMLS definitions will appear here after selecting a mapped CUI.</p>';
+    if (liveCuiSelect) liveCuiSelect.innerHTML = '<option value="">Select mapped CUI...</option>';
+    if (apiKeyInput) apiKeyInput.value = '';
+    clearLiveResults(false);
+    setLiveStatus('Select an i-CLASSi terminal branch to enable live lookup for its mapped CUI.');
   }
 
   function getCuisForRow(row) {
@@ -82,123 +118,267 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
       return;
     }
 
-    cuiList.innerHTML = cuis.map(cui => {
-      const isCached = Boolean(cache.concepts[cui]);
+    cuiList.innerHTML = cuis.map((cui, index) => {
+      const concept = cache.concepts[cui];
+      const hasPublicDefinition = Boolean(concept && getPublicDefinitions(concept).length);
+      const classes = [index === 0 ? 'active' : '', hasPublicDefinition ? '' : 'ghost'].filter(Boolean).join(' ');
       return `
-        <button type="button" class="${isCached ? '' : 'ghost'}" data-cui="${escapeHtml(cui)}">
-          ${escapeHtml(cui)}${isCached ? '' : ' (not cached)'}
+        <button type="button" class="${classes}" data-cui="${escapeHtml(cui)}">
+          ${escapeHtml(cui)}${hasPublicDefinition ? '' : ' (no definition)'}
         </button>
       `;
     }).join('');
 
     cuiList.querySelectorAll('button[data-cui]').forEach(button => {
       button.addEventListener('click', () => {
-        const concept = cache.concepts[button.dataset.cui];
-        if (concept) renderConcept(concept, selectedRow && selectedRow['LNIC Code']);
-        else renderMissing([button.dataset.cui], selectedRow && selectedRow['LNIC Code']);
+        selectedCui = button.dataset.cui;
+        if (liveCuiSelect) liveCuiSelect.value = selectedCui;
+        cuiList.querySelectorAll('button[data-cui]').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        renderPublicConcept(selectedCui, selectedRow && selectedRow['LNIC Code']);
+        clearLiveResults(false);
+        setLiveStatus(`Ready to retrieve live UMLS metadata for ${selectedCui} using your own API key.`);
       });
     });
   }
 
-  function searchCache(query) {
-    const value = String(query || '').trim().toLowerCase();
-    if (!value) {
-      setStatus('Enter a CUI or disease name to search the local metadata cache.', true);
-      return;
-    }
-
-    const matches = Object.values(cache.concepts)
-      .filter(concept =>
-        String(concept.ui || '').toLowerCase().includes(value) ||
-        String(concept.name || '').toLowerCase().includes(value) ||
-        (concept.semanticTypes || []).join(' ').toLowerCase().includes(value)
-      )
-      .slice(0, 20);
-
-    if (!matches.length) {
-      results.innerHTML = '<p class="muted-small">No cached UMLS concepts match this search.</p>';
-      setStatus('No match in the generated UMLS cache.', true);
-      return;
-    }
-
-    results.innerHTML = `
-      <div class="result-list">
-        ${matches.map(concept => `
-          <button type="button" data-cui="${escapeHtml(concept.ui)}">
-            <strong>${escapeHtml(concept.ui)}</strong>
-            <span>${escapeHtml(concept.name || '')}</span>
-          </button>
-        `).join('')}
-      </div>
-    `;
-    results.querySelectorAll('button[data-cui]').forEach(button => {
-      button.addEventListener('click', () => renderConcept(cache.concepts[button.dataset.cui]));
+  function populateLiveCuiSelect(cuis) {
+    if (!liveCuiSelect) return;
+    liveCuiSelect.innerHTML = '<option value="">Select mapped CUI...</option>';
+    cuis.forEach(cui => {
+      const option = document.createElement('option');
+      option.value = cui;
+      option.textContent = cui;
+      liveCuiSelect.appendChild(option);
     });
-    setStatus(`Found ${matches.length} cached UMLS concept${matches.length === 1 ? '' : 's'}.`);
+    liveCuiSelect.value = cuis[0] || '';
   }
 
-  function renderConcept(concept, lnic) {
-    if (concept.notFound || concept.status === 'not_found') {
-      renderNotFoundConcept(concept, lnic);
-      return;
-    }
-    const definitions = Array.isArray(concept.definitions) ? concept.definitions : [];
-    const atoms = Array.isArray(concept.atoms) ? concept.atoms : [];
-    const semanticTypes = (concept.semanticTypes || []).join(', ') || 'Not reported';
+  function renderPublicConcept(cui, lnic) {
+    const concept = cache.concepts[cui] || { ui: cui, definitions: [] };
+    const definitions = getPublicDefinitions(concept);
+    const release = cache.umlsVersion || concept.umlsVersion || 'not reported';
+    const conceptName = concept.name || getMappedCuiName(cui) || 'UMLS concept';
+
     results.innerHTML = `
       <div class="concept-header">
         <div>
-          <span class="muted-small">${escapeHtml(concept.ui || '')}${lnic ? ` · ${escapeHtml(lnic)}` : ''}</span>
-          <h3>${escapeHtml(concept.name || concept.ui || 'UMLS concept')}</h3>
+          <span class="muted-small">${escapeHtml(cui)}${lnic ? ` · ${escapeHtml(lnic)}` : ''}</span>
+          <h3>${escapeHtml(conceptName)}</h3>
         </div>
-        ${concept.ui ? `<a class="concept-link" href="https://uts-ws.nlm.nih.gov/rest/content/current/CUI/${encodeURIComponent(concept.ui)}" target="_blank" rel="noopener">Open UMLS metadata</a>` : ''}
+        <a class="concept-link" href="https://uts-ws.nlm.nih.gov/rest/content/${encodeURIComponent(release)}/CUI/${encodeURIComponent(cui)}" target="_blank" rel="noopener">Open UMLS concept page</a>
       </div>
       <div class="meta-grid compact">
-        <div class="meta-item"><span>Status</span>${escapeHtml(concept.status || 'Not reported')}</div>
-        <div class="meta-item"><span>Semantic type</span>${escapeHtml(semanticTypes)}</div>
-        <div class="meta-item"><span>Atoms</span>${escapeHtml(String(concept.atomCount || 0))}</div>
-        <div class="meta-item"><span>Relations</span>${escapeHtml(String(concept.relationCount || 0))}</div>
-        <div class="meta-item"><span>Major revision</span>${escapeHtml(concept.majorRevisionDate || 'Not reported')}</div>
+        <div class="meta-item"><span>Mapped CUI</span>${escapeHtml(cui)}</div>
+        <div class="meta-item"><span>UMLS release</span>${escapeHtml(release)}</div>
+        <div class="meta-item"><span>Cached content</span>Source-attributed definitions</div>
       </div>
       <div class="definition-list">
+        <h3>Definitions</h3>
+        ${definitions.length ? definitions.map(definition => `
+          <article class="definition">
+            <strong>${escapeHtml(definition.rootSource || 'UMLS')}</strong>
+            ${definition.sourceIdentifier ? `<span class="muted-small">${escapeHtml(definition.sourceIdentifier)}</span>` : ''}
+            <p>${escapeHtml(definition.value || '')}</p>
+          </article>
+        `).join('') : '<p class="muted-small">No cached English definition is currently available for this mapped UMLS concept.</p>'}
+      </div>
+    `;
+    setStatus(`Showing cached UMLS definitions for ${cui}.`);
+  }
+
+  function renderNoMappedCui() {
+    results.innerHTML = '<p class="muted-small">No mapped CUI is available for this i-CLASSi entity.</p>';
+  }
+
+  function getPublicDefinitions(concept) {
+    const excludedSources = new Set((cache.excludedDefinitionSources || defaultExcludedDefinitionSources).map(source => source.toUpperCase()));
+    const seenDefinitions = new Set();
+    const definitions = Array.isArray(concept.definitions)
+      ? concept.definitions
+      : concept.definitions
+        ? [concept.definitions]
+        : [];
+    return definitions
+      .filter(definition => {
+        const source = String(definition.rootSource || '').toUpperCase();
+        const key = `${source}|${definition.value || ''}`;
+        if (isExcludedDefinitionSource(source, excludedSources) || seenDefinitions.has(key)) return false;
+        seenDefinitions.add(key);
+        return true;
+      });
+  }
+
+  function isExcludedDefinitionSource(source, excludedSources) {
+    if (!source) return true;
+    if (excludedSources.has(source)) return true;
+    return /^MSH[A-Z]{3}$/.test(source);
+  }
+
+  function getMappedCuiName(cui) {
+    const match = mappings.find(item => item.Vocabulary === 'UMLS CUI' && item.Code === cui && item['Vocabulary Prefered Name']);
+    return match ? match['Vocabulary Prefered Name'] : '';
+  }
+
+  function renderPolicySummary() {
+    if (!policySummary) return;
+    const release = cache.umlsVersion || 'not reported';
+    const represented = cache.representedSources && cache.representedSources.length
+      ? cache.representedSources
+      : [];
+    const excluded = cache.excludedDefinitionSources || defaultExcludedDefinitionSources;
+    policySummary.textContent = `UMLS release: ${release}. Cached definition sources represented on this site: ${represented.join(', ') || 'none'}. Excluded translation sources: ${excluded.join(', ')}.`;
+  }
+
+  function retrieveLiveLookup() {
+    const cui = liveCuiSelect && liveCuiSelect.value ? liveCuiSelect.value : selectedCui;
+    const apiKey = apiKeyInput ? apiKeyInput.value.trim() : '';
+
+    if (!cui || !getCuisForRow(selectedRow || {}).includes(cui)) {
+      setLiveStatus('Select a mapped CUI from the current i-CLASSi disease before live lookup.', true);
+      return;
+    }
+    if (!apiKey) {
+      setLiveStatus('Enter your own active UMLS API key to retrieve live metadata.', true);
+      return;
+    }
+    if (liveRequestInFlight) {
+      setLiveStatus('A live UMLS request is already running. Please wait.');
+      return;
+    }
+
+    liveRequestInFlight = true;
+    if (liveLookupButton) liveLookupButton.disabled = true;
+    setLiveStatus(`Retrieving live UMLS metadata for ${cui}.`);
+    liveResults.innerHTML = '<p class="muted-small">Retrieving live UMLS response for this browser session...</p>';
+
+    fetchLiveConcept(cui, apiKey)
+      .then(liveData => {
+        renderLiveResponse(cui, liveData);
+        setLiveStatus(`Live UMLS response retrieved for ${cui}.`);
+      })
+      .catch(error => {
+        liveResults.innerHTML = `<p class="status error">${escapeHtml(error.message)}</p>`;
+        setLiveStatus(error.message, true);
+      })
+      .finally(() => {
+        liveRequestInFlight = false;
+        if (liveLookupButton) liveLookupButton.disabled = false;
+      });
+  }
+
+  function fetchLiveConcept(cui, apiKey) {
+    const version = cache.umlsVersion || '2026AA';
+    const conceptPath = `content/${encodeURIComponent(version)}/CUI/${encodeURIComponent(cui)}`;
+    return fetchUmlsJson(conceptPath, apiKey).then(conceptResponse => {
+      const concept = conceptResponse.result || {};
+      return Promise.allSettled([
+        fetchUmlsJson(`${conceptPath}/definitions`, apiKey, { pageSize: '25' }),
+        fetchUmlsJson(`${conceptPath}/atoms`, apiKey, { pageSize: '25' }),
+        fetchUmlsJson(`${conceptPath}/relations`, apiKey, { pageSize: '25' })
+      ]).then(([definitions, atoms, relations]) => ({
+        concept,
+        definitions: getSettledResults(definitions),
+        atoms: getSettledResults(atoms),
+        relations: getSettledResults(relations),
+        errors: [definitions, atoms, relations]
+          .filter(result => result.status === 'rejected')
+          .map(result => result.reason.message)
+      }));
+    });
+  }
+
+  function fetchUmlsJson(path, apiKey, query = {}) {
+    const url = new URL(`https://uts-ws.nlm.nih.gov/rest/${path}`);
+    Object.entries(query).forEach(([key, value]) => url.searchParams.set(key, value));
+    url.searchParams.set('apiKey', apiKey);
+    return fetch(url.toString())
+      .then(response => {
+        if (response.ok) return response.json();
+        if (response.status === 401 || response.status === 403) throw new Error('UMLS authorization failed. Check that your API key is active and valid.');
+        if (response.status === 404) throw new Error('The selected CUI was not found in the configured UMLS release.');
+        if (response.status === 429) throw new Error('UMLS rate limit reached. Please wait before trying again.');
+        throw new Error('The UMLS live lookup request failed.');
+      })
+      .catch(error => {
+        if (error.message && (
+          error.message.startsWith('UMLS') ||
+          error.message.includes('CUI was not found') ||
+          error.message.includes('rate limit') ||
+          error.message.includes('live lookup request failed')
+        )) throw error;
+        throw new Error('Network or browser CORS failure during UMLS live lookup.');
+      });
+  }
+
+  function getSettledResults(result) {
+    if (result.status !== 'fulfilled') return [];
+    return Array.isArray(result.value.result) ? result.value.result : [];
+  }
+
+  function renderLiveResponse(cui, data) {
+    const semanticTypes = Array.isArray(data.concept.semanticTypes)
+      ? data.concept.semanticTypes.map(item => item.name).filter(Boolean).join(', ')
+      : 'Not reported';
+    const conceptStatus = data.concept.status === 'R'
+      ? 'Reviewed'
+      : data.concept.status === 'U'
+        ? 'Unreviewed'
+        : data.concept.status || 'Not reported';
+    liveResults.innerHTML = `
+      <div class="concept-header">
+        <div>
+          <span class="muted-small">${escapeHtml(cui)}</span>
+          <h3>${escapeHtml(data.concept.name || cui)}</h3>
+        </div>
+        <span class="session-badge">Live UMLS response</span>
+      </div>
+      <div class="meta-grid compact">
+        <div class="meta-item"><span>Status</span>${escapeHtml(conceptStatus)}</div>
+        <div class="meta-item"><span>Semantic types</span>${escapeHtml(semanticTypes)}</div>
+        <div class="meta-item"><span>Class type</span>${escapeHtml(data.concept.classType || 'Not reported')}</div>
+      </div>
+      ${renderLiveDefinitions(data.definitions)}
+      ${renderLiveAtoms(data.atoms)}
+      ${renderLiveRelations(data.relations)}
+      ${data.errors.length ? `<p class="muted-small">${escapeHtml(data.errors.join(' '))}</p>` : ''}
+    `;
+    bindLiveDownloads(cui, data);
+  }
+
+  function renderLiveDefinitions(definitions) {
+    return `
+      <div class="definition-list">
+        <h3>Definitions</h3>
         ${definitions.length ? definitions.map(definition => `
           <article class="definition">
             <strong>${escapeHtml(definition.rootSource || 'UMLS')}</strong>
             <p>${escapeHtml(definition.value || '')}</p>
           </article>
-        `).join('') : '<p class="muted-small">No definitions were returned for this concept when the cache was generated.</p>'}
+        `).join('') : '<p class="muted-small">No definitions were returned by the live UMLS response.</p>'}
       </div>
-      ${renderAtoms(atoms)}
     `;
-    setStatus(`Showing cached UMLS concept ${concept.ui}.`);
   }
 
-  function renderAtoms(atoms) {
-    if (!atoms.length) {
-      return '<p class="muted-small">No atoms were cached for this concept.</p>';
-    }
+  function renderLiveAtoms(atoms) {
+    if (!atoms.length) return '<p class="muted-small">No atoms were returned by the live UMLS response.</p>';
     return `
       <div class="atoms-panel">
-        <h3>Atoms</h3>
+        <div class="live-table-header">
+          <h3>Atoms from live response</h3>
+          <button type="button" class="secondary" data-live-download="atoms">Download atoms TXT</button>
+        </div>
         <div class="atoms-scroll">
           <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>AUI</th>
-                <th>Vocabulary</th>
-                <th>Term Type</th>
-                <th>Code</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Name</th><th>AUI</th><th>Vocabulary</th><th>Term Type</th><th>Source Code</th></tr></thead>
             <tbody>
-              ${atoms.map(atom => `
+              ${atoms.slice(0, 25).map(atom => `
                 <tr>
                   <td>${escapeHtml(atom.name || '')}</td>
-                  <td>${escapeHtml(atom.aui || '')}</td>
-                  <td>${escapeHtml(atom.vocabulary || '')}</td>
+                  <td>${escapeHtml(atom.ui || '')}</td>
+                  <td>${escapeHtml(atom.rootSource || '')}</td>
                   <td>${escapeHtml(atom.termType || '')}</td>
-                  <td>${escapeHtml(atom.code || '')}</td>
+                  <td>${escapeHtml(getUmlsCodeId(atom.code) || '')}</td>
                 </tr>
               `).join('')}
             </tbody>
@@ -208,47 +388,118 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
     `;
   }
 
-  function renderNotFoundConcept(concept, lnic) {
-    const fallbackNames = Array.isArray(concept.mappingPreferredNames) ? concept.mappingPreferredNames : [];
-    results.innerHTML = `
-      <div class="concept-header">
-        <div>
-          <span class="muted-small">${escapeHtml(concept.ui || '')}${lnic ? ` · ${escapeHtml(lnic)}` : ''}</span>
-          <h3>${escapeHtml(concept.name || concept.ui || 'Mapped UMLS CUI')}</h3>
+  function renderLiveRelations(relations) {
+    if (!relations.length) return '<p class="muted-small">No relations were returned by the live UMLS response.</p>';
+    return `
+      <div class="atoms-panel">
+        <div class="live-table-header">
+          <h3>Relations from live response</h3>
+          <button type="button" class="secondary" data-live-download="relations">Download relations TXT</button>
         </div>
-        ${concept.ui ? `<a class="concept-link" href="https://uts-ws.nlm.nih.gov/rest/content/current/CUI/${encodeURIComponent(concept.ui)}" target="_blank" rel="noopener">Open UMLS metadata</a>` : ''}
+        <div class="atoms-scroll">
+          <table>
+            <thead><tr><th>Relation</th><th>Additional relation</th><th>Related concept</th><th>Vocabulary</th></tr></thead>
+            <tbody>
+              ${relations.slice(0, 25).map(relation => `
+                <tr>
+                  <td>${escapeHtml(relation.relationLabel || '')}</td>
+                  <td>${escapeHtml(relation.additionalRelationLabel || '')}</td>
+                  <td>${escapeHtml(relation.relatedIdName || relation.relatedId || '')}</td>
+                  <td>${escapeHtml(relation.rootSource || '')}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
       </div>
-      <p class="muted-small">
-        This mapped CUI was not found in the configured UMLS release when the metadata cache was generated.
-        The mapping is preserved, but UMLS concept metadata could not be retrieved.
-      </p>
-      ${fallbackNames.length ? `
-        <div class="definition-list">
-          <article class="definition">
-            <strong>Mapping preferred name</strong>
-            <p>${fallbackNames.map(escapeHtml).join('; ')}</p>
-          </article>
-        </div>
-      ` : ''}
     `;
-    setStatus(`Mapped CUI ${concept.ui} was not found in UMLS ${concept.umlsVersion || 'current'}.`, true);
   }
 
-  function renderMissing(cuis, lnic) {
-    const cuiText = cuis.length ? cuis.join(', ') : 'No CUI';
-    results.innerHTML = `
-      <p class="muted-small">
-        ${escapeHtml(cuiText)} ${lnic ? `for ${escapeHtml(lnic)} ` : ''}is not in the generated UMLS metadata cache yet.
-        Run <code>scripts/build-umls-cache.ps1</code> with your private UMLS API key, then publish the updated
-        <code>iclassi/umls_concepts.json</code>.
-      </p>
-    `;
+  function bindLiveDownloads(cui, data) {
+    liveResults.querySelectorAll('[data-live-download]').forEach(button => {
+      button.addEventListener('click', () => {
+        const type = button.dataset.liveDownload;
+        if (type === 'atoms') {
+          downloadTextFile(
+            `umls-${cui}-atoms.txt`,
+            buildAtomDownloadText(cui, data.atoms)
+          );
+        }
+        if (type === 'relations') {
+          downloadTextFile(
+            `umls-${cui}-relations.txt`,
+            buildRelationDownloadText(cui, data.relations)
+          );
+        }
+      });
+    });
+  }
+
+  function buildAtomDownloadText(cui, atoms) {
+    const rows = [
+      ['CUI', 'Name', 'AUI', 'Vocabulary', 'Term Type', 'Source Code']
+    ];
+    atoms.slice(0, 25).forEach(atom => {
+      rows.push([
+        cui,
+        atom.name || '',
+        atom.ui || '',
+        atom.rootSource || '',
+        atom.termType || '',
+        getUmlsCodeId(atom.code) || ''
+      ]);
+    });
+    return rows.map(row => row.map(cleanTextCell).join('\t')).join('\n');
+  }
+
+  function buildRelationDownloadText(cui, relations) {
+    const rows = [
+      ['CUI', 'Relation', 'Additional Relation', 'Related Concept', 'Vocabulary']
+    ];
+    relations.slice(0, 25).forEach(relation => {
+      rows.push([
+        cui,
+        relation.relationLabel || '',
+        relation.additionalRelationLabel || '',
+        relation.relatedIdName || relation.relatedId || '',
+        relation.rootSource || ''
+      ]);
+    });
+    return rows.map(row => row.map(cleanTextCell).join('\t')).join('\n');
+  }
+
+  function downloadTextFile(filename, content) {
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  function cleanTextCell(value) {
+    return String(value || '').replace(/[\r\n\t]+/g, ' ').trim();
+  }
+
+  function clearLiveLookup() {
+    if (apiKeyInput) apiKeyInput.value = '';
+    clearLiveResults(true);
+  }
+
+  function clearLiveResults(showStatus) {
+    liveResults.innerHTML = '<p class="muted-small">No live UMLS response has been retrieved in this browser session.</p>';
+    if (showStatus) setLiveStatus('API key and live response cleared from this browser session.');
   }
 
   function normalizeCache(data) {
     const normalized = data && typeof data === 'object' ? data : {};
     normalized.concepts = normalized.concepts || {};
     normalized.entityConcepts = normalized.entityConcepts || {};
+    normalized.excludedDefinitionSources = normalized.excludedDefinitionSources || defaultExcludedDefinitionSources;
+    normalized.representedSources = normalized.representedSources || [];
     return normalized;
   }
 
@@ -261,9 +512,19 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
     return /^C\d{7}$/i.test(String(value || '').trim());
   }
 
+  function getUmlsCodeId(codeUri) {
+    if (!codeUri) return '';
+    return decodeURIComponent(String(codeUri).split('/').pop());
+  }
+
   function setStatus(message, isError = false) {
     status.textContent = message;
     status.className = isError ? 'status error' : 'status';
+  }
+
+  function setLiveStatus(message, isError = false) {
+    liveStatus.textContent = message;
+    liveStatus.className = isError ? 'status error' : 'status';
   }
 
   function escapeHtml(value) {

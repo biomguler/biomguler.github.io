@@ -3,7 +3,11 @@ param(
   [string]$ClassificationPath = "iclassi/iclassi.json",
   [string]$MappingPath = "iclassi/iclassi_mapping.json",
   [string]$OutputPath = "iclassi/umls_concepts.json",
-  [string]$UmlsVersion = "current",
+  [string]$UmlsVersion = "2026AA",
+  [string[]]$ExcludedDefinitionSources = @(
+    "MSHCZE", "MSHDUT", "MSHFIN", "MSHFRE", "MSHGER", "MSHITA", "MSHJPN",
+    "MSHKOR", "MSHNOR", "MSHPOL", "MSHPOR", "MSHRUS", "MSHSPA", "MSHSWE"
+  ),
   [string[]]$AdditionalCuis = @(),
   [string[]]$SearchTerms = @(),
   [int]$DelayMilliseconds = 150,
@@ -126,6 +130,84 @@ function Get-UmlsCodeId {
   return [uri]::UnescapeDataString($lastSegment)
 }
 
+function Normalize-SourceList {
+  param([string[]]$Sources)
+  return @($Sources | ForEach-Object { $_.Trim().ToUpperInvariant() } | Where-Object { $_ } | Sort-Object -Unique)
+}
+
+$ExcludedDefinitionSources = Normalize-SourceList -Sources $ExcludedDefinitionSources
+$excludedDefinitionSourceSet = [System.Collections.Generic.HashSet[string]]::new([string[]]$ExcludedDefinitionSources)
+
+function Test-ExcludedDefinitionSource {
+  param(
+    [string]$RootSource,
+    [System.Collections.Generic.HashSet[string]]$ExcludedSourceSet
+  )
+
+  if (-not $RootSource) {
+    return $true
+  }
+  if ($ExcludedSourceSet.Contains($RootSource)) {
+    return $true
+  }
+  return ($RootSource -match '^MSH[A-Z]{3}$')
+}
+
+function Get-UmlsDefinitions {
+  param(
+    [string]$Cui,
+    [string]$UmlsVersion,
+    [System.Collections.Generic.HashSet[string]]$ExcludedSourceSet
+  )
+
+  $definitions = [System.Collections.Generic.List[object]]::new()
+  $seenDefinitions = [System.Collections.Generic.HashSet[string]]::new()
+  $skippedSources = @{}
+
+  try {
+    $definitionResults = Invoke-UmlsPagedResults -Path "content/$UmlsVersion/CUI/$Cui/definitions" -PageSize 100
+    foreach ($definition in $definitionResults) {
+      $rootSource = "$($definition.rootSource)".Trim().ToUpperInvariant()
+      if (-not $rootSource) {
+        continue
+      }
+      if (Test-ExcludedDefinitionSource -RootSource $rootSource -ExcludedSourceSet $ExcludedSourceSet) {
+        $skippedSources[$rootSource] = "non-English MeSH translation source"
+        continue
+      }
+      $definitionKey = "$rootSource|$($definition.value)"
+      if ($seenDefinitions.Contains($definitionKey)) {
+        continue
+      }
+      $definitions.Add([ordered]@{
+        rootSource = $rootSource
+        sourceIdentifier = $definition.sourceIdentifier
+        value = $definition.value
+        umlsVersion = $UmlsVersion
+      })
+      [void]$seenDefinitions.Add($definitionKey)
+    }
+    if ($skippedSources.Count -gt 0) {
+      $skippedSummary = @($skippedSources.GetEnumerator() |
+        Sort-Object Name |
+        ForEach-Object { "$($_.Key) ($($_.Value))" }) -join ', '
+      Write-Host "  Skipped translated definition source(s) for ${Cui}: $skippedSummary"
+    }
+  } catch {
+    if ($_.Exception.Message -match 'UMLS authentication failed') {
+      throw
+    }
+    $statusCode = Get-HttpStatusCode -ErrorRecord $_
+    if ($statusCode -eq 404) {
+      Write-Host "  No definitions endpoint for $Cui."
+    } else {
+      Write-Warning "Failed to fetch definitions for ${Cui}: $($_.Exception.Message)"
+    }
+  }
+
+  return [object[]]$definitions.ToArray()
+}
+
 Write-Host "Validating UMLS API key..."
 $null = Invoke-Umls -Path "content/$UmlsVersion/CUI/C0009044"
 Write-Host "UMLS API key accepted."
@@ -176,27 +258,8 @@ foreach ($cui in $AdditionalCuis) {
   }
 }
 
-foreach ($term in $SearchTerms) {
-  $query = $term.Trim()
-  if (-not $query) {
-    continue
-  }
-  Write-Host "Searching UMLS for '$query'..."
-  try {
-    $searchResponse = Invoke-Umls -Path "search/$UmlsVersion" -Query @{
-      string = $query
-      searchType = "words"
-      semanticGroups = "Disorders"
-      pageSize = "25"
-    }
-    $matches = @($searchResponse.result.results | Where-Object { Is-Cui $_.ui })
-    foreach ($match in $matches) {
-      [void]$allCuis.Add($match.ui)
-    }
-    Write-Host "  Added $($matches.Count) CUI candidate(s) from search."
-  } catch {
-    Write-Warning "Search failed for '$query': $($_.Exception.Message)"
-  }
+if ($SearchTerms.Count -gt 0) {
+  Write-Warning "-SearchTerms is ignored for the UMLS definition cache. Add reviewed CUIs through the mapping file or -AdditionalCuis."
 }
 
 $concepts = @{}
@@ -230,10 +293,7 @@ foreach ($cui in ($allCuis | Sort-Object)) {
         status = "not_found"
         notFound = $true
         umlsVersion = $UmlsVersion
-        error = $_.Exception.Message
-        mappingPreferredNames = $fallbackNames
-        semanticTypes = @()
-        definitions = @()
+        definitions = [object[]]@()
       }
       continue
     }
@@ -241,74 +301,24 @@ foreach ($cui in ($allCuis | Sort-Object)) {
     $concepts[$cui] = [ordered]@{
       ui = $cui
       name = $null
-      error = $_.Exception.Message
-      semanticTypes = @()
-      definitions = @()
+      status = "unavailable"
+      umlsVersion = $UmlsVersion
+      definitions = [object[]]@()
     }
     continue
   }
 
   $concept = $conceptResponse.result
-  $definitions = @()
+  $definitions = [object[]]@()
   if ($concept.definitions -and $concept.definitions -ne "NONE") {
-    try {
-      $definitionResults = Invoke-UmlsPagedResults -Path "content/$UmlsVersion/CUI/$cui/definitions" -PageSize 100
-      $definitions = @($definitionResults | ForEach-Object {
-        [ordered]@{
-          rootSource = $_.rootSource
-          value = $_.value
-        }
-      })
-    } catch {
-      if ($_.Exception.Message -match 'UMLS authentication failed') {
-        throw
-      }
-      $statusCode = Get-HttpStatusCode -ErrorRecord $_
-      if ($statusCode -eq 404) {
-        Write-Host "  No definitions endpoint for $cui."
-      } else {
-        Write-Warning "Failed to fetch definitions for ${cui}: $($_.Exception.Message)"
-      }
-    }
-  }
-
-  $atoms = @()
-  if ($concept.atoms -and $concept.atoms -ne "NONE") {
-    try {
-      $atomResults = Invoke-UmlsPagedResults -Path "content/$UmlsVersion/CUI/$cui/atoms" -PageSize 100
-      $atoms = @($atomResults | ForEach-Object {
-        [ordered]@{
-          name = $_.name
-          aui = $_.ui
-          vocabulary = $_.rootSource
-          termType = $_.termType
-          code = Get-UmlsCodeId -CodeUri $_.code
-          codeUri = $_.code
-          suppressible = $_.suppressible
-          obsolete = $_.obsolete
-          language = $_.language
-        }
-      })
-    } catch {
-      if ($_.Exception.Message -match 'UMLS authentication failed') {
-        throw
-      }
-      Write-Warning "Failed to fetch atoms for ${cui}: $($_.Exception.Message)"
-    }
+    $definitions = [object[]]@(Get-UmlsDefinitions -Cui $cui -UmlsVersion $UmlsVersion `
+      -ExcludedSourceSet $excludedDefinitionSourceSet)
   }
 
   $concepts[$cui] = [ordered]@{
     ui = $concept.ui
     name = $concept.name
-    status = $concept.status
-    semanticTypes = @($concept.semanticTypes | ForEach-Object { $_.name })
-    atomCount = $concept.atomCount
-    relationCount = $concept.relationCount
-    attributeCount = $concept.attributeCount
-    majorRevisionDate = $concept.majorRevisionDate
-    dateAdded = $concept.dateAdded
-    definitions = $definitions
-    atoms = $atoms
+    definitions = [object[]]@($definitions)
   }
 }
 
@@ -320,7 +330,14 @@ foreach ($key in ($entityConcepts.Keys | Sort-Object)) {
 $payload = [ordered]@{
   generatedAt = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
   umlsVersion = $UmlsVersion
-  source = "Generated from $ClassificationPath and $MappingPath"
+  source = "UMLS definition cache generated from $ClassificationPath and $MappingPath"
+  definitionPolicy = "Definitions are cached from the UMLS definitions endpoint, excluding non-English MeSH translation sources."
+  excludedDefinitionSources = $ExcludedDefinitionSources
+  representedSources = @($concepts.Values |
+    ForEach-Object { $_.definitions } |
+    ForEach-Object { $_.rootSource } |
+    Where-Object { $_ } |
+    Sort-Object -Unique)
   conceptCount = $concepts.Count
   entityConcepts = $serializableEntityConcepts
   concepts = $concepts

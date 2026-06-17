@@ -244,7 +244,7 @@ select {
 }
 
 .intro-logo {
-  background: #ffffff;
+  background: transparent;
   display: inline-flex;
   justify-content: center;
   margin: 0 auto 24px;

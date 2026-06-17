@@ -1,26 +1,18 @@
 {
-  "generatedAt": "2026-06-17T11:22:21Z",
+  "generatedAt": "2026-06-17T16:28:32Z",
   "umlsVersion": "2026AA",
-  "source": "UMLS definition cache generated from iclassi/iclassi.json and iclassi/iclassi_mapping.json",
-  "definitionPolicy": "Definitions are cached from the UMLS definitions endpoint, excluding non-English MeSH translation sources.",
-  "excludedDefinitionSources": [
-    "MSHCZE",
-    "MSHDUT",
-    "MSHFIN",
-    "MSHFRE",
-    "MSHGER",
-    "MSHITA",
-    "MSHJPN",
-    "MSHKOR",
-    "MSHNOR",
-    "MSHPOL",
-    "MSHPOR",
-    "MSHRUS",
-    "MSHSPA",
-    "MSHSWE"
+  "source": "Public UMLS cache generated from iclassi/iclassi.json and iclassi/iclassi_mapping.json",
+  "publicContentPolicy": "Public UMLS content is limited to selected CUI, AUI, names, term metadata, source codes, and source-attributed definitions from MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, and PDQ. Category 3/restricted sources are excluded from the public cache.",
+  "publicSources": [
+    "HPO",
+    "MEDLINEPLUS",
+    "MSH",
+    "NCI",
+    "ORPHANET",
+    "PDQ"
   ],
+  "maxPublicAtomsPerConcept": 50,
   "representedSources": [
-    "CSP",
     "HPO",
     "MEDLINEPLUS",
     "MSH",
@@ -48,12 +40,33 @@
           "value": "Monoclonal B-cell lymphocytosis characterized by the presence of fewer than 5 x 10^9/L abnormal B-lymphocytes in peripheral blood and absence of the characteristic immunophenotype of chronic lymphocytic leukemia. This type of monoclonal B-cell lymphocytosis does not progress to chronic lymphocytic leukemia.",
           "umlsVersion": "2026AA"
         }
+      ],
+      "atoms": [
+        {
+          "cui": "C5230690",
+          "aui": "A35981225",
+          "name": "Monoclonal B-Cell Lymphocytosis, Non-Chronic Lymphocytic Leukemia Type",
+          "rootSource": "NCI",
+          "termType": "PT",
+          "sourceCode": "C199374",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C5230690",
+          "aui": "A35978791",
+          "name": "Low Count Monoclonal B-Cell Lymphocytosis",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C199374",
+          "umlsVersion": "2026AA"
+        }
       ]
     },
     "C5190889": {
       "ui": "C5190889",
       "name": "Non-chronic lymphocytic leukemia monoclonal B-cell lymphocytosis",
-      "definitions": []
+      "definitions": [],
+      "atoms": []
     },
     "C2698259": {
       "ui": "C2698259",
@@ -63,6 +76,26 @@
           "rootSource": "NCI",
           "sourceIdentifier": null,
           "value": "A monoclonal expansion of B-lymphocytes with or without the characteristic immunophenotype of chronic lymphocytic leukemia. It precedes virtually all cases of chronic lymphocytic leukemia/small lymphocytic lymphoma.",
+          "umlsVersion": "2026AA"
+        }
+      ],
+      "atoms": [
+        {
+          "cui": "C2698259",
+          "aui": "A16758032",
+          "name": "Monoclonal B-Cell Lymphocytosis",
+          "rootSource": "NCI",
+          "termType": "PT",
+          "sourceCode": "C80310",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C2698259",
+          "aui": "A29935358",
+          "name": "monoclonal B-cell lymphocytosis",
+          "rootSource": "PDQ",
+          "termType": "PT",
+          "sourceCode": "CDR0000610241",
           "umlsVersion": "2026AA"
         }
       ]
@@ -108,15 +141,461 @@
           "umlsVersion": "2026AA"
         },
         {
-          "rootSource": "CSP",
-          "sourceIdentifier": null,
-          "value": "malignant neoplasm of plasma cells usually arising in the bone marrow and manifested by skeletal destruction, bone pain, and the presence of anomalous immunoglobulins.",
-          "umlsVersion": "2026AA"
-        },
-        {
           "rootSource": "PDQ",
           "sourceIdentifier": null,
           "value": "A bone marrow-based plasma cell neoplasm characterized by a serum monoclonal protein and skeletal destruction with osteolytic lesions, pathological fractures, bone pain, hypercalcemia, and anemia. Clinical variants include non-secretory myeloma, smoldering myeloma, indolent myeloma, and plasma cell leukemia. (WHO, 2001) Check for \"https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C3242\" active clinical trials using this agent. (\"http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C3242\" NCI Thesaurus)",
+          "umlsVersion": "2026AA"
+        }
+      ],
+      "atoms": [
+        {
+          "cui": "C0026764",
+          "aui": "A0088554",
+          "name": "Multiple Myeloma",
+          "rootSource": "MSH",
+          "termType": "MH",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A21144712",
+          "name": "Multiple Myeloma",
+          "rootSource": "MEDLINEPLUS",
+          "termType": "PT",
+          "sourceCode": "332",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A35975482",
+          "name": "Multiple Myeloma",
+          "rootSource": "NCI",
+          "termType": "PT",
+          "sourceCode": "C3242",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A0088556",
+          "name": "Multiple Myelomas",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A26657975",
+          "name": "Myeloma, Multiple",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A0089352",
+          "name": "Myelomas, Multiple",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A24682844",
+          "name": "Multiple myeloma",
+          "rootSource": "HPO",
+          "termType": "PT",
+          "sourceCode": "HP:0006775",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A34631841",
+          "name": "Multiple myeloma",
+          "rootSource": "ORPHANET",
+          "termType": "PT",
+          "sourceCode": "29073",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A37641325",
+          "name": "Multiple myeloma",
+          "rootSource": "MEDLINEPLUS",
+          "termType": "PT",
+          "sourceCode": "20964",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4343768",
+          "name": "multiple myeloma",
+          "rootSource": "PDQ",
+          "termType": "PT",
+          "sourceCode": "CDR0000042947",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4343769",
+          "name": "multiple myeloma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000037974",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4343770",
+          "name": "multiple myeloma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000040068",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A18466291",
+          "name": "Myeloma Multiple",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A18463233",
+          "name": "Myeloma-Multiples",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A26636569",
+          "name": "Myeloma-Multiple",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4357424",
+          "name": "myeloma, multiple",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000042947",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A29931787",
+          "name": "Myeloma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000042947",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A7568336",
+          "name": "Myeloma",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C3242",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A26609448",
+          "name": "Myeloma, Plasma-Cell",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A34634615",
+          "name": "Plasma cell myeloma",
+          "rootSource": "ORPHANET",
+          "termType": "SY",
+          "sourceCode": "29073",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A0089351",
+          "name": "Myeloma, Plasma Cell",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A17010949",
+          "name": "Myelomas, Plasma Cell",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A17008216",
+          "name": "Plasma Cell Myelomas",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A29953183",
+          "name": "Plasma Cell Myeloma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000042947",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A35977912",
+          "name": "Plasma Cell Myeloma",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C3242",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A26663306",
+          "name": "Plasma Cell Myeloma",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4343778",
+          "name": "myeloma, plasma cell",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000040068",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4343777",
+          "name": "myeloma, plasma cell",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000037974",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4343815",
+          "name": "plasma cell myeloma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000040068",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4343814",
+          "name": "plasma cell myeloma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000037974",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A1007349",
+          "name": "Myelomas, Plasma-Cell",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A1049250",
+          "name": "Plasma-Cell Myeloma",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A1049251",
+          "name": "Plasma-Cell Myelomas",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A21143535",
+          "name": "Plasma-cell myeloma",
+          "rootSource": "MEDLINEPLUS",
+          "termType": "SY",
+          "sourceCode": "332",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A17005485",
+          "name": "Cell Myeloma, Plasma",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A17005486",
+          "name": "Cell Myelomas, Plasma",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A21143536",
+          "name": "Plasma-cell Myeloma",
+          "rootSource": "MEDLINEPLUS",
+          "termType": "ET",
+          "sourceCode": "332",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A37650011",
+          "name": "Plasma cell myelomas",
+          "rootSource": "MEDLINEPLUS",
+          "termType": "ET",
+          "sourceCode": "20964",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A34637425",
+          "name": "Myelomatosis",
+          "rootSource": "ORPHANET",
+          "termType": "SY",
+          "sourceCode": "29073",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A37650010",
+          "name": "Myelomatosis",
+          "rootSource": "MEDLINEPLUS",
+          "termType": "ET",
+          "sourceCode": "20964",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A26652679",
+          "name": "Myelomatosis",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A18457077",
+          "name": "Myelomatoses",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4343140",
+          "name": "plasma cell neoplasm",
+          "rootSource": "PDQ",
+          "termType": "PT",
+          "sourceCode": "CDR0000040068",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4343142",
+          "name": "neoplasm, plasma cell",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000040068",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4343141",
+          "name": "neoplasm, plasma cell",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000037974",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A4359144",
+          "name": "plasma cell neoplasms",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000037974",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A37652894",
+          "name": "Kahler-Bozzolo disease",
+          "rootSource": "MEDLINEPLUS",
+          "termType": "ET",
+          "sourceCode": "20964",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A26628372",
+          "name": "Kahler Disease",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A18460195",
+          "name": "Disease, Kahler",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D009101",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0026764",
+          "aui": "A37635591",
+          "name": "Kahler disease",
+          "rootSource": "MEDLINEPLUS",
+          "termType": "ET",
+          "sourceCode": "20964",
           "umlsVersion": "2026AA"
         }
       ]
@@ -129,6 +608,26 @@
           "rootSource": "NCI",
           "sourceIdentifier": null,
           "value": "Monoclonal B-cell lymphocytosis characterized by the presence of more than 5 x 10^9/L abnormal B-lymphocytes in peripheral blood and presence of the characteristic immunophenotype of chronic lymphocytic leukemia. This type of monoclonal B-cell lymphocytosis evolves to chronic lymphocytic leukemia at a rate of 1-2% per year.",
+          "umlsVersion": "2026AA"
+        }
+      ],
+      "atoms": [
+        {
+          "cui": "C5192217",
+          "aui": "A35973738",
+          "name": "Monoclonal B-Cell Lymphocytosis, Chronic Lymphocytic Leukemia Type",
+          "rootSource": "NCI",
+          "termType": "PT",
+          "sourceCode": "C199373",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C5192217",
+          "aui": "A35975782",
+          "name": "High Count Monoclonal B-Cell Lymphocytosis",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C199373",
           "umlsVersion": "2026AA"
         }
       ]

@@ -4,10 +4,8 @@ param(
   [string]$MappingPath = "iclassi/iclassi_mapping.json",
   [string]$OutputPath = "iclassi/umls_concepts.json",
   [string]$UmlsVersion = "2026AA",
-  [string[]]$ExcludedDefinitionSources = @(
-    "MSHCZE", "MSHDUT", "MSHFIN", "MSHFRE", "MSHGER", "MSHITA", "MSHJPN",
-    "MSHKOR", "MSHNOR", "MSHPOL", "MSHPOR", "MSHRUS", "MSHSPA", "MSHSWE"
-  ),
+  [string[]]$PublicUmlsSources = @("MSH", "NCI", "HPO", "MEDLINEPLUS", "ORPHANET", "PDQ"),
+  [int]$MaxPublicAtomsPerConcept = 50,
   [string[]]$AdditionalCuis = @(),
   [string[]]$SearchTerms = @(),
   [int]$DelayMilliseconds = 150,
@@ -135,29 +133,26 @@ function Normalize-SourceList {
   return @($Sources | ForEach-Object { $_.Trim().ToUpperInvariant() } | Where-Object { $_ } | Sort-Object -Unique)
 }
 
-$ExcludedDefinitionSources = Normalize-SourceList -Sources $ExcludedDefinitionSources
-$excludedDefinitionSourceSet = [System.Collections.Generic.HashSet[string]]::new([string[]]$ExcludedDefinitionSources)
+$PublicUmlsSources = Normalize-SourceList -Sources $PublicUmlsSources
+$publicUmlsSourceSet = [System.Collections.Generic.HashSet[string]]::new([string[]]$PublicUmlsSources)
 
-function Test-ExcludedDefinitionSource {
+function Test-PublicUmlsSource {
   param(
     [string]$RootSource,
-    [System.Collections.Generic.HashSet[string]]$ExcludedSourceSet
+    [System.Collections.Generic.HashSet[string]]$PublicSourceSet
   )
 
   if (-not $RootSource) {
-    return $true
+    return $false
   }
-  if ($ExcludedSourceSet.Contains($RootSource)) {
-    return $true
-  }
-  return ($RootSource -match '^MSH[A-Z]{3}$')
+  return $PublicSourceSet.Contains($RootSource)
 }
 
 function Get-UmlsDefinitions {
   param(
     [string]$Cui,
     [string]$UmlsVersion,
-    [System.Collections.Generic.HashSet[string]]$ExcludedSourceSet
+    [System.Collections.Generic.HashSet[string]]$PublicSourceSet
   )
 
   $definitions = [System.Collections.Generic.List[object]]::new()
@@ -171,8 +166,8 @@ function Get-UmlsDefinitions {
       if (-not $rootSource) {
         continue
       }
-      if (Test-ExcludedDefinitionSource -RootSource $rootSource -ExcludedSourceSet $ExcludedSourceSet) {
-        $skippedSources[$rootSource] = "non-English MeSH translation source"
+      if (-not (Test-PublicUmlsSource -RootSource $rootSource -PublicSourceSet $PublicSourceSet)) {
+        $skippedSources[$rootSource] = "not in public UMLS source allowlist"
         continue
       }
       $definitionKey = "$rootSource|$($definition.value)"
@@ -191,7 +186,7 @@ function Get-UmlsDefinitions {
       $skippedSummary = @($skippedSources.GetEnumerator() |
         Sort-Object Name |
         ForEach-Object { "$($_.Key) ($($_.Value))" }) -join ', '
-      Write-Host "  Skipped translated definition source(s) for ${Cui}: $skippedSummary"
+      Write-Host "  Skipped non-public/restricted definition source(s) for ${Cui}: $skippedSummary"
     }
   } catch {
     if ($_.Exception.Message -match 'UMLS authentication failed') {
@@ -206,6 +201,68 @@ function Get-UmlsDefinitions {
   }
 
   return [object[]]$definitions.ToArray()
+}
+
+function Get-UmlsPublicAtoms {
+  param(
+    [string]$Cui,
+    [string]$UmlsVersion,
+    [System.Collections.Generic.HashSet[string]]$PublicSourceSet,
+    [int]$MaxAtoms
+  )
+
+  $atoms = [System.Collections.Generic.List[object]]::new()
+  $seenAtoms = [System.Collections.Generic.HashSet[string]]::new()
+  $skippedSources = @{}
+
+  try {
+    $atomResults = Invoke-UmlsPagedResults -Path "content/$UmlsVersion/CUI/$Cui/atoms" -PageSize 100
+    foreach ($atom in $atomResults) {
+      if ($atoms.Count -ge $MaxAtoms) {
+        break
+      }
+      $rootSource = "$($atom.rootSource)".Trim().ToUpperInvariant()
+      if (-not (Test-PublicUmlsSource -RootSource $rootSource -PublicSourceSet $PublicSourceSet)) {
+        if ($rootSource) {
+          $skippedSources[$rootSource] = "not in public UMLS source allowlist"
+        }
+        continue
+      }
+      $aui = "$($atom.ui)".Trim()
+      $atomKey = "$rootSource|$aui|$($atom.name)"
+      if ($seenAtoms.Contains($atomKey)) {
+        continue
+      }
+      $atoms.Add([ordered]@{
+        cui = $Cui
+        aui = $aui
+        name = $atom.name
+        rootSource = $rootSource
+        termType = $atom.termType
+        sourceCode = Get-UmlsCodeId -CodeUri $atom.code
+        umlsVersion = $UmlsVersion
+      })
+      [void]$seenAtoms.Add($atomKey)
+    }
+    if ($skippedSources.Count -gt 0) {
+      $skippedSummary = @($skippedSources.GetEnumerator() |
+        Sort-Object Name |
+        ForEach-Object { "$($_.Key) ($($_.Value))" }) -join ', '
+      Write-Host "  Skipped non-public/restricted atom source(s) for ${Cui}: $skippedSummary"
+    }
+  } catch {
+    if ($_.Exception.Message -match 'UMLS authentication failed') {
+      throw
+    }
+    $statusCode = Get-HttpStatusCode -ErrorRecord $_
+    if ($statusCode -eq 404) {
+      Write-Host "  No atoms endpoint for $Cui."
+    } else {
+      Write-Warning "Failed to fetch public atoms for ${Cui}: $($_.Exception.Message)"
+    }
+  }
+
+  return [object[]]$atoms.ToArray()
 }
 
 Write-Host "Validating UMLS API key..."
@@ -294,6 +351,7 @@ foreach ($cui in ($allCuis | Sort-Object)) {
         notFound = $true
         umlsVersion = $UmlsVersion
         definitions = [object[]]@()
+        atoms = [object[]]@()
       }
       continue
     }
@@ -304,6 +362,7 @@ foreach ($cui in ($allCuis | Sort-Object)) {
       status = "unavailable"
       umlsVersion = $UmlsVersion
       definitions = [object[]]@()
+      atoms = [object[]]@()
     }
     continue
   }
@@ -312,13 +371,21 @@ foreach ($cui in ($allCuis | Sort-Object)) {
   $definitions = [object[]]@()
   if ($concept.definitions -and $concept.definitions -ne "NONE") {
     $definitions = [object[]]@(Get-UmlsDefinitions -Cui $cui -UmlsVersion $UmlsVersion `
-      -ExcludedSourceSet $excludedDefinitionSourceSet)
+      -PublicSourceSet $publicUmlsSourceSet)
+  }
+
+  $atoms = [object[]]@()
+  if ($concept.atoms -and $concept.atoms -ne "NONE" -and $MaxPublicAtomsPerConcept -gt 0) {
+    $atoms = [object[]]@(Get-UmlsPublicAtoms -Cui $cui -UmlsVersion $UmlsVersion `
+      -PublicSourceSet $publicUmlsSourceSet `
+      -MaxAtoms $MaxPublicAtomsPerConcept)
   }
 
   $concepts[$cui] = [ordered]@{
     ui = $concept.ui
     name = $concept.name
     definitions = [object[]]@($definitions)
+    atoms = [object[]]@($atoms)
   }
 }
 
@@ -330,11 +397,12 @@ foreach ($key in ($entityConcepts.Keys | Sort-Object)) {
 $payload = [ordered]@{
   generatedAt = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
   umlsVersion = $UmlsVersion
-  source = "UMLS definition cache generated from $ClassificationPath and $MappingPath"
-  definitionPolicy = "Definitions are cached from the UMLS definitions endpoint, excluding non-English MeSH translation sources."
-  excludedDefinitionSources = $ExcludedDefinitionSources
+  source = "Public UMLS cache generated from $ClassificationPath and $MappingPath"
+  publicContentPolicy = "Public UMLS content is limited to selected CUI, AUI, names, term metadata, source codes, and source-attributed definitions from MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, and PDQ. Category 3/restricted sources are excluded from the public cache."
+  publicSources = $PublicUmlsSources
+  maxPublicAtomsPerConcept = $MaxPublicAtomsPerConcept
   representedSources = @($concepts.Values |
-    ForEach-Object { $_.definitions } |
+    ForEach-Object { @($_.definitions) + @($_.atoms) } |
     ForEach-Object { $_.rootSource } |
     Where-Object { $_ } |
     Sort-Object -Unique)

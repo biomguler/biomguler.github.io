@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lookup | i-CLASSi Studio</title>
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=2">
+  <link rel="icon" type="image/png" href="images/favicon.png?v=3">
   <link rel="stylesheet" href="styles.css?v=3">
   <script src="versioning.js"></script>
   <script src="mobile-nav.js"></script>
@@ -15,7 +15,7 @@
   <div class="app-shell">
     <aside class="sidebar">
       <a class="sidebar-brand" href="index.html">
-        <img src="images/i-classi-vector-transparent.svg" alt="i-CLASSi logo">
+        <img src="images/favicon-sidebar.png?v=2" alt="i-CLASSi logo">
         <strong>i-CLASSi</strong>
       </a>
       <nav class="sidebar-nav">
@@ -54,7 +54,7 @@
           <div class="page-heading-icon">▽</div>
           <div>
             <h1>i-CLASSi Lookup</h1>
-            <p>Expand the classification from L1 to L6. Terminal branches open disease details, mapped UMLS CUIs, cached UMLS definitions, and optional licensed live lookup.</p>
+            <p>Expand the classification from L1 to L6. Terminal branches open disease details, mapped UMLS CUIs, public UMLS source content, and optional licensed live lookup.</p>
           </div>
         </div>
 
@@ -88,15 +88,15 @@
             <section class="umls-card" id="umlsPanel">
               <div class="umls-toolbar">
                 <div>
-                  <strong>UMLS definitions</strong>
-                  <p id="umlsStatus" class="status">Loading UMLS definition cache...</p>
+                  <strong>Public UMLS content</strong>
+                  <p id="umlsStatus" class="status">Loading public UMLS cache...</p>
                 </div>
                 <a class="concept-link" href="legal-notice.html">Terminology notice</a>
               </div>
               <div class="umls-public-notice">
                 <p>Some material in the UMLS Metathesaurus is from copyrighted sources of the respective copyright holders. Users of the UMLS Metathesaurus are solely responsible for compliance with any copyright, patent or trademark restrictions and are referred to the copyright, patent or trademark notices appearing in the original sources, all of which are hereby incorporated by reference.</p>
-                <p>UMLS Metathesaurus data © U.S. National Library of Medicine. Cached content is source-attributed and integrated into the i-CLASSi classification.</p>
-                <p>The cached section contains source-attributed definitions from UMLS, excluding non-English MeSH translation sources. Additional UMLS metadata is retrieved live using the visitor’s own UMLS API key and is not added to the public i-CLASSi dataset.</p>
+                <p>UMLS Metathesaurus data © U.S. National Library of Medicine. Cached public content is source-attributed and integrated into the i-CLASSi classification.</p>
+                <p>The cached section is limited to selected CUI, AUI, names, source codes, term metadata, and definitions from MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, and PDQ. Category 3/restricted sources are excluded from the public interface. Additional UMLS metadata is retrieved live using the visitor’s own UMLS API key and is not added to the public i-CLASSi dataset.</p>
                 <p id="umlsPolicySummary" class="muted-small">Definition cache policy is loading.</p>
               </div>
               <div class="umls-body public-umls-body">
@@ -108,7 +108,7 @@
                   <div id="mappedCuis" class="cui-list"></div>
                 </div>
                 <div id="umlsResults" class="public-definition-results">
-                  <p class="muted-small">UMLS definitions will appear here after selecting a mapped CUI.</p>
+                  <p class="muted-small">Public UMLS content will appear here after selecting a mapped CUI.</p>
                 </div>
               </div>
               <div class="licensed-lookup" id="licensedLookup">
@@ -245,5 +245,8 @@
   </script>
 </body>
 </html>
+
+
+
 
 

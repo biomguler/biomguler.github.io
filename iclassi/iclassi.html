@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>i-CLASSi | InterLymph Classification Explorer</title>
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=2">
+  <link rel="icon" type="image/png" href="images/favicon.png?v=3">
   <link rel="stylesheet" href="styles.css?v=3">
   <script src="versioning.js"></script>
   <script src="mobile-nav.js"></script>
@@ -23,7 +23,7 @@
   <div class="app-shell">
     <aside class="sidebar">
       <a class="sidebar-brand" href="index.html">
-        <img src="images/i-classi-vector-transparent.svg" alt="i-CLASSi logo">
+        <img src="images/favicon-sidebar.png?v=2" alt="i-CLASSi logo">
         <strong>i-CLASSi</strong>
       </a>
       <nav class="sidebar-nav">
@@ -80,14 +80,14 @@
           <div class="page-heading">
             <div class="page-heading-icon">▤</div>
             <div>
-              <h1>i-CLASSi Phenotype Explorer</h1>
+              <h1>i-CLASSi Explorer</h1>
               <p>Browse the InterLymph lymphoid neoplasm classification reference. Click hierarchy levels in the left panel to filter, or use search and column filters below.</p>
             </div>
           </div>
 
           <section class="explorer-card">
             <div class="card-header">
-              <strong>i-CLASSi Phenotype Explorer</strong>
+              <strong>i-CLASSi Explorer</strong>
               <div class="table-actions">
                 <input id="globalSearch" type="text" placeholder="Global search by LNIC code, entity, UMLS CUI, or hierarchy...">
                 <select id="quickEntity">
@@ -127,8 +127,8 @@
 
   <script>
     const columnsConfig = [
-      { data: 'Source', visible: true },
-      { data: 'Entry ID', visible: true },
+      { data: 'Source', visible: false },
+      { data: 'Entry ID', visible: false },
       { data: 'LNIC Code', visible: true, render: data => `<span class="code-link">${data || ''}</span>` },
       { data: 'WHO-HAEM5 Category', visible: true },
       { data: 'WHO-HAEM5 Family-Class', visible: true },
@@ -305,5 +305,8 @@
   </script>
 </body>
 </html>
+
+
+
 
 

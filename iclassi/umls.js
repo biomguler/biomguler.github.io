@@ -14,12 +14,9 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
   const liveStatus = panel.querySelector('#liveLookupStatus');
   const liveResults = panel.querySelector('#liveLookupResults');
 
-  const defaultExcludedDefinitionSources = [
-    'MSHCZE', 'MSHDUT', 'MSHFIN', 'MSHFRE', 'MSHGER', 'MSHITA', 'MSHJPN',
-    'MSHKOR', 'MSHNOR', 'MSHPOL', 'MSHPOR', 'MSHRUS', 'MSHSPA', 'MSHSWE'
-  ];
+  const defaultPublicSources = ['MSH', 'NCI', 'HPO', 'MEDLINEPLUS', 'ORPHANET', 'PDQ'];
   let mappings = [];
-  let cache = { concepts: {}, entityConcepts: {}, excludedDefinitionSources: defaultExcludedDefinitionSources };
+  let cache = { concepts: {}, entityConcepts: {}, publicSources: defaultPublicSources };
   let selectedRow = null;
   let selectedCui = '';
   let liveRequestInFlight = false;
@@ -32,8 +29,8 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
       mappings = Array.isArray(mappingData) ? mappingData : [];
       cache = normalizeCache(cacheData);
       setStatus(cache.generatedAt
-        ? `UMLS definition cache generated ${cache.generatedAt}.`
-        : 'UMLS definition cache is not generated yet.');
+        ? `Public UMLS cache generated ${cache.generatedAt}.`
+        : 'Public UMLS cache is not generated yet.');
       renderPolicySummary();
       if (config.autoSelectInitial !== false && rows && rows.length) selectDisease(rows[0]);
     })
@@ -91,7 +88,7 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
       <span>Click a terminal hierarchy branch to view mapped UMLS concepts.</span>
     `;
     cuiList.innerHTML = '';
-    results.innerHTML = '<p class="muted-small">UMLS definitions will appear here after selecting a mapped CUI.</p>';
+    results.innerHTML = '<p class="muted-small">Public UMLS content will appear here after selecting a mapped CUI.</p>';
     if (liveCuiSelect) liveCuiSelect.innerHTML = '<option value="">Select mapped CUI...</option>';
     if (apiKeyInput) apiKeyInput.value = '';
     clearLiveResults(false);
@@ -120,11 +117,11 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
 
     cuiList.innerHTML = cuis.map((cui, index) => {
       const concept = cache.concepts[cui];
-      const hasPublicDefinition = Boolean(concept && getPublicDefinitions(concept).length);
-      const classes = [index === 0 ? 'active' : '', hasPublicDefinition ? '' : 'ghost'].filter(Boolean).join(' ');
+      const hasPublicContent = Boolean(concept && (getPublicDefinitions(concept).length || getPublicAtoms(concept).length));
+      const classes = [index === 0 ? 'active' : '', hasPublicContent ? '' : 'ghost'].filter(Boolean).join(' ');
       return `
         <button type="button" class="${classes}" data-cui="${escapeHtml(cui)}">
-          ${escapeHtml(cui)}${hasPublicDefinition ? '' : ' (no definition)'}
+          ${escapeHtml(cui)}${hasPublicContent ? '' : ' (no cached public content)'}
         </button>
       `;
     }).join('');
@@ -155,8 +152,9 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
   }
 
   function renderPublicConcept(cui, lnic) {
-    const concept = cache.concepts[cui] || { ui: cui, definitions: [] };
+    const concept = cache.concepts[cui] || { ui: cui, definitions: [], atoms: [] };
     const definitions = getPublicDefinitions(concept);
+    const atoms = getPublicAtoms(concept);
     const release = cache.umlsVersion || concept.umlsVersion || 'not reported';
     const conceptName = concept.name || getMappedCuiName(cui) || 'UMLS concept';
 
@@ -166,12 +164,12 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
           <span class="muted-small">${escapeHtml(cui)}${lnic ? ` · ${escapeHtml(lnic)}` : ''}</span>
           <h3>${escapeHtml(conceptName)}</h3>
         </div>
-        <a class="concept-link" href="https://uts-ws.nlm.nih.gov/rest/content/${encodeURIComponent(release)}/CUI/${encodeURIComponent(cui)}" target="_blank" rel="noopener">Open UMLS concept page</a>
+        <a class="concept-link" href="https://uts.nlm.nih.gov/uts/umls/concept/${encodeURIComponent(cui)}" target="_blank" rel="noopener">Open UMLS concept page</a>
       </div>
       <div class="meta-grid compact">
         <div class="meta-item"><span>Mapped CUI</span>${escapeHtml(cui)}</div>
         <div class="meta-item"><span>UMLS release</span>${escapeHtml(release)}</div>
-        <div class="meta-item"><span>Cached content</span>Source-attributed definitions</div>
+        <div class="meta-item"><span>Public sources</span>${escapeHtml((cache.publicSources || defaultPublicSources).join(', '))}</div>
       </div>
       <div class="definition-list">
         <h3>Definitions</h3>
@@ -181,10 +179,11 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
             ${definition.sourceIdentifier ? `<span class="muted-small">${escapeHtml(definition.sourceIdentifier)}</span>` : ''}
             <p>${escapeHtml(definition.value || '')}</p>
           </article>
-        `).join('') : '<p class="muted-small">No cached English definition is currently available for this mapped UMLS concept.</p>'}
+        `).join('') : '<p class="muted-small">No cached public definition is currently available for this mapped UMLS concept.</p>'}
       </div>
+      ${renderPublicAtoms(atoms)}
     `;
-    setStatus(`Showing cached UMLS definitions for ${cui}.`);
+    setStatus(`Showing public UMLS content for ${cui}.`);
   }
 
   function renderNoMappedCui() {
@@ -192,7 +191,7 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
   }
 
   function getPublicDefinitions(concept) {
-    const excludedSources = new Set((cache.excludedDefinitionSources || defaultExcludedDefinitionSources).map(source => source.toUpperCase()));
+    const publicSources = getPublicSourceSet();
     const seenDefinitions = new Set();
     const definitions = Array.isArray(concept.definitions)
       ? concept.definitions
@@ -203,16 +202,60 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
       .filter(definition => {
         const source = String(definition.rootSource || '').toUpperCase();
         const key = `${source}|${definition.value || ''}`;
-        if (isExcludedDefinitionSource(source, excludedSources) || seenDefinitions.has(key)) return false;
+        if (!publicSources.has(source) || seenDefinitions.has(key)) return false;
         seenDefinitions.add(key);
         return true;
       });
   }
 
-  function isExcludedDefinitionSource(source, excludedSources) {
-    if (!source) return true;
-    if (excludedSources.has(source)) return true;
-    return /^MSH[A-Z]{3}$/.test(source);
+  function getPublicAtoms(concept) {
+    const publicSources = getPublicSourceSet();
+    const seenAtoms = new Set();
+    const atoms = Array.isArray(concept.atoms)
+      ? concept.atoms
+      : concept.atoms
+        ? [concept.atoms]
+        : [];
+    return atoms
+      .filter(atom => {
+        const source = String(atom.rootSource || '').toUpperCase();
+        const key = `${source}|${atom.aui || ''}|${atom.name || ''}`;
+        if (!publicSources.has(source) || seenAtoms.has(key)) return false;
+        seenAtoms.add(key);
+        return true;
+      });
+  }
+
+  function renderPublicAtoms(atoms) {
+    if (!atoms.length) {
+      return '<p class="muted-small">No cached public atom names are currently available for this mapped UMLS concept.</p>';
+    }
+    return `
+      <div class="atoms-panel public-atoms-panel">
+        <h3>Public source names and atoms</h3>
+        <div class="atoms-scroll">
+          <table>
+            <thead><tr><th>CUI</th><th>AUI</th><th>Name</th><th>Source</th><th>Term Type</th><th>Source Code</th></tr></thead>
+            <tbody>
+              ${atoms.map(atom => `
+                <tr>
+                  <td>${escapeHtml(atom.cui || '')}</td>
+                  <td>${escapeHtml(atom.aui || '')}</td>
+                  <td>${escapeHtml(atom.name || '')}</td>
+                  <td>${escapeHtml(atom.rootSource || '')}</td>
+                  <td>${escapeHtml(atom.termType || '')}</td>
+                  <td>${escapeHtml(atom.sourceCode || '')}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  }
+
+  function getPublicSourceSet() {
+    return new Set((cache.publicSources || defaultPublicSources).map(source => String(source || '').toUpperCase()));
   }
 
   function getMappedCuiName(cui) {
@@ -226,8 +269,8 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
     const represented = cache.representedSources && cache.representedSources.length
       ? cache.representedSources
       : [];
-    const excluded = cache.excludedDefinitionSources || defaultExcludedDefinitionSources;
-    policySummary.textContent = `UMLS release: ${release}. Cached definition sources represented on this site: ${represented.join(', ') || 'none'}. Excluded translation sources: ${excluded.join(', ')}.`;
+    const allowed = cache.publicSources || defaultPublicSources;
+    policySummary.textContent = `UMLS release: ${release}. Public UMLS content is limited to selected CUI, AUI, names, source codes, term metadata, and definitions from ${allowed.join(', ')}. Represented sources in this cache: ${represented.join(', ') || 'none'}.`;
   }
 
   function retrieveLiveLookup() {
@@ -498,7 +541,7 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
     const normalized = data && typeof data === 'object' ? data : {};
     normalized.concepts = normalized.concepts || {};
     normalized.entityConcepts = normalized.entityConcepts || {};
-    normalized.excludedDefinitionSources = normalized.excludedDefinitionSources || defaultExcludedDefinitionSources;
+    normalized.publicSources = normalized.publicSources || defaultPublicSources;
     normalized.representedSources = normalized.representedSources || [];
     return normalized;
   }

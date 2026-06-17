@@ -2,12 +2,22 @@
   const MANIFEST_URL = 'versions.json';
   const STORAGE_KEY = 'iclassi.selectedVersion';
   const FALLBACK_MANIFEST = {
-    current: '0.1.0-prototype',
+    current: '0.1.0-beta',
     versions: [
       {
+        id: '0.1.0-beta',
+        label: '0.1.0 (beta)',
+        path: 'versions/0.1.0-beta/'
+      },
+      {
         id: '0.1.0-prototype',
-        label: '0.1.0 (prototype)',
+        label: '0.1.0 (prototype subset)',
         path: 'versions/0.1.0-prototype/'
+      },
+      {
+        id: '0.2.0-prototype',
+        label: '0.2.0 (prototype subset)',
+        path: 'versions/0.2.0-prototype/'
       }
     ]
   };
@@ -23,9 +33,10 @@
           version,
           versionId: version.id,
           basePath: normalizeBasePath(version.path),
-          file: filename => normalizeBasePath(version.path) + filename
+          file: filename => withVersionCacheKey(normalizeBasePath(version.path) + filename, version.id)
         };
         bindVersionControls(context);
+        preserveVersionInLinks(context);
         return context;
       });
     }
@@ -33,7 +44,7 @@
   }
 
   function loadManifest() {
-    return fetch(MANIFEST_URL)
+    return fetch(MANIFEST_URL, { cache: 'no-store' })
       .then(response => {
         if (!response.ok) throw new Error(`Could not load ${MANIFEST_URL}`);
         return response.json();
@@ -91,6 +102,16 @@
     document.querySelectorAll('[data-version-label]').forEach(element => {
       element.textContent = context.version.label || context.versionId;
     });
+
+    document.querySelectorAll('[data-version-footer]').forEach(element => {
+      element.textContent = formatFooterVersion(context.version);
+    });
+  }
+
+  function formatFooterVersion(version) {
+    const label = version.label || version.id || '';
+    const normalizedLabel = label.replace(/\s*\(/, ' ').replace(/\)/g, '').trim();
+    return `i-CLASSi Tool v${normalizedLabel}`;
   }
 
   function changeVersion(versionId) {
@@ -102,6 +123,28 @@
     const url = new URL(window.location.href);
     url.searchParams.set('version', versionId);
     window.location.href = url.toString();
+  }
+
+  function preserveVersionInLinks(context) {
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('http://') || href.startsWith('https://')) {
+        return;
+      }
+      try {
+        const url = new URL(href, window.location.href);
+        if (url.origin !== window.location.origin) return;
+        url.searchParams.set('version', context.versionId);
+        link.setAttribute('href', `${url.pathname.split('/').pop()}${url.search}${url.hash}`);
+      } catch (error) {
+        // Leave unusual links untouched.
+      }
+    });
+  }
+
+  function withVersionCacheKey(url, versionId) {
+    const separator = url.includes('?') ? '&' : '?';
+    return `${url}${separator}version=${encodeURIComponent(versionId)}`;
   }
 
   function normalizeBasePath(path) {

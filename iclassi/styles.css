@@ -770,6 +770,70 @@ table.dataTable tbody tr.selected {
   margin-bottom: 4px;
 }
 
+.gwas-context-card {
+  margin-bottom: 14px;
+}
+
+.gwas-context-body {
+  padding: 14px 16px 16px;
+}
+
+.gwas-context-body .meta-grid {
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+}
+
+.gwas-context-title h2 {
+  font-size: 22px;
+  margin: 3px 0 12px;
+}
+
+.lnic-chip {
+  background: #eef6f7;
+  border-color: #c8dce2;
+  color: var(--teal-dark);
+  font-size: 12px;
+  min-height: 26px;
+  padding: 4px 8px;
+}
+
+.lnic-chip:hover,
+.lnic-chip.active {
+  background: var(--teal-dark);
+  border-color: var(--teal-dark);
+  color: #ffffff;
+}
+
+.external-id-link {
+  background: #f7fafc;
+  border: 1px solid var(--line-soft);
+  border-radius: 4px;
+  color: var(--teal-dark);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 1px 3px 1px 0;
+  padding: 3px 6px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.external-id-link:hover {
+  background: #eef6f7;
+  border-color: #c8dce2;
+}
+
+.rsid-link-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-right: 4px;
+}
+
+.external-id-link.secondary-link {
+  color: #334762;
+  font-weight: 600;
+}
+
 .definition-list {
   display: grid;
   gap: 10px;

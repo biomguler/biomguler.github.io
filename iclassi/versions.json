@@ -1,14 +1,19 @@
 {
-  "current": "0.1.0-prototype",
+  "current": "0.1.0-beta",
   "versions": [
     {
+      "id": "0.1.0-beta",
+      "label": "0.1.0 (beta)",
+      "path": "versions/0.1.0-beta/"
+    },
+    {
       "id": "0.1.0-prototype",
-      "label": "0.1.0 (prototype)",
+      "label": "0.1.0 (prototype subset)",
       "path": "versions/0.1.0-prototype/"
     },
     {
       "id": "0.2.0-prototype",
-      "label": "0.2.0 (prototype test)",
+      "label": "0.2.0 (prototype subset)",
       "path": "versions/0.2.0-prototype/"
     }
   ]

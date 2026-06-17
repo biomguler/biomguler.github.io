@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -30,7 +30,7 @@
         <a href="legal-notice.html">Legal Notice</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <span>© 2026 Murat Güler</span>
-        <span>i-CLASSi Studio v0.1.0</span>
+        <span data-version-footer>i-CLASSi Tool v0.1.0 beta</span>
       </div>
     </aside>
 
@@ -40,7 +40,7 @@
         <div class="topbar-controls">
           <div class="topbar-field">
             <label>i-CLASSi version</label>
-            <select data-version-select><option>0.1.0 (prototype)</option></select>
+            <select data-version-select><option>0.1.0 (beta)</option></select>
           </div>
         </div>
       </header>
@@ -74,7 +74,7 @@
           <div class="learn-grid">
             <section class="learn-card">
               <h3>Version selector</h3>
-              <p>The selector in the top-right corner controls the data release loaded by data-driven tabs. In the current prototype, each version points to a matched set of classification, mapping, and GWAS JSON files.</p>
+              <p>The selector in the top-right corner controls the data release loaded by data-driven tabs. The beta release loads the full matched classification, mapping, and GWAS JSON files. Prototype versions are smaller subsets included to demonstrate version switching.</p>
             </section>
             <section class="learn-card">
               <h3>Global search</h3>
@@ -162,8 +162,17 @@
           <h3>How to use it</h3>
           <ul>
             <li>Search by LNIC code to find GWAS records mapped to an i-CLASSi entity.</li>
+            <li>Click an LNIC code in the table to show the corresponding L1-L6 i-CLASSi classification context.</li>
             <li>Search by rsID, nearest gene, trait, author, or PubMed identifier for literature-driven exploration.</li>
+            <li>Click rsID, GWAS Catalog, or PubMed identifiers to open external records in a new browser tab.</li>
             <li>Use P values, cytobands, and genomic positions to compare signals across records.</li>
+          </ul>
+          <h3>External identifier links</h3>
+          <ul>
+            <li><strong>rsID</strong> opens the dbSNP variant page. For example, <code>rs7176508</code> opens <code>https://www.ncbi.nlm.nih.gov/snp/?term=rs7176508</code>.</li>
+            <li><strong>Open Targets</strong> appears next to each rsID and searches the Open Targets Platform. For example, <code>rs7176508</code> opens <code>https://platform.opentargets.org/search?q=rs7176508&amp;page=1</code>.</li>
+            <li><strong>GWAS Catalog</strong> IDs open EBI GWAS Catalog study pages. For example, <code>GCST001826</code> opens <code>https://www.ebi.ac.uk/gwas/studies/GCST001826</code>.</li>
+            <li><strong>PUBMED</strong> IDs open PubMed publication pages. For example, <code>23047821</code> opens <code>https://pubmed.ncbi.nlm.nih.gov/23047821/</code>.</li>
           </ul>
           <h3>Column glossary</h3>
           <dl class="column-glossary">
@@ -172,15 +181,15 @@
             <dt>CHR</dt><dd>Chromosome where the reported variant or locus is located.</dd>
             <dt>Cytoband</dt><dd>Cytogenetic band for the locus.</dd>
             <dt>POS</dt><dd>Genomic position reported for the variant or locus.</dd>
-            <dt>rsID</dt><dd>Reference SNP identifier.</dd>
+            <dt>rsID</dt><dd>Reference SNP identifier. The rsID link opens dbSNP; the adjacent Open Targets link searches the Open Targets Platform for the same variant.</dd>
             <dt>EA</dt><dd>Effect allele reported for the association.</dd>
             <dt>Nearest gene(s)</dt><dd>Nearest gene or genes assigned to the reported locus.</dd>
             <dt>P</dt><dd>P value for the reported association.</dd>
             <dt>Author</dt><dd>Lead author or study author label.</dd>
             <dt>Reported trait(s)</dt><dd>Trait name as reported by the study or catalog source.</dd>
             <dt>EFO traits</dt><dd>Experimental Factor Ontology trait labels mapped to the reported trait.</dd>
-            <dt>GWAS Catalog</dt><dd>GWAS Catalog accession or link-related field for the record.</dd>
-            <dt>PUBMED</dt><dd>PubMed identifier for the associated publication.</dd>
+            <dt>GWAS Catalog</dt><dd>GWAS Catalog study accession. IDs such as GCST001826 open the corresponding EBI GWAS Catalog study page.</dd>
+            <dt>PUBMED</dt><dd>PubMed identifier for the associated publication. IDs open the corresponding PubMed record at NCBI.</dd>
           </dl>
 
           <h2 id="abbrev-docs">Abbreviations</h2>
@@ -203,3 +212,5 @@
   </div>
 </body>
 </html>
+
+

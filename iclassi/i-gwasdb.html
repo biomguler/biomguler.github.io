@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -31,15 +31,24 @@
         <a class="sidebar-link" href="learn.html"><span class="sidebar-icon">?</span>Learn</a>
         <a class="sidebar-link" href="about.html"><span class="sidebar-icon">i</span>About</a>
       </nav>
-      <div class="sidebar-footer"><a href="legal-notice.html">Legal Notice</a><a href="privacy-policy.html">Privacy Policy</a><span>© 2026 Murat Güler</span><span>i-CLASSi Studio v0.1.0</span></div>
+      <div class="sidebar-footer"><a href="legal-notice.html">Legal Notice</a><a href="privacy-policy.html">Privacy Policy</a><span>© 2026 Murat Güler</span><span data-version-footer>i-CLASSi Tool v0.1.0 beta</span></div>
     </aside>
     <main class="app-main">
       <header class="topbar">
         <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
-        <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select data-version-select><option>0.1.0 (prototype)</option></select></div></div>
+        <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select data-version-select><option>0.1.0 (beta)</option></select></div></div>
       </header>
       <section class="workspace">
         <div class="page-heading"><div class="page-heading-icon">◇</div><div><h1>i-GWASdb Explorer</h1><p>Browse genome-wide association records linked to i-CLASSi disease categories and LNIC codes.</p></div></div>
+        <section class="explorer-card gwas-context-card" id="gwasContextCard">
+          <div class="card-header">
+            <strong>i-CLASSi context</strong>
+            <span class="muted-small">Click an LNIC code in the GWAS table to view its L1-L6 classification path.</span>
+          </div>
+          <div class="gwas-context-body" id="gwasContextBody">
+            <p class="muted-small">No LNIC code selected.</p>
+          </div>
+        </section>
         <section class="explorer-card">
           <div class="card-header"><strong>GWAS table</strong><div class="table-actions"><input id="globalSearch" type="text" placeholder="Global search by LNIC, gene, trait, variant, or author..."><select id="quickTrait"><option value="">Quick trait...</option></select><button type="button" class="danger" id="clearTableFilters">Clear</button><button type="button" class="success" id="exportCsv">Export CSV</button></div></div>
           <table id="gwasdbTable" class="display">
@@ -51,31 +60,39 @@
     </main>
   </div>
   <script>
+    let classificationByLnic = {};
+
     const columnsConfigGwasdb = [
-      { data: 'LNIC Code(s)', render: data => `<span class="code-link">${data || ''}</span>` },
+      { data: 'LNIC Code(s)', render: renderLnicCodes },
       { data: 'Study type' },
       { data: 'CHR' },
       { data: 'Cytoband' },
       { data: 'POS' },
-      { data: 'rsID' },
+      { data: 'rsID', render: renderRsIds },
       { data: 'EA' },
       { data: 'Nearest gene(s)' },
       { data: 'P' },
       { data: 'Author' },
       { data: 'Reported trait(s)' },
       { data: 'EFO traits', visible: true },
-      { data: 'GWAS Catalog', visible: true },
-      { data: 'PUBMED', visible: true }
+      { data: 'GWAS Catalog', visible: true, render: renderGwasCatalogIds },
+      { data: 'PUBMED', visible: true, render: renderPubmedIds }
     ];
 
     IclassiVersions.ready().then(versionContext => {
+      $.getJSON(versionContext.file('iclassi.json'), classificationRows => {
+        classificationByLnic = buildClassificationIndex(classificationRows);
+      }).always(() => {
       initializeDataTable(versionContext.file('i-gwasdb.json'), '#gwasdbTable', columnsConfigGwasdb, {}, {
-        scrollY: 'calc(100vh - 270px)',
+        scrollY: `${Math.max(window.innerHeight - 455, 320)}px`,
+        heightOffset: 455,
         buttons: ['copy', 'csv', 'excel'],
         initComplete: function(table, data) {
           setupColumnFilters(table);
           setupControls(table, data);
+          setupLnicContextClicks();
         }
+      });
       });
     });
 
@@ -92,6 +109,98 @@
       quickTrait.addEventListener('change', () => table.column(10).search(quickTrait.value ? `^${$.fn.dataTable.util.escapeRegex(quickTrait.value)}$` : '', true, false).draw());
       document.querySelector('#clearTableFilters').addEventListener('click', () => { globalSearch.value = ''; quickTrait.value = ''; table.search(''); table.columns().search(''); $('#gwasdbTable thead select').val(''); $('#gwasdbTable thead input').val(''); table.draw(); });
       document.querySelector('#exportCsv').addEventListener('click', () => table.button('.buttons-csv').trigger());
+    }
+
+    function setupLnicContextClicks() {
+      $('#gwasdbTable tbody').on('click', '.lnic-chip', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        const lnic = this.dataset.lnic;
+        showLnicContext(lnic);
+        document.querySelectorAll('.lnic-chip.active').forEach(item => item.classList.remove('active'));
+        this.classList.add('active');
+      });
+    }
+
+    function showLnicContext(lnic) {
+      const body = document.querySelector('#gwasContextBody');
+      const row = classificationByLnic[lnic];
+      if (!row) {
+        body.innerHTML = `<p class="status error">No i-CLASSi classification row was found for ${escapeHtml(lnic)}.</p>`;
+        return;
+      }
+      const title = row['Entity-Type'] || row['WHO-HAEM5 Entity-Type'] || lnic;
+      const fields = [
+        ['LNIC Code', row['LNIC Code']],
+        ['L1 Lineage-Nature', row['Lineage-Nature']],
+        ['L2 Major Group', row['Major Group']],
+        ['L3 Category', row.Category],
+        ['L4 Class-Family', row['Class-Family']],
+        ['L5 Entity-Type', row['Entity-Type']],
+        ['L6 Subtype(s)', row['Subtype(s)']]
+      ];
+      body.innerHTML = `
+        <div class="gwas-context-title">
+          <span class="muted-small">${escapeHtml(lnic)}</span>
+          <h2>${escapeHtml(title)}</h2>
+        </div>
+        <div class="meta-grid compact">
+          ${fields.map(([label, value]) => `
+            <div class="meta-item">
+              <span>${escapeHtml(label)}</span>
+              ${escapeHtml(value || 'Not reported')}
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function buildClassificationIndex(rows) {
+      return (Array.isArray(rows) ? rows : []).reduce((index, row) => {
+        const lnic = row && row['LNIC Code'];
+        if (lnic) index[lnic] = row;
+        return index;
+      }, {});
+    }
+
+    function renderLnicCodes(data, type) {
+      if (type !== 'display') return data || '';
+      const codes = splitValueList(data).filter(value => /^LNIC-\d{3}-\d{3}$/i.test(value));
+      if (!codes.length) return escapeHtml(data || '');
+      return codes.map(code => `<button type="button" class="lnic-chip" data-lnic="${escapeHtml(code)}">${escapeHtml(code)}</button>`).join(' ');
+    }
+
+    function renderGwasCatalogIds(data, type) {
+      if (type !== 'display') return data || '';
+      const ids = splitValueList(data).filter(value => /^GCST\d+$/i.test(value));
+      if (!ids.length) return escapeHtml(data || '');
+      return ids.map(id => `<a class="external-id-link" href="https://www.ebi.ac.uk/gwas/studies/${encodeURIComponent(id)}" target="_blank" rel="noopener">${escapeHtml(id)}</a>`).join(' ');
+    }
+
+    function renderRsIds(data, type) {
+      if (type !== 'display') return data || '';
+      const ids = splitValueList(data).filter(value => /^rs\d+$/i.test(value));
+      if (!ids.length) return escapeHtml(data || '');
+      return ids.map(id => `
+        <span class="rsid-link-group">
+          <a class="external-id-link" href="https://www.ncbi.nlm.nih.gov/snp/?term=${encodeURIComponent(id)}" target="_blank" rel="noopener">${escapeHtml(id)}</a>
+          <a class="external-id-link secondary-link" href="https://platform.opentargets.org/search?q=${encodeURIComponent(id)}&page=1" target="_blank" rel="noopener">Open Targets</a>
+        </span>
+      `).join(' ');
+    }
+
+    function renderPubmedIds(data, type) {
+      if (type !== 'display') return data || '';
+      const ids = splitValueList(data).filter(value => /^\d+$/.test(value));
+      if (!ids.length) return escapeHtml(data || '');
+      return ids.map(id => `<a class="external-id-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(id)}/" target="_blank" rel="noopener">${escapeHtml(id)}</a>`).join(' ');
+    }
+
+    function splitValueList(value) {
+      return String(value || '')
+        .split(/[,;|\s]+/)
+        .map(item => item.trim())
+        .filter(Boolean);
     }
 
     function setupColumnFilters(table) {
@@ -139,3 +248,5 @@
   </script>
 </body>
 </html>
+
+

@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>i-GWASdb | i-CLASSi Studio</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=6">
   <script src="versioning.js"></script>
-  <script src="mobile-nav.js"></script>
+  <script src="mobile-nav.js?v=3"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
   <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -15,7 +15,8 @@
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
-  <script src="table.js"></script>
+  <script src="table.js?v=2"></script>
+  <script src="hierarchy.js?v=2"></script>
 </head>
 <body>
   <div class="app-shell">
@@ -38,8 +39,26 @@
         <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
         <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select data-version-select><option>0.1.0 (beta)</option></select></div></div>
       </header>
-      <section class="workspace">
-        <div class="page-heading"><div class="page-heading-icon">◇</div><div><h1>i-GWASdb Explorer</h1><p>Browse genome-wide association records linked to i-CLASSi disease categories and LNIC codes.</p></div></div>
+      <div class="explorer-layout data-explorer-layout" id="gwasExplorerLayout">
+        <aside class="hierarchy-panel">
+          <h2>Hierarchy Navigator</h2>
+          <div class="hierarchy-panel-controls">
+            <input id="gwasHierarchySearch" type="text" placeholder="Search hierarchy...">
+            <div class="hierarchy-level-controls level-row">
+              <button type="button" class="secondary" data-gwas-expand-level="2">Expand L2</button>
+              <button type="button" class="secondary" data-gwas-expand-level="3">Expand L3</button>
+              <button type="button" class="secondary" data-gwas-expand-level="4">Expand L4</button>
+            </div>
+            <div class="hierarchy-level-controls action-row">
+              <button type="button" class="secondary" data-gwas-expand-level="7">Expand all</button>
+              <button type="button" class="secondary" id="collapseGwasHierarchy">Collapse</button>
+            </div>
+            <button type="button" class="secondary" id="clearGwasHierarchy">Clear Selection</button>
+          </div>
+          <div class="hierarchy-tree" id="gwasHierarchyTree"></div>
+        </aside>
+        <section class="workspace">
+        <div class="page-heading"><div class="page-heading-icon">◇</div><div class="page-heading-main"><h1>i-GWASdb Explorer</h1><p>Browse genome-wide association records linked to i-CLASSi disease categories and LNIC codes.</p></div><div class="page-heading-actions"><button type="button" class="secondary navigator-toggle" data-toggle-navigator="gwasExplorerLayout">Hide navigator</button></div></div>
         <section class="explorer-card gwas-context-card" id="gwasContextCard">
           <div class="card-header">
             <strong>i-CLASSi context</strong>
@@ -56,11 +75,16 @@
             <tbody></tbody>
           </table>
         </section>
-      </section>
+        </section>
+      </div>
     </main>
   </div>
   <script>
     let classificationByLnic = {};
+    let gwasHierarchyRows = [];
+    let gwasHierarchySearchQuery = '';
+    let gwasHierarchyExpandToLevel = 1;
+    let activeGwasHierarchyButton = null;
 
     const columnsConfigGwasdb = [
       { data: 'LNIC Code(s)', render: renderLnicCodes },
@@ -81,16 +105,19 @@
 
     IclassiVersions.ready().then(versionContext => {
       $.getJSON(versionContext.file('iclassi.json'), classificationRows => {
+        gwasHierarchyRows = Array.isArray(classificationRows) ? classificationRows : [];
         classificationByLnic = buildClassificationIndex(classificationRows);
       }).always(() => {
       initializeDataTable(versionContext.file('i-gwasdb.json'), '#gwasdbTable', columnsConfigGwasdb, {}, {
         scrollY: `${Math.max(window.innerHeight - 455, 320)}px`,
+        scrollX: true,
         heightOffset: 455,
         buttons: ['copy', 'csv', 'excel'],
         initComplete: function(table, data) {
           setupColumnFilters(table);
           setupControls(table, data);
           setupLnicContextClicks();
+          setupGwasHierarchy(table);
         }
       });
       });
@@ -111,8 +138,61 @@
       document.querySelector('#exportCsv').addEventListener('click', () => table.button('.buttons-csv').trigger());
     }
 
+    function setupGwasHierarchy(table) {
+      const tree = document.querySelector('#gwasHierarchyTree');
+      const search = document.querySelector('#gwasHierarchySearch');
+      const collapse = document.querySelector('#collapseGwasHierarchy');
+      const clear = document.querySelector('#clearGwasHierarchy');
+
+      search.addEventListener('input', event => {
+        gwasHierarchySearchQuery = event.target.value.trim().toLowerCase();
+        renderGwasHierarchy(table);
+      });
+
+      collapse.addEventListener('click', () => {
+        gwasHierarchyExpandToLevel = 1;
+        renderGwasHierarchy(table);
+      });
+
+      document.querySelectorAll('[data-gwas-expand-level]').forEach(button => {
+        button.addEventListener('click', () => {
+          gwasHierarchyExpandToLevel = Number(button.dataset.gwasExpandLevel || 1);
+          renderGwasHierarchy(table);
+        });
+      });
+
+      clear.addEventListener('click', () => {
+        search.value = '';
+        gwasHierarchySearchQuery = '';
+        gwasHierarchyExpandToLevel = 1;
+        if (activeGwasHierarchyButton) activeGwasHierarchyButton.classList.remove('active');
+        activeGwasHierarchyButton = null;
+        table.column(0).search('').draw();
+        document.querySelector('#gwasContextBody').innerHTML = '<p class="muted-small">No LNIC code selected.</p>';
+        renderGwasHierarchy(table);
+      });
+
+      renderGwasHierarchy(table);
+
+      function renderGwasHierarchy(tableInstance) {
+        const rows = getVisibleHierarchyRows(gwasHierarchyRows, gwasHierarchySearchQuery);
+        renderExpandableHierarchy(tree, rows, {
+          searchQuery: gwasHierarchySearchQuery,
+          expandToLevel: gwasHierarchyExpandToLevel,
+          onSelect: function(node, button) {
+            if (activeGwasHierarchyButton) activeGwasHierarchyButton.classList.remove('active');
+            activeGwasHierarchyButton = button;
+            button.classList.add('active');
+            const lnicCodes = getNodeLnicCodes(node);
+            tableInstance.column(0).search(buildLnicSearchPattern(lnicCodes), true, false).draw();
+            showHierarchyContext(node, lnicCodes, '#gwasContextBody');
+          }
+        });
+      }
+    }
+
     function setupLnicContextClicks() {
-      $('#gwasdbTable tbody').on('click', '.lnic-chip', function(event) {
+      $('#gwasdbTable tbody, #gwasContextBody').on('click', '.lnic-chip', function(event) {
         event.preventDefault();
         event.stopPropagation();
         const lnic = this.dataset.lnic;
@@ -155,12 +235,51 @@
       `;
     }
 
+    function showHierarchyContext(node, lnicCodes, targetSelector) {
+      const body = document.querySelector(targetSelector);
+      const rows = lnicCodes.map(code => classificationByLnic[code]).filter(Boolean);
+      if (!rows.length) {
+        body.innerHTML = `<p class="status error">No i-CLASSi classification rows were found for the selected branch.</p>`;
+        return;
+      }
+      if (rows.length === 1) {
+        showLnicContext(rows[0]['LNIC Code']);
+        return;
+      }
+      body.innerHTML = `
+        <div class="gwas-context-title">
+          <span class="muted-small">${escapeHtml(node.label)} ${escapeHtml(node.value)}</span>
+          <h2>${rows.length} LNIC codes in selected branch</h2>
+        </div>
+        <div class="cui-list">
+          ${lnicCodes.map(code => `<button type="button" class="lnic-chip" data-lnic="${escapeHtml(code)}">${escapeHtml(code)}</button>`).join('')}
+        </div>
+      `;
+    }
+
     function buildClassificationIndex(rows) {
       return (Array.isArray(rows) ? rows : []).reduce((index, row) => {
         const lnic = row && row['LNIC Code'];
         if (lnic) index[lnic] = row;
         return index;
       }, {});
+    }
+
+    function getVisibleHierarchyRows(rows, query) {
+      if (!query) return rows;
+      return rows.filter(row =>
+        Object.values(row).some(value => String(value || '').toLowerCase().includes(query))
+      );
+    }
+
+    function getNodeLnicCodes(node) {
+      return [...new Set((node.rows || [])
+        .map(row => row && row['LNIC Code'])
+        .filter(Boolean))];
+    }
+
+    function buildLnicSearchPattern(lnicCodes) {
+      return lnicCodes.map(code => $.fn.dataTable.util.escapeRegex(code)).join('|');
     }
 
     function renderLnicCodes(data, type) {

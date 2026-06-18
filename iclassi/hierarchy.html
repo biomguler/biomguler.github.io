@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lookup | i-CLASSi Studio</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=6">
   <script src="versioning.js"></script>
-  <script src="mobile-nav.js"></script>
+  <script src="mobile-nav.js?v=3"></script>
   <script src="hierarchy.js?v=2"></script>
   <script src="umls.js?v=4"></script>
 </head>
@@ -52,16 +52,19 @@
       <section class="workspace">
         <div class="page-heading">
           <div class="page-heading-icon">▽</div>
-          <div>
+          <div class="page-heading-main">
             <h1>i-CLASSi Lookup</h1>
             <p>Expand the classification from L1 to L6. Terminal branches open disease details, mapped UMLS CUIs, public UMLS source content, and optional licensed live lookup.</p>
           </div>
+          <div class="page-heading-actions">
+            <button type="button" class="secondary navigator-toggle" data-toggle-navigator="lookupHierarchyWorkspace">Hide navigator</button>
+          </div>
         </div>
 
-        <div class="hierarchy-workspace">
+        <div class="hierarchy-workspace" id="lookupHierarchyWorkspace">
           <section class="hierarchy-browser">
             <div class="card-header">
-              <strong>Classification lookup tree</strong>
+              <strong>Hierarchy Navigator</strong>
               <div class="hierarchy-panel-controls lookup-controls">
                 <input id="hierarchySearch" type="text" placeholder="Filter hierarchy by entity, subtype, or code...">
                 <div class="hierarchy-level-controls level-row">

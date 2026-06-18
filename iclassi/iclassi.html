@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>i-CLASSi | InterLymph Classification Explorer</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=6">
   <script src="versioning.js"></script>
-  <script src="mobile-nav.js"></script>
+  <script src="mobile-nav.js?v=3"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
   <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -16,7 +16,7 @@
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.flash.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
-  <script src="table.js"></script>
+  <script src="table.js?v=2"></script>
   <script src="hierarchy.js?v=2"></script>
 </head>
 <body>
@@ -57,7 +57,7 @@
         </div>
       </header>
 
-      <div class="explorer-layout">
+      <div class="explorer-layout" id="iclassiExplorerLayout">
         <aside class="hierarchy-panel">
           <h2>Hierarchy Navigator</h2>
           <div class="hierarchy-panel-controls">
@@ -79,9 +79,12 @@
         <section class="workspace">
           <div class="page-heading">
             <div class="page-heading-icon">▤</div>
-            <div>
+            <div class="page-heading-main">
               <h1>i-CLASSi Explorer</h1>
               <p>Browse the InterLymph lymphoid neoplasm classification reference. Click hierarchy levels in the left panel to filter, or use search and column filters below.</p>
+            </div>
+            <div class="page-heading-actions">
+              <button type="button" class="secondary navigator-toggle" data-toggle-navigator="iclassiExplorerLayout">Hide navigator</button>
             </div>
           </div>
 
@@ -146,6 +149,7 @@
       initializeDataTable(versionContext.file('iclassi.json'), '#example', columnsConfig, {}, {
         heightOffset: 310,
         scrollY: 'calc(100vh - 360px)',
+        scrollX: true,
         buttons: ['copy', 'csv', 'excel'],
         initComplete: function(table, data) {
           setupColumnFilters(table);

@@ -391,8 +391,21 @@ select {
 .hierarchy-panel {
   background: #ffffff;
   border-right: 1px solid var(--line);
-  padding: 14px 12px;
   overflow: auto;
+  padding: 14px 12px;
+}
+
+.data-explorer-layout {
+  min-height: calc(100vh - 46px);
+}
+
+.navigator-collapsed {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.navigator-collapsed > .hierarchy-panel,
+.navigator-collapsed > .hierarchy-browser {
+  display: none;
 }
 
 .hierarchy-panel h2 {
@@ -545,6 +558,18 @@ select {
   margin-bottom: 20px;
 }
 
+.page-heading-main {
+  min-width: 0;
+}
+
+.page-heading-actions {
+  margin-left: auto;
+}
+
+.navigator-toggle {
+  white-space: nowrap;
+}
+
 .page-heading-icon {
   color: var(--teal-dark);
   font-size: 25px;
@@ -636,6 +661,16 @@ table.dataTable {
   border-collapse: collapse;
   table-layout: fixed;
   width: 100% !important;
+}
+
+#example.dataTable,
+#mappingTable.dataTable,
+#gwasdbTable.dataTable {
+  min-width: 1240px;
+}
+
+#gwasdbTable.dataTable {
+  min-width: 1380px;
 }
 
 .dataTables_scrollHeadInner,
@@ -1427,6 +1462,14 @@ code {
   .page-heading {
     display: grid;
     gap: 10px;
+  }
+
+  .page-heading-actions {
+    margin-left: 0;
+  }
+
+  .navigator-toggle {
+    width: 100%;
   }
 
   .page-heading h1,

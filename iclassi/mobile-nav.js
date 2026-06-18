@@ -51,9 +51,27 @@
     });
   }
 
+  function initNavigatorToggles() {
+    document.querySelectorAll('[data-toggle-navigator]').forEach(button => {
+      const target = document.getElementById(button.dataset.toggleNavigator);
+      if (!target) return;
+      button.addEventListener('click', () => {
+        const collapsed = target.classList.toggle('navigator-collapsed');
+        button.textContent = collapsed ? 'Show navigator' : 'Hide navigator';
+        button.setAttribute('aria-expanded', String(!collapsed));
+        setTimeout(() => window.dispatchEvent(new Event('resize')), 0);
+      });
+      button.setAttribute('aria-expanded', String(!target.classList.contains('navigator-collapsed')));
+    });
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMobileNav, { once: true });
+    document.addEventListener('DOMContentLoaded', () => {
+      initMobileNav();
+      initNavigatorToggles();
+    }, { once: true });
   } else {
     initMobileNav();
+    initNavigatorToggles();
   }
 })();

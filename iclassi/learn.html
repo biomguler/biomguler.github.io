@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn | i-CLASSi Studio</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
   <script src="versioning.js?v=2"></script>
   <script src="mobile-nav.js?v=3"></script>
 </head>
@@ -166,15 +166,33 @@
           </dl>
 
           <h2 id="mapping-docs">Mapping Explorer</h2>
-          <p>The Mapping tab documents how i-CLASSi entities are linked to external biomedical vocabularies and ontology identifiers.</p>
+          <p>The Mapping tab documents how LNIC entities are linked to external biomedical vocabularies and ontology identifiers. Each row contains one vocabulary code.</p>
+          <div class="learn-callout">
+            <strong>Review status</strong>
+            <span>Mapping confidence records the extent of human review, not semantic closeness. Programmatically generated mappings remain Low until reviewed by a person.</span>
+          </div>
           <h3>How to use it</h3>
           <ul>
             <li>Use the Hierarchy Navigator to filter mapping records by any L1-L6 branch and its linked LNIC codes.</li>
+            <li>Use Vocabulary, Mapping type, Confidence, and LNIC code or keyword filters to narrow the table.</li>
             <li>Filter by LNIC code to see every vocabulary mapping for one entity.</li>
             <li>Click an LNIC code in the mapping table to show the corresponding L1-L6 i-CLASSi classification context.</li>
-            <li>Filter by Vocabulary to compare mappings from UMLS, NCIt, SNOMED CT, ICD, EFO, or other sources included in the release.</li>
-            <li>Use Mapping type and Mapping confidence together to understand how directly a code represents the i-CLASSi entity.</li>
+            <li>Filter by Vocabulary to compare mappings from UMLS, ICD, EFO, or other displayed sources included in the release.</li>
+            <li>Use Mapping type to interpret semantic scope and Mapping confidence to assess the extent of human review.</li>
           </ul>
+          <h3>Mapping types</h3>
+          <dl class="column-glossary">
+            <dt>exact</dt><dd>The external code corresponds precisely to the LNIC entity.</dd>
+            <dt>narrower</dt><dd>The external code is more specific than the LNIC entity.</dd>
+            <dt>broader</dt><dd>The external code includes the LNIC entity plus other entities.</dd>
+            <dt>partial</dt><dd>The code overlaps but is ambiguous, historical, deprecated, or not fully equivalent.</dd>
+          </dl>
+          <h3>Mapping confidence</h3>
+          <dl class="column-glossary">
+            <dt>Low</dt><dd>Created programmatically without human review.</dd>
+            <dt>Moderate</dt><dd>Checked by one person.</dd>
+            <dt>High</dt><dd>Checked independently by at least two people.</dd>
+          </dl>
           <h3>Column glossary</h3>
           <dl class="column-glossary">
             <dt>Entry ID</dt><dd>Internal row identifier from the mapping dataset.</dd>
@@ -183,10 +201,10 @@
             <dt>Subtype (s)</dt><dd>Subtype label or subtype group associated with the mapping row.</dd>
             <dt>Vocabulary</dt><dd>External vocabulary, ontology, or coding system.</dd>
             <dt>Code</dt><dd>Identifier in the external vocabulary.</dd>
-            <dt>Mapping_type</dt><dd>Relationship between the i-CLASSi entity and the external code, such as exact, broader, narrower, or related.</dd>
+            <dt>Mapping_type</dt><dd>Semantic relationship between the LNIC entity and the external code: exact, narrower, broader, or partial.</dd>
             <dt>Vocabulary Prefered Name</dt><dd>Preferred label from the external vocabulary. The original column name preserves the source spelling.</dd>
             <dt>Version</dt><dd>Version or release of the external vocabulary used for the mapping.</dd>
-            <dt>Mapping confidence</dt><dd>Curated confidence level for the mapping.</dd>
+            <dt>Mapping confidence</dt><dd>Extent of human review: Low for programmatic mappings, Moderate after one-person review, and High after independent review by at least two people.</dd>
           </dl>
 
           <h2 id="igwas-docs">i-GWASdb Explorer</h2>

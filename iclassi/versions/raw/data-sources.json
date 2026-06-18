@@ -192,6 +192,88 @@
                                                 }
                                             ],
                         "notes":  "Crosswalks support harmonization and review but should not be interpreted as universally exact one-to-one clinical equivalences."
+                    },
+                    {
+                        "name":  "Experimental Factor Ontology (EFO)",
+                        "organization":  "EMBL-EBI",
+                        "url":  "https://www.ebi.ac.uk/ols4/ontologies/efo",
+                        "usedBy":  "i-GWASdb trait harmonization and vocabulary mapping",
+                        "snapshotLabel":  "EFO release",
+                        "snapshotValue":  "3.91.0 (June 15, 2026)",
+                        "description":  "The Experimental Factor Ontology provides controlled terms for experimental variables, diseases, traits, assays, and related biomedical concepts used in GWAS and data harmonization.",
+                        "metrics":  [
+                                        {
+                                            "label":  "Release",
+                                            "value":  "3.91.0"
+                                        },
+                                        {
+                                            "label":  "Release date",
+                                            "value":  "June 15, 2026"
+                                        }
+                                    ],
+                        "technicalContext":  [
+                                                 {
+                                                     "label":  "Ontology identifier",
+                                                     "value":  "EFO"
+                                                 },
+                                                 {
+                                                     "label":  "Release tag",
+                                                     "value":  "v3.91.0"
+                                                 }
+                                             ],
+                        "releaseHighlights":  [
+                                                  {
+                                                      "code":  "EFO:0920101",
+                                                      "description":  "[NTR] Added myocardial strain"
+                                                  },
+                                                  {
+                                                      "code":  "MONDO:1060213",
+                                                      "description":  "Added MONDO_1060213 to imports and dependencies"
+                                                  },
+                                                  {
+                                                      "code":  "Assay terms",
+                                                      "description":  "Added assay terms for EFO issue #2707"
+                                                  },
+                                                  {
+                                                      "code":  "Release",
+                                                      "description":  "Published EFO release 3.91.0"
+                                                  }
+                                              ],
+                        "additionalLinks":  [
+                                                {
+                                                    "label":  "Browse EFO in OLS",
+                                                    "url":  "https://www.ebi.ac.uk/ols4/ontologies/efo"
+                                                },
+                                                {
+                                                    "label":  "EFO 3.91.0 release",
+                                                    "url":  "https://github.com/EBISPOT/efo/releases/tag/v3.91.0"
+                                                },
+                                                {
+                                                    "label":  "Latest EFO release",
+                                                    "url":  "https://github.com/EBISPOT/efo/releases/latest"
+                                                },
+                                                {
+                                                    "label":  "Full changelog",
+                                                    "url":  "https://github.com/EBISPOT/efo/compare/v3.90.0...v3.91.0"
+                                                },
+                                                {
+                                                    "label":  "Myocardial strain PR #2706",
+                                                    "url":  "https://github.com/EBISPOT/efo/pull/2706"
+                                                },
+                                                {
+                                                    "label":  "MONDO import PR #2710",
+                                                    "url":  "https://github.com/EBISPOT/efo/pull/2710"
+                                                },
+                                                {
+                                                    "label":  "Assay terms PR #2712",
+                                                    "url":  "https://github.com/EBISPOT/efo/pull/2712"
+                                                },
+                                                {
+                                                    "label":  "Release PR #2714",
+                                                    "url":  "https://github.com/EBISPOT/efo/pull/2714"
+                                                }
+                                            ],
+                        "notes":  "i-CLASSi records this as the EFO source snapshot for the release. Consult the OLS browser and GitHub release pages for current ontology content and later releases."
                     }
                 ]
 }

@@ -1,174 +1,256 @@
-{
-  "versionId": "0.2.0-prototype",
-  "versionLabel": "0.2.0 (prototype subset)",
-  "releaseType": "Demonstration subset",
-  "sources": [
-    {
-      "name": "GWAS Catalog",
-      "organization": "EMBL-EBI and NHGRI",
-      "url": "https://www.ebi.ac.uk/gwas/",
-      "usedBy": "i-GWASdb prototype subset",
-      "snapshotDate": "2026-06-01",
-      "description": "This prototype contains a reduced demonstration subset derived from the GWAS Catalog source snapshot used for the 0.1.0 beta release.",
-      "metrics": [
-        {
-          "label": "Catalog publications",
-          "value": "7,714"
-        },
-        {
-          "label": "Catalog top associations",
-          "value": "1,142,122"
-        },
-        {
-          "label": "Catalog full summary statistics",
-          "value": "176,855"
-        }
-      ],
-      "technicalContext": [
-        {
-          "label": "Genome assembly",
-          "value": "GRCh38.p14"
-        },
-        {
-          "label": "i-GWASdb SNP position assembly",
-          "value": "GRCh37"
-        },
-        {
-          "label": "dbSNP build",
-          "value": "156"
-        }
-      ],
-      "notes": "The prototype table is intentionally incomplete and is provided only to demonstrate version switching. SNP positions stored in the i-GWASdb POS column are reported on GRCh37."
-    },
-    {
-      "name": "Unified Medical Language System® (UMLS®)",
-      "organization": "U.S. National Library of Medicine",
-      "url": "https://www.nlm.nih.gov/research/umls/",
-      "usedBy": "Lookup and terminology mapping",
-      "snapshotLabel": "UMLS release",
-      "snapshotValue": "2026AA",
-      "description": "The prototype uses the same UMLS 2026AA terminology release and public-source policy as the 0.1.0 beta release.",
-      "metrics": [
-        {
-          "label": "New translation sources",
-          "value": "5"
-        },
-        {
-          "label": "Updated sources",
-          "value": "81"
-        }
-      ],
-      "technicalContext": [
-        {
-          "label": "Metathesaurus release",
-          "value": "2026AA"
-        },
-        {
-          "label": "Public cache allowlist",
-          "value": "MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, PDQ"
-        }
-      ],
-      "releaseHighlights": [
-        {
-          "code": "LNC-AR-JO",
-          "description": "Arabic, Jordan Edition of LOINC"
-        },
-        {
-          "code": "LNC-CS-CZ",
-          "description": "Czech, Czechia Edition of LOINC"
-        },
-        {
-          "code": "MDRNOR",
-          "description": "Norwegian Edition of MedDRA"
-        },
-        {
-          "code": "MDRSLK",
-          "description": "Slovak Edition of MedDRA"
-        },
-        {
-          "code": "MDRSLV",
-          "description": "Slovenian Edition of MedDRA"
-        }
-      ],
-      "additionalLinks": [
-        {
-          "label": "New and updated source details",
-          "url": "https://www.nlm.nih.gov/research/umls/sourcereleasedocs/index.html"
-        }
-      ],
-      "notes": "Prototype terminology records are a reduced demonstration subset. Category 3 or otherwise restricted vocabularies are excluded from the public i-CLASSi cache."
-    },
-    {
-      "name": "ICD-O-3 Coding Updates",
-      "organization": "North American Association of Central Cancer Registries (NAACCR)",
-      "url": "https://www.naaccr.org/icdo3/",
-      "usedBy": "i-CLASSi classification and mapping",
-      "snapshotLabel": "Implementation year",
-      "snapshotValue": "2026",
-      "description": "The prototype uses ICD-O-3.2 terminology reviewed against NAACCR's 2026 implementation guidance and coding tables.",
-      "metrics": [
-        {
-          "label": "Classification",
-          "value": "ICD-O-3.2"
-        },
-        {
-          "label": "Implementation",
-          "value": "2026"
-        }
-      ],
-      "technicalContext": [
-        {
-          "label": "2026 coding guidelines posted",
-          "value": "April 18, 2025"
-        },
-        {
-          "label": "2026 alphabetic table posted",
-          "value": "April 23, 2025"
-        }
-      ],
-      "additionalLinks": [
-        {
-          "label": "NAACCR ICD-O-3 coding updates",
-          "url": "https://www.naaccr.org/icdo3/"
-        }
-      ],
-      "notes": "The prototype contains only a demonstration subset of the i-CLASSi data."
-    },
-    {
-      "name": "SEER Hematopoietic and Lymphoid Neoplasm Database",
-      "organization": "National Cancer Institute, Surveillance, Epidemiology, and End Results Program",
-      "url": "https://seer.cancer.gov/seertools/hemelymph/",
-      "usedBy": "ICD code conversion and hematopoietic terminology review",
-      "snapshotLabel": "2026 changes released",
-      "snapshotValue": "November 26, 2025",
-      "description": "The prototype refers to SEER hematopoietic terminology and ICD code-list conversions used by the beta release.",
-      "metrics": [
-        {
-          "label": "Database entries",
-          "value": "226 neoplasms"
-        },
-        {
-          "label": "Change set",
-          "value": "2026"
-        }
-      ],
-      "technicalContext": [
-        {
-          "label": "Primary morphology system",
-          "value": "ICD-O-3"
-        },
-        {
-          "label": "Conversion targets",
-          "value": "ICD-9, ICD-10, ICD-10-CM"
-        }
-      ],
-      "additionalLinks": [
-        {
-          "label": "Open ICD code lists",
-          "url": "https://seer.cancer.gov/seertools/hemelymph/code_list/"
-        }
-      ],
-      "notes": "The prototype contains only a demonstration subset. Crosswalks should not be interpreted as universally exact one-to-one clinical equivalences."
-    }
-  ]
+﻿{
+    "versionId":  "0.2.0-prototype",
+    "versionLabel":  "0.2.0 (prototype subset)",
+    "releaseType":  "Demonstration subset",
+    "sources":  [
+                    {
+                        "name":  "GWAS Catalog",
+                        "organization":  "EMBL-EBI and NHGRI",
+                        "url":  "https://www.ebi.ac.uk/gwas/",
+                        "usedBy":  "i-GWASdb prototype subset",
+                        "snapshotDate":  "2026-06-01",
+                        "description":  "This prototype contains a reduced demonstration subset derived from the GWAS Catalog source snapshot used for the 0.1.0 beta release.",
+                        "metrics":  [
+                                        {
+                                            "label":  "Catalog publications",
+                                            "value":  "7,714"
+                                        },
+                                        {
+                                            "label":  "Catalog top associations",
+                                            "value":  "1,142,122"
+                                        },
+                                        {
+                                            "label":  "Catalog full summary statistics",
+                                            "value":  "176,855"
+                                        }
+                                    ],
+                        "technicalContext":  [
+                                                 {
+                                                     "label":  "Genome assembly",
+                                                     "value":  "GRCh38.p14"
+                                                 },
+                                                 {
+                                                     "label":  "i-GWASdb SNP position assembly",
+                                                     "value":  "GRCh37"
+                                                 },
+                                                 {
+                                                     "label":  "dbSNP build",
+                                                     "value":  "156"
+                                                 }
+                                             ],
+                        "notes":  "The prototype table is intentionally incomplete and is provided only to demonstrate version switching. SNP positions stored in the i-GWASdb POS column are reported on GRCh37."
+                    },
+                    {
+                        "name":  "Unified Medical Language System® (UMLS®)",
+                        "organization":  "U.S. National Library of Medicine",
+                        "url":  "https://www.nlm.nih.gov/research/umls/",
+                        "usedBy":  "Lookup and terminology mapping",
+                        "snapshotLabel":  "UMLS release",
+                        "snapshotValue":  "2026AA",
+                        "description":  "The prototype uses the same UMLS 2026AA terminology release and public-source policy as the 0.1.0 beta release.",
+                        "metrics":  [
+                                        {
+                                            "label":  "New translation sources",
+                                            "value":  "5"
+                                        },
+                                        {
+                                            "label":  "Updated sources",
+                                            "value":  "81"
+                                        }
+                                    ],
+                        "technicalContext":  [
+                                                 {
+                                                     "label":  "Metathesaurus release",
+                                                     "value":  "2026AA"
+                                                 },
+                                                 {
+                                                     "label":  "Public cache allowlist",
+                                                     "value":  "MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, PDQ"
+                                                 }
+                                             ],
+                        "releaseHighlights":  [
+                                                  {
+                                                      "code":  "LNC-AR-JO",
+                                                      "description":  "Arabic, Jordan Edition of LOINC"
+                                                  },
+                                                  {
+                                                      "code":  "LNC-CS-CZ",
+                                                      "description":  "Czech, Czechia Edition of LOINC"
+                                                  },
+                                                  {
+                                                      "code":  "MDRNOR",
+                                                      "description":  "Norwegian Edition of MedDRA"
+                                                  },
+                                                  {
+                                                      "code":  "MDRSLK",
+                                                      "description":  "Slovak Edition of MedDRA"
+                                                  },
+                                                  {
+                                                      "code":  "MDRSLV",
+                                                      "description":  "Slovenian Edition of MedDRA"
+                                                  }
+                                              ],
+                        "additionalLinks":  [
+                                                {
+                                                    "label":  "New and updated source details",
+                                                    "url":  "https://www.nlm.nih.gov/research/umls/sourcereleasedocs/index.html"
+                                                }
+                                            ],
+                        "notes":  "Prototype terminology records are a reduced demonstration subset. Category 3 or otherwise restricted vocabularies are excluded from the public i-CLASSi cache."
+                    },
+                    {
+                        "name":  "ICD-O-3 Coding Updates",
+                        "organization":  "North American Association of Central Cancer Registries (NAACCR)",
+                        "url":  "https://www.naaccr.org/icdo3/",
+                        "usedBy":  "i-CLASSi classification and mapping",
+                        "snapshotLabel":  "Implementation year",
+                        "snapshotValue":  "2026",
+                        "description":  "The prototype uses ICD-O-3.2 terminology reviewed against NAACCR\u0027s 2026 implementation guidance and coding tables.",
+                        "metrics":  [
+                                        {
+                                            "label":  "Classification",
+                                            "value":  "ICD-O-3.2"
+                                        },
+                                        {
+                                            "label":  "Implementation",
+                                            "value":  "2026"
+                                        }
+                                    ],
+                        "technicalContext":  [
+                                                 {
+                                                     "label":  "2026 coding guidelines posted",
+                                                     "value":  "April 18, 2025"
+                                                 },
+                                                 {
+                                                     "label":  "2026 alphabetic table posted",
+                                                     "value":  "April 23, 2025"
+                                                 }
+                                             ],
+                        "additionalLinks":  [
+                                                {
+                                                    "label":  "NAACCR ICD-O-3 coding updates",
+                                                    "url":  "https://www.naaccr.org/icdo3/"
+                                                }
+                                            ],
+                        "notes":  "The prototype contains only a demonstration subset of the i-CLASSi data."
+                    },
+                    {
+                        "name":  "SEER Hematopoietic and Lymphoid Neoplasm Database",
+                        "organization":  "National Cancer Institute, Surveillance, Epidemiology, and End Results Program",
+                        "url":  "https://seer.cancer.gov/seertools/hemelymph/",
+                        "usedBy":  "ICD code conversion and hematopoietic terminology review",
+                        "snapshotLabel":  "2026 changes released",
+                        "snapshotValue":  "November 26, 2025",
+                        "description":  "The prototype refers to SEER hematopoietic terminology and ICD code-list conversions used by the beta release.",
+                        "metrics":  [
+                                        {
+                                            "label":  "Database entries",
+                                            "value":  "226 neoplasms"
+                                        },
+                                        {
+                                            "label":  "Change set",
+                                            "value":  "2026"
+                                        }
+                                    ],
+                        "technicalContext":  [
+                                                 {
+                                                     "label":  "Primary morphology system",
+                                                     "value":  "ICD-O-3"
+                                                 },
+                                                 {
+                                                     "label":  "Conversion targets",
+                                                     "value":  "ICD-9, ICD-10, ICD-10-CM"
+                                                 }
+                                             ],
+                        "additionalLinks":  [
+                                                {
+                                                    "label":  "Open ICD code lists",
+                                                    "url":  "https://seer.cancer.gov/seertools/hemelymph/code_list/"
+                                                }
+                                            ],
+                        "notes":  "The prototype contains only a demonstration subset. Crosswalks should not be interpreted as universally exact one-to-one clinical equivalences."
+                    },
+                    {
+                        "name":  "Experimental Factor Ontology (EFO)",
+                        "organization":  "EMBL-EBI",
+                        "url":  "https://www.ebi.ac.uk/ols4/ontologies/efo",
+                        "usedBy":  "i-GWASdb trait harmonization and vocabulary mapping",
+                        "snapshotLabel":  "EFO release",
+                        "snapshotValue":  "3.91.0 (June 15, 2026)",
+                        "description":  "The Experimental Factor Ontology provides controlled terms for experimental variables, diseases, traits, assays, and related biomedical concepts used in GWAS and data harmonization.",
+                        "metrics":  [
+                                        {
+                                            "label":  "Release",
+                                            "value":  "3.91.0"
+                                        },
+                                        {
+                                            "label":  "Release date",
+                                            "value":  "June 15, 2026"
+                                        }
+                                    ],
+                        "technicalContext":  [
+                                                 {
+                                                     "label":  "Ontology identifier",
+                                                     "value":  "EFO"
+                                                 },
+                                                 {
+                                                     "label":  "Release tag",
+                                                     "value":  "v3.91.0"
+                                                 }
+                                             ],
+                        "releaseHighlights":  [
+                                                  {
+                                                      "code":  "EFO:0920101",
+                                                      "description":  "[NTR] Added myocardial strain"
+                                                  },
+                                                  {
+                                                      "code":  "MONDO:1060213",
+                                                      "description":  "Added MONDO_1060213 to imports and dependencies"
+                                                  },
+                                                  {
+                                                      "code":  "Assay terms",
+                                                      "description":  "Added assay terms for EFO issue #2707"
+                                                  },
+                                                  {
+                                                      "code":  "Release",
+                                                      "description":  "Published EFO release 3.91.0"
+                                                  }
+                                              ],
+                        "additionalLinks":  [
+                                                {
+                                                    "label":  "Browse EFO in OLS",
+                                                    "url":  "https://www.ebi.ac.uk/ols4/ontologies/efo"
+                                                },
+                                                {
+                                                    "label":  "EFO 3.91.0 release",
+                                                    "url":  "https://github.com/EBISPOT/efo/releases/tag/v3.91.0"
+                                                },
+                                                {
+                                                    "label":  "Latest EFO release",
+                                                    "url":  "https://github.com/EBISPOT/efo/releases/latest"
+                                                },
+                                                {
+                                                    "label":  "Full changelog",
+                                                    "url":  "https://github.com/EBISPOT/efo/compare/v3.90.0...v3.91.0"
+                                                },
+                                                {
+                                                    "label":  "Myocardial strain PR #2706",
+                                                    "url":  "https://github.com/EBISPOT/efo/pull/2706"
+                                                },
+                                                {
+                                                    "label":  "MONDO import PR #2710",
+                                                    "url":  "https://github.com/EBISPOT/efo/pull/2710"
+                                                },
+                                                {
+                                                    "label":  "Assay terms PR #2712",
+                                                    "url":  "https://github.com/EBISPOT/efo/pull/2712"
+                                                },
+                                                {
+                                                    "label":  "Release PR #2714",
+                                                    "url":  "https://github.com/EBISPOT/efo/pull/2714"
+                                                }
+                                            ],
+                        "notes":  "i-CLASSi records this as the EFO source snapshot for the release. Consult the OLS browser and GitHub release pages for current ontology content and later releases."
+                    }
+                ]
 }

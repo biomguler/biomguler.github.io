@@ -3,7 +3,11 @@
 # Convert the i-CLASSi raw files into a versioned JSON folder.
 #
 # Example:
-#   bash scripts/json_converter.sh iclassi/versions/raw -v "0.1.0"
+#   bash scripts/json_converter.sh iclassi/versions/raw \
+#     -v "0.1.0-beta" \
+#     --version-label "0.1.0-beta" \
+#     --release-type "first release" \
+#     --force
 #
 # Output:
 #   iclassi/versions/0.1.0/iclassi.json
@@ -40,7 +44,11 @@ Accepted raw filenames:
   data-sources.json or data_sources.json
 
 Example:
-  bash scripts/json_converter.sh iclassi/versions/raw -v "0.1.0"
+  bash scripts/json_converter.sh iclassi/versions/raw \
+    -v "0.1.0-beta" \
+    --version-label "0.1.0-beta" \
+    --release-type "first release" \
+    --force
 EOF
 }
 
@@ -338,10 +346,22 @@ require_headers(
 mapping_headers, mapping_records = read_tsv(mapping_input)
 required_mapping_headers = [
     "Entry ID", "LNIC Code", "Entity-Type", "Vocabulary", "Code",
-    "Mapping_type", "Vocabulary Prefered Name", "Version",
-    "Mapping confidence",
+    "Mapping_type", "Version", "Mapping confidence",
 ]
 require_headers(mapping_input, mapping_headers, required_mapping_headers)
+preferred_name_headers = [
+    "Vocabulary Preferred Name",
+    "Vocabulary Prefered Name",
+]
+preferred_name_header = next(
+    (header for header in preferred_name_headers if header in mapping_headers),
+    None,
+)
+if preferred_name_header is None:
+    raise ValueError(
+        f"{mapping_input}: missing required header: "
+        "Vocabulary Preferred Name"
+    )
 if not any(
     header.replace("\u00a0", " ") in {"Subtype (s)", "Subtype(s)"}
     for header in mapping_headers
@@ -350,6 +370,11 @@ if not any(
         f"{mapping_input}: missing required subtype header "
         "(Subtype(s) or Subtype (s))"
     )
+
+# Preserve compatibility with the current Mapping page and UMLS cache scripts,
+# which use the historical JSON property spelling "Prefered".
+for record in mapping_records:
+    record["Vocabulary Prefered Name"] = record.pop(preferred_name_header)
 
 with data_sources_input.open("r", encoding="utf-8-sig") as source:
     data_sources_template = json.load(source)

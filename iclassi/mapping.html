@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mapping | i-CLASSi Studio</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
   <script src="versioning.js?v=2"></script>
   <script src="mobile-nav.js?v=3"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
@@ -15,7 +15,7 @@
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
-  <script src="table.js?v=2"></script>
+  <script src="table.js?v=3"></script>
   <script src="hierarchy.js?v=2"></script>
   <script src="abbreviation-tooltips.js?v=2"></script>
 </head>
@@ -60,7 +60,32 @@
           <div class="hierarchy-tree" id="mappingHierarchyTree"></div>
         </aside>
         <section class="workspace">
-        <div class="page-heading"><div class="page-heading-icon">⇄</div><div class="page-heading-main"><h1>Mapping Explorer</h1><p>Inspect vocabulary crosswalks and confidence labels for i-CLASSi disease entities.</p></div><div class="page-heading-actions"><button type="button" class="secondary navigator-toggle" data-toggle-navigator="mappingExplorerLayout">Hide navigator</button></div></div>
+        <div class="page-heading"><div class="page-heading-icon">⇄</div><div class="page-heading-main"><h1>LNIC Vocabulary Mapping</h1><p>Explore mappings between InterLymph Neoplasm Classification (LNIC) entities and external vocabularies, including ICD-O-3, ICD-9, ICD-10, and ICD-10-CM. Each row contains one vocabulary code.</p></div><div class="page-heading-actions"><button type="button" class="secondary navigator-toggle" data-toggle-navigator="mappingExplorerLayout">Hide navigator</button></div></div>
+        <section class="mapping-guide" aria-labelledby="mappingGuideTitle">
+          <div class="mapping-review-note">
+            <strong id="mappingGuideTitle">Review status</strong>
+            <p>Mapping confidence records the extent of human review, not semantic closeness. Programmatically generated mappings remain Low until reviewed by a person.</p>
+          </div>
+          <div class="mapping-definition-columns">
+            <div>
+              <h2>Mapping types</h2>
+              <dl class="mapping-definition-list">
+                <dt>exact</dt><dd>The external code corresponds precisely to the LNIC entity.</dd>
+                <dt>narrower</dt><dd>The external code is more specific than the LNIC entity.</dd>
+                <dt>broader</dt><dd>The external code includes the LNIC entity plus other entities.</dd>
+                <dt>partial</dt><dd>The code overlaps but is ambiguous, historical, deprecated, or not fully equivalent.</dd>
+              </dl>
+            </div>
+            <div>
+              <h2>Mapping confidence</h2>
+              <dl class="mapping-definition-list">
+                <dt>Low</dt><dd>Created programmatically without human review.</dd>
+                <dt>Moderate</dt><dd>Checked by one person.</dd>
+                <dt>High</dt><dd>Checked independently by at least two people.</dd>
+              </dl>
+            </div>
+          </div>
+        </section>
         <section class="explorer-card gwas-context-card" id="mappingContextCard">
           <div class="card-header">
             <strong>i-CLASSi context</strong>
@@ -71,7 +96,35 @@
           </div>
         </section>
         <section class="explorer-card">
-          <div class="card-header"><strong>Mapping table</strong><div class="table-actions"><input id="globalSearch" type="text" placeholder="Global search by entity, vocabulary, code, or preferred name..."><select id="quickEntity"><option value="">Quick entity...</option></select><button type="button" class="danger" id="clearTableFilters">Clear</button><button type="button" class="success" id="exportCsv">Export CSV</button></div></div>
+          <div class="card-header">
+            <strong>Mapping table</strong>
+            <div class="mapping-filter-grid">
+              <label>
+                <span>Vocabulary</span>
+                <select id="mappingVocabulary"><option value="">All vocabularies</option></select>
+              </label>
+              <label>
+                <span>Mapping type</span>
+                <select id="mappingType"><option value="">All mapping types</option></select>
+              </label>
+              <label>
+                <span>Confidence</span>
+                <select id="mappingConfidence"><option value="">All confidence levels</option></select>
+              </label>
+              <label class="mapping-keyword-filter">
+                <span>LNIC code or keyword</span>
+                <input id="globalSearch" type="text" placeholder="e.g., LNIC-000-039 or Burkitt">
+              </label>
+              <div class="mapping-filter-actions">
+                <span>Filters</span>
+                <button type="button" class="secondary" id="clearTableFilters">Reset filters</button>
+              </div>
+              <div class="mapping-export-action">
+                <span>Export</span>
+                <button type="button" class="success" id="exportCsv">Export CSV</button>
+              </div>
+            </div>
+          </div>
           <table id="mappingTable" class="display">
             <thead><tr><th>Entry ID</th><th>LNIC Code</th><th>Entity-Type</th><th>Subtype(s)</th><th>Vocabulary</th><th>Code</th><th>Mapping type</th><th>Vocabulary Preferred Name</th><th>Version</th><th>Mapping confidence</th></tr></thead>
             <tbody></tbody>
@@ -110,6 +163,7 @@
         scrollY: `${Math.max(window.innerHeight - 455, 320)}px`,
         scrollX: true,
         heightOffset: 455,
+        filterData: row => !['NCIT', 'SNOMED CT', 'ICD11'].includes(String(row.Vocabulary || '').trim().toUpperCase()),
         buttons: ['copy', 'csv', 'excel'],
         initComplete: function(table, data) {
           setupColumnFilters(table);
@@ -123,17 +177,54 @@
 
     function setupControls(table, data) {
       const globalSearch = document.querySelector('#globalSearch');
-      const quickEntity = document.querySelector('#quickEntity');
+      const vocabularyFilter = document.querySelector('#mappingVocabulary');
+      const mappingTypeFilter = document.querySelector('#mappingType');
+      const confidenceFilter = document.querySelector('#mappingConfidence');
+      const clearButton = document.querySelector('#clearTableFilters');
+
       globalSearch.addEventListener('input', () => table.search(globalSearch.value).draw());
-      [...new Set(data.map(row => row['Entity-Type']).filter(Boolean))].sort().forEach(entity => {
-        const option = document.createElement('option');
-        option.value = entity;
-        option.textContent = entity;
-        quickEntity.appendChild(option);
+
+      populateFilter(vocabularyFilter, data.map(row => row.Vocabulary));
+      populateFilter(mappingTypeFilter, data.map(row => row.Mapping_type));
+      populateFilter(confidenceFilter, data.map(row => row['Mapping confidence']));
+
+      vocabularyFilter.addEventListener('change', () => applyExactColumnFilter(table, 4, vocabularyFilter.value));
+      mappingTypeFilter.addEventListener('change', () => applyExactColumnFilter(table, 6, mappingTypeFilter.value));
+      confidenceFilter.addEventListener('change', () => applyExactColumnFilter(table, 9, confidenceFilter.value));
+
+      clearButton.addEventListener('click', () => {
+        globalSearch.value = '';
+        vocabularyFilter.value = '';
+        mappingTypeFilter.value = '';
+        confidenceFilter.value = '';
+        table.search('');
+        table.columns().search('');
+        $('#mappingTable thead select').val('');
+        $('#mappingTable thead input').val('');
+        table.draw();
+        const clearHierarchy = document.querySelector('#clearMappingHierarchy');
+        if (clearHierarchy) clearHierarchy.click();
       });
-      quickEntity.addEventListener('change', () => table.column(2).search(quickEntity.value ? `^${$.fn.dataTable.util.escapeRegex(quickEntity.value)}$` : '', true, false).draw());
-      document.querySelector('#clearTableFilters').addEventListener('click', () => { globalSearch.value = ''; quickEntity.value = ''; table.search(''); table.columns().search(''); $('#mappingTable thead select').val(''); $('#mappingTable thead input').val(''); table.draw(); });
+
       document.querySelector('#exportCsv').addEventListener('click', () => table.button('.buttons-csv').trigger());
+    }
+
+    function populateFilter(select, values) {
+      [...new Set(values.map(value => String(value || '').trim()).filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+        .forEach(value => {
+          const option = document.createElement('option');
+          option.value = value;
+          option.textContent = value;
+          select.appendChild(option);
+        });
+    }
+
+    function applyExactColumnFilter(table, columnIndex, value) {
+      const search = value
+        ? `^${$.fn.dataTable.util.escapeRegex(value)}$`
+        : '';
+      table.column(columnIndex).search(search, true, false).draw();
     }
 
     function setupMappingHierarchy(table) {

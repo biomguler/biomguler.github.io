@@ -636,6 +636,106 @@ button.navigator-toggle:focus-visible {
   grid-template-columns: minmax(260px, 1fr) auto auto;
 }
 
+.mapping-guide {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  margin-bottom: 14px;
+  padding: 16px;
+}
+
+.mapping-review-note {
+  background: var(--blue-soft);
+  border-left: 4px solid var(--blue);
+  padding: 11px 13px;
+}
+
+.mapping-review-note strong {
+  color: var(--sidebar);
+  display: block;
+  margin-bottom: 3px;
+}
+
+.mapping-review-note p {
+  color: #334762;
+  margin: 0;
+}
+
+.mapping-definition-columns {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 14px;
+}
+
+.mapping-definition-columns h2 {
+  font-size: 15px;
+  margin: 0 0 7px;
+}
+
+.mapping-definition-list {
+  display: grid;
+  grid-template-columns: minmax(72px, 92px) minmax(0, 1fr);
+  margin: 0;
+}
+
+.mapping-definition-list dt,
+.mapping-definition-list dd {
+  border-top: 1px solid var(--line-soft);
+  margin: 0;
+  padding: 7px 0;
+}
+
+.mapping-definition-list dt {
+  color: var(--sidebar);
+  font-weight: 800;
+  padding-right: 8px;
+}
+
+.mapping-definition-list dd {
+  color: #334762;
+  font-size: 12px;
+}
+
+.mapping-filter-grid {
+  align-items: end;
+  display: grid;
+  gap: 9px;
+  grid-template-columns:
+    minmax(145px, 0.8fr)
+    minmax(145px, 0.8fr)
+    minmax(145px, 0.8fr)
+    minmax(240px, 1.5fr)
+    auto
+    auto;
+}
+
+.mapping-filter-grid label,
+.mapping-filter-actions,
+.mapping-export-action {
+  display: grid;
+  gap: 5px;
+}
+
+.mapping-filter-grid label > span,
+.mapping-filter-actions > span,
+.mapping-export-action > span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.mapping-filter-grid input,
+.mapping-filter-grid select {
+  min-width: 0;
+  width: 100%;
+}
+
+.mapping-filter-actions button,
+.mapping-export-action button {
+  white-space: nowrap;
+}
+
 .dataTables_wrapper {
   padding: 0 12px 14px;
 }
@@ -1654,6 +1754,8 @@ code {
   .stat-row,
   .component-grid,
   .source-metrics,
+  .mapping-definition-columns,
+  .mapping-filter-grid,
   .hierarchy-workspace {
     grid-template-columns: 1fr;
   }

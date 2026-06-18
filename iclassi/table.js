@@ -1,8 +1,11 @@
 function initializeDataTable(jsonUrl, tableId, columnsConfig, toggleConfig, options = {}) {
     $(document).ready(function() {
         $.getJSON(jsonUrl, function(data) {
+            const tableData = typeof options.filterData === 'function'
+                ? data.filter(options.filterData)
+                : data;
             const table = $(tableId).DataTable({
-                data: data,
+                data: tableData,
                 paging: options.paging || false,
                 scrollY: options.scrollY || 'calc(100vh - 320px)',
                 scrollX: options.scrollX !== undefined ? options.scrollX : false,
@@ -14,7 +17,7 @@ function initializeDataTable(jsonUrl, tableId, columnsConfig, toggleConfig, opti
                 buttons: options.buttons || ['copy', 'csv', 'excel', 'pdf', 'print'],
                 initComplete: function () {
                     if (typeof options.initComplete === 'function') {
-                        options.initComplete.call(this, this.api(), data);
+                        options.initComplete.call(this, this.api(), tableData);
                     }
                 }
             });
@@ -46,7 +49,7 @@ function initializeDataTable(jsonUrl, tableId, columnsConfig, toggleConfig, opti
             attachTopHorizontalScrollbar(table);
 
             if (typeof options.onTableReady === 'function') {
-                options.onTableReady(table, data);
+                options.onTableReady(table, tableData);
             }
         }).fail(function() {
             const colspan = columnsConfig.length;

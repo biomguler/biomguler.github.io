@@ -22,8 +22,8 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
   let liveRequestInFlight = false;
 
   Promise.all([
-    fetch(config.mappingUrl || 'iclassi_mapping.json').then(toJson),
-    fetch(config.cacheUrl || 'umls_concepts.json').then(toJson)
+    fetch(config.mappingUrl || 'iclassi_mapping.json', { cache: 'no-store' }).then(toJson),
+    fetch(config.cacheUrl || 'umls_concepts.json', { cache: 'no-store' }).then(toJson)
   ])
     .then(([mappingData, cacheData]) => {
       mappings = Array.isArray(mappingData) ? mappingData : [];

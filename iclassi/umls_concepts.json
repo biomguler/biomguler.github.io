@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-17T16:28:32Z",
+  "generatedAt": "2026-06-18T14:28:23Z",
   "umlsVersion": "2026AA",
-  "source": "Public UMLS cache generated from iclassi/iclassi.json and iclassi/iclassi_mapping.json",
+  "source": "Public UMLS cache generated from iclassi/versions/0.1.0-beta/iclassi.json and iclassi/versions/0.1.0-beta/iclassi_mapping.json",
   "publicContentPolicy": "Public UMLS content is limited to selected CUI, AUI, names, term metadata, source codes, and source-attributed definitions from MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, and PDQ. Category 3/restricted sources are excluded from the public cache.",
   "publicSources": [
     "HPO",
@@ -20,8 +20,18 @@
     "ORPHANET",
     "PDQ"
   ],
-  "conceptCount": 5,
+  "conceptCount": 8,
   "entityConcepts": {
+    "LNIC-000-002": [
+      "C0023434",
+      "C0855095"
+    ],
+    "LNIC-000-003": [
+      "C0023443"
+    ],
+    "LNIC-000-004": [
+      "C0349632"
+    ],
     "LNIC-120-001": [
       "C2698259",
       "C5190889",
@@ -62,11 +72,196 @@
         }
       ]
     },
-    "C5190889": {
-      "ui": "C5190889",
-      "name": "Non-chronic lymphocytic leukemia monoclonal B-cell lymphocytosis",
-      "definitions": [],
-      "atoms": []
+    "C0855095": {
+      "ui": "C0855095",
+      "name": "Small Lymphocytic Lymphoma",
+      "definitions": [
+        {
+          "rootSource": "NCI",
+          "sourceIdentifier": null,
+          "value": "A non-Hodgkin lymphoma composed of monomorphic small, round B-lymphocytes in the lymph nodes. When the lymphoid process predominantly involves the bone marrow and the peripheral blood it is called chronic lymphocytic leukemia. (WHO, 2001)",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "rootSource": "PDQ",
+          "sourceIdentifier": null,
+          "value": "A non-Hodgkin lymphoma composed of monomorphic small, round B-lymphocytes in the lymph nodes. When the lymphoid process predominantly involves the bone marrow and the peripheral blood it is called chronic lymphocytic leukemia. (WHO, 2001) Check for \"https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C7540\" active clinical trials using this agent. (\"http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C7540\" NCI Thesaurus)",
+          "umlsVersion": "2026AA"
+        }
+      ],
+      "atoms": [
+        {
+          "cui": "C0855095",
+          "aui": "A7573709",
+          "name": "Small Lymphocytic Lymphoma",
+          "rootSource": "NCI",
+          "termType": "PT",
+          "sourceCode": "C7540",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4346426",
+          "name": "small lymphocytic lymphoma",
+          "rootSource": "PDQ",
+          "termType": "PT",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4353137",
+          "name": "lymphocytic lymphoma, small",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4353226",
+          "name": "lymphoma, small lymphocytic",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A8286519",
+          "name": "Small lymphocytic lymphoma",
+          "rootSource": "PDQ",
+          "termType": "ET",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4352040",
+          "name": "diffuse lymphocytic, well-differentiated lymphoma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4352053",
+          "name": "diffuse well-differentiated lymphocytic lymphoma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4353166",
+          "name": "lymphoma, diffuse lymphocytic, well-differentiated",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4356212",
+          "name": "well-differentiated lymphoma, diffuse lymphocytic",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4350273",
+          "name": "WDL, diffuse lymphocytic",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4352031",
+          "name": "diffuse WDL lymphoma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4348842",
+          "name": "DLWD lymphoma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4349007",
+          "name": "DWDL lymphoma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A29946443",
+          "name": "B-Cell Small Lymphocytic Lymphoma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A7617578",
+          "name": "B-Cell Small Lymphocytic Lymphoma",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C7540",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A29949439",
+          "name": "Small B-Cell Lymphocytic Lymphoma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A7620405",
+          "name": "Small B-Cell Lymphocytic Lymphoma",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C7540",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A4360254",
+          "name": "SL lymphoma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0855095",
+          "aui": "A29931160",
+          "name": "SLL",
+          "rootSource": "PDQ",
+          "termType": "AB",
+          "sourceCode": "CDR0000038170",
+          "umlsVersion": "2026AA"
+        }
+      ]
     },
     "C2698259": {
       "ui": "C2698259",
@@ -100,505 +295,11 @@
         }
       ]
     },
-    "C0026764": {
-      "ui": "C0026764",
-      "name": "Multiple Myeloma",
-      "definitions": [
-        {
-          "rootSource": "MSH",
-          "sourceIdentifier": null,
-          "value": "A malignancy of mature PLASMA CELLS engaging in monoclonal immunoglobulin production. It is characterized by hyperglobulinemia, excess Bence-Jones proteins (free monoclonal IMMUNOGLOBULIN LIGHT CHAINS) in the urine, skeletal destruction, bone pain, and fractures. Other features include ANEMIA; HYPERCALCEMIA; and RENAL INSUFFICIENCY.",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "rootSource": "MEDLINEPLUS",
-          "sourceIdentifier": null,
-          "value": "<p>Multiple myeloma is a cancer that begins in plasma cells, a type of white blood cell. These cells are part of your immune system, which helps protect the body from germs and other harmful substances. In time, myeloma cells collect in the bone marrow and in the solid parts of bones.</p> <p>No one knows the exact causes of multiple myeloma, but it is more common in older people and African Americans. It can run in families. Common symptoms may include:</p><ul> <li>Bone pain, often in the back or ribs</li> <li><a href=\"https://medlineplus.gov/fractures.html\">Fractures</a> (broken bones)</li> <li>Weakness or fatigue</li> <li>Weight loss</li> <li>Frequent infections and fevers</li> <li>Feeling very thirsty</li> <li>Frequent urination</li> </ul> <p>Doctors diagnose multiple myeloma using lab tests, imaging tests, and a bone marrow biopsy. Your treatment depends on how advanced the disease is and whether you have symptoms. If you have no symptoms, you may not need treatment right away. If you have symptoms, you may have chemotherapy, stem cell transplantation, radiation, or targeted therapy. Targeted therapy uses drugs or other substances that attack specific cancer cells with less harm to normal cells.</p> <p class=\"\">NIH: National Cancer Institute</p>",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "rootSource": "NCI",
-          "sourceIdentifier": null,
-          "value": "A bone marrow-based plasma cell neoplasm characterized by a serum monoclonal protein and skeletal destruction with osteolytic lesions, pathological fractures, bone pain, hypercalcemia, and anemia. Clinical variants include non-secretory myeloma, smoldering myeloma, indolent myeloma, and plasma cell leukemia. (WHO, 2001)",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "rootSource": "HPO",
-          "sourceIdentifier": null,
-          "value": "A malignant plasma cell tumor growing within soft tissue or within the skeleton. [https://orcid.org/0009-0006-4530-3154]",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "rootSource": "ORPHANET",
-          "sourceIdentifier": null,
-          "value": "Multiple myeloma (MM) is a malignant tumor of plasma cell characterized by overproduction of abnormal plasma cells in the bone marrow and skeletal destruction. The clinical features are bone pain, renal impairment, immunodeficiency, anemia and presence of abnormal immunoglobulins (Ig).",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "rootSource": "MEDLINEPLUS",
-          "sourceIdentifier": null,
-          "value": "Multiple myeloma is a cancer that develops in the bone marrow, the spongy tissue found in the center of most bones. The bone marrow produces red blood cells, which carry oxygen throughout the body; white blood cells, which form the body's defenses (immune system); and platelets, which are necessary for blood clotting.~Multiple myeloma is characterized by abnormalities in plasma cells, a type of white blood cell. These abnormal cells multiply out of control, increasing from about one percent of cells in the bone marrow to the majority of bone marrow cells. The abnormal cells form tumors within the bone, causing bone pain and an increased risk of fractures. If the tumors interfere with nerves near the bones, numbness or weakness in the arms or legs can occur. Affected individuals may also experience a loss of bone tissue, particularly in the skull, spine, ribs, and pelvis. The deterioration of bone can result in an excess of calcium in the blood (hypercalcemia), which can lead to nausea and loss of appetite, excessive thirst, fatigue, muscle weakness, and confusion.~The abnormal plasma cells in multiple myeloma produce proteins that impair the development of normal blood cells. As a result, affected individuals may have a reduced number of red blood cells (anemia), which can cause fatigue, weakness, and unusually pale skin (pallor); a low number of white blood cells (leukopenia), which can result in a weakened immune system and frequent infections such as pneumonia; and a reduced number of platelets (thrombocytopenia), which can lead to abnormal bleeding and bruising. Kidney problems can also occur in this disorder, caused by hypercalcemia or by toxic proteins produced by the abnormal plasma cells.~People with multiple myeloma typically develop the disorder around age 65. Over time, affected individuals can develop life-threatening complications, but the rate at which this happens varies widely. Some affected individuals are diagnosed incidentally when tests are done for other purposes and do not experience symptoms for years.",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "rootSource": "PDQ",
-          "sourceIdentifier": null,
-          "value": "A bone marrow-based plasma cell neoplasm characterized by a serum monoclonal protein and skeletal destruction with osteolytic lesions, pathological fractures, bone pain, hypercalcemia, and anemia. Clinical variants include non-secretory myeloma, smoldering myeloma, indolent myeloma, and plasma cell leukemia. (WHO, 2001) Check for \"https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C3242\" active clinical trials using this agent. (\"http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C3242\" NCI Thesaurus)",
-          "umlsVersion": "2026AA"
-        }
-      ],
-      "atoms": [
-        {
-          "cui": "C0026764",
-          "aui": "A0088554",
-          "name": "Multiple Myeloma",
-          "rootSource": "MSH",
-          "termType": "MH",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A21144712",
-          "name": "Multiple Myeloma",
-          "rootSource": "MEDLINEPLUS",
-          "termType": "PT",
-          "sourceCode": "332",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A35975482",
-          "name": "Multiple Myeloma",
-          "rootSource": "NCI",
-          "termType": "PT",
-          "sourceCode": "C3242",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A0088556",
-          "name": "Multiple Myelomas",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A26657975",
-          "name": "Myeloma, Multiple",
-          "rootSource": "MSH",
-          "termType": "ET",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A0089352",
-          "name": "Myelomas, Multiple",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A24682844",
-          "name": "Multiple myeloma",
-          "rootSource": "HPO",
-          "termType": "PT",
-          "sourceCode": "HP:0006775",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A34631841",
-          "name": "Multiple myeloma",
-          "rootSource": "ORPHANET",
-          "termType": "PT",
-          "sourceCode": "29073",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A37641325",
-          "name": "Multiple myeloma",
-          "rootSource": "MEDLINEPLUS",
-          "termType": "PT",
-          "sourceCode": "20964",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4343768",
-          "name": "multiple myeloma",
-          "rootSource": "PDQ",
-          "termType": "PT",
-          "sourceCode": "CDR0000042947",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4343769",
-          "name": "multiple myeloma",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000037974",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4343770",
-          "name": "multiple myeloma",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000040068",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A18466291",
-          "name": "Myeloma Multiple",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A18463233",
-          "name": "Myeloma-Multiples",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A26636569",
-          "name": "Myeloma-Multiple",
-          "rootSource": "MSH",
-          "termType": "ET",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4357424",
-          "name": "myeloma, multiple",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000042947",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A29931787",
-          "name": "Myeloma",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000042947",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A7568336",
-          "name": "Myeloma",
-          "rootSource": "NCI",
-          "termType": "SY",
-          "sourceCode": "C3242",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A26609448",
-          "name": "Myeloma, Plasma-Cell",
-          "rootSource": "MSH",
-          "termType": "ET",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A34634615",
-          "name": "Plasma cell myeloma",
-          "rootSource": "ORPHANET",
-          "termType": "SY",
-          "sourceCode": "29073",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A0089351",
-          "name": "Myeloma, Plasma Cell",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A17010949",
-          "name": "Myelomas, Plasma Cell",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A17008216",
-          "name": "Plasma Cell Myelomas",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A29953183",
-          "name": "Plasma Cell Myeloma",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000042947",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A35977912",
-          "name": "Plasma Cell Myeloma",
-          "rootSource": "NCI",
-          "termType": "SY",
-          "sourceCode": "C3242",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A26663306",
-          "name": "Plasma Cell Myeloma",
-          "rootSource": "MSH",
-          "termType": "ET",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4343778",
-          "name": "myeloma, plasma cell",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000040068",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4343777",
-          "name": "myeloma, plasma cell",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000037974",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4343815",
-          "name": "plasma cell myeloma",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000040068",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4343814",
-          "name": "plasma cell myeloma",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000037974",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A1007349",
-          "name": "Myelomas, Plasma-Cell",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A1049250",
-          "name": "Plasma-Cell Myeloma",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A1049251",
-          "name": "Plasma-Cell Myelomas",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A21143535",
-          "name": "Plasma-cell myeloma",
-          "rootSource": "MEDLINEPLUS",
-          "termType": "SY",
-          "sourceCode": "332",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A17005485",
-          "name": "Cell Myeloma, Plasma",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A17005486",
-          "name": "Cell Myelomas, Plasma",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A21143536",
-          "name": "Plasma-cell Myeloma",
-          "rootSource": "MEDLINEPLUS",
-          "termType": "ET",
-          "sourceCode": "332",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A37650011",
-          "name": "Plasma cell myelomas",
-          "rootSource": "MEDLINEPLUS",
-          "termType": "ET",
-          "sourceCode": "20964",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A34637425",
-          "name": "Myelomatosis",
-          "rootSource": "ORPHANET",
-          "termType": "SY",
-          "sourceCode": "29073",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A37650010",
-          "name": "Myelomatosis",
-          "rootSource": "MEDLINEPLUS",
-          "termType": "ET",
-          "sourceCode": "20964",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A26652679",
-          "name": "Myelomatosis",
-          "rootSource": "MSH",
-          "termType": "ET",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A18457077",
-          "name": "Myelomatoses",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4343140",
-          "name": "plasma cell neoplasm",
-          "rootSource": "PDQ",
-          "termType": "PT",
-          "sourceCode": "CDR0000040068",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4343142",
-          "name": "neoplasm, plasma cell",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000040068",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4343141",
-          "name": "neoplasm, plasma cell",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000037974",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A4359144",
-          "name": "plasma cell neoplasms",
-          "rootSource": "PDQ",
-          "termType": "SY",
-          "sourceCode": "CDR0000037974",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A37652894",
-          "name": "Kahler-Bozzolo disease",
-          "rootSource": "MEDLINEPLUS",
-          "termType": "ET",
-          "sourceCode": "20964",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A26628372",
-          "name": "Kahler Disease",
-          "rootSource": "MSH",
-          "termType": "ET",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A18460195",
-          "name": "Disease, Kahler",
-          "rootSource": "MSH",
-          "termType": "PM",
-          "sourceCode": "D009101",
-          "umlsVersion": "2026AA"
-        },
-        {
-          "cui": "C0026764",
-          "aui": "A37635591",
-          "name": "Kahler disease",
-          "rootSource": "MEDLINEPLUS",
-          "termType": "ET",
-          "sourceCode": "20964",
-          "umlsVersion": "2026AA"
-        }
-      ]
+    "C5190889": {
+      "ui": "C5190889",
+      "name": "Non-chronic lymphocytic leukemia monoclonal B-cell lymphocytosis",
+      "definitions": [],
+      "atoms": []
     },
     "C5192217": {
       "ui": "C5192217",
@@ -628,6 +329,849 @@
           "rootSource": "NCI",
           "termType": "SY",
           "sourceCode": "C199373",
+          "umlsVersion": "2026AA"
+        }
+      ]
+    },
+    "C0023434": {
+      "ui": "C0023434",
+      "name": "Chronic Lymphocytic Leukemia",
+      "definitions": [
+        {
+          "rootSource": "MEDLINEPLUS",
+          "sourceIdentifier": null,
+          "value": "<h3>What is leukemia?</h3> <p><a href=\"https://medlineplus.gov/leukemia.html\">Leukemia</a> is a term for cancers of the blood cells. Leukemia starts in blood-forming tissues such as the bone marrow. Your bone marrow makes the cells which will develop into white blood cells, red blood cells, and platelets. Each type of cell has a different job:</p><ul> <li>White blood cells help your body fight infection</li> <li>Red blood cells deliver oxygen from your lungs to your tissues and organs</li> <li><a href=\"https://medlineplus.gov/plateletdisorders.html\">Platelets</a> help form clots to stop bleeding</li> </ul> <p>When you have leukemia, your bone marrow makes large numbers of abnormal cells. This problem most often happens with white blood cells. These abnormal cells build up in your bone marrow and blood. They crowd out the healthy blood cells and make it hard for your cells and blood to do their work.</p> <h3>What is chronic lymphocytic leukemia (CLL)?</h3> <p>Chronic lymphocytic leukemia (CLL) is a type of chronic leukemia. \"Chronic\" means that the leukemia usually gets worse slowly. In CLL, the bone marrow makes abnormal lymphocytes (a type of white blood cell). When the abnormal cells crowd out the healthy cells, it can lead to infection, <a href=\"https://medlineplus.gov/anemia.html\">anemia</a>, and <a href=\"https://medlineplus.gov/bleedingdisorders.html\">easy bleeding</a>. The abnormal cells can also spread outside the blood to other parts of the body. CLL is one of the most common types of leukemia in adults. It often occurs during or after middle age. It is rare in <a href=\"https://medlineplus.gov/childhoodleukemia.html\">children</a>.</p> <h3>What causes chronic lymphocytic leukemia (CLL)?</h3> <p>CLL happens when there are changes in the genetic material (DNA) in bone marrow cells. The cause of these genetic changes is unknown, so it's hard to predict who might get CLL. There are a few factors that might raise your risk.</p> <h3>Who is at risk for chronic lymphocytic leukemia (CLL)?</h3> <p>It is hard to predict who will get CLL. There are a few factors that could raise your risk:</p><ul> <li>Age - your risk goes up as you get older. Most people who are diagnosed with CLL are over 50.</li> <li>Family history of CLL and other <a href=\"https://medlineplus.gov/blooddisorders.html\">blood</a> and <a href=\"https://medlineplus.gov/bonemarrowdiseases.html\">bone marrow</a> diseases</li> <li>Racial/ethnic group - CLL is more common in whites than in people from other racial or ethnic groups</li> <li>Exposure to certain chemicals, including Agent Orange, a chemical that was used in the Vietnam War</li> </ul> <h3>What are the symptoms of chronic lymphocytic leukemia (CLL)?</h3> <p>In the beginning, CLL does not cause any symptoms. Later, you can have symptoms such as:</p><ul> <li>Swollen lymph nodes - you may notice them as painless lumps in the neck, underarm, stomach, or groin</li> <li>Weakness or <a href=\"https://medlineplus.gov/fatigue.html\">feeling tired</a></li> <li>Pain or a feeling of fullness below the ribs</li> <li><a href=\"https://medlineplus.gov/fever.html\">Fever</a> and infection</li> <li>Easy <a href=\"https://medlineplus.gov/bruises.html\">bruising</a> or <a href=\"https://medlineplus.gov/bleeding.html\">bleeding</a></li> <li>Petechiae, which are tiny red dots under the skin. They are caused by bleeding.</li> <li>Weight loss for no known reason</li> <li>Drenching night sweats</li> </ul> <h3>How is chronic lymphocytic leukemia (CLL) diagnosed?</h3> <p>Your health care provider may use many tools to diagnose CLL:</p><ul> <li>A physical exam</li> <li>A medical history</li> <li>Blood tests, such as a <a href=\"https://medlineplus.gov/lab-tests/complete-blood-count-cbc/\">complete blood count (CBC) with differential</a> and blood chemistry tests. Blood chemistry tests measure different substances in the blood, including electrolytes, fats, proteins, glucose (sugar), and enzymes. Specific blood chemistry tests include a <a href=\"https://medlineplus.gov/lab-tests/basic-metabolic-panel-bmp/\">basic metabolic panel (BMP)</a>, a <a href=\"https://medlineplus.gov/lab-tests/comprehensive-metabolic-panel-cmp/\">comprehensive metabolic panel (CMP)</a>, <a href=\"https://medlineplus.gov/kidneytests.html\">kidney function tests</a>, <a href=\"https://medlineplus.gov/lab-tests/liver-function-tests/\">liver function tests</a>, and an <a href=\"https://medlineplus.gov/lab-tests/electrolyte-panel/\">electrolyte panel</a>.</li> <li>Flow cytometry tests, which check for leukemia cells and identify which type of leukemia it is. The tests can be done on blood, bone marrow, or other tissue.</li> <li><a href=\"https://medlineplus.gov/genetictesting.html\">Genetic tests</a> to look for gene and chromosome changes</li> </ul> <p>If you are diagnosed with CLL, you may have additional tests to see whether the cancer has spread. These include <a href=\"https://medlineplus.gov/diagnosticimaging.html\">imaging tests</a> and <a href=\"https://medlineplus.gov/lab-tests/bone-marrow-tests/\">bone marrow tests</a>.</p> <h3>What are the treatments for chronic lymphocytic leukemia (CLL)?</h3> <p>Treatments for CLL include:</p><ul> <li>Watchful waiting, which means that you don't get treatment right away. Your health care provider regularly checks to see if your signs or symptoms appear or change.</li> <li>Targeted therapy, which uses drugs or other substances that attack specific cancer cells with less harm to normal cells.</li> <li><a href=\"https://medlineplus.gov/cancerchemotherapy.html\">Chemotherapy</a></li> <li><a href=\"https://medlineplus.gov/radiationtherapy.html\">Radiation therapy</a></li> <li><a href=\"https://medlineplus.gov/cancerimmunotherapy.html\">Immunotherapy</a></li> <li>Chemotherapy with <a href=\"https://medlineplus.gov/bonemarrowtransplantation.html\">bone marrow</a> or <a href=\"https://medlineplus.gov/stemcells.html\">stem cell</a> transplant</li> </ul> <p>The goals of treatment are to slow the growth of the leukemia cells and to give you long periods of remission. Remission means that the signs and symptoms of cancer are reduced or have disappeared. The CLL may come back after remission, and you may need more treatment.</p> <p class=\"\">NIH: National Cancer Institute</p>",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "rootSource": "NCI",
+          "sourceIdentifier": null,
+          "value": "The most common type of chronic lymphoid leukemia. It comprises 90% of chronic lymphoid leukemias in the United States. Morphologically, the neoplastic cells are small, round B-lymphocytes. This type of leukemia is not considered to be curable with available therapy. (WHO, 2001)",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "rootSource": "HPO",
+          "sourceIdentifier": null,
+          "value": "A chronic lymphocytic/lymphatic/lymphoblastic leukemia (CLL) is a neoplastic disease characterized by proliferation and accumulation (blood, marrow and lymphoid organs) of morphologically mature but immunologically dysfunctional lymphocytes. A CLL is always a B-cell lymphocytic leukemia as there are no reports of cases of T-cell lymphocytic leukemias. [https://orcid.org/0000-0002-0736-9199]",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "rootSource": "MSH",
+          "sourceIdentifier": null,
+          "value": "A chronic leukemia characterized by abnormal B-lymphocytes and often generalized lymphadenopathy. In patients presenting predominately with blood and bone marrow involvement it is called chronic lymphocytic leukemia (CLL); in those predominately with enlarged lymph nodes it is called small lymphocytic lymphoma. These terms represent spectrums of the same disease.",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "rootSource": "ORPHANET",
+          "sourceIdentifier": null,
+          "value": "B-cell chronic lymphocytic leukemia (B-CLL) is a type of B-cell non-Hodgkin lymphoma, and the most common form of leukemia in Western countries, affecting elderly adults (mean age of 67 and 72 years) with a slight male predominance (1.7:1), and characterized by a highly variable clinical presentation that can include asymptomatic disease or non-specific B-symptoms such as unintentional weight loss, severe fatigue, fever (without evidence of infection), and night sweats as well as cervical lymphadenopathy, splenomegaly and frequent infections. Some patients can also develop autoimmune complications such as autoimmune hemolytic anemia or immune thrombocytopenia. The clinical course is extremely heterogeneous with survival ranging from a few months to several decades.",
+          "umlsVersion": "2026AA"
+        }
+      ],
+      "atoms": [
+        {
+          "cui": "C0023434",
+          "aui": "A21143361",
+          "name": "Chronic Lymphocytic Leukemia",
+          "rootSource": "MEDLINEPLUS",
+          "termType": "PT",
+          "sourceCode": "87",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26642391",
+          "name": "Chronic Lymphocytic Leukemia",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A7576420",
+          "name": "Chronic Lymphocytic Leukemia",
+          "rootSource": "NCI",
+          "termType": "PT",
+          "sourceCode": "C3163",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A24682708",
+          "name": "Chronic lymphocytic leukemia",
+          "rootSource": "HPO",
+          "termType": "SY",
+          "sourceCode": "HP:0005550",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A36501690",
+          "name": "Chronic lymphocytic leukemia",
+          "rootSource": "ORPHANET",
+          "termType": "SY",
+          "sourceCode": "67038",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A12999719",
+          "name": "Chronic Lymphocytic Leukemias",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A4342373",
+          "name": "leukemia, chronic lymphocytic",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000037765",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26628948",
+          "name": "Leukemia, Lymphocytic, Chronic",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26631716",
+          "name": "Lymphocytic Leukemia, Chronic",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A12999720",
+          "name": "Lymphocytic Leukemias, Chronic",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A21142583",
+          "name": "Leukemia, Chronic Lymphocytic",
+          "rootSource": "MEDLINEPLUS",
+          "termType": "ET",
+          "sourceCode": "87",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26596412",
+          "name": "Leukemia, Chronic Lymphocytic",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A4343596",
+          "name": "chronic lymphocytic leukemia",
+          "rootSource": "PDQ",
+          "termType": "PT",
+          "sourceCode": "CDR0000037765",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A4343730",
+          "name": "lymphocytic leukemia, chronic",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000037765",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A33194649",
+          "name": "Chronic lymphocytic leukaemia",
+          "rootSource": "HPO",
+          "termType": "SY",
+          "sourceCode": "HP:0005550",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26639773",
+          "name": "B-Lymphocytic Leukemia, Chronic",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0028480",
+          "name": "B Lymphocytic Leukemia, Chronic",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0028554",
+          "name": "B-Lymphocytic Leukemias, Chronic",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0039235",
+          "name": "Chronic B-Lymphocytic Leukemia",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0039236",
+          "name": "Chronic B-Lymphocytic Leukemias",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0079295",
+          "name": "Leukemia, Chronic B-Lymphocytic",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0079497",
+          "name": "Leukemias, Chronic B-Lymphocytic",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26639775",
+          "name": "Leukemia, Chronic Lymphatic",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A24666773",
+          "name": "Chronic lymphatic leukemia",
+          "rootSource": "HPO",
+          "termType": "PT",
+          "sourceCode": "HP:0005550",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A32328178",
+          "name": "Chronic lymphatic leukaemia",
+          "rootSource": "HPO",
+          "termType": "SY",
+          "sourceCode": "HP:0005550",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A33267615",
+          "name": "Chronic Lymphatic Leukemias",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A33268795",
+          "name": "Leukemias, Chronic Lymphatic",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A33266687",
+          "name": "Lymphatic Leukemia, Chronic",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A33266688",
+          "name": "Lymphatic Leukemias, Chronic",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A33268493",
+          "name": "Chronic Lymphatic Leukemia",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26661130",
+          "name": "B-Cell Leukemia, Chronic",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0028455",
+          "name": "B Cell Leukemia, Chronic",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0028519",
+          "name": "B-Cell Leukemias, Chronic",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0039233",
+          "name": "Chronic B-Cell Leukemia",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0039234",
+          "name": "Chronic B-Cell Leukemias",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26645044",
+          "name": "Leukemia, B Cell, Chronic",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26661131",
+          "name": "Leukemia, B-Cell, Chronic",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0079294",
+          "name": "Leukemia, Chronic B-Cell",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A0079496",
+          "name": "Leukemias, Chronic B-Cell",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A7568998",
+          "name": "B-Cell Lymphocytic Leukemia",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C3163",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A7616589",
+          "name": "B Cell Lymphocytic Leukemia",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C3163",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A12990233",
+          "name": "Leukemia, Lymphocytic, Chronic, B-Cell",
+          "rootSource": "MSH",
+          "termType": "MH",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26615238",
+          "name": "Leukemia, Lymphocytic, Chronic, B Cell",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26669111",
+          "name": "Lymphocytic Leukemia, Chronic, B Cell",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A26618012",
+          "name": "Lymphocytic Leukemia, Chronic, B-Cell",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D015451",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A34651247",
+          "name": "B-cell chronic lymphocytic leukemia",
+          "rootSource": "ORPHANET",
+          "termType": "PT",
+          "sourceCode": "67038",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A4343928",
+          "name": "B-cell chronic lymphocytic leukemia",
+          "rootSource": "PDQ",
+          "termType": "PT",
+          "sourceCode": "CDR0000039824",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A4347655",
+          "name": "B cell chronic lymphocytic leukemia",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000039824",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A4351802",
+          "name": "chronic lymphocytic leukemia, B-cell",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000039824",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023434",
+          "aui": "A4352863",
+          "name": "leukemia, B-cell chronic lymphocytic",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000039824",
+          "umlsVersion": "2026AA"
+        }
+      ]
+    },
+    "C0023443": {
+      "ui": "C0023443",
+      "name": "Hairy Cell Leukemia",
+      "definitions": [
+        {
+          "rootSource": "NCI",
+          "sourceIdentifier": null,
+          "value": "A neoplasm of small B-lymphocytes with \"hairy\" projections in bone marrow, spleen, and peripheral blood. Most patients present with splenomegaly and pancytopenia. (WHO, 2001)",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "rootSource": "MSH",
+          "sourceIdentifier": null,
+          "value": "A neoplastic disease of the lymphoreticular cells which is considered to be a rare type of chronic leukemia; it is characterized by an insidious onset, splenomegaly, anemia, granulocytopenia, thrombocytopenia, little or no lymphadenopathy, and the presence of hairy or flagellated cells in the blood and bone marrow.",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "rootSource": "PDQ",
+          "sourceIdentifier": null,
+          "value": "A rare neoplasm of small B-lymphocytes with \"hairy\" projections in bone marrow, spleen, and peripheral blood. Most patients are middle-aged to elderly adults and present with splenomegaly and pancytopenia. (WHO, 2001) Check for \"https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C7402\" active clinical trials using this agent. (\"http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C7402\" NCI Thesaurus)",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "rootSource": "ORPHANET",
+          "sourceIdentifier": null,
+          "value": "A rare, slowly progressive, chronic leukemia characterized by presence of abnormal B-lymphocytes (medium sized with abundant irregular pale cytoplasm, hair-like cytoplasmic projections/ruffled cytoplasmic border, a round or bean-shaped nucleus and absent nucleoli) in the blood or bone marrow, spleen and peripheral blood pancytopenia, notable monocytopenia, and marked susceptibility to infection. The characteristic immunophenotype is CD11c+, CD25+, CD103+ and CD123+ with a BRAF mutation in most cases.",
+          "umlsVersion": "2026AA"
+        }
+      ],
+      "atoms": [
+        {
+          "cui": "C0023443",
+          "aui": "A21142689",
+          "name": "Hairy Cell Leukemia",
+          "rootSource": "MEDLINEPLUS",
+          "termType": "ET",
+          "sourceCode": "5620",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A26633863",
+          "name": "Hairy Cell Leukemia",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D007943",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A7570936",
+          "name": "Hairy Cell Leukemia",
+          "rootSource": "NCI",
+          "termType": "PT",
+          "sourceCode": "C7402",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A0065585",
+          "name": "Hairy Cell Leukemias",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D007943",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A0079316",
+          "name": "Leukemia, Hairy Cell",
+          "rootSource": "MSH",
+          "termType": "MH",
+          "sourceCode": "D007943",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A0079512",
+          "name": "Leukemias, Hairy Cell",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D007943",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A4343496",
+          "name": "Leukemia, hairy cell",
+          "rootSource": "PDQ",
+          "termType": "ET",
+          "sourceCode": "CDR0000039065",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A4343681",
+          "name": "hairy cell leukemia",
+          "rootSource": "PDQ",
+          "termType": "PT",
+          "sourceCode": "CDR0000039065",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A4343718",
+          "name": "leukemia, hairy cell",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000039065",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A26652575",
+          "name": "Reticuloendotheliosis, Leukemic",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D007943",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A0079545",
+          "name": "Leukemic Reticuloendothelioses",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D007943",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A29949540",
+          "name": "Leukemic Reticuloendotheliosis",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000039065",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A7571706",
+          "name": "Leukemic Reticuloendotheliosis",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C7402",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A26665862",
+          "name": "Leukemic Reticuloendotheliosis",
+          "rootSource": "MSH",
+          "termType": "ET",
+          "sourceCode": "D007943",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A0111608",
+          "name": "Reticuloendothelioses, Leukemic",
+          "rootSource": "MSH",
+          "termType": "PM",
+          "sourceCode": "D007943",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A34648577",
+          "name": "Leukemic reticuloendotheliosis",
+          "rootSource": "ORPHANET",
+          "termType": "SY",
+          "sourceCode": "58017",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A29946542",
+          "name": "HCL",
+          "rootSource": "PDQ",
+          "termType": "AB",
+          "sourceCode": "CDR0000039065",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A34637617",
+          "name": "HCL-C",
+          "rootSource": "ORPHANET",
+          "termType": "SY",
+          "sourceCode": "58017",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0023443",
+          "aui": "A34632037",
+          "name": "Classic hairy cell leukemia",
+          "rootSource": "ORPHANET",
+          "termType": "PT",
+          "sourceCode": "58017",
+          "umlsVersion": "2026AA"
+        }
+      ]
+    },
+    "C0349632": {
+      "ui": "C0349632",
+      "name": "Splenic Marginal Zone B-Cell Lymphoma",
+      "definitions": [
+        {
+          "rootSource": "ORPHANET",
+          "sourceIdentifier": null,
+          "value": "Splenic marginal zone lymphoma is a rare, indolent B-cell non-Hodgkin lymphoma characterized by abnormal clonal proliferation of mature B-lymphocytes with involvement in the spleen, bone marrow and, frequently, the blood. It usually presents with splenomegaly, lymphocytosis, anemia and/or thrombocytopenia. Hepatitis C virus and autoimmune manifestations, such as autoimmune hemolytic anemia and autoimmune thrombocytopenia, could be associated.",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "rootSource": "NCI",
+          "sourceIdentifier": null,
+          "value": "A B-cell non-Hodgkin lymphoma composed of small lymphocytes which surround and replace the splenic white pulp germinal centers. It involves the spleen and splenic hilar lymph nodes, bone marrow, and often the peripheral blood. When lymphoma cells are present in the peripheral blood, they are usually, but not always, characterized by the presence of short polar villi. (WHO)",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "rootSource": "PDQ",
+          "sourceIdentifier": null,
+          "value": "A B-cell non-Hodgkin lymphoma composed of small lymphocytes which surround and replace the splenic white pulp germinal centers. It involves the spleen and splenic hilar lymph nodes, bone marrow, and often the peripheral blood. Patients present with splenomegaly and the clinical course is indolent. (WHO, 2001) Check for \"https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C4663\" active clinical trials using this agent. (\"http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C4663\" NCI Thesaurus)",
+          "umlsVersion": "2026AA"
+        }
+      ],
+      "atoms": [
+        {
+          "cui": "C0349632",
+          "aui": "A16763078",
+          "name": "Splenic Marginal Zone B-Cell Lymphoma",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C4663",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A29952489",
+          "name": "splenic marginal zone B-cell lymphoma",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000372809",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A34643426",
+          "name": "Splenic marginal zone lymphoma",
+          "rootSource": "ORPHANET",
+          "termType": "PT",
+          "sourceCode": "86854",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A16769841",
+          "name": "Splenic Marginal Zone Lymphoma",
+          "rootSource": "NCI",
+          "termType": "PT",
+          "sourceCode": "C4663",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A8285862",
+          "name": "splenic marginal zone lymphoma",
+          "rootSource": "PDQ",
+          "termType": "PT",
+          "sourceCode": "CDR0000372809",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A16760763",
+          "name": "Splenic Marginal Zone B-Cell Lymphoma with Villous Lymphocytes",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C4663",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A7620977",
+          "name": "Splenic Lymphoma with Circulating Villous Lymphocytes",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C4663",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A29946409",
+          "name": "marginal zone lymphoma of spleen",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000372809",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A7607424",
+          "name": "Marginal Zone Lymphoma of Spleen",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C4663",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A7607425",
+          "name": "Marginal Zone Lymphoma of the Spleen",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C4663",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A29946408",
+          "name": "marginal zone lymphoma of the spleen",
+          "rootSource": "PDQ",
+          "termType": "SY",
+          "sourceCode": "CDR0000372809",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A29943326",
+          "name": "SMZL",
+          "rootSource": "PDQ",
+          "termType": "AB",
+          "sourceCode": "CDR0000372809",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A34632378",
+          "name": "SMZL",
+          "rootSource": "ORPHANET",
+          "termType": "SY",
+          "sourceCode": "86854",
+          "umlsVersion": "2026AA"
+        },
+        {
+          "cui": "C0349632",
+          "aui": "A16769842",
+          "name": "Splenic Marginal Zone Lymphoma with Villous Lymphocytes",
+          "rootSource": "NCI",
+          "termType": "SY",
+          "sourceCode": "C4663",
           "umlsVersion": "2026AA"
         }
       ]

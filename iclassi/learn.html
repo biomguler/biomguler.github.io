@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn | i-CLASSi Studio</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=9">
   <script src="versioning.js"></script>
   <script src="mobile-nav.js?v=3"></script>
 </head>
@@ -23,6 +23,7 @@
         <a class="sidebar-link" href="hierarchy.html"><span class="sidebar-icon">⌕</span>Lookup</a>
         <a class="sidebar-link" href="i-gwasdb.html"><span class="sidebar-icon">◇</span>i-GWASdb</a>
         <a class="sidebar-link" href="abbreviations.html"><span class="sidebar-icon">A</span>Abbreviations</a>
+        <a class="sidebar-link" href="data-sources.html"><span class="sidebar-icon">≡</span>Data Sources</a>
         <a class="sidebar-link active" href="learn.html"><span class="sidebar-icon">?</span>Learn</a>
         <a class="sidebar-link" href="about.html"><span class="sidebar-icon">i</span>About</a>
       </nav>
@@ -58,6 +59,7 @@
               <li>Use <a href="mapping.html">Mapping</a> to inspect vocabulary mappings for the selected LNIC code.</li>
               <li>Use <a href="i-gwasdb.html">i-GWASdb</a> to review linked GWAS records.</li>
               <li>Use <a href="abbreviations.html">Abbreviations</a> whenever terminology or acronyms are unclear.</li>
+              <li>Use <a href="data-sources.html">Data Sources</a> to review version-specific source snapshots, counts, reference builds, and provenance notes.</li>
             </ol>
           </section>
 
@@ -69,6 +71,7 @@
             <a href="#mapping-docs">Mapping</a>
             <a href="#igwas-docs">i-GWASdb</a>
             <a href="#abbrev-docs">Abbreviations</a>
+            <a href="#sources-docs">Data Sources</a>
           </nav>
 
           <h2 id="interface">Interface Basics</h2>
@@ -191,6 +194,7 @@
             <li>Click an LNIC code in the table to show the corresponding L1-L6 i-CLASSi classification context.</li>
             <li>Search by rsID, nearest gene, trait, author, or PubMed identifier for literature-driven exploration.</li>
             <li>Click rsID, GWAS Catalog, or PubMed identifiers to open external records in a new browser tab.</li>
+            <li>Interpret values in the POS column as GRCh37 genomic coordinates. Convert or lift over positions before comparing them directly with resources using GRCh38.</li>
             <li>Use P values, cytobands, and genomic positions to compare signals across records.</li>
           </ul>
           <h3>External identifier links</h3>
@@ -206,7 +210,7 @@
             <dt>Study type</dt><dd>Type or design of the genetic association study.</dd>
             <dt>CHR</dt><dd>Chromosome where the reported variant or locus is located.</dd>
             <dt>Cytoband</dt><dd>Cytogenetic band for the locus.</dd>
-            <dt>POS</dt><dd>Genomic position reported for the variant or locus.</dd>
+            <dt>POS</dt><dd>Genomic position reported for the variant or locus, based on the GRCh37 human genome assembly.</dd>
             <dt>rsID</dt><dd>Reference SNP identifier. The rsID link opens dbSNP; the adjacent Open Targets link searches the Open Targets Platform for the same variant.</dd>
             <dt>EA</dt><dd>Effect allele reported for the association.</dd>
             <dt>Nearest gene(s)</dt><dd>Nearest gene or genes assigned to the reported locus.</dd>
@@ -231,6 +235,17 @@
             <dt>Abbreviations-acronyms</dt><dd>Short form used in i-CLASSi tables or documentation.</dd>
             <dt>Full name</dt><dd>Expanded term represented by the abbreviation or acronym.</dd>
           </dl>
+
+          <h2 id="sources-docs">Data Sources</h2>
+          <p>The Data Sources tab records the external resources and source snapshots used by each selectable i-CLASSi version.</p>
+          <h3>How to use it</h3>
+          <ul>
+            <li>Select an i-CLASSi version in the top-right corner to load provenance metadata for that release.</li>
+            <li>Review the snapshot date before comparing i-CLASSi counts with a live external database, because external resources continue to change.</li>
+            <li>Use the reported genome assembly and reference database build when interpreting genomic positions and variant identifiers.</li>
+            <li>Open the source website for current records, policies, citations, and updated database totals.</li>
+            <li>Prototype versions are documented as demonstration subsets when they reuse a source snapshot from the beta release.</li>
+          </ul>
           <a class="back-to-top" href="#learn-top">Back to top</a>
         </article>
       </section>

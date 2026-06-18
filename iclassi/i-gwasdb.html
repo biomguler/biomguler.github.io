@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>i-GWASdb | i-CLASSi Studio</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=9">
   <script src="versioning.js"></script>
   <script src="mobile-nav.js?v=3"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
@@ -29,6 +29,7 @@
         <a class="sidebar-link" href="hierarchy.html"><span class="sidebar-icon">⌕</span>Lookup</a>
         <a class="sidebar-link active" href="i-gwasdb.html"><span class="sidebar-icon">◇</span>i-GWASdb</a>
         <a class="sidebar-link" href="abbreviations.html"><span class="sidebar-icon">A</span>Abbreviations</a>
+        <a class="sidebar-link" href="data-sources.html"><span class="sidebar-icon">≡</span>Data Sources</a>
         <a class="sidebar-link" href="learn.html"><span class="sidebar-icon">?</span>Learn</a>
         <a class="sidebar-link" href="about.html"><span class="sidebar-icon">i</span>About</a>
       </nav>
@@ -59,6 +60,10 @@
         </aside>
         <section class="workspace">
         <div class="page-heading"><div class="page-heading-icon">◇</div><div class="page-heading-main"><h1>i-GWASdb Explorer</h1><p>Browse genome-wide association records linked to i-CLASSi disease categories and LNIC codes.</p></div><div class="page-heading-actions"><button type="button" class="secondary navigator-toggle" data-toggle-navigator="gwasExplorerLayout">Hide navigator</button></div></div>
+        <div class="learn-callout">
+          <strong>Genomic coordinate reference</strong>
+          <span>The SNP positions reported in the i-GWASdb <strong>POS</strong> column are based on the GRCh37 human genome assembly.</span>
+        </div>
         <section class="explorer-card gwas-context-card" id="gwasContextCard">
           <div class="card-header">
             <strong>i-CLASSi context</strong>

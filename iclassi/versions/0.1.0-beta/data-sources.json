@@ -1,0 +1,200 @@
+{
+  "versionId": "0.1.0-beta",
+  "versionLabel": "0.1.0 (beta)",
+  "releaseType": "Beta release",
+  "sources": [
+    {
+      "name": "GWAS Catalog",
+      "organization": "EMBL-EBI and NHGRI",
+      "url": "https://www.ebi.ac.uk/gwas/",
+      "usedBy": "i-GWASdb",
+      "snapshotDate": "2026-06-01",
+      "description": "GWAS Catalog records provide publication, association, variant, trait, and study identifiers used by the i-GWASdb component.",
+      "metrics": [
+        {
+          "label": "Publications",
+          "value": "7,714"
+        },
+        {
+          "label": "Top associations",
+          "value": "1,142,122"
+        },
+        {
+          "label": "Full summary statistics",
+          "value": "176,855"
+        }
+      ],
+      "technicalContext": [
+        {
+          "label": "Genome assembly",
+          "value": "GRCh38.p14"
+        },
+        {
+          "label": "i-GWASdb SNP position assembly",
+          "value": "GRCh37"
+        },
+        {
+          "label": "dbSNP build",
+          "value": "156"
+        }
+      ],
+      "notes": "Counts describe the GWAS Catalog as of the stated snapshot date and may differ from the live catalog after that date. Although the current GWAS Catalog is mapped to GRCh38.p14, SNP positions stored in the i-GWASdb POS column are reported on GRCh37."
+    },
+    {
+      "name": "Unified Medical Language System® (UMLS®)",
+      "organization": "U.S. National Library of Medicine",
+      "url": "https://www.nlm.nih.gov/research/umls/",
+      "usedBy": "Lookup and terminology mapping",
+      "snapshotLabel": "UMLS release",
+      "snapshotValue": "2026AA",
+      "description": "UMLS Concept Unique Identifiers, preferred concept names, selected public-source definitions, and selected atom metadata support i-CLASSi terminology mapping and disease lookup.",
+      "metrics": [
+        {
+          "label": "New translation sources",
+          "value": "5"
+        },
+        {
+          "label": "Updated sources",
+          "value": "81"
+        }
+      ],
+      "technicalContext": [
+        {
+          "label": "Metathesaurus release",
+          "value": "2026AA"
+        },
+        {
+          "label": "Public cache allowlist",
+          "value": "MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, PDQ"
+        }
+      ],
+      "releaseHighlights": [
+        {
+          "code": "LNC-AR-JO",
+          "description": "Arabic, Jordan Edition of LOINC"
+        },
+        {
+          "code": "LNC-CS-CZ",
+          "description": "Czech, Czechia Edition of LOINC"
+        },
+        {
+          "code": "MDRNOR",
+          "description": "Norwegian Edition of the Medical Dictionary for Regulatory Activities Terminology (MedDRA)"
+        },
+        {
+          "code": "MDRSLK",
+          "description": "Slovak Edition of the Medical Dictionary for Regulatory Activities Terminology (MedDRA)"
+        },
+        {
+          "code": "MDRSLV",
+          "description": "Slovenian Edition of the Medical Dictionary for Regulatory Activities Terminology (MedDRA)"
+        }
+      ],
+      "additionalLinks": [
+        {
+          "label": "New and updated source details",
+          "url": "https://www.nlm.nih.gov/research/umls/sourcereleasedocs/index.html"
+        }
+      ],
+      "notes": "The 2026AA release includes five new translation sources and 81 updated sources, including translation sources and subsources. Public i-CLASSi content excludes Category 3 or otherwise restricted vocabularies."
+    },
+    {
+      "name": "ICD-O-3 Coding Updates",
+      "organization": "North American Association of Central Cancer Registries (NAACCR)",
+      "url": "https://www.naaccr.org/icdo3/",
+      "usedBy": "i-CLASSi classification and mapping",
+      "snapshotLabel": "Implementation year",
+      "snapshotValue": "2026",
+      "description": "NAACCR ICD-O-3 coding updates provide the ICD-O-3.2 implementation guidelines and numeric and alphabetic coding tables used to review morphology terminology and codes.",
+      "metrics": [
+        {
+          "label": "Classification",
+          "value": "ICD-O-3.2"
+        },
+        {
+          "label": "Implementation",
+          "value": "2026"
+        }
+      ],
+      "technicalContext": [
+        {
+          "label": "2026 coding guidelines posted",
+          "value": "April 18, 2025"
+        },
+        {
+          "label": "2026 numeric table posted",
+          "value": "April 18, 2025"
+        },
+        {
+          "label": "2026 alphabetic table posted",
+          "value": "April 23, 2025"
+        }
+      ],
+      "additionalLinks": [
+        {
+          "label": "NAACCR ICD-O-3 coding updates",
+          "url": "https://www.naaccr.org/icdo3/"
+        }
+      ],
+      "notes": "The NAACCR page should be consulted for the current implementation guidelines, coding tables, annotated histology list, corrections, and previous-year guidance."
+    },
+    {
+      "name": "SEER Hematopoietic and Lymphoid Neoplasm Database",
+      "organization": "National Cancer Institute, Surveillance, Epidemiology, and End Results Program",
+      "url": "https://seer.cancer.gov/seertools/hemelymph/",
+      "usedBy": "ICD code conversion and hematopoietic terminology review",
+      "snapshotLabel": "2026 changes released",
+      "snapshotValue": "November 26, 2025",
+      "description": "The SEER Hematopoietic and Lymphoid Neoplasm Database provides disease terminology, ICD-O-3 morphology information, coding guidance, and conversion-oriented ICD code lists.",
+      "metrics": [
+        {
+          "label": "Database entries",
+          "value": "226 neoplasms"
+        },
+        {
+          "label": "Change set",
+          "value": "2026"
+        }
+      ],
+      "technicalContext": [
+        {
+          "label": "Primary morphology system",
+          "value": "ICD-O-3"
+        },
+        {
+          "label": "Conversion targets",
+          "value": "ICD-9, ICD-10, ICD-10-CM"
+        }
+      ],
+      "releaseHighlights": [
+        {
+          "code": "ICD-O-3 → ICD-9",
+          "description": "Conversion-oriented code list from ICD-O-3 morphology to ICD-9"
+        },
+        {
+          "code": "ICD-O-3 → ICD-10",
+          "description": "Conversion-oriented code list from ICD-O-3 morphology to ICD-10"
+        },
+        {
+          "code": "ICD-O-3 → ICD-10-CM",
+          "description": "Conversion-oriented code list from ICD-O-3 morphology to ICD-10-CM"
+        },
+        {
+          "code": "ICD-9 / ICD-10 → ICD-O-3",
+          "description": "Reverse code-list views are also available through the SEER ICD Code Lists interface"
+        }
+      ],
+      "additionalLinks": [
+        {
+          "label": "Search hematopoietic database",
+          "url": "https://seer.cancer.gov/seertools/hemelymph/"
+        },
+        {
+          "label": "Open ICD code lists",
+          "url": "https://seer.cancer.gov/seertools/hemelymph/code_list/"
+        }
+      ],
+      "notes": "Crosswalks support harmonization and review but should not be interpreted as universally exact one-to-one clinical equivalences."
+    }
+  ]
+}

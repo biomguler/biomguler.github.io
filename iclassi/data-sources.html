@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Sources | i-CLASSi Studio</title>
+  <link rel="icon" type="image/png" href="images/favicon.png?v=3">
+  <link rel="stylesheet" href="styles.css?v=9">
+  <script src="versioning.js"></script>
+  <script src="mobile-nav.js?v=3"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="index.html"><img src="images/favicon-sidebar.png?v=2" alt="i-CLASSi logo"><strong>i-CLASSi</strong></a>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="index.html"><span class="sidebar-icon">⌂</span>Intro</a>
+        <a class="sidebar-link" href="iclassi.html"><span class="sidebar-icon">▤</span>i-CLASSi</a>
+        <a class="sidebar-link" href="mapping.html"><span class="sidebar-icon">⇄</span>Mapping</a>
+        <a class="sidebar-link" href="hierarchy.html"><span class="sidebar-icon">⌕</span>Lookup</a>
+        <a class="sidebar-link" href="i-gwasdb.html"><span class="sidebar-icon">◇</span>i-GWASdb</a>
+        <a class="sidebar-link" href="abbreviations.html"><span class="sidebar-icon">A</span>Abbreviations</a>
+        <a class="sidebar-link active" href="data-sources.html"><span class="sidebar-icon">≡</span>Data Sources</a>
+        <a class="sidebar-link" href="learn.html"><span class="sidebar-icon">?</span>Learn</a>
+        <a class="sidebar-link" href="about.html"><span class="sidebar-icon">i</span>About</a>
+      </nav>
+      <div class="sidebar-footer"><a href="legal-notice.html">Legal Notice</a><a href="privacy-policy.html">Privacy Policy</a><span>© 2026 Murat Güler</span><span data-version-footer>i-CLASSi Tool v0.1.0 beta</span></div>
+    </aside>
+
+    <main class="app-main">
+      <header class="topbar">
+        <div class="topbar-title">InterLymph hierarchical classification platform for i-CLASSi</div>
+        <div class="topbar-controls">
+          <div class="topbar-field">
+            <label>i-CLASSi version</label>
+            <select data-version-select><option>0.1.0 (beta)</option></select>
+          </div>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <article class="content-panel data-sources-panel">
+          <div class="page-heading">
+            <div class="page-heading-icon">≡</div>
+            <div class="page-heading-main">
+              <h1>Data Sources</h1>
+              <p>Version-specific provenance, source snapshots, reference builds, and external data-release context used by i-CLASSi.</p>
+            </div>
+          </div>
+
+          <div class="source-release-summary">
+            <span>Selected release</span>
+            <strong id="sourceVersionLabel">Loading...</strong>
+            <small id="sourceReleaseType"></small>
+          </div>
+
+          <div id="dataSourcesStatus" class="status">Loading data-source metadata...</div>
+          <div id="dataSourcesList" class="data-sources-list"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    IclassiVersions.ready().then(versionContext => {
+      const sourceUrl = versionContext.file('data-sources.json');
+      fetch(sourceUrl)
+        .then(response => {
+          if (!response.ok) throw new Error(`Could not load data-source metadata for ${versionContext.version.label || versionContext.versionId}.`);
+          return response.json();
+        })
+        .then(renderDataSources)
+        .catch(error => {
+          document.querySelector('#dataSourcesStatus').className = 'status error';
+          document.querySelector('#dataSourcesStatus').textContent = error.message;
+        });
+    });
+
+    function renderDataSources(data) {
+      const sources = Array.isArray(data.sources) ? data.sources : [];
+      document.querySelector('#sourceVersionLabel').textContent = data.versionLabel || data.versionId || 'Selected version';
+      document.querySelector('#sourceReleaseType').textContent = data.releaseType || '';
+      document.querySelector('#dataSourcesStatus').textContent = sources.length
+        ? `${sources.length} documented external data source${sources.length === 1 ? '' : 's'}.`
+        : 'No external data sources are documented for this version.';
+
+      document.querySelector('#dataSourcesList').innerHTML = sources.map(source => `
+        <section class="source-record">
+          <header class="source-record-header">
+            <div>
+              <span class="source-used-by">${escapeHtml(source.usedBy || 'i-CLASSi')}</span>
+              <h2>${escapeHtml(source.name || 'Data source')}</h2>
+              <p>${escapeHtml(source.organization || '')}</p>
+            </div>
+            ${source.url ? `<a class="button secondary source-link" href="${escapeAttribute(source.url)}" target="_blank" rel="noopener">Open source website</a>` : ''}
+          </header>
+
+          <p>${escapeHtml(source.description || '')}</p>
+
+          <div class="source-snapshot">
+            <span>${escapeHtml(source.snapshotLabel || 'Source snapshot')}</span>
+            <strong>${source.snapshotValue ? escapeHtml(source.snapshotValue) : formatDate(source.snapshotDate)}</strong>
+          </div>
+
+          <div class="source-metrics">
+            ${(source.metrics || []).map(metric => `
+              <div class="source-metric">
+                <strong>${escapeHtml(metric.value || '')}</strong>
+                <span>${escapeHtml(metric.label || '')}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="meta-grid source-technical-context">
+            ${(source.technicalContext || []).map(item => `
+              <div class="meta-item">
+                <span>${escapeHtml(item.label || '')}</span>
+                ${escapeHtml(item.value || 'Not reported')}
+              </div>
+            `).join('')}
+          </div>
+
+          ${Array.isArray(source.releaseHighlights) && source.releaseHighlights.length ? `
+            <div class="source-highlights">
+              <h3>What's new for ${escapeHtml(source.snapshotValue || source.snapshotDate || 'this release')}</h3>
+              <dl>
+                ${source.releaseHighlights.map(item => `
+                  <dt>${escapeHtml(item.code || '')}</dt>
+                  <dd>${escapeHtml(item.description || '')}</dd>
+                `).join('')}
+              </dl>
+            </div>
+          ` : ''}
+
+          ${Array.isArray(source.additionalLinks) && source.additionalLinks.length ? `
+            <div class="source-links">
+              ${source.additionalLinks.map(link => `
+                <a href="${escapeAttribute(link.url || '#')}" target="_blank" rel="noopener">${escapeHtml(link.label || 'More information')}</a>
+              `).join('')}
+            </div>
+          ` : ''}
+
+          ${source.notes ? `<p class="source-note">${escapeHtml(source.notes)}</p>` : ''}
+        </section>
+      `).join('');
+    }
+
+    function formatDate(value) {
+      const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (!match) return escapeHtml(value || 'Not reported');
+      const date = new Date(`${value}T00:00:00Z`);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC'
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function escapeAttribute(value) {
+      return escapeHtml(value).replace(/`/g, '&#096;');
+    }
+  </script>
+</body>
+</html>

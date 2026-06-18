@@ -566,8 +566,20 @@ select {
   margin-left: auto;
 }
 
-.navigator-toggle {
+button.navigator-toggle {
+  background: var(--blue);
+  border-color: var(--blue);
+  box-shadow: 0 4px 12px rgba(47, 111, 183, 0.22);
+  color: #ffffff;
+  font-weight: 800;
   white-space: nowrap;
+}
+
+button.navigator-toggle:hover,
+button.navigator-toggle:focus-visible {
+  background: var(--sidebar);
+  border-color: var(--sidebar);
+  color: #ffffff;
 }
 
 .page-heading-icon {

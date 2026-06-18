@@ -1,3 +1,16 @@
+<#
+.SYNOPSIS
+Builds the public UMLS concept cache used by i-CLASSi.
+
+.EXAMPLE
+.\scripts\build-umls-cache.ps1 `
+  -ApiKey "YOUR_UMLS_API_KEY" `
+  -ClassificationPath "iclassi/versions/0.1.0-beta/iclassi.json" `
+  -MappingPath "iclassi/versions/0.1.0-beta/iclassi_mapping.json"
+
+Builds the cache from the i-CLASSi 0.1.0 beta classification and mapping files.
+#>
+
 param(
   [string]$ApiKey = $env:UMLS_API_KEY,
   [string]$ClassificationPath = "iclassi/iclassi.json",

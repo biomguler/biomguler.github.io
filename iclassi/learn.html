@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn | i-CLASSi Studio</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
   <script src="versioning.js"></script>
   <script src="mobile-nav.js?v=3"></script>
 </head>
@@ -63,6 +63,7 @@
 
           <nav class="learn-toc" aria-label="Learn page sections">
             <a href="#interface">Interface Basics</a>
+            <a href="#navigator-docs">Hierarchy Navigator</a>
             <a href="#iclassi-docs">i-CLASSi</a>
             <a href="#lookup-docs">Lookup</a>
             <a href="#mapping-docs">Mapping</a>
@@ -87,6 +88,27 @@
             <section class="learn-card">
               <h3>Export</h3>
               <p>Use <strong>Export CSV</strong> to download the currently filtered table. Apply search and column filters first when you only need a subset.</p>
+            </section>
+          </div>
+
+          <h2 id="navigator-docs">Hierarchy Navigator</h2>
+          <p>The Hierarchy Navigator provides a consistent L1-L6 view of the i-CLASSi classification in the i-CLASSi, Lookup, Mapping, and i-GWASdb tabs.</p>
+          <div class="learn-grid">
+            <section class="learn-card">
+              <h3>Browse the hierarchy</h3>
+              <p>The navigator initially shows L1 branches. Click a branch arrow to reveal its downstream levels. L5 represents entity type and L6 represents subtype(s).</p>
+            </section>
+            <section class="learn-card">
+              <h3>Search and expand</h3>
+              <p>Enter an entity, subtype, hierarchy label, or LNIC code in the navigator search. Matching paths expand automatically and matching text is highlighted. Expand L2, L3, L4, or all levels when you want a broader overview.</p>
+            </section>
+            <section class="learn-card">
+              <h3>Filter linked tables</h3>
+              <p>In i-CLASSi, Mapping, and i-GWASdb, selecting a branch filters the table to records associated with the LNIC codes contained in that branch. A terminal branch narrows the result to its entity or subtype.</p>
+            </section>
+            <section class="learn-card">
+              <h3>Hide or reset</h3>
+              <p>Use the blue <strong>Hide navigator</strong> button to give the table or detail panel more room. The button changes to <strong>Show navigator</strong> so the panel can be restored. Use <strong>Clear Selection</strong> to remove the hierarchy search and branch filter.</p>
             </section>
           </div>
 
@@ -140,6 +162,7 @@
           <p>The Mapping tab documents how i-CLASSi entities are linked to external biomedical vocabularies and ontology identifiers.</p>
           <h3>How to use it</h3>
           <ul>
+            <li>Use the Hierarchy Navigator to filter mapping records by any L1-L6 branch and its linked LNIC codes.</li>
             <li>Filter by LNIC code to see every vocabulary mapping for one entity.</li>
             <li>Click an LNIC code in the mapping table to show the corresponding L1-L6 i-CLASSi classification context.</li>
             <li>Filter by Vocabulary to compare mappings from UMLS, NCIt, SNOMED CT, ICD, EFO, or other sources included in the release.</li>
@@ -163,6 +186,7 @@
           <p>i-GWASdb links genetic association records to i-CLASSi disease categories. It is intended for browsing GWAS evidence in the context of the classification.</p>
           <h3>How to use it</h3>
           <ul>
+            <li>Use the Hierarchy Navigator to filter GWAS records by any L1-L6 branch and its linked LNIC codes.</li>
             <li>Search by LNIC code to find GWAS records mapped to an i-CLASSi entity.</li>
             <li>Click an LNIC code in the table to show the corresponding L1-L6 i-CLASSi classification context.</li>
             <li>Search by rsID, nearest gene, trait, author, or PubMed identifier for literature-driven exploration.</li>

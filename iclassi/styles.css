@@ -748,6 +748,55 @@ table.dataTable tbody tr.selected {
   font-weight: 700;
 }
 
+.abbr-term {
+  border-bottom: 1px dotted var(--blue);
+  color: inherit;
+  cursor: help;
+  display: inline;
+  outline: none;
+  position: relative;
+}
+
+.abbr-term::after {
+  background: var(--sidebar);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 5px;
+  bottom: calc(100% + 7px);
+  box-shadow: 0 8px 20px rgba(7, 27, 51, 0.22);
+  color: #ffffff;
+  content: attr(data-expansion);
+  font-size: 12px;
+  font-weight: 600;
+  left: 50%;
+  line-height: 1.35;
+  max-width: 280px;
+  opacity: 0;
+  padding: 7px 9px;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  transform: translate(-50%, 3px);
+  transition: opacity 120ms ease, transform 120ms ease;
+  visibility: hidden;
+  white-space: normal;
+  width: max-content;
+  z-index: 90;
+}
+
+.abbr-term:hover::after,
+.abbr-term:focus::after,
+.abbr-term:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+
+.abbr-term:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
 .umls-card {
   margin-top: 16px;
 }

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn | i-CLASSi Studio</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
   <script src="versioning.js"></script>
   <script src="mobile-nav.js?v=3"></script>
 </head>
@@ -87,6 +87,10 @@
             <section class="learn-card">
               <h3>Column filters</h3>
               <p>Each table column has its own filter under the column header. Text boxes support partial matches; dropdown filters restrict the table to exact values listed in that column.</p>
+            </section>
+            <section class="learn-card">
+              <h3>Abbreviation tooltips</h3>
+              <p>Recognized abbreviations are marked with a dotted underline in classification tables, hierarchy trees, and L1-L6 context panels. Hover over the term, focus it with the keyboard, or tap it on a touch device to see the full name.</p>
             </section>
             <section class="learn-card">
               <h3>Export</h3>
@@ -223,17 +227,24 @@
           </dl>
 
           <h2 id="abbrev-docs">Abbreviations</h2>
-          <p>The Abbreviations tab is a quick reference for acronyms and shortened terms used across i-CLASSi resources.</p>
+          <p>The Abbreviations tab is a version-specific reference for acronyms, shortened terms, aliases, categories, and lifecycle status used across i-CLASSi resources.</p>
           <h3>How to use it</h3>
           <ul>
+            <li>The selected i-CLASSi version controls which abbreviation JSON file is loaded.</li>
             <li>Search the abbreviation column when you know the acronym.</li>
             <li>Search the full-name column when you know the expanded term but not the abbreviation.</li>
+            <li>Search aliases to find alternative abbreviations that resolve to the same canonical term.</li>
+            <li>Use category and status filters to distinguish terminology groups and current or retired labels.</li>
+            <li>In other tabs, recognized standalone abbreviations show their full name in a tooltip without expanding the table columns.</li>
             <li>Keep this tab open while reading mapping or GWAS rows with dense terminology.</li>
           </ul>
           <h3>Column glossary</h3>
           <dl class="column-glossary">
-            <dt>Abbreviations-acronyms</dt><dd>Short form used in i-CLASSi tables or documentation.</dd>
-            <dt>Full name</dt><dd>Expanded term represented by the abbreviation or acronym.</dd>
+            <dt>Abbreviation</dt><dd>Canonical short form used in the selected i-CLASSi version.</dd>
+            <dt>Full name</dt><dd>Expanded term represented by the canonical abbreviation.</dd>
+            <dt>Category</dt><dd>Terminology group, such as classification, biomarker, clinical, or data-source terminology.</dd>
+            <dt>Status</dt><dd>Lifecycle state for the selected release, such as current or retired.</dd>
+            <dt>Aliases</dt><dd>Alternative short forms that resolve to the same full name and tooltip definition.</dd>
           </dl>
 
           <h2 id="sources-docs">Data Sources</h2>

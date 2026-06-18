@@ -1,0 +1,1019 @@
+﻿[
+    {
+        "abbreviation":  "LN",
+        "full_name":  "Lymphoid Neoplasms",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "NHL",
+        "full_name":  "Non-Hodgkin Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "HL",
+        "full_name":  "Hodgkin Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "LPD",
+        "full_name":  "Lymphoproliferative Disorder",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "LPD-IDD",
+        "full_name":  "Lymphoproliferative disorders associated with Immune Deficiency/Dysregulation",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PM-LN",
+        "full_name":  "Plasma cell / Mature LN",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "M-BCN",
+        "full_name":  "Mature B-cell neoplasms",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "MZL",
+        "full_name":  "Marginal Zone Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "NMZL",
+        "full_name":  "Nodal Marginal Zone Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "pNMZL",
+        "full_name":  "Pediatric Nodal Marginal Zone Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "FL",
+        "full_name":  "Follicular Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "ISFN",
+        "full_name":  "In situ Follicular Neoplasia",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "cFL",
+        "full_name":  "Classic Follicular Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "uFL",
+        "full_name":  "Unusual Follicular Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "dFL",
+        "full_name":  "Diffuse Follicular Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "FLBCL",
+        "full_name":  "Follicular Large B-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PCFCL",
+        "full_name":  "Primary Cutaneous Follicular Centre Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "MCL",
+        "full_name":  "Mantle Cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "ISMCN",
+        "full_name":  "In situ Mantle Cell Neoplasm",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "nnMCL",
+        "full_name":  "Non-nodal Mantle Cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "LBCL",
+        "full_name":  "Large B-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "DLBCL",
+        "full_name":  "Diffuse Large B-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "THRLBCL",
+        "full_name":  "T-cell/Histiocyte-rich Large B-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "CHL",
+        "full_name":  "Classical Hodgkin Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "T-PLL",
+        "full_name":  "T-cell Prolymphocytic Leukemia",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "T-LGLL",
+        "full_name":  "T-cell Large Granular Lymphocytic Leukemia",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "T-LGL",
+        "full_name":  "T-cell Large Granular Lymphocyte",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "NK-LGLL",
+        "full_name":  "NK-cell Large Granular Lymphocytic Leukemia",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "CLPD-NK",
+        "full_name":  "Chronic Lymphoproliferative Disorder of NK cells",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "ATLL",
+        "full_name":  "Adult T-cell Leukemia/Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "SS",
+        "full_name":  "Sézary Syndrome",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "ANKL",
+        "full_name":  "Aggressive NK-cell Leukemia",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PCSM-LPD",
+        "full_name":  "Primary Cutaneous Small/Medium CD4+ T-cell LPD",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PCCD4-TCL",
+        "full_name":  "Primary Cutaneous CD4-positive T-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "MF",
+        "full_name":  "Mycosis Fungoides",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "CTCL",
+        "full_name":  "Cutaneous T-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "CD30+PCLPD",
+        "full_name":  "CD30-positive Primary Cutaneous LPD",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "LyP",
+        "full_name":  "Lymphomatoid Papulosis",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "C-ALCL",
+        "full_name":  "Cutaneous Anaplastic Large Cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "SPTCL",
+        "full_name":  "Subcutaneous Panniculitis-like T-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PCGD-TCL",
+        "full_name":  "Primary Cutaneous Gamma-delta T-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PCAETL",
+        "full_name":  "Primary Cutaneous Aggressive Epidermotropic T-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PCCD8-TCL",
+        "full_name":  "Primary Cutaneous CD8+ Aggressive Epidermotropic TCL",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PCPTCL-NOS",
+        "full_name":  "Primary Cutaneous Peripheral TCL, Not Otherwise Specified",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PCTCL-NOS",
+        "full_name":  "Primary Cutaneous TCL, NOS",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "iTCL-GI",
+        "full_name":  "Indolent T-cell Lymphoma of GI Tract",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "iNK-LPD",
+        "full_name":  "Indolent NK-cell LPD",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "EATL",
+        "full_name":  "Enteropathy-associated TCL",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "MEITL",
+        "full_name":  "Monomorphic Epitheliotropic Intestinal TCL",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "ITCL-NOS",
+        "full_name":  "Intestinal TCL, NOS",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "HSTL",
+        "full_name":  "Hepatosplenic TCL",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "ALCL",
+        "full_name":  "Anaplastic Large Cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "BIA-ALCL",
+        "full_name":  "Breast Implant-associated ALCL",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "nTFHL",
+        "full_name":  "Nodal T-follicular Helper Cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "AITL",
+        "full_name":  "Angioimmunoblastic T-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PTCL-NOS",
+        "full_name":  "Peripheral TCL, NOS",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "ENKTL / ENNKTL",
+        "full_name":  "Extranodal NK/T-cell Lymphoma (nasal/non-nasal types)",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PCN",
+        "full_name":  "Plasma Cell Neoplasms",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PCM / MM",
+        "full_name":  "Plasma Cell Myeloma / Multiple Myeloma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "SPB",
+        "full_name":  "Solitary Plasmacytoma of Bone",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "EMP",
+        "full_name":  "Extramedullary Plasmacytoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "HCD",
+        "full_name":  "Heavy Chain Disease",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "GammaHCD / Alpha HCD",
+        "full_name":  "Heavy Chain Disease variants",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "POEMS, TEMPI, AESOP",
+        "full_name":  "Paraneoplastic Syndromes",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "UCD",
+        "full_name":  "Unicentric Castleman Disease",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "iMCD",
+        "full_name":  "Idiopathic Multicentric Castleman Disease",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "KSHV/HHV8-MCD",
+        "full_name":  "Kaposi Sarcoma Herpesvirus/HHV8-associated Multicentric Castleman Disease",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PTLD",
+        "full_name":  "Post-transplant Lymphoproliferative Disorder",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PTLD-PH",
+        "full_name":  "Plasmacytic Hyperplasia type",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PTLD-IM",
+        "full_name":  "Infectious Mononucleosis-like PTLD",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PTLD-P",
+        "full_name":  "Polymorphic PTLD",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PTLD-M",
+        "full_name":  "Monomorphic PTLD (B-cell or T/NK-cell)",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PTLD-CHL",
+        "full_name":  "Classical Hodgkin Lymphoma type PTLD",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PID-LPD",
+        "full_name":  "Primary Immunodeficiency-associated LPD",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PID-CHL",
+        "full_name":  "PID-associated Classical HL",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "CAEBV",
+        "full_name":  "Chronic Active EBV disease",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "SEBVTCL",
+        "full_name":  "Systemic EBV-positive T-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "EBV+LPD-PED",
+        "full_name":  "EBV-positive LPD of Childhood",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "CLL",
+        "full_name":  "Chronic Lymphocytic Leukemia",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "SLL",
+        "full_name":  "Small Lymphocytic Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "CLL/SLL",
+        "full_name":  "Chronic Lymphocytic Leukemia/Small Lymphocytic Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "HCL",
+        "full_name":  "Hairy Cell Leukemia",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "SMZL",
+        "full_name":  "Splenic Marginal Zone Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "SDRPL",
+        "full_name":  "Splenic Diffuse Red Pulp Small B-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "SBLPN",
+        "full_name":  "Splenic B-cell Lymphoma/Leukemia with Prominent Nucleoli",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "B-PLL",
+        "full_name":  "B-cell Prolymphocytic Leukemia",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "LPL",
+        "full_name":  "Lymphoplasmacytic Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "WM",
+        "full_name":  "Waldenström Macroglobulinemia",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PTFL",
+        "full_name":  "Pediatric-type Follicular Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "DTFL",
+        "full_name":  "Duodenal-type Follicular Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "DLBCL-NOS",
+        "full_name":  "Diffuse Large B-cell Lymphoma, Not Otherwise Specified",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "HGBL",
+        "full_name":  "High-grade B-cell Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "HGBL-DH",
+        "full_name":  "High-grade B-cell Lymphoma, Double Hit",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "HGBL-TH",
+        "full_name":  "High-grade B-cell Lymphoma, Triple Hit",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "nTFHL-AI",
+        "full_name":  "Nodal TFH Cell Lymphoma, Angioimmunoblastic-type",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "nTFHL-F",
+        "full_name":  "Nodal TFH Cell Lymphoma, Follicular-type",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "nTFHL-NOS",
+        "full_name":  "Nodal TFH Cell Lymphoma, Not Otherwise Specified",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "EBV",
+        "full_name":  "Epstein–Barr Virus",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "CMV",
+        "full_name":  "Cytomegalovirus",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PTLD-IM-like",
+        "full_name":  "Infectious Mononucleosis-like PTLD",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PTLD-M-B-cell",
+        "full_name":  "Monomorphic PTLD, B-cell",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PTLD-M-T/NK",
+        "full_name":  "Monomorphic PTLD, T- or NK-cell",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PID-T-ALL/LBL",
+        "full_name":  "Primary Immunodeficiency-associated T-lymphoblastic Leukemia/Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PID-LPD-B-cell",
+        "full_name":  "Primary Immunodeficiency-associated B-cell Lymphoproliferative Disorder",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "PID-LPD-T/NK",
+        "full_name":  "Primary Immunodeficiency-associated T/NK-cell Lymphoproliferative Disorder",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "HIV-LPD-P",
+        "full_name":  "HIV-associated Polymorphous Lymphoid Proliferations",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "HIV-LPD-B-cell",
+        "full_name":  "HIV-associated B-cell Non-Hodgkin Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "HIV-T/NK",
+        "full_name":  "HIV-associated T/NK-cell Non-Hodgkin Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "HIV-CHL",
+        "full_name":  "HIV-associated Classical Hodgkin Lymphoma",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "MGUS",
+        "full_name":  "Monoclonal Gammopathy of Undetermined Significance",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "MGRS",
+        "full_name":  "Monoclonal Gammopathy of Renal Significance",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "AL",
+        "full_name":  "Amyloid Light-chain (AL) Amyloidosis",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    },
+    {
+        "abbreviation":  "IgG4-RD",
+        "full_name":  "IgG4-related Disease",
+        "category":  "",
+        "status":  "current",
+        "aliases":  [
+
+                    ]
+    }
+]

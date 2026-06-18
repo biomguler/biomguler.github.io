@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abbreviations | i-CLASSi Studio</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
   <script src="versioning.js"></script>
   <script src="mobile-nav.js?v=3"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
@@ -40,11 +40,11 @@
         <div class="topbar-controls"><div class="topbar-field"><label>i-CLASSi version</label><select data-version-select><option>0.1.0 (beta)</option></select></div></div>
       </header>
       <section class="workspace">
-        <div class="page-heading"><div class="page-heading-icon">A</div><div><h1>Abbreviations</h1><p>Common abbreviations and acronyms used in i-CLASSi resources.</p></div></div>
+        <div class="page-heading"><div class="page-heading-icon">A</div><div><h1>Abbreviations</h1><p>Version-specific abbreviations, aliases, categories, and lifecycle status used in i-CLASSi resources.</p></div></div>
         <section class="explorer-card">
-          <div class="card-header"><strong>Abbreviation table</strong><div class="table-actions compact-table-actions"><input id="globalSearch" type="text" placeholder="Global search by acronym or full name..."><button type="button" class="danger" id="clearTableFilters">Clear</button><button type="button" class="success" id="exportCsv">Export CSV</button></div></div>
+          <div class="card-header"><strong>Abbreviation table</strong><div class="table-actions compact-table-actions"><input id="globalSearch" type="text" placeholder="Global search by abbreviation, full name, category, status, or alias..."><button type="button" class="danger" id="clearTableFilters">Clear</button><button type="button" class="success" id="exportCsv">Export CSV</button></div></div>
           <table id="abbrevTable" class="display">
-            <thead><tr><th>Abbreviation or acronym</th><th>Full name</th></tr></thead>
+            <thead><tr><th>Abbreviation</th><th>Full name</th><th>Category</th><th>Status</th><th>Aliases</th></tr></thead>
             <tbody></tbody>
           </table>
         </section>
@@ -53,20 +53,30 @@
   </div>
   <script>
     const columnsConfigAbbrev = [
-      { data: 'Abbreviations-acronyms' },
-      { data: 'Full name' }
+      { data: 'abbreviation' },
+      { data: 'full_name' },
+      { data: 'category', defaultContent: '' },
+      { data: 'status', defaultContent: '' },
+      { data: 'aliases', defaultContent: '', render: renderAliases }
     ];
 
-    initializeDataTable('abbreviations.json', '#abbrevTable', columnsConfigAbbrev, {}, {
-      scrollY: 'calc(100vh - 270px)',
-      buttons: ['copy', 'csv', 'excel'],
-      initComplete: function(table) {
-        setupColumnFilters(table);
-        document.querySelector('#globalSearch').addEventListener('input', event => table.search(event.target.value).draw());
-        document.querySelector('#clearTableFilters').addEventListener('click', () => { document.querySelector('#globalSearch').value = ''; table.search(''); table.columns().search(''); $('#abbrevTable thead select').val(''); $('#abbrevTable thead input').val(''); table.draw(); });
-        document.querySelector('#exportCsv').addEventListener('click', () => table.button('.buttons-csv').trigger());
-      }
+    IclassiVersions.ready().then(versionContext => {
+      initializeDataTable(versionContext.file('abbreviations.json'), '#abbrevTable', columnsConfigAbbrev, {}, {
+        scrollY: 'calc(100vh - 270px)',
+        buttons: ['copy', 'csv', 'excel'],
+        initComplete: function(table) {
+          setupColumnFilters(table);
+          document.querySelector('#globalSearch').addEventListener('input', event => table.search(event.target.value).draw());
+          document.querySelector('#clearTableFilters').addEventListener('click', () => { document.querySelector('#globalSearch').value = ''; table.search(''); table.columns().search(''); $('#abbrevTable thead select').val(''); $('#abbrevTable thead input').val(''); table.draw(); });
+          document.querySelector('#exportCsv').addEventListener('click', () => table.button('.buttons-csv').trigger());
+        }
+      });
     });
+
+    function renderAliases(data) {
+      if (Array.isArray(data)) return data.join(', ');
+      return String(data || '');
+    }
 
     function setupColumnFilters(table) {
       table.columns().every(function() {

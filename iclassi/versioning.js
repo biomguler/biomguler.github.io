@@ -5,6 +5,11 @@
     current: '0.1.0-beta',
     versions: [
       {
+        id: '0.1.0',
+        label: '0.1.0',
+        path: 'versions/0.1.0/'
+      },
+      {
         id: '0.1.0-beta',
         label: '0.1.0 (beta)',
         path: 'versions/0.1.0-beta/'

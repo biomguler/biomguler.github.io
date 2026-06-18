@@ -1,7 +1,7 @@
 {
   "versionId": "0.1.0-beta",
-  "versionLabel": "0.1.0 (beta)",
-  "releaseType": "Beta release",
+  "versionLabel": "0.1.0-beta",
+  "releaseType": "first release",
   "sources": [
     {
       "name": "GWAS Catalog",

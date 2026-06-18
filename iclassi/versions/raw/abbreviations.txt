@@ -1,0 +1,204 @@
+abbreviation	full_name	category	status	aliases
+ALK	Anaplastic lymphoma kinase	Biomarker/gene	current	
+HL	Hodgkin lymphoma	Classification hierarchy	current	
+ID-TLL	Immune deficiency/dysregulation-associated tumour-like lesion	Classification hierarchy	current	
+LN	Lymphoid neoplasm	Classification hierarchy	current	
+LN-IDD	Lymphoid neoplasm associated with immune deficiency or dysregulation	Classification hierarchy	current	
+LPD	Lymphoproliferative disorder	Classification hierarchy	current	
+LPD-IDD	Lymphoproliferative disorder associated with immune deficiency or dysregulation	Classification hierarchy	current	
+M-BCN	Mature B-cell neoplasm	Classification hierarchy	current	
+NHL	Non-Hodgkin lymphoma	Classification hierarchy	current	
+PM-LN	Plasma-cell or mature lymphoid neoplasm grouping	Classification hierarchy	current	
+PNSLP	Pre-neoplastic and neoplastic small lymphocytic proliferation	Classification hierarchy	current	
+SBL	Splenic B-cell lymphomas and leukemias	Classification hierarchy	current	
+TLL	Tumour-like lesion	Classification hierarchy	current	
+C-ALCL	Primary cutaneous anaplastic large cell lymphoma	Cutaneous T-cell	current	
+CD30+PCLPD	CD30-positive primary cutaneous T-cell lymphoproliferative disorder	Cutaneous T-cell	current	
+CTCL	Cutaneous T-cell lymphoma	Cutaneous T-cell	current	
+LyP	Lymphomatoid papulosis	Cutaneous T-cell	current	
+MF	Mycosis fungoides	Cutaneous T-cell	current	
+PCAETL	Primary cutaneous CD8-positive aggressive epidermotropic cytotoxic T-cell lymphoma	Cutaneous T-cell	current	
+PCCD4-TCL	Primary cutaneous CD4-positive small/medium T-cell lymphoma	Cutaneous T-cell	legacy	
+PCCD8-TCL	Primary cutaneous CD8-positive aggressive epidermotropic cytotoxic T-cell lymphoma	Cutaneous T-cell	legacy	
+PCGD-TCL	Primary cutaneous gamma-delta T-cell lymphoma	Cutaneous T-cell	current	
+PCPTCL-NOS	Primary cutaneous peripheral T-cell lymphoma, not otherwise specified	Cutaneous T-cell	current	
+PCSM-LPD	Primary cutaneous CD4-positive small/medium T-cell lymphoproliferative disorder	Cutaneous T-cell	current	
+PCTCL-NOS	Primary cutaneous T-cell lymphoma, not otherwise specified	Cutaneous T-cell	legacy	
+SPTCL	Subcutaneous panniculitis-like T-cell lymphoma	Cutaneous T-cell	current	
+CAEBV	Chronic active Epstein–Barr virus disease	EBV-associated T/NK-cell	current	
+EBV+LPD-PED	Epstein–Barr virus-positive lymphoproliferative disease of childhood	EBV-associated T/NK-cell	legacy	
+HV-LPD	Hydroa vacciniforme lymphoproliferative disorder	EBV-associated T/NK-cell	current	
+HVL	Hydroa vacciniforme-like lymphoproliferative disease	EBV-associated T/NK-cell	legacy	
+SEBVTCL	Systemic Epstein–Barr virus-positive T-cell lymphoma of childhood	EBV-associated T/NK-cell	current	
+CNS	Central nervous system	General terminology	current	
+GI	Gastrointestinal	General terminology	current	
+NOS	Not otherwise specified	General terminology	current	
+WHO-HAEM4	World Health Organization classification of haematolymphoid tumours, fourth edition	General terminology	legacy	
+WHO-HAEM5	World Health Organization classification of haematolymphoid tumours, fifth edition	General terminology	current	
+CHL	Classical Hodgkin lymphoma	Hodgkin lymphoma	current	
+NLPHL	Nodular lymphocyte-predominant Hodgkin lymphoma	Hodgkin lymphoma	current	
+HIV-CHL	HIV-associated classical Hodgkin lymphoma	Immune deficiency/dysregulation	current	
+HIV-LPD	HIV-associated lymphoproliferative disorder	Immune deficiency/dysregulation	umbrella	
+HIV-LPD-B-cell	HIV-associated B-cell lymphoproliferative disorder or lymphoma	Immune deficiency/dysregulation	current	
+HIV-LPD-P	HIV-associated polymorphic lymphoid proliferation	Immune deficiency/dysregulation	current	
+HIV-LPD-T/NK	HIV-associated T- or NK-cell lymphoproliferative disorder or lymphoma	Immune deficiency/dysregulation	current	
+HIV-T/NK	HIV-associated T- or NK-cell lymphoma	Immune deficiency/dysregulation	legacy	
+IAT-CHL	Iatrogenic immunodeficiency-associated classical Hodgkin lymphoma	Immune deficiency/dysregulation	current	
+IAT-LPD	Iatrogenic immunodeficiency-associated lymphoproliferative disorder	Immune deficiency/dysregulation	umbrella	
+IAT-LPD-B-cell	Iatrogenic immunodeficiency-associated B-cell lymphoproliferative disorder or lymphoma	Immune deficiency/dysregulation	current	
+IAT-LPD-P	Iatrogenic immunodeficiency-associated polymorphic lymphoproliferative disorder	Immune deficiency/dysregulation	current	
+IAT-LPD-T/NK	Iatrogenic immunodeficiency-associated T- or NK-cell lymphoproliferative disorder or lymphoma	Immune deficiency/dysregulation	current	
+PID-CHL	Primary immunodeficiency-associated classical Hodgkin lymphoma	Immune deficiency/dysregulation	current	
+PID-LPD	Primary immunodeficiency-associated lymphoproliferative disorder	Immune deficiency/dysregulation	current	
+PID-LPD-B-cell	Primary immunodeficiency-associated B-cell lymphoproliferative disorder	Immune deficiency/dysregulation	current	
+PID-LPD-P	Primary immunodeficiency-associated polymorphic lymphoproliferative disorder	Immune deficiency/dysregulation	current	
+PID-LPD-T/NK	Primary immunodeficiency-associated T- or NK-cell lymphoproliferative disorder	Immune deficiency/dysregulation	current	
+PID-T-ALL/LBL	Primary immunodeficiency-associated T-lymphoblastic leukemia/lymphoma	Immune deficiency/dysregulation	current	
+PTLD	Post-transplant lymphoproliferative disorder	Immune deficiency/dysregulation	current	
+PTLD-CHL	Classical Hodgkin lymphoma-type post-transplant lymphoproliferative disorder	Immune deficiency/dysregulation	current	
+PTLD-IM	Infectious mononucleosis-like post-transplant lymphoproliferative disorder	Immune deficiency/dysregulation	legacy	
+PTLD-IM-like	Infectious mononucleosis-like post-transplant lymphoproliferative disorder	Immune deficiency/dysregulation	current	
+PTLD-M	Monomorphic post-transplant lymphoproliferative disorder	Immune deficiency/dysregulation	umbrella	
+PTLD-M-B-cell	Monomorphic post-transplant lymphoproliferative disorder, B-cell type	Immune deficiency/dysregulation	current	
+PTLD-M-T-cell	Monomorphic post-transplant lymphoproliferative disorder, T- or NK-cell type	Immune deficiency/dysregulation	legacy	
+PTLD-M-T/NK	Monomorphic post-transplant lymphoproliferative disorder, T- or NK-cell type	Immune deficiency/dysregulation	current	
+PTLD-P	Polymorphic post-transplant lymphoproliferative disorder	Immune deficiency/dysregulation	current	
+PTLD-PH	Post-transplant plasmacytic hyperplasia	Immune deficiency/dysregulation	current	
+EC-PEL	Extracavitary primary effusion lymphoma	KSHV/HHV8-associated B-cell	current	
+GLPD	Germinotropic lymphoproliferative disorder	KSHV/HHV8-associated B-cell	current	
+KSHV/HHV8-GLPD	KSHV/HHV8-positive germinotropic lymphoproliferative disorder	KSHV/HHV8-associated B-cell	current	
+PEL	Primary effusion lymphoma	KSHV/HHV8-associated B-cell	current	
+ALK+DLBCL	ALK-positive large B-cell lymphoma	Large B-cell lymphoma	current	
+CI-DLBCL	Diffuse large B-cell lymphoma associated with chronic inflammation	Large B-cell lymphoma	current	
+DLBCL	Diffuse large B-cell lymphoma	Large B-cell lymphoma	current	
+DLBCL-NOS	Diffuse large B-cell lymphoma, not otherwise specified	Large B-cell lymphoma	current	
+DLBCL/HGBL-MYC/BCL2	Diffuse large B-cell lymphoma/high-grade B-cell lymphoma with MYC and BCL2 rearrangements	Large B-cell lymphoma	current	
+EBV+DLBCL	Epstein–Barr virus-positive diffuse large B-cell lymphoma	Large B-cell lymphoma	current	
+FA-LBCL	Fibrin-associated large B-cell lymphoma	Large B-cell lymphoma	current	
+FO-LBCL	Fluid overload-associated large B-cell lymphoma	Large B-cell lymphoma	current	
+HGBL	High-grade B-cell lymphoma	Large B-cell lymphoma	current	
+HGBL-11q	High-grade B-cell lymphoma with 11q aberration	Large B-cell lymphoma	current	
+HGBL-DH	High-grade B-cell lymphoma, double hit	Large B-cell lymphoma	legacy	
+HGBL-NOS	High-grade B-cell lymphoma, not otherwise specified	Large B-cell lymphoma	current	
+HGBL-TH	High-grade B-cell lymphoma, triple hit	Large B-cell lymphoma	legacy	
+IP-LBCL	Primary large B-cell lymphoma of immune-privileged sites	Large B-cell lymphoma	current	
+IVLBCL	Intravascular large B-cell lymphoma	Large B-cell lymphoma	current	
+LBCL	Large B-cell lymphoma	Large B-cell lymphoma	current	
+LBCL-IRF4	Large B-cell lymphoma with IRF4 rearrangement	Large B-cell lymphoma	current	
+LYG	Lymphomatoid granulomatosis	Large B-cell lymphoma	current	
+MGZL	Mediastinal grey zone lymphoma	Large B-cell lymphoma	current	
+PBL	Plasmablastic lymphoma	Large B-cell lymphoma	current	
+PCLBCL-LT	Primary cutaneous diffuse large B-cell lymphoma, leg type	Large B-cell lymphoma	current	
+PCNS-LBCL	Primary central nervous system large B-cell lymphoma	Large B-cell lymphoma	current	
+PMBCL	Primary mediastinal large B-cell lymphoma	Large B-cell lymphoma	current	MLBCL
+PT-LBCL	Primary testicular large B-cell lymphoma	Large B-cell lymphoma	current	
+PVR-LBCL	Primary vitreoretinal large B-cell lymphoma	Large B-cell lymphoma	current	
+THRLBCL	T-cell/histiocyte-rich large B-cell lymphoma	Large B-cell lymphoma	current	
+B-PLL	B-cell prolymphocytic leukemia	Mature B-cell	legacy	
+BL	Burkitt lymphoma	Mature B-cell	current	
+cFL	Classic follicular lymphoma	Mature B-cell	current	
+CLL	Chronic lymphocytic leukemia	Mature B-cell	current	
+CLL/SLL	Chronic lymphocytic leukemia/small lymphocytic lymphoma	Mature B-cell	current	
+dFL	Follicular lymphoma with a predominantly diffuse growth pattern	Mature B-cell	current	
+DTFL	Duodenal-type follicular lymphoma	Mature B-cell	current	
+EMZL	Extranodal marginal zone lymphoma	Mature B-cell	current	
+FL	Follicular lymphoma	Mature B-cell	current	
+FLBCL	Follicular large B-cell lymphoma	Mature B-cell	current	
+HCL	Hairy cell leukemia	Mature B-cell	current	
+HCL-V	Hairy cell leukemia variant	Mature B-cell	legacy	
+HGT	High-grade transformation	Mature B-cell	current	
+ISFN	In situ follicular B-cell neoplasm	Mature B-cell	current	
+ISMCN	In situ mantle cell neoplasm	Mature B-cell	current	
+LPL	Lymphoplasmacytic lymphoma	Mature B-cell	current	
+MALT	Mucosa-associated lymphoid tissue	Mature B-cell	current	
+MBL	Monoclonal B-cell lymphocytosis	Mature B-cell	current	
+MCL	Mantle cell lymphoma	Mature B-cell	current	
+MZL	Marginal zone lymphoma	Mature B-cell	current	
+NMZL	Nodal marginal zone lymphoma	Mature B-cell	current	
+nnMCL	Leukemic non-nodal mantle cell lymphoma	Mature B-cell	current	
+PCFCL	Primary cutaneous follicle centre lymphoma	Mature B-cell	current	
+PCMZL	Primary cutaneous marginal zone lymphoma	Mature B-cell	current	
+pNMZL	Paediatric nodal marginal zone lymphoma	Mature B-cell	current	
+PTFL	Paediatric-type follicular lymphoma	Mature B-cell	current	
+SBLPN	Splenic B-cell lymphoma/leukemia with prominent nucleoli	Mature B-cell	current	
+SDRPL	Splenic diffuse red pulp small B-cell lymphoma	Mature B-cell	current	
+SLL	Small lymphocytic lymphoma	Mature B-cell	current	
+SMZL	Splenic marginal zone lymphoma	Mature B-cell	current	
+uFL	Follicular lymphoma with unusual cytological features	Mature B-cell	current	
+WM	Waldenström macroglobulinemia	Mature B-cell	current	
+AITL	Angioimmunoblastic T-cell lymphoma	Mature T/NK-cell	legacy	
+ALCL	Anaplastic large cell lymphoma	Mature T/NK-cell	current	
+ALK+ALCL	ALK-positive anaplastic large cell lymphoma	Mature T/NK-cell	current	
+ALK-ALCL	ALK-negative anaplastic large cell lymphoma	Mature T/NK-cell	current	
+ANKL	Aggressive NK-cell leukemia	Mature T/NK-cell	current	
+ATLL	Adult T-cell leukemia/lymphoma	Mature T/NK-cell	current	
+BIA-ALCL	Breast implant-associated anaplastic large cell lymphoma	Mature T/NK-cell	current	
+CLPD-NK	Chronic lymphoproliferative disorder of NK cells	Mature T/NK-cell	legacy	
+EATL	Enteropathy-associated T-cell lymphoma	Mature T/NK-cell	current	
+ENKTL	Extranodal NK/T-cell lymphoma	Mature T/NK-cell	current	
+ENNKTL	Extranodal NK/T-cell lymphoma, nasal type	Mature T/NK-cell	legacy	
+HSTL	Hepatosplenic T-cell lymphoma	Mature T/NK-cell	current	
+iNK-LPD	Indolent NK-cell lymphoproliferative disorder of the gastrointestinal tract	Mature T/NK-cell	current	
+iTCL-GI	Indolent T-cell lymphoma of the gastrointestinal tract	Mature T/NK-cell	current	
+ITCL-NOS	Intestinal T-cell lymphoma, not otherwise specified	Mature T/NK-cell	current	
+MEITL	Monomorphic epitheliotropic intestinal T-cell lymphoma	Mature T/NK-cell	current	
+NK-LGLL	NK-cell large granular lymphocytic leukemia	Mature T/NK-cell	current	
+nTFHL	Nodal T-follicular helper-cell lymphoma	Mature T/NK-cell	current	
+nTFHL-AI	Nodal T-follicular helper-cell lymphoma, angioimmunoblastic type	Mature T/NK-cell	current	
+nTFHL-F	Nodal T-follicular helper-cell lymphoma, follicular type	Mature T/NK-cell	current	
+nTFHL-NOS	Nodal T-follicular helper-cell lymphoma, not otherwise specified	Mature T/NK-cell	current	
+PTCL	Peripheral T-cell lymphoma	Mature T/NK-cell	current	
+PTCL-NOS	Peripheral T-cell lymphoma, not otherwise specified	Mature T/NK-cell	current	
+SS	Sézary syndrome	Mature T/NK-cell	current	
+T-LGL	T-cell large granular lymphocytic leukemia	Mature T/NK-cell	legacy	
+T-LGLL	T-cell large granular lymphocytic leukemia	Mature T/NK-cell	current	
+T-PLL	T-cell prolymphocytic leukemia	Mature T/NK-cell	current	
+TFH	T-follicular helper	Mature T/NK-cell	current	
+AESOP	Adenopathy and extensive skin patch overlying a plasmacytoma	Plasma-cell and paraprotein disorders	current	
+AL	Immunoglobulin light-chain amyloidosis	Plasma-cell and paraprotein disorders	current	
+Alpha HCD	Alpha heavy-chain disease	Plasma-cell and paraprotein disorders	current	α-HCD; AlphaHCD
+EMP	Extramedullary plasmacytoma	Plasma-cell and paraprotein disorders	current	
+Gamma HCD	Gamma heavy-chain disease	Plasma-cell and paraprotein disorders	current	γ-HCD; GammaHCD
+HCD	Heavy-chain disease	Plasma-cell and paraprotein disorders	current	
+IgM MGUS	IgM monoclonal gammopathy of undetermined significance	Plasma-cell and paraprotein disorders	current	
+MGRS	Monoclonal gammopathy of renal significance	Plasma-cell and paraprotein disorders	current	
+MGUS	Monoclonal gammopathy of undetermined significance	Plasma-cell and paraprotein disorders	current	
+MM	Multiple myeloma	Plasma-cell and paraprotein disorders	current	
+Mu HCD	Mu heavy-chain disease	Plasma-cell and paraprotein disorders	current	μ-HCD
+non-IgM MGUS	Non-IgM monoclonal gammopathy of undetermined significance	Plasma-cell and paraprotein disorders	current	
+PCM	Plasma-cell myeloma	Plasma-cell and paraprotein disorders	current	
+PCN	Plasma-cell neoplasm	Plasma-cell and paraprotein disorders	current	
+PCN-with syndrome	Plasma-cell neoplasm with an associated paraneoplastic syndrome	Plasma-cell and paraprotein disorders	current	
+POEMS	Polyneuropathy, organomegaly, endocrinopathy, monoclonal plasma-cell disorder, and skin changes	Plasma-cell and paraprotein disorders	current	
+SPB	Solitary plasmacytoma of bone	Plasma-cell and paraprotein disorders	current	
+TEMPI	Telangiectasias, elevated erythropoietin and erythrocytosis, monoclonal gammopathy, perinephric fluid collections, and intrapulmonary shunting	Plasma-cell and paraprotein disorders	current	
+i-CLASSi	InterLymph classification platform for lymphoid neoplasms	Platform	platform	
+B-ALL	B-cell acute lymphoblastic leukemia	Precursor B-cell	current	
+B-ALL/B-LBL	B-cell acute lymphoblastic leukemia/B-lymphoblastic lymphoma	Precursor B-cell	current	
+B-ALL/B-LBL-RGA	B-cell acute lymphoblastic leukemia/B-lymphoblastic lymphoma with recurrent genetic abnormalities	Precursor B-cell	current	
+B-ALL/LBL	B-lymphoblastic leukemia/lymphoma	Precursor B-cell	current	
+B-ALL/LBL-RGA	B-lymphoblastic leukemia/lymphoma with recurrent genetic abnormalities	Precursor B-cell	legacy	
+B-LBL	B-lymphoblastic lymphoma	Precursor B-cell	current	
+iAMP21	Intrachromosomal amplification of chromosome 21	Precursor B-cell	current	
+RGA	Recurrent genetic abnormality	Precursor B-cell	current	
+ALL	Acute lymphoblastic leukemia	Precursor lymphoid	current	
+LBL	Lymphoblastic lymphoma	Precursor lymphoid	current	
+ETP-ALL	Early T-cell precursor acute lymphoblastic leukemia	Precursor T-cell	current	
+T-ALL	T-cell acute lymphoblastic leukemia	Precursor T-cell	current	
+T-ALL/LBL	T-lymphoblastic leukemia/lymphoma	Precursor T-cell	current	
+ALPS	Autoimmune lymphoproliferative syndrome	Tumour-like/reactive	current	
+HHV8-MCD	Human herpesvirus 8-associated multicentric Castleman disease	Tumour-like/reactive	current	KSHV-MCD
+IgG4-RD	IgG4-related disease	Tumour-like/reactive	current	
+iMCD	Idiopathic multicentric Castleman disease	Tumour-like/reactive	current	
+iT-LBP	Indolent T-lymphoblastic proliferation	Tumour-like/reactive	current	
+KFD	Kikuchi–Fujimoto disease	Tumour-like/reactive	current	
+KSHV-MCD	Kaposi sarcoma-associated herpesvirus-associated multicentric Castleman disease	Tumour-like/reactive	current	HHV8-MCD
+KSHV/HHV8-MCD	KSHV/HHV8-associated multicentric Castleman disease	Tumour-like/reactive	current	
+MCD	Multicentric Castleman disease	Tumour-like/reactive	current	
+TAFRO	Thrombocytopenia, anasarca, fever, reticulin fibrosis or renal dysfunction, and organomegaly	Tumour-like/reactive	current	
+UCD	Unicentric Castleman disease	Tumour-like/reactive	current	
+CMV	Cytomegalovirus	Virus/technical	current	
+EBV	Epstein–Barr virus	Virus/technical	current	
+HHV8	Human herpesvirus 8	Virus/technical	current	KSHV
+HIV	Human immunodeficiency virus	Virus/technical	current	
+KSHV	Kaposi sarcoma-associated herpesvirus	Virus/technical	current	HHV8

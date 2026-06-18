@@ -1,6 +1,7 @@
 (function() {
   const MANIFEST_URL = 'versions.json';
   const STORAGE_KEY = 'iclassi.selectedVersion';
+  const PAGE_CACHE_KEY = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
   const FALLBACK_MANIFEST = {
     current: '0.1.0-beta',
     versions: [
@@ -149,7 +150,7 @@
 
   function withVersionCacheKey(url, versionId) {
     const separator = url.includes('?') ? '&' : '?';
-    return `${url}${separator}version=${encodeURIComponent(versionId)}`;
+    return `${url}${separator}version=${encodeURIComponent(versionId)}&cache=${encodeURIComponent(PAGE_CACHE_KEY)}`;
   }
 
   function normalizeBasePath(path) {

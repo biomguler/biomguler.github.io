@@ -318,17 +318,53 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
       return Promise.allSettled([
         fetchUmlsJson(`${conceptPath}/definitions`, apiKey, { pageSize: '25' }),
         fetchUmlsJson(`${conceptPath}/atoms`, apiKey, { pageSize: '25' }),
-        fetchUmlsJson(`${conceptPath}/relations`, apiKey, { pageSize: '25' })
-      ]).then(([definitions, atoms, relations]) => ({
-        concept,
-        definitions: getSettledResults(definitions),
-        atoms: getSettledResults(atoms),
-        relations: getSettledResults(relations),
-        errors: [definitions, atoms, relations]
-          .filter(result => result.status === 'rejected')
-          .map(result => result.reason.message)
-      }));
+        fetchUmlsJson(`${conceptPath}/relations`, apiKey, { pageSize: '25' }),
+        fetchUmlsPagedResults(`${conceptPath}/relations`, apiKey, {
+          pageSize: '200',
+          includeRelationLabels: 'RB,RN,PAR,CHD'
+        })
+      ]).then(([definitions, atoms, relations, hierarchyRelations]) => {
+        const hierarchyConcepts = getHierarchyConcepts(cui, getSettledArray(hierarchyRelations));
+        return {
+          concept,
+          definitions: getSettledResults(definitions),
+          atoms: getSettledResults(atoms),
+          relations: getSettledResults(relations),
+          broaderConcepts: hierarchyConcepts.broader,
+          narrowerConcepts: hierarchyConcepts.narrower,
+          errors: [definitions, atoms, relations, hierarchyRelations]
+            .filter(result => result.status === 'rejected')
+            .map(result => result.reason.message)
+        };
+      });
     });
+  }
+
+  function fetchUmlsPagedResults(path, apiKey, query = {}) {
+    const pageSize = query.pageSize || '200';
+    return fetchUmlsJson(path, apiKey, { ...query, pageSize, pageNumber: '1' })
+      .then(firstPage => {
+        const results = Array.isArray(firstPage.result) ? firstPage.result.slice() : [];
+        const pageCount = Math.max(1, Number(firstPage.pageCount) || 1);
+        if (pageCount === 1) return results;
+
+        const remainingPages = [];
+        for (let pageNumber = 2; pageNumber <= pageCount; pageNumber += 1) {
+          remainingPages.push(
+            fetchUmlsJson(path, apiKey, {
+              ...query,
+              pageSize,
+              pageNumber: String(pageNumber)
+            })
+          );
+        }
+        return Promise.all(remainingPages).then(pages => {
+          pages.forEach(page => {
+            if (Array.isArray(page.result)) results.push(...page.result);
+          });
+          return results;
+        });
+      });
   }
 
   function fetchUmlsJson(path, apiKey, query = {}) {
@@ -359,6 +395,52 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
     return Array.isArray(result.value.result) ? result.value.result : [];
   }
 
+  function getSettledArray(result) {
+    if (result.status !== 'fulfilled') return [];
+    return Array.isArray(result.value) ? result.value : [];
+  }
+
+  function getHierarchyConcepts(cui, relations) {
+    const grouped = { broader: [], narrower: [] };
+    const seen = { broader: new Set(), narrower: new Set() };
+
+    relations.forEach(relation => {
+      const label = String(relation.relationLabel || '').toUpperCase();
+      if (!['RB', 'RN', 'PAR', 'CHD'].includes(label)) return;
+
+      const fromId = String(relation.relatedFromId || '');
+      const relatedId = String(relation.relatedId || '');
+      // The CUI endpoint normally returns the selected concept on the from side; invert when it is explicitly on the related side.
+      const selectedIsRelated = uriContainsCui(relatedId, cui) && !uriContainsCui(fromId, cui);
+      const selectedIsFrom = !selectedIsRelated;
+      const direction = selectedIsFrom
+        ? (['RB', 'CHD'].includes(label) ? 'broader' : 'narrower')
+        : (['RN', 'PAR'].includes(label) ? 'broader' : 'narrower');
+      const conceptId = selectedIsRelated ? fromId : relatedId;
+      const conceptName = selectedIsRelated
+        ? relation.relatedFromIdName
+        : relation.relatedIdName;
+      const concept = {
+        name: conceptName || getUmlsCodeId(conceptId) || 'Unnamed related concept',
+        id: getUmlsCodeId(conceptId),
+        cui: getCuiFromUri(conceptId),
+        relationLabel: label,
+        additionalRelationLabel: relation.additionalRelationLabel || '',
+        rootSource: relation.rootSource || '',
+        uri: conceptId
+      };
+      const dedupeKey = concept.cui || concept.name.toLowerCase();
+      if (seen[direction].has(dedupeKey)) return;
+      seen[direction].add(dedupeKey);
+      grouped[direction].push(concept);
+    });
+
+    Object.values(grouped).forEach(items => {
+      items.sort((left, right) => left.name.localeCompare(right.name));
+    });
+    return grouped;
+  }
+
   function renderLiveResponse(cui, data) {
     const semanticTypes = Array.isArray(data.concept.semanticTypes)
       ? data.concept.semanticTypes.map(item => item.name).filter(Boolean).join(', ')
@@ -383,6 +465,10 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
       </div>
       ${renderLiveDefinitions(data.definitions)}
       ${renderLiveAtoms(data.atoms)}
+      <div class="live-hierarchy-grid">
+        ${renderLiveHierarchyConcepts(data.broaderConcepts, 'Broader concepts', 'broader')}
+        ${renderLiveHierarchyConcepts(data.narrowerConcepts, 'Narrower concepts', 'narrower')}
+      </div>
       ${renderLiveRelations(data.relations)}
       ${data.errors.length ? `<p class="muted-small">${escapeHtml(data.errors.join(' '))}</p>` : ''}
     `;
@@ -458,6 +544,41 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
     `;
   }
 
+  function renderLiveHierarchyConcepts(concepts, title, downloadType) {
+    const rows = Array.isArray(concepts) ? concepts : [];
+    return `
+      <section class="atoms-panel live-hierarchy-panel">
+        <div class="live-table-header">
+          <h3>${escapeHtml(title)} (${rows.length})</h3>
+          ${rows.length
+            ? `<button type="button" class="secondary" data-live-download="${escapeHtml(downloadType)}">Download TXT</button>`
+            : ''}
+        </div>
+        ${rows.length ? `
+          <div class="atoms-scroll hierarchy-relations-scroll">
+            <table>
+              <thead><tr><th>Concept</th><th>Identifier</th><th>Relation</th><th>Vocabulary</th></tr></thead>
+              <tbody>
+                ${rows.map(concept => `
+                  <tr>
+                    <td>
+                      ${concept.cui
+                        ? `<a class="hierarchy-concept-link" href="https://uts.nlm.nih.gov/uts/umls/concept/${encodeURIComponent(concept.cui)}" target="_blank" rel="noopener">${escapeHtml(concept.name)}</a>`
+                        : escapeHtml(concept.name)}
+                    </td>
+                    <td>${escapeHtml(concept.cui || concept.id || '')}</td>
+                    <td title="${escapeHtml(concept.additionalRelationLabel)}">${escapeHtml(concept.relationLabel)}</td>
+                    <td>${escapeHtml(concept.rootSource)}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+        ` : `<p class="muted-small">No ${escapeHtml(title.toLowerCase())} were returned by the live UMLS response.</p>`}
+      </section>
+    `;
+  }
+
   function bindLiveDownloads(cui, data) {
     liveResults.querySelectorAll('[data-live-download]').forEach(button => {
       button.addEventListener('click', () => {
@@ -472,6 +593,16 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
           downloadTextFile(
             `umls-${cui}-relations.txt`,
             buildRelationDownloadText(cui, data.relations)
+          );
+        }
+        if (type === 'broader' || type === 'narrower') {
+          downloadTextFile(
+            `umls-${cui}-${type}-concepts.txt`,
+            buildHierarchyDownloadText(
+              cui,
+              type,
+              type === 'broader' ? data.broaderConcepts : data.narrowerConcepts
+            )
           );
         }
       });
@@ -506,6 +637,24 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
         relation.additionalRelationLabel || '',
         relation.relatedIdName || relation.relatedId || '',
         relation.rootSource || ''
+      ]);
+    });
+    return rows.map(row => row.map(cleanTextCell).join('\t')).join('\n');
+  }
+
+  function buildHierarchyDownloadText(cui, direction, concepts) {
+    const rows = [
+      ['Selected CUI', 'Direction', 'Concept', 'Related CUI or Source ID', 'Relation', 'Additional Relation', 'Vocabulary']
+    ];
+    concepts.forEach(concept => {
+      rows.push([
+        cui,
+        direction,
+        concept.name || '',
+        concept.cui || concept.id || '',
+        concept.relationLabel || '',
+        concept.additionalRelationLabel || '',
+        concept.rootSource || ''
       ]);
     });
     return rows.map(row => row.map(cleanTextCell).join('\t')).join('\n');
@@ -558,6 +707,15 @@ function initIclassiUmlsPanel(table, rows, config = {}) {
   function getUmlsCodeId(codeUri) {
     if (!codeUri) return '';
     return decodeURIComponent(String(codeUri).split('/').pop());
+  }
+
+  function getCuiFromUri(uri) {
+    const match = String(uri || '').match(/\/CUI\/(C\d{7})(?:\/|$)/i);
+    return match ? match[1].toUpperCase() : '';
+  }
+
+  function uriContainsCui(uri, cui) {
+    return getCuiFromUri(uri) === String(cui || '').toUpperCase();
   }
 
   function setStatus(message, isError = false) {

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn | i-CLASSi Studio</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="styles.css?v=12">
   <script src="versioning.js?v=3"></script>
   <script src="mobile-nav.js?v=3"></script>
 </head>
@@ -154,7 +154,7 @@
             <li>Click a terminal branch to load the disease detail panel and mapped UMLS CUI list.</li>
             <li>Cached public UMLS content appears without requiring a user API key. Public content is limited to selected CUI, AUI, names, source codes, term metadata, and source-attributed definitions from MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, and PDQ.</li>
             <li>Category 3/restricted UMLS source vocabularies are excluded from the public interface.</li>
-            <li>For atoms, relations, and live metadata, enter your own UMLS API key and retrieve the live response in your browser session.</li>
+            <li>For atoms, relations, broader concepts, narrower concepts, and live metadata, enter your own UMLS API key and retrieve the live response in your browser session.</li>
           </ul>
           <h3>Lookup fields</h3>
           <dl class="column-glossary">
@@ -162,7 +162,7 @@
             <dt>Selected disease</dt><dd>The terminal hierarchy item currently selected by the user.</dd>
             <dt>Mapped CUIs</dt><dd>UMLS Concept Unique Identifiers linked to the selected i-CLASSi entity through the mapping table.</dd>
             <dt>Public UMLS content</dt><dd>Cached source-attributed UMLS definitions and selected atom-level fields from MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, and PDQ. Displayed atom fields include CUI, AUI, name, source abbreviation, term type, and source code.</dd>
-            <dt>Live UMLS lookup</dt><dd>Optional licensed lookup using the visitor's own UMLS API key. Live atoms and relations can be downloaded as TXT from the live response.</dd>
+            <dt>Live UMLS lookup</dt><dd>Optional licensed lookup using the visitor's own UMLS API key. The response includes atoms, relations, and fully paginated source-asserted broader and narrower concepts. These tables can be downloaded as TXT.</dd>
           </dl>
 
           <h2 id="mapping-docs">Mapping Explorer</h2>

@@ -1164,6 +1164,31 @@ table.dataTable tbody tr.selected {
   background: #f5f8fb;
 }
 
+.live-hierarchy-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.live-hierarchy-panel {
+  min-width: 0;
+}
+
+.hierarchy-relations-scroll {
+  max-height: 420px;
+}
+
+.hierarchy-concept-link {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hierarchy-concept-link:hover,
+.hierarchy-concept-link:focus-visible {
+  text-decoration: underline;
+}
+
 .licensed-lookup {
   border-top: 1px solid var(--line-soft);
   display: grid;
@@ -1756,7 +1781,8 @@ code {
   .source-metrics,
   .mapping-definition-columns,
   .mapping-filter-grid,
-  .hierarchy-workspace {
+  .hierarchy-workspace,
+  .live-hierarchy-grid {
     grid-template-columns: 1fr;
   }
 

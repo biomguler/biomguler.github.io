@@ -8,7 +8,7 @@ LPD	Lymphoproliferative disorder	Classification hierarchy	current
 LPD-IDD	Lymphoproliferative disorder associated with immune deficiency or dysregulation	Classification hierarchy	current	
 M-BCN	Mature B-cell neoplasm	Classification hierarchy	current	
 NHL	Non-Hodgkin lymphoma	Classification hierarchy	current	
-PM-LN	Plasma-cell or mature lymphoid neoplasm grouping	Classification hierarchy	current	
+PM-LN	Premalignant lymphoid neoplasm	Classification hierarchy	current	
 PNSLP	Pre-neoplastic and neoplastic small lymphocytic proliferation	Classification hierarchy	current	
 SBL	Splenic B-cell lymphomas and leukemias	Classification hierarchy	current	
 TLL	Tumour-like lesion	Classification hierarchy	current	

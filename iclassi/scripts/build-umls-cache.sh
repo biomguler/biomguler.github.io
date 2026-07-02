@@ -8,7 +8,7 @@
 #   - jq
 #
 # Example:
-#   bash ./scripts/build-umls-cache.sh \
+#   bash ./iclassi/scripts/build-umls-cache.sh \
 #     --api-key "YOUR_UMLS_API_KEY" \
 #     --classification-path "iclassi/versions/0.1.0-beta/iclassi.json" \
 #     --mapping-path "iclassi/versions/0.1.0-beta/iclassi_mapping.json"
@@ -18,11 +18,12 @@ set -euo pipefail
 api_key="${UMLS_API_KEY:-}"
 classification_path="iclassi/iclassi.json"
 mapping_path="iclassi/iclassi_mapping.json"
-output_path="iclassi/umls_concepts.json"
+output_path=""
 umls_version="2026AA"
 public_sources_csv="MSH,NCI,HPO,MEDLINEPLUS,ORPHANET,PDQ"
 max_public_atoms=50
 additional_cuis=()
+search_terms=()
 delay_ms=150
 debug_uri=false
 stop_on_missing=false
@@ -30,31 +31,32 @@ stop_on_missing=false
 usage() {
   cat <<'EOF'
 Usage:
-  bash ./scripts/build-umls-cache.sh [options]
+  bash ./iclassi/scripts/build-umls-cache.sh [options]
 
 Options:
   --api-key KEY                 UMLS API key. Defaults to UMLS_API_KEY.
   --classification-path PATH   Classification JSON input.
   --mapping-path PATH          Mapping JSON input.
-  --output-path PATH           Generated cache JSON output.
+  --output-path PATH           Generated cache JSON output. Default: umls_concepts.json beside the mapping file.
   --umls-version VERSION       UMLS release, such as 2026AA.
   --public-sources CSV         Public source allowlist.
   --max-public-atoms NUMBER    Maximum public atoms per concept.
   --additional-cui CUI         Include an additional CUI. May be repeated.
+  --search-term TERM           Accepted for parity with PowerShell; ignored.
   --delay-ms NUMBER            Delay between UMLS requests.
   --debug-uri                  Print request URLs with the API key redacted.
   --stop-on-missing-concept    Stop when a CUI returns HTTP 404.
   -h, --help                   Show this help.
 
 Example:
-  bash ./scripts/build-umls-cache.sh \
+  bash ./iclassi/scripts/build-umls-cache.sh \
     --api-key "YOUR_UMLS_API_KEY" \
     --classification-path "iclassi/versions/0.1.0-beta/iclassi.json" \
     --mapping-path "iclassi/versions/0.1.0-beta/iclassi_mapping.json"
 
 Safer API-key usage:
   export UMLS_API_KEY="YOUR_UMLS_API_KEY"
-  bash ./scripts/build-umls-cache.sh
+  bash ./iclassi/scripts/build-umls-cache.sh
 EOF
 }
 
@@ -105,6 +107,11 @@ while [[ $# -gt 0 ]]; do
     --additional-cui)
       require_value "$@"
       additional_cuis+=("$2")
+      shift 2
+      ;;
+    --search-term|--search-terms)
+      require_value "$@"
+      search_terms+=("$2")
       shift 2
       ;;
     --delay-ms)
@@ -160,6 +167,18 @@ fi
 if ! [[ "$delay_ms" =~ ^[0-9]+$ ]]; then
   echo "--delay-ms must be a non-negative integer." >&2
   exit 2
+fi
+
+if [[ -z "$output_path" ]]; then
+  output_dir="$(dirname "$mapping_path")"
+  if [[ -z "$output_dir" || "$output_dir" == "." ]]; then
+    output_dir="$(dirname "$classification_path")"
+  fi
+  if [[ -z "$output_dir" || "$output_dir" == "." ]]; then
+    output_path="umls_concepts.json"
+  else
+    output_path="$output_dir/umls_concepts.json"
+  fi
 fi
 
 temp_dir="$(mktemp -d)"
@@ -256,9 +275,10 @@ preferred_names_file="$temp_dir/preferred-names.tsv"
 
 jq -r '
   .[]
-  | select(.Vocabulary == "UMLS CUI")
-  | select((.Code // "") | test("^C[0-9]{7}$"))
-  | [.["LNIC Code"], .Code, (.["Vocabulary Prefered Name"] // "")]
+  | select(((.Vocabulary // "") | ascii_upcase | gsub("[^A-Z0-9]"; "")) as $v | ($v == "UMLS" or $v == "UMLSCUI" or $v == "UMLSCUIS"))
+  | ((.Code // "") | tostring | gsub("^\\s+|\\s+$"; "")) as $code
+  | select($code | test("^C[0-9]{7}$"))
+  | [.["LNIC Code"], $code, ((.["Vocabulary Preferred Name"] // .["Vocabulary Prefered Name"] // "") | tostring | gsub("^\\s+|\\s+$"; ""))]
   | @tsv
 ' "$mapping_path" |
 while IFS=$'\t' read -r lnic cui preferred_name; do
@@ -297,7 +317,15 @@ for additional_cui in "${additional_cuis[@]}"; do
   fi
 done
 
+if [[ "${#search_terms[@]}" -gt 0 ]]; then
+  echo "WARNING: --search-term is ignored for the UMLS definition cache. Add reviewed CUIs through the mapping file or --additional-cui." >&2
+fi
+
 sort -u "$all_cuis_file" -o "$all_cuis_file"
+
+if [[ ! -s "$all_cuis_file" ]]; then
+  echo "WARNING: No UMLS CUIs were found in $mapping_path or $classification_path. Mapping rows must have Vocabulary values such as 'UMLS' or 'UMLS CUI' and CUI-formatted Code values such as C0026764." >&2
+fi
 
 jq -Rn '
   [inputs | select(length > 0) | split("\t") | {key: .[0], value: .[1]}]

@@ -3,7 +3,7 @@
 Builds the public UMLS concept cache used by i-CLASSi.
 
 .EXAMPLE
-.\scripts\build-umls-cache.ps1 `
+.\iclassi\scripts\build-umls-cache.ps1 `
   -ApiKey "YOUR_UMLS_API_KEY" `
   -ClassificationPath "iclassi/versions/0.1.0-beta/iclassi.json" `
   -MappingPath "iclassi/versions/0.1.0-beta/iclassi_mapping.json"
@@ -15,7 +15,7 @@ param(
   [string]$ApiKey = $env:UMLS_API_KEY,
   [string]$ClassificationPath = "iclassi/iclassi.json",
   [string]$MappingPath = "iclassi/iclassi_mapping.json",
-  [string]$OutputPath = "iclassi/umls_concepts.json",
+  [string]$OutputPath = "",
   [string]$UmlsVersion = "2026AA",
   [string[]]$PublicUmlsSources = @("MSH", "NCI", "HPO", "MEDLINEPLUS", "ORPHANET", "PDQ"),
   [int]$MaxPublicAtomsPerConcept = 50,
@@ -31,6 +31,17 @@ if (-not $ApiKey) {
 }
 $ApiKey = $ApiKey.Trim()
 
+if (-not $OutputPath) {
+  $outputBasePath = Split-Path -Parent $MappingPath
+  if (-not $outputBasePath) {
+    $outputBasePath = Split-Path -Parent $ClassificationPath
+  }
+  if (-not $outputBasePath) {
+    $outputBasePath = "."
+  }
+  $OutputPath = Join-Path $outputBasePath "umls_concepts.json"
+}
+
 function Read-JsonFile {
   param([string]$Path)
   if (-not (Test-Path -LiteralPath $Path)) {
@@ -42,6 +53,15 @@ function Read-JsonFile {
 function Is-Cui {
   param([string]$Value)
   return $Value -match '^C\d{7}$'
+}
+
+function Is-UmlsVocabulary {
+  param([string]$Value)
+  if (-not $Value) {
+    return $false
+  }
+  $normalized = ($Value.Trim().ToUpperInvariant() -replace '[^A-Z0-9]', '')
+  return $normalized -eq "UMLS" -or $normalized -eq "UMLSCUI" -or $normalized -eq "UMLSCUIS"
 }
 
 function Add-EntityCui {
@@ -290,15 +310,19 @@ $cuiPreferredNames = @{}
 $allCuis = [System.Collections.Generic.HashSet[string]]::new()
 
 foreach ($row in $mappingRows) {
-  if ($row.Vocabulary -eq "UMLS CUI" -and (Is-Cui $row.Code)) {
-    [void]$allCuis.Add($row.Code)
-    Add-EntityCui -EntityConcepts $entityConcepts -Lnic $row.'LNIC Code' -Cui $row.Code
-    if (-not $cuiPreferredNames.ContainsKey($row.Code)) {
-      $cuiPreferredNames[$row.Code] = [System.Collections.Generic.List[string]]::new()
+  $code = "$($row.Code)".Trim()
+  if ((Is-UmlsVocabulary $row.Vocabulary) -and (Is-Cui $code)) {
+    [void]$allCuis.Add($code)
+    Add-EntityCui -EntityConcepts $entityConcepts -Lnic $row.'LNIC Code' -Cui $code
+    if (-not $cuiPreferredNames.ContainsKey($code)) {
+      $cuiPreferredNames[$code] = [System.Collections.Generic.List[string]]::new()
     }
-    $preferredName = $row.'Vocabulary Prefered Name'
-    if ($preferredName -and -not $cuiPreferredNames[$row.Code].Contains($preferredName)) {
-      $cuiPreferredNames[$row.Code].Add($preferredName)
+    $preferredName = "$($row.'Vocabulary Preferred Name')".Trim()
+    if (-not $preferredName) {
+      $preferredName = "$($row.'Vocabulary Prefered Name')".Trim()
+    }
+    if ($preferredName -and -not $cuiPreferredNames[$code].Contains($preferredName)) {
+      $cuiPreferredNames[$code].Add($preferredName)
     }
   }
 }
@@ -330,6 +354,10 @@ foreach ($cui in $AdditionalCuis) {
 
 if ($SearchTerms.Count -gt 0) {
   Write-Warning "-SearchTerms is ignored for the UMLS definition cache. Add reviewed CUIs through the mapping file or -AdditionalCuis."
+}
+
+if ($allCuis.Count -eq 0) {
+  Write-Warning "No UMLS CUIs were found in $MappingPath or $ClassificationPath. Mapping rows must have Vocabulary values such as 'UMLS' or 'UMLS CUI' and CUI-formatted Code values such as C0026764."
 }
 
 $concepts = @{}
@@ -422,6 +450,11 @@ $payload = [ordered]@{
   conceptCount = $concepts.Count
   entityConcepts = $serializableEntityConcepts
   concepts = $concepts
+}
+
+$outputDirectory = Split-Path -Parent $OutputPath
+if ($outputDirectory -and -not (Test-Path -LiteralPath $outputDirectory)) {
+  New-Item -ItemType Directory -Path $outputDirectory -Force | Out-Null
 }
 
 $json = $payload | ConvertTo-Json -Depth 12

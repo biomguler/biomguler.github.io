@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -166,7 +166,7 @@
           renderHierarchy(rows);
           initIclassiUmlsPanel(null, rows, {
             mappingUrl: versionContext.file('iclassi_mapping.json'),
-            cacheUrl: 'umls_concepts.json',
+            cacheUrl: versionContext.file('umls_concepts.json'),
             autoSelectInitial: false
           });
         })

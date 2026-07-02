@@ -81,7 +81,7 @@
     "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
     "WHO-HAEM5 Family-Class": "Splenic B-cell lymphomas and leukemias (SBL)",
     "WHO-HAEM5 Entity-Type": "Splenic B-cell lymphoma/leukemia with prominent nucleoli (SBLPN)",
-    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Hairy cell leukemia-variant (HCL-V) + others**",
+    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "Hairy cell leukemia-variant (HCL-V)  and other variants",
     "Lineage-Nature": "LN",
     "Major Group": "NHL",
     "Category": "Mature B-cell",
@@ -246,7 +246,7 @@
     "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
     "WHO-HAEM5 Family-Class": "Mantle cell lymphoma (MCL)",
     "WHO-HAEM5 Entity-Type": "In situ mantle cell neoplasm (ISMCN)",
-    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "in situ mantle cell lymphoma (MCL-in-in situ)",
+    "Interlymph 2010 Entity-Type based on WHO-HAEM4": "In situ mantle cell lymphoma (MCL-in-in situ)",
     "Lineage-Nature": "PM-LN",
     "Major Group": "LPD",
     "Category": "Mature B-cell",
@@ -296,8 +296,8 @@
     "Major Group": "NHL/HL",
     "Category": "Mature B-cell",
     "Class-Family": "Transformations of indolent B-cell lymphomas",
-    "Entity-Type": "HGT of entity (CLL, MZL, LPL, FL)",
-    "Subtype(s)": ""
+    "Entity-Type": "HGT ofentity (CLL, MZL, LPL, FL) lymphomas",
+    "Subtype(s)": "HGT of entity (CLL, MZL, LPL, FL)"
   },
   {
     "Source": "T1",
@@ -686,7 +686,7 @@
     "Major Group": "LPD",
     "Category": "Mature B-cell",
     "Class-Family": "Monoclonal gammopathies",
-    "Entity-Type": "IgMMGUS",
+    "Entity-Type": "IgM MGUS",
     "Subtype(s)": ""
   },
   {

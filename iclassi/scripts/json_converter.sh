@@ -3,7 +3,7 @@
 # Convert the i-CLASSi raw files into a versioned JSON folder.
 #
 # Example:
-#   bash scripts/json_converter.sh iclassi/versions/raw \
+#   bash iclassi/scripts/json_converter.sh iclassi/versions/raw \
 #     -v "0.1.0-beta" \
 #     --version-label "0.1.0-beta" \
 #     --release-type "first release" \
@@ -21,7 +21,7 @@ set -euo pipefail
 usage() {
   cat <<'EOF'
 Usage:
-  bash scripts/json_converter.sh RAW_DIRECTORY -v VERSION [options]
+  bash iclassi/scripts/json_converter.sh RAW_DIRECTORY -v VERSION [options]
 
 Required:
   RAW_DIRECTORY          Folder containing four TSV files and data-sources.json.
@@ -44,7 +44,7 @@ Accepted raw filenames:
   data-sources.json or data_sources.json
 
 Example:
-  bash scripts/json_converter.sh iclassi/versions/raw \
+  bash iclassi/scripts/json_converter.sh iclassi/versions/raw \
     -v "0.1.0-beta" \
     --version-label "0.1.0-beta" \
     --release-type "first release" \

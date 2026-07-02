@@ -2,8 +2,14 @@
 .SYNOPSIS
 Converts an abbreviation CSV export into the versioned i-CLASSi JSON schema.
 
+.NOTES
+Deprecated: this script is kept for old one-off abbreviation CSV conversions only.
+The normal release workflow now uses iclassi/scripts/json_converter.sh, which creates
+the versioned abbreviations.json together with the classification, mapping,
+i-GWASdb, and data source JSON files.
+
 .EXAMPLE
-.\scripts\convert-abbreviations.ps1 `
+.\iclassi\scripts\convert-abbreviations.ps1 `
   -InputPath "C:\path\to\abbreviations.csv" `
   -VersionId "0.1.0-beta"
 

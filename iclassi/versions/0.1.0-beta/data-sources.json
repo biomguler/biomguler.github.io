@@ -139,6 +139,72 @@
       "notes": "The NAACCR page should be consulted for the current implementation guidelines, coding tables, annotated histology list, corrections, and previous-year guidance."
     },
     {
+      "name": "ICD-O-4 Coding Updates",
+      "organization": "International Agency for Research on Cancer (IARC) and World Health Organization (WHO)",
+      "url": "https://www.iarc.who.int/news-events/an-overview-of-the-new-international-classification-of-diseases-for-oncology-4th-edition-icd-o-4/",
+      "usedBy": "i-CLASSi classification and mapping review",
+      "snapshotLabel": "IARC overview publication",
+      "snapshotValue": "January 30, 2026",
+      "description": "ICD-O-4 is the fourth edition of the International Classification of Diseases for Oncology. It updates tumour coding structure for topography, morphology or histology, behaviour, and grade, and supports coding of existing and newly defined tumour entities.",
+      "metrics": [
+        {
+          "label": "Classification",
+          "value": "ICD-O-4"
+        },
+        {
+          "label": "Overview article",
+          "value": "Published online January 22, 2026"
+        }
+      ],
+      "technicalContext": [
+        {
+          "label": "Primary coding scope",
+          "value": "Tumour topography, morphology/histology, behaviour, and grade"
+        },
+        {
+          "label": "Harmonization",
+          "value": "Aligned with ICD-11"
+        },
+        {
+          "label": "Tumour entity context",
+          "value": "Developed after review of the 5th edition WHO Classification of Tumours series and intended to support current and future WHO Classification of Tumours content"
+        }
+      ],
+      "releaseHighlights": [
+        {
+          "code": "ICD-O-4",
+          "description": "Improved structure of unique codes for existing and newly defined tumour entities"
+        },
+        {
+          "code": "ICD-11",
+          "description": "Harmonized with the 11th revision of the International Classification of Diseases"
+        },
+        {
+          "code": "WHO Classification of Tumours Online",
+          "description": "Finalized ICD-O-4 topography and morphology tables are expected through the WHO Classification of Tumours Online website"
+        },
+        {
+          "code": "WHO book",
+          "description": "ICD-O-4 book publication by WHO is in preparation"
+        }
+      ],
+      "additionalLinks": [
+        {
+          "label": "IARC ICD-O-4 overview",
+          "url": "https://www.iarc.who.int/news-events/an-overview-of-the-new-international-classification-of-diseases-for-oncology-4th-edition-icd-o-4/"
+        },
+        {
+          "label": "Read the article",
+          "url": "https://doi.org/10.1016/j.canep.2026.102989"
+        },
+        {
+          "label": "WHO Classification of Tumours Online",
+          "url": "https://tumourclassification.iarc.who.int/"
+        }
+      ],
+      "notes": "ICD-O-4 is included as a forward-looking source for tracking oncology coding updates. The IARC overview article and WHO Classification of Tumours Online website should be consulted for current content and updates."
+    },
+    {
       "name": "SEER Hematopoietic and Lymphoid Neoplasm Database",
       "organization": "National Cancer Institute, Surveillance, Epidemiology, and End Results Program",
       "url": "https://seer.cancer.gov/seertools/hemelymph/",
@@ -195,6 +261,50 @@
         }
       ],
       "notes": "Crosswalks support harmonization and review but should not be interpreted as universally exact one-to-one clinical equivalences."
+    },
+    {
+      "name": "Mondo Disease Ontology (MONDO)",
+      "organization": "Monarch Initiative",
+      "url": "https://monarch-initiative.github.io/mondo",
+      "usedBy": "Disease ontology harmonization and vocabulary mapping",
+      "snapshotLabel": "MONDO release",
+      "snapshotValue": "v2026-06-02",
+      "description": "Mondo is a disease ontology that aims to harmonize disease definitions across the world. It supports disease concept alignment and cross-resource terminology review for i-CLASSi mapping work.",
+      "metrics": [
+        {
+          "label": "Release",
+          "value": "v2026-06-02"
+        }
+      ],
+      "technicalContext": [
+        {
+          "label": "Ontology identifier",
+          "value": "MONDO"
+        },
+        {
+          "label": "Release tag",
+          "value": "v2026-06-02"
+        }
+      ],
+      "additionalLinks": [
+        {
+          "label": "Mondo website",
+          "url": "https://monarch-initiative.github.io/mondo"
+        },
+        {
+          "label": "MONDO v2026-06-02 release",
+          "url": "https://github.com/monarch-initiative/mondo/releases/tag/v2026-06-02"
+        },
+        {
+          "label": "MONDO releases",
+          "url": "https://github.com/monarch-initiative/mondo/releases"
+        },
+        {
+          "label": "OBO Foundry Mondo page",
+          "url": "http://obofoundry.org/ontology/mondo.html"
+        }
+      ],
+      "notes": "i-CLASSi records MONDO v2026-06-02 as the disease ontology source snapshot for this release. Consult the Mondo website, GitHub releases, and OBO Foundry page for current ontology content and later releases."
     },
     {
       "name": "Experimental Factor Ontology (EFO)",

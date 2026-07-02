@@ -800,6 +800,7 @@ table.dataTable thead th {
   min-width: 0;
   overflow-wrap: anywhere;
   padding: 7px 8px;
+  text-align: center;
   vertical-align: bottom;
   white-space: normal;
 }
@@ -829,7 +830,8 @@ table.dataTable tbody td {
   line-height: 1.4;
   overflow-wrap: anywhere;
   padding: 8px 8px;
-  vertical-align: top;
+  text-align: center;
+  vertical-align: middle;
   white-space: normal;
   word-break: break-word;
 }

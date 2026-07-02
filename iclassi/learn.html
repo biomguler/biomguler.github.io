@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -146,25 +146,41 @@
           </dl>
 
           <h2 id="lookup-docs">Lookup</h2>
-          <p>The Lookup tab provides a tree-first view of the classification. Terminal branches connect to disease details, mapped UMLS CUIs, cached public UMLS source content, and optional live UMLS metadata.</p>
+          <p>The Lookup tab is the terminology workspace for a selected i-CLASSi entity. It combines the L1-L6 hierarchy path, mapped vocabulary identifiers, versioned public UMLS cache content, and optional licensed live UMLS retrieval.</p>
+          <div class="learn-callout">
+            <strong>UMLS access</strong>
+            <span>Public i-CLASSi lookup content is available without a user key. Live UMLS lookup requires your own UMLS Terminology Services account and API key from the U.S. National Library of Medicine.</span>
+          </div>
           <h3>How to use it</h3>
           <ul>
-            <li>Search the classification tree by disease name, subtype, or LNIC code.</li>
+            <li>Search the classification tree by disease name, subtype, abbreviation, or LNIC code.</li>
             <li>Use Expand L2, L3, or L4 to open the tree to a controlled depth without expanding everything.</li>
-            <li>Click a terminal branch to load the disease detail panel and mapped UMLS CUI list.</li>
-            <li>Cached public UMLS content appears without requiring a user API key. Public content is limited to selected CUI, AUI, names, source codes, term metadata, and source-attributed definitions from MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, and PDQ.</li>
-            <li>Category 3/restricted UMLS source vocabularies are excluded from the public interface.</li>
-            <li>For atoms, relations, broader concepts, narrower concepts, and live metadata, enter your own UMLS API key and retrieve the live response in your browser session.</li>
+            <li>Click a terminal branch to load the disease detail panel, hierarchy path, and mapped UMLS CUI list.</li>
+            <li>Select a mapped CUI to inspect public, versioned UMLS cache content. This public cache appears without requiring a user API key.</li>
+            <li>Use licensed live lookup only when you need additional UMLS atoms, relations, broader concepts, narrower concepts, or current metadata beyond the public cache.</li>
           </ul>
+          <h3>Public cache versus live lookup</h3>
+          <dl class="column-glossary">
+            <dt>Public UMLS cache</dt><dd>Versioned content bundled with i-CLASSi. It is limited to selected CUI, AUI, names, source codes, term metadata, and source-attributed definitions from MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, and PDQ. Category 3/restricted vocabularies are excluded from the public interface.</dd>
+            <dt>Licensed live lookup</dt><dd>Optional UMLS API retrieval performed in the browser with the visitor's own API key. Returned live tables include atoms, relations, broader concepts, and narrower concepts, and can be downloaded as TXT for the current browser session.</dd>
+            <dt>API key handling</dt><dd>The API key is used for the current browser session lookup. Do not share your key, paste it into screenshots, or commit it to project files.</dd>
+          </dl>
+          <h3>How to get a UMLS API key</h3>
+          <ol>
+            <li>Open the official NLM UMLS page: <a href="https://www.nlm.nih.gov/research/umls/index.html" target="_blank" rel="noopener">Unified Medical Language System (UMLS)</a>.</li>
+            <li>Use the NLM/UTS sign-up or request-license link to create an individual UMLS Terminology Services account.</li>
+            <li>Review and accept the UMLS license terms. NLM states that UMLS licenses are issued to individuals, not groups or organizations, and that there is no charge for licensing the UMLS from NLM.</li>
+            <li>After your UTS account is active, open your UTS profile/API-key area and copy your API key.</li>
+            <li>Return to i-CLASSi Lookup, select a mapped CUI, paste the key into the live lookup field, and click <strong>Retrieve with my UMLS API key</strong>.</li>
+          </ol>
           <h3>Lookup fields</h3>
           <dl class="column-glossary">
             <dt>Hierarchy Navigator</dt><dd>Expandable L1 to L6 hierarchy. L5 represents entity type and L6 represents subtype(s).</dd>
             <dt>Selected disease</dt><dd>The terminal hierarchy item currently selected by the user.</dd>
             <dt>Mapped CUIs</dt><dd>UMLS Concept Unique Identifiers linked to the selected i-CLASSi entity through the mapping table.</dd>
-            <dt>Public UMLS content</dt><dd>Cached source-attributed UMLS definitions and selected atom-level fields from MSH, NCI, HPO, MEDLINEPLUS, ORPHANET, and PDQ. Displayed atom fields include CUI, AUI, name, source abbreviation, term type, and source code.</dd>
-            <dt>Live UMLS lookup</dt><dd>Optional licensed lookup using the visitor's own UMLS API key. The response includes atoms, relations, and fully paginated source-asserted broader and narrower concepts. These tables can be downloaded as TXT.</dd>
+            <dt>Public UMLS content</dt><dd>Cached source-attributed UMLS definitions and selected atom-level fields from public-compatible sources. Displayed atom fields include CUI, AUI, name, source abbreviation, term type, and source code.</dd>
+            <dt>Live UMLS lookup</dt><dd>Licensed UMLS API lookup using the visitor's own key. Use it for source-attributed UMLS details that are not included in the public i-CLASSi cache.</dd>
           </dl>
-
           <h2 id="mapping-docs">Mapping Explorer</h2>
           <p>The Mapping tab documents how LNIC entities are linked to external biomedical vocabularies and ontology identifiers. Each row contains one vocabulary code.</p>
           <div class="learn-callout">

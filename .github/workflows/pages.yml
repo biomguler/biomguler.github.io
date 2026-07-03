@@ -24,8 +24,13 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
 
   deploy:
     runs-on: ubuntu-latest

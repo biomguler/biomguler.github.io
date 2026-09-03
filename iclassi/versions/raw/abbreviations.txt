@@ -202,3 +202,5 @@ EBV	Epstein–Barr virus	Virus/technical	current
 HHV8	Human herpesvirus 8	Virus/technical	current	KSHV
 HIV	Human immunodeficiency virus	Virus/technical	current	
 KSHV	Kaposi sarcoma-associated herpesvirus	Virus/technical	current	HHV8
+EBVMCU	EBV-positive mucocutaneous ulcer	Immune deficiency/dysregulation	current	EBV+MCU
+IEI-LPDs	Inborn error of immunity-associated lymphoid proliferations and lymphomas	Immune deficiency/dysregulation	current	IEI-LPD

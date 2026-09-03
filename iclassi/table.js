@@ -4,6 +4,7 @@ function initializeDataTable(jsonUrl, tableId, columnsConfig, toggleConfig, opti
             const tableData = typeof options.filterData === 'function'
                 ? data.filter(options.filterData)
                 : data;
+            const exportHeaderLabels = getExportHeaderLabels(tableId);
             const table = $(tableId).DataTable({
                 data: tableData,
                 paging: options.paging || false,
@@ -14,7 +15,7 @@ function initializeDataTable(jsonUrl, tableId, columnsConfig, toggleConfig, opti
                 columns: columnsConfig,
                 orderCellsTop: true,
                 dom: options.dom || 'Bfrtip',
-                buttons: options.buttons || ['copy', 'csv', 'excel', 'pdf', 'print'],
+                buttons: normalizeExportButtons(options.buttons || ['copy', 'csv', 'excel', 'pdf', 'print'], columnsConfig, exportHeaderLabels),
                 initComplete: function () {
                     if (typeof options.initComplete === 'function') {
                         options.initComplete.call(this, this.api(), tableData);
@@ -60,6 +61,80 @@ function initializeDataTable(jsonUrl, tableId, columnsConfig, toggleConfig, opti
     });
 }
 
+function getExportHeaderLabels(tableId) {
+    return $(`${tableId} thead th`).map(function () {
+        return getHeaderTextFromNode(this);
+    }).get();
+}
+
+function getHeaderTextFromNode(node) {
+    const clone = node.cloneNode(true);
+    clone.querySelectorAll('input, select, button, textarea, option, label').forEach(function (element) {
+        element.remove();
+    });
+    return normalizeExportText(clone.textContent);
+}
+function normalizeExportButtons(buttons, columnsConfig, headerLabels) {
+    const exportButtonTypes = [
+        'copy',
+        'csv',
+        'excel',
+        'pdf',
+        'print',
+        'copyHtml5',
+        'csvHtml5',
+        'excelHtml5',
+        'pdfHtml5'
+    ];
+
+    return buttons.map(function (button) {
+        const config = typeof button === 'string' ? { extend: button } : Object.assign({}, button);
+        if (exportButtonTypes.indexOf(config.extend) === -1) {
+            return button;
+        }
+
+        const existingExportOptions = config.exportOptions || {};
+        const existingFormat = existingExportOptions.format || {};
+        const existingHeaderFormatter = existingFormat.header;
+        const mergedFormat = Object.assign({}, existingFormat, {
+            header: function (data, columnIndex, node) {
+                const cleanedHeader = getCleanExportHeader(data, columnIndex, node, columnsConfig, headerLabels);
+                if (typeof existingHeaderFormatter === 'function') {
+                    return existingHeaderFormatter(cleanedHeader, columnIndex, node);
+                }
+                return cleanedHeader;
+            }
+        });
+
+        config.exportOptions = Object.assign({}, existingExportOptions, { format: mergedFormat });
+        return config;
+    });
+}
+
+function getCleanExportHeader(data, columnIndex, node, columnsConfig, headerLabels) {
+    const configuredColumn = columnsConfig && columnsConfig[columnIndex];
+    const configuredTitle = configuredColumn && configuredColumn.title;
+    const capturedTitle = headerLabels && headerLabels[columnIndex];
+    if (configuredTitle) {
+        return normalizeExportText(configuredTitle);
+    }
+    if (capturedTitle) {
+        return normalizeExportText(capturedTitle);
+    }
+
+    if (node) {
+        const headerText = getHeaderTextFromNode(node);
+        if (headerText) {
+            return headerText;
+        }
+    }
+
+    return normalizeExportText(data);
+}
+
+function normalizeExportText(value) {
+    return String(value || '').replace(/\s+/g, ' ').trim();
+}
 function attachTopHorizontalScrollbar(table) {
     const wrapper = $(table.table().container());
     const scrollContainer = wrapper.find('.dataTables_scroll');

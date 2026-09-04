@@ -3848,7 +3848,7 @@
     "Code": "C5855689",
     "Mapping_type": "exact",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "HHV-8 and EBV-Negative Primary Effusion-Based Lymphoma"
   },
   {
@@ -5264,7 +5264,7 @@
     "Code": "C5667168",
     "Mapping_type": "broader",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Immunodeficiency-Related Lymphoproliferative Disorder"
   },
   {
@@ -5276,7 +5276,7 @@
     "Code": "C4014733",
     "Mapping_type": "narrower",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Follicular hyperplasia"
   },
   {
@@ -5288,7 +5288,7 @@
     "Code": "C5886872",
     "Mapping_type": "partial",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Lymphoid Hyperplasia, Reactive"
   },
   {
@@ -5300,7 +5300,7 @@
     "Code": "C0333997",
     "Mapping_type": "broader",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Lymphoid hyperplasia"
   },
   {
@@ -5312,7 +5312,7 @@
     "Code": "C1334174",
     "Mapping_type": "narrower",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Infectious mononucleosis-like post-transplant lymphoproliferative disorder"
   },
   {
@@ -5324,7 +5324,7 @@
     "Code": "C1301361",
     "Mapping_type": "narrower",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Post-transplant lymphoproliferative disorder, polymorphic"
   },
   {
@@ -5336,7 +5336,7 @@
     "Code": "D47.Z1",
     "Mapping_type": "partial",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "International Classification of Diseases, Tenth Revision, Clinical Modification (ICD-10-CM), 2025",
     "Vocabulary Prefered Name": "Post-transplant lymphoproliferative disorder (PTLD)"
   },
   {
@@ -5348,7 +5348,7 @@
     "Code": "9971/1",
     "Mapping_type": "partial",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "International Classification of Diseases for Oncology, Third Edition, Second Revision (ICD-O-3.2), 2025",
     "Vocabulary Prefered Name": "posttransplant lymphoproliferative disorder, NOS"
   },
   {
@@ -5360,7 +5360,7 @@
     "Code": "9971/3",
     "Mapping_type": "partial",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "International Classification of Diseases for Oncology, Third Edition, Second Revision (ICD-O-3.2), 2025",
     "Vocabulary Prefered Name": "polymorphic posttransplant lymphoproliferative disorder, NOS"
   },
   {
@@ -5372,7 +5372,7 @@
     "Code": "99710/1",
     "Mapping_type": "partial",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "International Classification of Diseases for Oncology, Fourth Edition",
     "Vocabulary Prefered Name": "Posttransplant lymphoproliferative disorder, NOS"
   },
   {
@@ -5384,7 +5384,7 @@
     "Code": "C4324739",
     "Mapping_type": "exact",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "EBV positive mucocutaneous ulcer"
   },
   {
@@ -5396,7 +5396,7 @@
     "Code": "96800/1",
     "Mapping_type": "exact",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "International Classification of Diseases for Oncology, Fourth Edition",
     "Vocabulary Prefered Name": "EBV-positive mucocutaneous ulcer"
   },
   {
@@ -5408,7 +5408,7 @@
     "Code": "9680/1",
     "Mapping_type": "exact",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "International Classification of Diseases for Oncology, Third Edition, Second Revision (ICD-O-3.2), 2025",
     "Vocabulary Prefered Name": "EBV positive mucocutaneous ulcer"
   },
   {
@@ -5420,7 +5420,7 @@
     "Code": "9971/1",
     "Mapping_type": "partial",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "International Classification of Diseases for Oncology, Third Edition, Second Revision (ICD-O-3.2), 2025",
     "Vocabulary Prefered Name": "posttransplant lymphoproliferative disorder, NOS"
   },
   {
@@ -5432,7 +5432,7 @@
     "Code": "C5667168",
     "Mapping_type": "broader",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Immunodeficiency-Related Lymphoproliferative Disorder"
   },
   {
@@ -5444,7 +5444,7 @@
     "Code": "C1334158",
     "Mapping_type": "narrower",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Immunodeficiency-associated Burkitt's lymphoma"
   },
   {
@@ -5456,7 +5456,7 @@
     "Code": "C5670691",
     "Mapping_type": "narrower",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Immunodeficiency-Related Primary Central Nervous System Lymphoma"
   },
   {
@@ -5468,7 +5468,7 @@
     "Code": "96874/3",
     "Mapping_type": "narrower",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "International Classification of Diseases for Oncology, Fourth Edition",
     "Vocabulary Prefered Name": "Burkitt lymphoma, immunodeficiency-associated"
   },
   {
@@ -5480,7 +5480,7 @@
     "Code": "9687/3",
     "Mapping_type": "narrower",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "International Classification of Diseases for Oncology, Third Edition, Second Revision (ICD-O-3.2), 2025",
     "Vocabulary Prefered Name": "Burkitt lymphoma, immunodeficiency-associated"
   },
   {
@@ -5492,7 +5492,7 @@
     "Code": "C0024314",
     "Mapping_type": "broader",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Lymphoproliferative Disorders"
   },
   {
@@ -5504,7 +5504,7 @@
     "Code": "C5959769",
     "Mapping_type": "exact",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Inborn Error of Immunity-Associated Cutaneous T-Cell Lymphoproliferative Disorder"
   },
   {
@@ -10417,19 +10417,19 @@
   },
   {
     "Entry ID": "096",
-    "LNIC Code": "LNIC-330-096",
+    "LNIC Code": "LNIC-360-096",
     "Entity-Type": "Reactive B-cell-rich lymphoid proliferations that can mimic\r\nlymphoma",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
     "Code": "C5856323",
     "Mapping_type": "exact",
     "Mapping confidence": "High",
-    "Version": "",
+    "Version": "2026AA",
     "Vocabulary Prefered Name": "Reactive B-Cell Rich Lymphoid Proliferations that Can Mimic Lymphoma"
   },
   {
     "Entry ID": "097",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-097",
     "Entity-Type": "IgG4-RD",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -10441,7 +10441,7 @@
   },
   {
     "Entry ID": "097",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-097",
     "Entity-Type": "IgG4-RD",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -10453,7 +10453,7 @@
   },
   {
     "Entry ID": "097",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-097",
     "Entity-Type": "IgG4-RD",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -10465,7 +10465,7 @@
   },
   {
     "Entry ID": "097",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-097",
     "Entity-Type": "IgG4-RD",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -10477,7 +10477,7 @@
   },
   {
     "Entry ID": "098",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-098",
     "Entity-Type": "UCD",
     "Subtype(s)": "Hyaline-vascular, mixed/plasmacytic",
     "Vocabulary": "ICDO4",
@@ -10489,7 +10489,7 @@
   },
   {
     "Entry ID": "098",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-098",
     "Entity-Type": "UCD",
     "Subtype(s)": "Hyaline-vascular, mixed/plasmacytic",
     "Vocabulary": "UMLS",
@@ -10501,7 +10501,7 @@
   },
   {
     "Entry ID": "098",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-098",
     "Entity-Type": "UCD",
     "Subtype(s)": "Hyaline-vascular, mixed/plasmacytic",
     "Vocabulary": "MONDO",
@@ -10513,7 +10513,7 @@
   },
   {
     "Entry ID": "099",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-099",
     "Entity-Type": "iMCD",
     "Subtype(s)": "TAFRO, NOS",
     "Vocabulary": "ICDO4",
@@ -10525,7 +10525,7 @@
   },
   {
     "Entry ID": "099",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-099",
     "Entity-Type": "iMCD",
     "Subtype(s)": "TAFRO, NOS",
     "Vocabulary": "UMLS",
@@ -10537,7 +10537,7 @@
   },
   {
     "Entry ID": "100",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-100",
     "Entity-Type": "KSHV8/HHV-MCD",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -10549,7 +10549,7 @@
   },
   {
     "Entry ID": "100",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-100",
     "Entity-Type": "KSHV8/HHV-MCD",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -10561,7 +10561,7 @@
   },
   {
     "Entry ID": "100",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-360-100",
     "Entity-Type": "KSHV8/HHV-MCD",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -10573,7 +10573,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICDO3",
@@ -10585,7 +10585,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "UMLS",
@@ -10597,7 +10597,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "UMLS",
@@ -10609,7 +10609,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "MONDO",
@@ -10621,7 +10621,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "MONDO",
@@ -10633,7 +10633,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICDO3",
@@ -10645,7 +10645,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICDO3",
@@ -10657,7 +10657,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICD9",
@@ -10669,7 +10669,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICD10CM",
@@ -10681,7 +10681,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICD10CM",
@@ -10693,7 +10693,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICD10CM",
@@ -10705,7 +10705,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICD10CM",
@@ -10717,7 +10717,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICD10CM",
@@ -10729,7 +10729,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICD10CM",
@@ -10741,7 +10741,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICD10CM",
@@ -10753,7 +10753,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICD10",
@@ -10765,7 +10765,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICD10",
@@ -10777,7 +10777,7 @@
   },
   {
     "Entry ID": "101",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-101",
     "Entity-Type": "B-ALL/B-LBL,NOS",
     "Subtype(s)": "B-ALL or LBL,NOS",
     "Vocabulary": "ICDO4",
@@ -10789,7 +10789,7 @@
   },
   {
     "Entry ID": "102",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-102",
     "Entity-Type": "B-ALL/B-LBL-RGA",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -10801,7 +10801,7 @@
   },
   {
     "Entry ID": "102",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-102",
     "Entity-Type": "B-ALL/B-LBL-RGA",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -10813,7 +10813,7 @@
   },
   {
     "Entry ID": "102",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-102",
     "Entity-Type": "B-ALL/B-LBL-RGA",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -10825,7 +10825,7 @@
   },
   {
     "Entry ID": "102",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-102",
     "Entity-Type": "B-ALL/B-LBL-RGA",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -10837,7 +10837,7 @@
   },
   {
     "Entry ID": "102",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-102",
     "Entity-Type": "B-ALL/B-LBL-RGA",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -10849,7 +10849,7 @@
   },
   {
     "Entry ID": "102",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-102",
     "Entity-Type": "B-ALL/B-LBL-RGA",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -10861,7 +10861,7 @@
   },
   {
     "Entry ID": "102",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-102",
     "Entity-Type": "B-ALL/B-LBL-RGA",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -10873,7 +10873,7 @@
   },
   {
     "Entry ID": "102",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-102",
     "Entity-Type": "B-ALL/B-LBL-RGA",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -10885,7 +10885,7 @@
   },
   {
     "Entry ID": "102",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-102",
     "Entity-Type": "B-ALL/B-LBL-RGA",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -10897,7 +10897,7 @@
   },
   {
     "Entry ID": "102",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-102",
     "Entity-Type": "B-ALL/B-LBL-RGA",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -10909,7 +10909,7 @@
   },
   {
     "Entry ID": "102",
-    "LNIC Code": "LNIC-110-048",
+    "LNIC Code": "LNIC-103-102",
     "Entity-Type": "B-ALL/B-LBL-RGA",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -10921,7 +10921,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-110-049",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -10933,7 +10933,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-110-049",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -10945,7 +10945,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-110-049",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -10957,7 +10957,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-110-049",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -10969,7 +10969,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-110-049",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -10981,7 +10981,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-110-049",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -10993,7 +10993,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-110-049",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11005,7 +11005,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-020-050",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11017,7 +11017,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-020-050",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11029,7 +11029,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-020-050",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -11041,7 +11041,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-020-050",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -11053,7 +11053,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-020-051",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -11065,7 +11065,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-020-051",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -11077,7 +11077,7 @@
   },
   {
     "Entry ID": "103",
-    "LNIC Code": "LNIC-020-051",
+    "LNIC Code": "LNIC-103-103",
     "Entity-Type": "B-ALL/LBL with hypodiploidy",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -11089,7 +11089,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-051",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -11101,7 +11101,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-051",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -11113,7 +11113,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-051",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11125,7 +11125,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-051",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11137,7 +11137,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11149,7 +11149,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11161,7 +11161,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11173,7 +11173,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11185,7 +11185,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11197,7 +11197,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -11209,7 +11209,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -11221,7 +11221,7 @@
   },
   {
     "Entry ID": "104",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-104",
     "Entity-Type": "B-ALL/LBL with iAMP21",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -11233,7 +11233,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -11245,7 +11245,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -11257,7 +11257,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -11269,7 +11269,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11281,7 +11281,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-052",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11293,7 +11293,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-053",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11305,7 +11305,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-053",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11317,7 +11317,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-054",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11329,7 +11329,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-054",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11341,7 +11341,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-054",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11353,7 +11353,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-054",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -11365,7 +11365,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-054",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -11377,7 +11377,7 @@
   },
   {
     "Entry ID": "105",
-    "LNIC Code": "LNIC-020-054",
+    "LNIC Code": "LNIC-103-105",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -11389,7 +11389,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -11401,7 +11401,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -11413,7 +11413,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11425,7 +11425,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11437,7 +11437,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11449,7 +11449,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11461,7 +11461,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11473,7 +11473,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11485,7 +11485,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11497,7 +11497,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -11509,7 +11509,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -11521,7 +11521,7 @@
   },
   {
     "Entry ID": "106",
-    "LNIC Code": "LNIC-020-055",
+    "LNIC Code": "LNIC-103-106",
     "Entity-Type": "B-ALL/LBL with BCR::ABL1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -11533,7 +11533,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-056",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -11545,7 +11545,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-056",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -11557,7 +11557,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-056",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11569,7 +11569,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-056",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11581,7 +11581,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-056",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11593,7 +11593,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-056",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11605,7 +11605,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-056",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11617,7 +11617,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-057",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11629,7 +11629,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-057",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11641,7 +11641,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-057",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -11653,7 +11653,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-057",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -11665,7 +11665,7 @@
   },
   {
     "Entry ID": "107",
-    "LNIC Code": "LNIC-020-057",
+    "LNIC Code": "LNIC-103-107",
     "Entity-Type": "B-ALL/LBL with KMT2A rearrangement",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -11677,7 +11677,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-057",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -11689,7 +11689,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-057",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -11701,7 +11701,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11713,7 +11713,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11725,7 +11725,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11737,7 +11737,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11749,7 +11749,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11761,7 +11761,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11773,7 +11773,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11785,7 +11785,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -11797,7 +11797,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -11809,7 +11809,7 @@
   },
   {
     "Entry ID": "108",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-108",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -11821,7 +11821,7 @@
   },
   {
     "Entry ID": "109",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-109",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -11833,7 +11833,7 @@
   },
   {
     "Entry ID": "109",
-    "LNIC Code": "LNIC-020-058",
+    "LNIC Code": "LNIC-103-109",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -11845,7 +11845,7 @@
   },
   {
     "Entry ID": "109",
-    "LNIC Code": "LNIC-100-059",
+    "LNIC Code": "LNIC-103-109",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11857,7 +11857,7 @@
   },
   {
     "Entry ID": "109",
-    "LNIC Code": "LNIC-100-059",
+    "LNIC Code": "LNIC-103-109",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11869,7 +11869,7 @@
   },
   {
     "Entry ID": "109",
-    "LNIC Code": "LNIC-100-059",
+    "LNIC Code": "LNIC-103-109",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11881,7 +11881,7 @@
   },
   {
     "Entry ID": "109",
-    "LNIC Code": "LNIC-100-059",
+    "LNIC Code": "LNIC-103-109",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11893,7 +11893,7 @@
   },
   {
     "Entry ID": "109",
-    "LNIC Code": "LNIC-100-059",
+    "LNIC Code": "LNIC-103-109",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11905,7 +11905,7 @@
   },
   {
     "Entry ID": "109",
-    "LNIC Code": "LNIC-100-059",
+    "LNIC Code": "LNIC-103-109",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11917,7 +11917,7 @@
   },
   {
     "Entry ID": "109",
-    "LNIC Code": "LNIC-100-059",
+    "LNIC Code": "LNIC-103-109",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -11929,7 +11929,7 @@
   },
   {
     "Entry ID": "109",
-    "LNIC Code": "LNIC-100-059",
+    "LNIC Code": "LNIC-103-109",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -11941,7 +11941,7 @@
   },
   {
     "Entry ID": "109",
-    "LNIC Code": "LNIC-100-059",
+    "LNIC Code": "LNIC-103-109",
     "Entity-Type": "B-ALL/LBL with ETV6::RUNX1-like features",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -11953,7 +11953,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-059",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -11965,7 +11965,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -11977,7 +11977,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -11989,7 +11989,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12001,7 +12001,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12013,7 +12013,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12025,7 +12025,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12037,7 +12037,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -12049,7 +12049,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -12061,7 +12061,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -12073,7 +12073,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -12085,7 +12085,7 @@
   },
   {
     "Entry ID": "110",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-110",
     "Entity-Type": "B-ALL/LBL with TCF3::PBX1 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -12097,7 +12097,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -12109,7 +12109,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -12121,7 +12121,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-100-060",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -12133,7 +12133,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-100-061",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12145,7 +12145,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-100-061",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12157,7 +12157,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-101-062",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12169,7 +12169,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-101-062",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12181,7 +12181,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-101-062",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12193,7 +12193,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-101-062",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -12205,7 +12205,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-101-062",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -12217,7 +12217,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-101-062",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -12229,7 +12229,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-101-062",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -12241,7 +12241,7 @@
   },
   {
     "Entry ID": "111",
-    "LNIC Code": "LNIC-101-062",
+    "LNIC Code": "LNIC-103-111",
     "Entity-Type": "B-ALL/LBL with IGH::IL3 fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -12253,7 +12253,7 @@
   },
   {
     "Entry ID": "112",
-    "LNIC Code": "LNIC-101-063",
+    "LNIC Code": "LNIC-103-112",
     "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -12265,7 +12265,7 @@
   },
   {
     "Entry ID": "112",
-    "LNIC Code": "LNIC-101-063",
+    "LNIC Code": "LNIC-103-112",
     "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD9",
@@ -12277,7 +12277,7 @@
   },
   {
     "Entry ID": "112",
-    "LNIC Code": "LNIC-101-063",
+    "LNIC Code": "LNIC-103-112",
     "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12289,7 +12289,7 @@
   },
   {
     "Entry ID": "112",
-    "LNIC Code": "LNIC-101-063",
+    "LNIC Code": "LNIC-103-112",
     "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12301,7 +12301,7 @@
   },
   {
     "Entry ID": "112",
-    "LNIC Code": "LNIC-101-063",
+    "LNIC Code": "LNIC-103-112",
     "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12313,7 +12313,7 @@
   },
   {
     "Entry ID": "112",
-    "LNIC Code": "LNIC-101-063",
+    "LNIC Code": "LNIC-103-112",
     "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12325,7 +12325,7 @@
   },
   {
     "Entry ID": "112",
-    "LNIC Code": "LNIC-101-063",
+    "LNIC Code": "LNIC-103-112",
     "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12337,7 +12337,7 @@
   },
   {
     "Entry ID": "112",
-    "LNIC Code": "LNIC-101-063",
+    "LNIC Code": "LNIC-103-112",
     "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -12349,7 +12349,7 @@
   },
   {
     "Entry ID": "112",
-    "LNIC Code": "LNIC-101-064",
+    "LNIC Code": "LNIC-103-112",
     "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -12361,7 +12361,7 @@
   },
   {
     "Entry ID": "112",
-    "LNIC Code": "LNIC-101-064",
+    "LNIC Code": "LNIC-103-112",
     "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -12373,7 +12373,7 @@
   },
   {
     "Entry ID": "112",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-112",
     "Entity-Type": "B-ALL/LBL with TCF3:HLF fusion",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -12385,7 +12385,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICDO3",
@@ -12397,7 +12397,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICD9",
@@ -12409,7 +12409,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICD10CM",
@@ -12421,7 +12421,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICD10CM",
@@ -12433,7 +12433,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICD10CM",
@@ -12445,7 +12445,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICD10CM",
@@ -12457,7 +12457,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICD10CM",
@@ -12469,7 +12469,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICD10",
@@ -12481,7 +12481,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICD10",
@@ -12493,7 +12493,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICDO4",
@@ -12505,7 +12505,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-065",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICDO4",
@@ -12517,7 +12517,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-066",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICDO4",
@@ -12529,7 +12529,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-066",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICDO4",
@@ -12541,7 +12541,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-066",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICDO4",
@@ -12553,7 +12553,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-066",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICDO4",
@@ -12565,7 +12565,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-066",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICDO4",
@@ -12577,7 +12577,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-066",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "UMLS",
@@ -12589,7 +12589,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-066",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "MONDO",
@@ -12601,7 +12601,7 @@
   },
   {
     "Entry ID": "113",
-    "LNIC Code": "LNIC-101-066",
+    "LNIC Code": "LNIC-103-113",
     "Entity-Type": "B-ALL/LBL with other defined genetic abnormalities",
     "Subtype(s)": "B-ALL with other defined genetic abnormalities (ex: B-ALL/LBL with DUX4 rearrangement, MEF2D rearrangement, ZNF384 rearrangement, PAX5 alterations or PAX5 p.P80R abnormalities, NUTM1 rearrangements, MYC rearrangement)",
     "Vocabulary": "ICDO4",
@@ -12613,7 +12613,7 @@
   },
   {
     "Entry ID": "114",
-    "LNIC Code": "LNIC-101-067",
+    "LNIC Code": "LNIC-364-114",
     "Entity-Type": "KFD",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -12625,7 +12625,7 @@
   },
   {
     "Entry ID": "114",
-    "LNIC Code": "LNIC-101-067",
+    "LNIC Code": "LNIC-364-114",
     "Entity-Type": "KFD",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -12637,7 +12637,7 @@
   },
   {
     "Entry ID": "115",
-    "LNIC Code": "LNIC-101-067",
+    "LNIC Code": "LNIC-364-115",
     "Entity-Type": "ALPS",
     "Subtype(s)": "Germline FAS(ALPS-FAS), somatic FAS(ALPS-sFAS), germline other specified FAS-pathway germline mutation (FASLG, CASP10, CASP8, FADD), unknown underlying mutation (ALPS-U)",
     "Vocabulary": "UMLS",
@@ -12649,19 +12649,19 @@
   },
   {
     "Entry ID": "115",
-    "LNIC Code": "LNIC-101-067",
+    "LNIC Code": "LNIC-364-115",
     "Entity-Type": "ALPS",
     "Subtype(s)": "Germline FAS(ALPS-FAS), somatic FAS(ALPS-sFAS), germline other specified FAS-pathway germline mutation (FASLG, CASP10, CASP8, FADD), unknown underlying mutation (ALPS-U)",
     "Vocabulary": "MONDO",
     "Code": "MONDO:0017979",
     "Mapping_type": "exact",
     "Mapping confidence": "High",
-    "Version": "2026AA",
+    "Version": "6/2/2026",
     "Vocabulary Prefered Name": "autoimmune lymphoproliferative syndrome"
   },
   {
     "Entry ID": "115",
-    "LNIC Code": "LNIC-101-067",
+    "LNIC Code": "LNIC-364-115",
     "Entity-Type": "ALPS",
     "Subtype(s)": "Germline FAS(ALPS-FAS), somatic FAS(ALPS-sFAS), germline other specified FAS-pathway germline mutation (FASLG, CASP10, CASP8, FADD), unknown underlying mutation (ALPS-U)",
     "Vocabulary": "ICD10CM",
@@ -12673,7 +12673,7 @@
   },
   {
     "Entry ID": "115",
-    "LNIC Code": "LNIC-101-067",
+    "LNIC Code": "LNIC-364-115",
     "Entity-Type": "ALPS",
     "Subtype(s)": "Germline FAS(ALPS-FAS), somatic FAS(ALPS-sFAS), germline other specified FAS-pathway germline mutation (FASLG, CASP10, CASP8, FADD), unknown underlying mutation (ALPS-U)",
     "Vocabulary": "ICDO4",
@@ -12685,7 +12685,7 @@
   },
   {
     "Entry ID": "116",
-    "LNIC Code": "LNIC-101-067",
+    "LNIC Code": "LNIC-365-116",
     "Entity-Type": "iT-LBP",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -12697,7 +12697,7 @@
   },
   {
     "Entry ID": "116",
-    "LNIC Code": "LNIC-101-067",
+    "LNIC Code": "LNIC-365-116",
     "Entity-Type": "iT-LBP",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -12709,7 +12709,7 @@
   },
   {
     "Entry ID": "116",
-    "LNIC Code": "LNIC-101-067",
+    "LNIC Code": "LNIC-365-116",
     "Entity-Type": "iT-LBP",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -12721,7 +12721,7 @@
   },
   {
     "Entry ID": "117",
-    "LNIC Code": "LNIC-121-068",
+    "LNIC Code": "LNIC-105-117",
     "Entity-Type": "T-ALL/LBL,NOS",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -12733,7 +12733,7 @@
   },
   {
     "Entry ID": "117",
-    "LNIC Code": "LNIC-121-068",
+    "LNIC Code": "LNIC-105-117",
     "Entity-Type": "T-ALL/LBL,NOS",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -12745,7 +12745,7 @@
   },
   {
     "Entry ID": "117",
-    "LNIC Code": "LNIC-121-068",
+    "LNIC Code": "LNIC-105-117",
     "Entity-Type": "T-ALL/LBL,NOS",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12757,7 +12757,7 @@
   },
   {
     "Entry ID": "117",
-    "LNIC Code": "LNIC-121-069",
+    "LNIC Code": "LNIC-105-117",
     "Entity-Type": "T-ALL/LBL,NOS",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12769,7 +12769,7 @@
   },
   {
     "Entry ID": "117",
-    "LNIC Code": "LNIC-121-069",
+    "LNIC Code": "LNIC-105-117",
     "Entity-Type": "T-ALL/LBL,NOS",
     "Subtype(s)": "",
     "Vocabulary": "ICD10",
@@ -12781,7 +12781,7 @@
   },
   {
     "Entry ID": "117",
-    "LNIC Code": "LNIC-101-070",
+    "LNIC Code": "LNIC-105-117",
     "Entity-Type": "T-ALL/LBL,NOS",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -12793,7 +12793,7 @@
   },
   {
     "Entry ID": "117",
-    "LNIC Code": "LNIC-101-070",
+    "LNIC Code": "LNIC-105-117",
     "Entity-Type": "T-ALL/LBL,NOS",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -12805,7 +12805,7 @@
   },
   {
     "Entry ID": "117",
-    "LNIC Code": "LNIC-101-070",
+    "LNIC Code": "LNIC-105-117",
     "Entity-Type": "T-ALL/LBL,NOS",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",
@@ -12817,7 +12817,7 @@
   },
   {
     "Entry ID": "118",
-    "LNIC Code": "LNIC-101-070",
+    "LNIC Code": "LNIC-105-118",
     "Entity-Type": "ETP-ALL",
     "Subtype(s)": "",
     "Vocabulary": "ICDO3",
@@ -12829,7 +12829,7 @@
   },
   {
     "Entry ID": "118",
-    "LNIC Code": "LNIC-101-070",
+    "LNIC Code": "LNIC-105-118",
     "Entity-Type": "ETP-ALL",
     "Subtype(s)": "",
     "Vocabulary": "ICD10CM",
@@ -12841,7 +12841,7 @@
   },
   {
     "Entry ID": "118",
-    "LNIC Code": "LNIC-101-070",
+    "LNIC Code": "LNIC-105-118",
     "Entity-Type": "ETP-ALL",
     "Subtype(s)": "",
     "Vocabulary": "MONDO",
@@ -12853,7 +12853,7 @@
   },
   {
     "Entry ID": "118",
-    "LNIC Code": "LNIC-101-070",
+    "LNIC Code": "LNIC-105-118",
     "Entity-Type": "ETP-ALL",
     "Subtype(s)": "",
     "Vocabulary": "UMLS",
@@ -12865,7 +12865,7 @@
   },
   {
     "Entry ID": "118",
-    "LNIC Code": "LNIC-121-071",
+    "LNIC Code": "LNIC-105-118",
     "Entity-Type": "ETP-ALL",
     "Subtype(s)": "",
     "Vocabulary": "ICDO4",

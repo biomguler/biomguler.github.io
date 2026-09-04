@@ -1427,7 +1427,7 @@
   {
     "Source": "ST1",
     "Entry ID": "096",
-    "LNIC Code": "LNIC-330-096",
+    "LNIC Code": "LNIC-360-096",
     "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
     "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
     "WHO-HAEM5 Entity-Type": "Reactive B-cell-rich lymphoid proliferations that can mimic\r\nlymphoma",
@@ -1442,7 +1442,7 @@
   {
     "Source": "ST1",
     "Entry ID": "097",
-    "LNIC Code": "LNIC-330-097",
+    "LNIC Code": "LNIC-360-097",
     "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
     "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
     "WHO-HAEM5 Entity-Type": "IgG4-related disease (IgG4-RD)",
@@ -1457,7 +1457,7 @@
   {
     "Source": "ST1",
     "Entry ID": "098",
-    "LNIC Code": "LNIC-330-098",
+    "LNIC Code": "LNIC-360-098",
     "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
     "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
     "WHO-HAEM5 Entity-Type": "Unicentric Castleman disease (UCD)",
@@ -1472,7 +1472,7 @@
   {
     "Source": "ST1",
     "Entry ID": "099",
-    "LNIC Code": "LNIC-330-099",
+    "LNIC Code": "LNIC-360-099",
     "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
     "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
     "WHO-HAEM5 Entity-Type": "Idiopathic multicentric Castleman disease (iMCD)",
@@ -1487,7 +1487,7 @@
   {
     "Source": "ST1",
     "Entry ID": "100",
-    "LNIC Code": "LNIC-330-100",
+    "LNIC Code": "LNIC-360-100",
     "WHO-HAEM5 Category": "Mature B-cell neoplasms (M-BCN)",
     "WHO-HAEM5 Family-Class": "Tumour-like lesions with B-cell predominance",
     "WHO-HAEM5 Entity-Type": "KSHV/HHV8-associated multicentric Castleman disease",
@@ -1697,7 +1697,7 @@
   {
     "Source": "ST3",
     "Entry ID": "114",
-    "LNIC Code": "LNIC-334-114",
+    "LNIC Code": "LNIC-364-114",
     "WHO-HAEM5 Category": "Tumour-like lesions with T-cell predominance",
     "WHO-HAEM5 Family-Class": "Tumour-like lesions with T-cell predominance",
     "WHO-HAEM5 Entity-Type": "Kikuchi-Fujimoto disease (KFD)",
@@ -1712,7 +1712,7 @@
   {
     "Source": "ST3",
     "Entry ID": "115",
-    "LNIC Code": "LNIC-334-115",
+    "LNIC Code": "LNIC-364-115",
     "WHO-HAEM5 Category": "Tumour-like lesions with T-cell predominance",
     "WHO-HAEM5 Family-Class": "Tumour-like lesions with T-cell predominance",
     "WHO-HAEM5 Entity-Type": "Autoimmune lymphoproliferative syndrome (ALPS)",
@@ -1727,7 +1727,7 @@
   {
     "Source": "ST3",
     "Entry ID": "116",
-    "LNIC Code": "LNIC-335-116",
+    "LNIC Code": "LNIC-365-116",
     "WHO-HAEM5 Category": "Tumour-like lesions with T-cell predominance",
     "WHO-HAEM5 Family-Class": "Tumour-like lesions with T-cell predominance",
     "WHO-HAEM5 Entity-Type": "Indolent T-lymphoblastic proliferation (iT-LBP)",

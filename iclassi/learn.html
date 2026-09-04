@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn | i-CLASSi Studio</title>
   <link rel="icon" type="image/png" href="images/favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=13">
+  <link rel="stylesheet" href="styles.css?v=14">
   <script src="versioning.js?v=3"></script>
   <script src="mobile-nav.js?v=3"></script>
 </head>
@@ -183,9 +183,13 @@
           </dl>
           <h2 id="mapping-docs">Mapping Explorer</h2>
           <p>The Mapping tab documents how LNIC entities are linked to external biomedical vocabularies and ontology identifiers. Each row contains one vocabulary code.</p>
+          <figure class="content-figure mapping-workflow-figure">
+            <img src="images/mapping-workflow-figure.jpg" alt="i-CLASSi mapping workflow showing expert review, mapping types, and confidence categories">
+            <figcaption>Figure 1. Independent expert review determines mapping type and mapping confidence.</figcaption>
+          </figure>
           <div class="learn-callout">
-            <strong>Review status</strong>
-            <span>Mapping confidence records the extent of human review, not semantic closeness. Programmatically generated mappings remain Low until reviewed by a person.</span>
+            <strong>Expert review workflow</strong>
+            <span>Mapping type was assigned using four categories by four experts' independent assessment. After these independent assessments, mapping confidence was recorded separately as High, Moderate, or Low to summarize the level of agreement across the mapping effort.</span>
           </div>
           <h3>How to use it</h3>
           <ul>
@@ -194,20 +198,22 @@
             <li>Filter by LNIC code to see every vocabulary mapping for one entity.</li>
             <li>Click an LNIC code in the mapping table to show the corresponding L1-L6 i-CLASSi classification context.</li>
             <li>Filter by Vocabulary to compare mappings from UMLS, ICD, EFO, or other displayed sources included in the release.</li>
-            <li>Use Mapping type to interpret semantic scope and Mapping confidence to assess the extent of human review.</li>
+            <li>Use Mapping type to interpret semantic scope and Mapping confidence to assess agreement across the expert review workflow.</li>
           </ul>
           <h3>Mapping types</h3>
+          <p>Mapping type describes the semantic relationship between the external concept and the target i-CLASSi lymphoid entity or subtype. The four public mapping categories are:</p>
           <dl class="column-glossary">
-            <dt>exact</dt><dd>The external code corresponds precisely to the LNIC entity.</dd>
-            <dt>narrower</dt><dd>The external code is more specific than the LNIC entity.</dd>
-            <dt>broader</dt><dd>The external code includes the LNIC entity plus other entities.</dd>
-            <dt>partial</dt><dd>The code overlaps but is ambiguous, historical, deprecated, or not fully equivalent.</dd>
+            <dt>exact</dt><dd>The external code corresponds directly to the i-CLASSi entity.</dd>
+            <dt>narrower</dt><dd>The external code represents a more specific concept fully contained within the i-CLASSi entity.</dd>
+            <dt>broader</dt><dd>The external code encompasses the i-CLASSi entity together with additional concepts.</dd>
+            <dt>partial</dt><dd>The external code overlaps the i-CLASSi entity but is ambiguous, historical, deprecated, or not fully equivalent.</dd>
           </dl>
           <h3>Mapping confidence</h3>
+          <p>Mapping confidence is recorded separately from mapping type. It summarizes agreement after independent expert review and should not be interpreted as semantic closeness.</p>
           <dl class="column-glossary">
-            <dt>Low</dt><dd>Created programmatically without human review.</dd>
-            <dt>Moderate</dt><dd>Checked by one person.</dd>
-            <dt>High</dt><dd>Checked independently by at least two people.</dd>
+            <dt>High</dt><dd>Consensus across the expert assessments.</dd>
+            <dt>Moderate</dt><dd>Majority vote across the expert assessments.</dd>
+            <dt>Low</dt><dd>Disagreement across the expert assessments.</dd>
           </dl>
           <h3>Column glossary</h3>
           <dl class="column-glossary">
@@ -217,10 +223,10 @@
             <dt>Subtype (s)</dt><dd>Subtype label or subtype group associated with the mapping row.</dd>
             <dt>Vocabulary</dt><dd>External vocabulary, ontology, or coding system.</dd>
             <dt>Code</dt><dd>Identifier in the external vocabulary.</dd>
-            <dt>Mapping_type</dt><dd>Semantic relationship between the LNIC entity and the external code: exact, narrower, broader, or partial.</dd>
+            <dt>Mapping_type</dt><dd>Semantic relationship assigned by independent expert assessment: exact, narrower, broader, or partial.</dd>
             <dt>Vocabulary Prefered Name</dt><dd>Preferred label from the external vocabulary. The original column name preserves the source spelling.</dd>
             <dt>Version</dt><dd>Version or release of the external vocabulary used for the mapping.</dd>
-            <dt>Mapping confidence</dt><dd>Extent of human review: Low for programmatic mappings, Moderate after one-person review, and High after independent review by at least two people.</dd>
+            <dt>Mapping confidence</dt><dd>Agreement category recorded after independent expert assessment: High for consensus, Moderate for majority vote, and Low for disagreement.</dd>
           </dl>
 
           <h2 id="igwas-docs">i-GWASdb Explorer</h2>

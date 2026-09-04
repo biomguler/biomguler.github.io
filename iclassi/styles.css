@@ -1897,3 +1897,14 @@ code {
     display: grid;
   }
 }
+
+.mapping-workflow-figure img {
+  max-width: 980px;
+  width: 100%;
+}
+.mapping-workflow-figure figcaption {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+  text-align: center;
+}

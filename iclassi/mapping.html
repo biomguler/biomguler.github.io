@@ -63,25 +63,25 @@
         <div class="page-heading"><div class="page-heading-icon">⇄</div><div class="page-heading-main"><h1>LNIC Vocabulary Mapping</h1><p>Explore mappings between InterLymph Neoplasm Classification (LNIC) entities and external vocabularies, including ICD-O-3, ICD-9, ICD-10, and ICD-10-CM. Each row contains one vocabulary code.</p></div><div class="page-heading-actions"><button type="button" class="secondary navigator-toggle" data-toggle-navigator="mappingExplorerLayout">Hide navigator</button></div></div>
         <section class="mapping-guide" aria-labelledby="mappingGuideTitle">
           <div class="mapping-review-note">
-            <strong id="mappingGuideTitle">Review status</strong>
-            <p>Mapping confidence records the extent of human review, not semantic closeness. Programmatically generated mappings remain Low until reviewed by a person.</p>
+            <strong id="mappingGuideTitle">Expert review workflow</strong>
+            <p>Mapping type was assigned by four experts' independent assessment. Mapping confidence was recorded separately after these assessments and summarizes the level of agreement across the mapping effort.</p>
           </div>
           <div class="mapping-definition-columns">
             <div>
               <h2>Mapping types</h2>
               <dl class="mapping-definition-list">
-                <dt>exact</dt><dd>The external code corresponds precisely to the LNIC entity.</dd>
-                <dt>narrower</dt><dd>The external code is more specific than the LNIC entity.</dd>
-                <dt>broader</dt><dd>The external code includes the LNIC entity plus other entities.</dd>
-                <dt>partial</dt><dd>The code overlaps but is ambiguous, historical, deprecated, or not fully equivalent.</dd>
+                <dt>exact</dt><dd>The external code corresponds directly to the i-CLASSi entity.</dd>
+                <dt>narrower</dt><dd>The external code represents a more specific concept fully contained within the i-CLASSi entity.</dd>
+                <dt>broader</dt><dd>The external code encompasses the i-CLASSi entity together with additional concepts.</dd>
+                <dt>partial</dt><dd>The external code overlaps the i-CLASSi entity but is ambiguous, historical, deprecated, or not fully equivalent.</dd>
               </dl>
             </div>
             <div>
               <h2>Mapping confidence</h2>
               <dl class="mapping-definition-list">
-                <dt>Low</dt><dd>Created programmatically without human review.</dd>
-                <dt>Moderate</dt><dd>Checked by one person.</dd>
-                <dt>High</dt><dd>Checked independently by at least two people.</dd>
+                <dt>High</dt><dd>Consensus across the expert assessments.</dd>
+                <dt>Moderate</dt><dd>Majority vote across the expert assessments.</dd>
+                <dt>Low</dt><dd>Disagreement across the expert assessments.</dd>
               </dl>
             </div>
           </div>

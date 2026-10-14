@@ -6931,7 +6931,7 @@
     "Vocabulary": "UMLS",
     "Code": "C5209276",
     "Mapping_type": "narrower",
-    "Mapping confidence": "Moderate",
+    "Mapping confidence": "Low",
     "Version": "2026AA",
     "Vocabulary Prefered Name": "IgA heavy chain paraproteinemia"
   },

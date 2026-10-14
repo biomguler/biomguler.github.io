@@ -576,7 +576,7 @@ Entry ID	LNIC Code	Entity-Type	Subtype(s)	Vocabulary	Code	Vocabulary Preferred N
 058	LNIC-020-058	Alpha HCD		ICD10CM	C88.20	Heavy chain disease	broader	High	International Classification of Diseases, Tenth Revision, Clinical Modification (ICD-10-CM), 2025
 058	LNIC-020-058	Alpha HCD		ICD10CM	C88.21	Heavy chain disease, in remission	partial	Moderate	International Classification of Diseases, Tenth Revision, Clinical Modification (ICD-10-CM), 2025
 058	LNIC-020-058	Alpha HCD		ICD10CM	C88.3	Immunoproliferative small intestinal disease	exact	Moderate	International Classification of Diseases, Tenth Revision, Clinical Modification (ICD-10-CM), 2025
-058	LNIC-020-058	Alpha HCD		UMLS	C5209276	IgA heavy chain paraproteinemia	narrower	Moderate	2026AA
+058	LNIC-020-058	Alpha HCD		UMLS	C5209276	IgA heavy chain paraproteinemia	narrower	Low	2026AA
 058	LNIC-020-058	Alpha HCD		UMLS	C0021071	Immunoproliferative Small Intestinal Disease	exact	Moderate	2026AA
 058	LNIC-020-058	Alpha HCD		EFO	EFO_1001798	immunoproliferative small intestinal disease	exact	Moderate	3.91.0
 058	LNIC-020-058	Alpha HCD		ICD10	C88.3	Immunoproliferative small intestinal disease	broader	High	International Statistical Classification of Diseases and Related Health Problems, Tenth Revision (ICD-10)
